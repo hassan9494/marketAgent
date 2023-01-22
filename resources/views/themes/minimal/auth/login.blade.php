@@ -58,6 +58,10 @@
                                         <a class="btn-forgetpass"
                                            href="{{ route('password.request') }}">@lang("Forgot Your Password?")</a>
                                     </div>
+                                    <div>
+                                        <a class="btn-forgetpass"
+                                           href="{{ route('register') }}">@lang("Register")</a>
+                                    </div>
                                 </div>
                             </div>
 

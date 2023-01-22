@@ -21,7 +21,8 @@
                     </a>
                 </div>
                 <div class="pull-left">
-                    <a class="btn btn-info backButton search-button"  style="background: #1c84ee;padding: 12px 30px;" href="{{route('user.service.show')}}" >
+                    <a class="btn btn-info backButton search-button" style="background: #089dda;padding: 12px 30px;"
+                       href="{{route('user.service.show')}}">
                         <i class="fa fa-arrow-left"></i></a>
                 </div>
             </div>
@@ -31,7 +32,9 @@
                         <input type="text" class="form-control w-100" id="myInput" onkeyup="myFunction()">
                         <i id="clearsearch" class="fa fa-times-circle pull-left" onclick="clearSearch()"></i>
                     </div>
-                    <button type="button" onclick="myFunction()" id="search" class="btn btn-primary mr-2 mb-2 search-button" style="background: #1c84ee;padding: 12px 30px;">@lang('Search')</button>
+                    <button type="button" onclick="myFunction()" id="search"
+                            class="btn btn-primary mr-2 mb-2 search-button"
+                            style="background: #089dda;padding: 12px 30px;">@lang('Search')</button>
                 </div>
                 <form id="productForm" class="form" method="post" action="{{route('user.order.store')}}"
                       enctype="multipart/form-data">
@@ -41,25 +44,31 @@
                             <div class="w-100">
                                 <ul class="products_list" id="myUL">
                                     @foreach($services as $key=>$service)
-                                    <input type="hidden" value="pubg" id="operator">
-                                    <li data-title=" {{$service->service_title }}" class="{{$service->is_available  != 1 ? 'disable ' : ''}} col-4 pr-0 pl-0" id="box{{$key+1}}"  onclick="{{$service->is_available}} == 1 ? as(this,'{{$key+1}}','9','{{$service->price}}','{{$service->id}}') : ''"
-                                        style="width:32.3%; flex:1 1 25cm; list-style-type:none ; display:inline-block ; max-width:175px ; opacity: 1 ;">
-                                        <div  class="product_group">
-                                            <img
-                                                src="{{ getFile(config('location.category.path').$service->category->image) }}"
-                                                style="width: 100%;  height:auto; max-width:175px; opacity:1 ;">
-                                            {{--                                            <div class="text1">--}}
-                                            {{--                                                <p>UC PUBG 60</p>--}}
-                                            {{--                                            </div>--}}
-                                            <div class="service-title " style="font-weight:bold ;font-size: 13px;">
-                                                <span class="">{{config('basic.currency_symbol')}} {{$service->price}} </span>
-                                                <br><span class=""> ‎₺ {{$service->price * config('basic.exchange_rate')}}</span>
-                                                <br>
-                                                {{--                                                <span class="bx bxs-star text-warning"></span>--}}
-                                                <span>{{$service->service_title}}</span>
+                                        <input type="hidden" value="pubg" id="operator">
+                                        <input class="inp-hid-catg" type="text" name="category" value="{{$service->category->id}}" hidden>
+                                        <li data-title=" {{$service->service_title }}"
+                                            class="{{$service->is_available  != 1 ? 'disable ' : ''}} col-4 pr-0 pl-0"
+                                            id="box{{$key+1}}"
+                                            onclick="{{$service->is_available}} == 1 ? as(this,'{{$key+1}}','9','{{$service->price}}','{{$service->id}}') : ''"
+                                            style="width:32.3%; flex:1 1 25cm; list-style-type:none ; display:inline-block ; max-width:175px ; opacity: 1 ;">
+                                            <div class="product_group">
+                                                <img
+                                                    src="{{ getFile(config('location.category.path').$service->category->image) }}"
+                                                    style="width: 100%;  height:auto; max-width:175px; opacity:1 ;">
+                                                {{--                                            <div class="text1">--}}
+                                                {{--                                                <p>UC PUBG 60</p>--}}
+                                                {{--                                            </div>--}}
+                                                <div class="service-title " style="font-weight:bold ;font-size: 13px;">
+                                                    <span
+                                                        class="">{{config('basic.currency_symbol')}} {{$service->price}} </span>
+                                                    <br><span
+                                                        class=""> ‎₺ {{$service->price * config('basic.exchange_rate')}}</span>
+                                                    <br>
+                                                    {{--                                                <span class="bx bxs-star text-warning"></span>--}}
+                                                    <span>{{$service->service_title}}</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </li>
+                                        </li>
                                     @endforeach
 
                                 </ul>
@@ -87,18 +96,42 @@
                             <input name="total" value="" class="form-control" id="total" readonly="">
                         </div>
                     </div>
-                    <div class="row mt-3">
-                        <div class="col-6">
-                            <label>@lang('Player number') </label>
-                            <input name="alt" value="" class="form-control" id="playerid" required="">
+                    @if($service->category->type == "GAME")
+                        <div class="row mt-3">
+                            <div class="col-4">
+                                <label>@lang('Player number') </label>
+                                <input oninvalid="setCustomValidity('أدخل رقم اللاعب من فضلك ')"
+                                       onchange="try{setCustomValidity('')}catch(e){}"
+                                       name="link" value="" class="form-control" id="player_number" required>
+
+                            </div>
+                            <div class="col-2 d-flex align-items-center refresh mb-2">
+                                <!-- <i class="fas fa-sync-alt get-name"></i> -->
+                                <i class="fas fa-crosshairs get-name "></i>
+                            </div>
+                            <div class="col-6">
+                                <label>@lang('Player name') </label>
+                                <input name="player_name" value="" class="form-control" id="player_name">
+                            </div>
                         </div>
-                    </div>
-{{--                    <div class="  mt-2">--}}
-{{--                        <div class="ml-3 alert alert-info">--}}
-{{--                            هذا المنتج يعمل بشكل آلي على مدار الساعة--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-                    <button class="btn btn-primary ml-3 mt-3 form_submit search-button" style="background: #1c84ee;padding: 12px 30px;">
+                    @elseif($service->category->type == "BALANCE" || $service->category->type == "OTHER")
+                        <div class="row mt-3">
+                            <div class="col-6">
+                                <label for="special_field">{{$service->category->special_field}}</label>
+                                <input name="special_field" value="" class="form-control" id="special_field"
+                                       placeholder="@lang('add') {{$service->category->special_field}}">
+                            </div>
+                        </div>
+                    @else
+                        <input type="hidden" name="link" value="">
+                    @endif
+                    {{--                    <div class="  mt-2">--}}
+                    {{--                        <div class="ml-3 alert alert-info">--}}
+                    {{--                            هذا المنتج يعمل بشكل آلي على مدار الساعة--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
+                    <button id="submit-button" class="btn btn-primary ml-3 mt-3 form_submit submit-button " disabled
+                            style="background: #089dda;padding: 12px 30px;">
                         <span class="indicator-label "></span>
                         @lang('Buy')
                         <div class="spinner-border indicator-progres d-none " role="status">
@@ -116,10 +149,44 @@
 @endsection
 @push('js')
     <script>
-        function clearSearch(){
+
+        $(".get-name").on("click", function() {
+            var category_id = $('.inp-hid-catg').val();
+            var player_number = $('#player_number').val();
+            if(player_number == ""){
+                $('.vald-player-number').addClass('active');
+            }
+            else{
+                $('#player_name').val('please wait');
+                $(".get-name").addClass('fa-spinner active');
+                $.ajax({
+                    url:'/user/player/'+category_id+'/'+player_number,
+                    type:"GET",
+                    success:function(response){
+                        console.log(response);
+                        $('#player_name').val(response.username);
+                        $(".get-name").removeClass('fa-spinner active');
+                    },
+                    error : function (xhr, b, c) {
+                        console.log("xhr=" + xhr + " b=" + b + " c=" + c);
+                    }
+                })
+            }
+        });
+        // fun 2
+        $("#player_number").on("keyup", function() {
+            if(player_number != ""){
+                $('.vald-player-number').removeClass('active');
+            }
+            else{
+                $('.vald-player-number').addClass('active');
+            }
+        });
+        function clearSearch() {
             document.getElementById('myInput').value = '';
             myFunction()
         }
+
         function myFunction() {
             // Declare variables
 
@@ -143,6 +210,7 @@
         }
 
         function cal() {
+            // console.log(sessionStorage.getItem('price'))
             var price = sessionStorage.getItem('price')
             var qty = document.getElementById('qty').value;
             var totals = document.getElementById('total');
@@ -154,10 +222,10 @@
             console.log('1')
             document.getElementById('box' + i).style.opacity = "1";
             for (x = 1; x != i; x++) {
-                document.getElementById('box' + x).style.opacity = "0.5";
+                document.getElementById('box' + x).style.opacity = "0.9";
             }
             for (x = e; x != i; x--) {
-                document.getElementById('box' + x).style.opacity = "0.5";
+                document.getElementById('box' + x).style.opacity = "0.9";
             }
             var qty = document.getElementById('qty').value;
             var total = document.getElementById('total');
@@ -169,7 +237,6 @@
 
             var bb = document.getElementById('bb');
             bb.style.visibility = "visible";
-
 
 
         }
@@ -191,13 +258,13 @@
                     '_token': '0BYiYSEUBTACS4BUQBqJBam1tb1Ilvfc4iRLXWl4'
                 },
                 type: "POST",
-                success: function(response) {
+                success: function (response) {
                     console.log(response);
                     playerName.value = response.playername;
                     refresh.className = "fa fa-refresh ";
 
                 },
-                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
                     alert("المرجو التاكد من الرقم");
                 }
 
@@ -207,18 +274,19 @@
 
         function as(app, i, e, price, id) {
             //  $("#box"+i).append(`<i class="fa fa-check text-success"></i>`);
+            $('#submit-button').removeAttr("disabled");
             document.getElementById('box' + i).style.opacity = "1";
-            document.getElementById('box' + i).style.transform  = "translateY(-50px)";
-            document.getElementById('box' + i).style.transform  = "  scale(1.2)";
+            document.getElementById('box' + i).style.transform = "translateY(-50px)";
+            document.getElementById('box' + i).style.transform = "  scale(1.2)";
             for (x = 1; x != i; x++) {
-                if (document.getElementById('box' + x)){
+                if (document.getElementById('box' + x)) {
                     document.getElementById('box' + x).style.transform = "none";
                     document.getElementById('box' + x).style.opacity = "0.5";
                 }
 
             }
             for (x = e; x != i; x--) {
-                if (document.getElementById('box' + x)){
+                if (document.getElementById('box' + x)) {
                     document.getElementById('box' + x).style.transform = "none";
                     document.getElementById('box' + x).style.opacity = "0.5";
                 }

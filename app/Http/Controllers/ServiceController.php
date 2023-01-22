@@ -192,7 +192,7 @@ class ServiceController extends Controller
         $service->max_amount = $req['max_amount'];
         $service->price = $req['price'];
         $service->service_status = $req['service_status'];
-        $service->api_provider_id = $req['api_provider_id'];
+        $service->api_provider_id = $req['api_provider_id'] == 0 ? null : $req['api_provider_id'];
         $service->api_service_id = $req['api_service_id'];
         $service->drip_feed = $req['drip_feed'];
         $service->description = $req['description'];

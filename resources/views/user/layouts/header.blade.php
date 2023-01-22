@@ -20,34 +20,41 @@
                            href="{{ route('user.home') }}">@lang('Dashboard') </a>
                     </li>
 
-                    <li class="nav-item dropdown {{ Request::routeIs('user.order*') ? 'active' : '' }}">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            @lang('Order')
-                            <i data-feather="chevron-down" class="svg-icon"></i>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item {{menuActive('user.order.create')}}" href="{{ route('user.order.create') }}">@lang('New Order')</a>
-                            <a class="dropdown-item {{menuActive('user.order.mass')}}" href="{{ route('user.order.mass') }}">@lang('Mass Order')</a>
-                            <a class="dropdown-item {{menuActive('user.order.index')}}" href="{{ route('user.order.index') }}">@lang('All Order')</a>
-                        </div>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::routeIs('user.order.index')  ? 'active' : '' }}"
+                           href="{{ route('user.order.index') }}">@lang('Order') </a>
                     </li>
+
+{{--                    <li class="nav-item dropdown {{ Request::routeIs('user.order*') ? 'active' : '' }}">--}}
+{{--                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"--}}
+{{--                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                            @lang('Order')--}}
+{{--                            <i data-feather="chevron-down" class="svg-icon"></i>--}}
+{{--                        </a>--}}
+{{--                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
+{{--                            <a class="dropdown-item {{menuActive('user.order.create')}}" href="{{ route('user.order.create') }}">@lang('New Order')</a>--}}
+{{--                            <a class="dropdown-item {{menuActive('user.order.mass')}}" href="{{ route('user.order.mass') }}">@lang('Mass Order')</a>--}}
+{{--                            <a class="dropdown-item {{menuActive('user.order.index')}}" href="{{ route('user.order.index') }}">@lang('All Order')</a>--}}
+{{--                        </div>--}}
+{{--                    </li>--}}
 
                     <li class="nav-item">
                         <a class="nav-link {{ Request::routeIs('user.service*')  ? 'active' : '' }}"
                            href="{{ route('user.service.show') }}">@lang('Services') </a>
                     </li>
-                    <li class="nav-item  ">
-                        <a class="nav-link {{ Request::routeIs('user.addFund*')  ? 'active' : '' }}"
-                           href="{{route('user.addFund')}}">@lang('Add Fund')</a>
-                    </li>
+{{--                    <li class="nav-item  ">--}}
+{{--                        <a class="nav-link {{ Request::routeIs('user.addFund*')  ? 'active' : '' }}"--}}
+{{--                           href="{{route('user.addFund')}}">@lang('Add Fund')</a>--}}
+{{--                    </li>--}}
 
 
 
-                    <li class="nav-item ">
-                        <a class="nav-link {{ Request::routeIs('user.fund-history') ? 'active' : '' }}"
-                           href="{{ route('user.fund-history') }}">@lang('Fund History')</a>
-                    </li>
+{{--                    <li class="nav-item ">--}}
+{{--                        <a class="nav-link {{ Request::routeIs('user.fund-history') ? 'active' : '' }}"--}}
+{{--                           href="{{ route('user.fund-history') }}">@lang('Fund History')</a>--}}
+{{--                    </li>--}}
 
                     <li class="nav-item ">
                         <a class="nav-link {{ Request::routeIs('user.transaction') ? 'active' : '' }}"
@@ -71,20 +78,20 @@
                                 <i data-feather="user" class="svg-icon mr-2 ml-1"></i>
                                 @lang('My Profile')</a>
 
-                            <a class="dropdown-item {{menuActive('user.referral')}}" href="{{ route('user.referral') }}">
-                                <i data-feather="users" class="svg-icon mr-2 ml-1"></i>
-                                @lang('My Referral')</a>
+{{--                            <a class="dropdown-item {{menuActive('user.referral')}}" href="{{ route('user.referral') }}">--}}
+{{--                                <i data-feather="users" class="svg-icon mr-2 ml-1"></i>--}}
+{{--                                @lang('My Referral')</a>--}}
 
-                            <a class="dropdown-item {{menuActive(['user.referral.bonus','user.referral.bonus.search'])}}" href="{{ route('user.referral.bonus') }}">
-                                <i data-feather="list" class="svg-icon mr-2 ml-1"></i>
-                                @lang('Referral Bonus')</a>
-
-
+{{--                            <a class="dropdown-item {{menuActive(['user.referral.bonus','user.referral.bonus.search'])}}" href="{{ route('user.referral.bonus') }}">--}}
+{{--                                <i data-feather="list" class="svg-icon mr-2 ml-1"></i>--}}
+{{--                                @lang('Referral Bonus')</a>--}}
 
 
-                            <a class="dropdown-item {{menuActive('user.api.docs')}}" href="{{ route('user.api.docs') }}">
-                                <i data-feather="key" class="svg-icon mr-2 ml-1"></i> @lang('API Setting')
-                            </a>
+
+
+{{--                            <a class="dropdown-item {{menuActive('user.api.docs')}}" href="{{ route('user.api.docs') }}">--}}
+{{--                                <i data-feather="key" class="svg-icon mr-2 ml-1"></i> @lang('API Setting')--}}
+{{--                            </a>--}}
 
                             <a class="dropdown-item {{menuActive('user.ticket.create')}}" href="{{ route('user.ticket.create') }}">
                                 <i class="fab fa-hire-a-helper mr-2 ml-1 icon-color"></i>@lang('Open Ticket')
@@ -92,9 +99,9 @@
                             <a class="dropdown-item {{menuActive('user.ticket.list')}}" href="{{ route('user.ticket.list') }}">
                                 <i class="fas fa-ticket-alt mr-2 ml-1 icon-color"></i> @lang('Show Ticket')
                             </a>
-                            <a class="dropdown-item {{menuActive(['user.twostep.security'])}}" href="{{route('user.twostep.security')}}">
-                                <i class="fas fa-lock mr-2 ml-1 icon-color"></i> @lang('2FA Security')
-                            </a>
+{{--                            <a class="dropdown-item {{menuActive(['user.twostep.security'])}}" href="{{route('user.twostep.security')}}">--}}
+{{--                                <i class="fas fa-lock mr-2 ml-1 icon-color"></i> @lang('2FA Security')--}}
+{{--                            </a>--}}
 
 
                             <div class="dropdown-divider"></div>
@@ -165,12 +172,12 @@
             </div>
             <!-- End Notification -->
 
-            <div class="push-notification">
-                <a onclick="darkMode()" class="nav-link dropdown-toggle pl-md-3 cursor-pointer"
-                   aria-expanded="false">
-                    <span><i class="far fa-moon bell-font"></i></span>
-                </a>
-            </div>
+{{--            <div class="push-notification">--}}
+{{--                <a onclick="darkMode()" class="nav-link dropdown-toggle pl-md-3 cursor-pointer"--}}
+{{--                   aria-expanded="false">--}}
+{{--                    <span><i class="far fa-moon bell-font"></i></span>--}}
+{{--                </a>--}}
+{{--            </div>--}}
             <div class="push-notification">
                 <a class="nav-link dropdown-toggle lin" href="#" id="navbarDropdown" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"

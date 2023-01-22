@@ -142,7 +142,7 @@
                         <div class="form-group">
                             <label>@lang('API Service ID')</label>
                             <input type="text" class="form-control square" name="api_service_id"
-                                   value="{{old('api_service_id', $service->api_service_id)}}"
+                                   value="{{old('api_service_id', $service->api_service_id == null ? null :$service->api_service_id )}}"
                                    placeholder="@lang('Api Service ID')">
                             @if($errors->has('api_service_id'))
                                 <div class="error text-danger">@lang($errors->first('api_service_id')) </div>
