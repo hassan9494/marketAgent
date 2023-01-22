@@ -40,81 +40,81 @@
 
 <body>
 <!-- HERO -->
-<header id="hero">
-    <nav id="navbar">
-        <div class="container-fluid px-md-5">
-            <div class="navbar navbar-expand-lg mx-lg-5">
+{{--<header id="hero">--}}
+{{--    <nav id="navbar">--}}
+{{--        <div class="container-fluid px-md-5">--}}
+{{--            <div class="navbar navbar-expand-lg mx-lg-5">--}}
 
-                <a class="navbar-brand" href="{{route('home')}}">
-                    <img src="{{getFile(config('location.logoIcon.path').'logo.png')}}" alt="Logo">
-                </a>
+{{--                <a class="navbar-brand" href="{{route('home')}}">--}}
+{{--                    <img src="{{getFile(config('location.logoIcon.path').'logo.png')}}" alt="Logo">--}}
+{{--                </a>--}}
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#smmnavbar">
-                    <div class="menu-icon">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </button>
-                <div class="collapse navbar-collapse" id="smmnavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link {{menuActive('home')}}" href="{{route('home')}}">@lang('Home')</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{menuActive('about')}}" href="{{route('about')}}">@lang('About Us')</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{menuActive('services')}}" href="{{route('services')}}">@lang('Services')</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{menuActive('blog')}}" href="{{route('blog')}}">@lang('Blog')</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{menuActive('contact')}}" href="{{route('contact')}}">@lang('Contact')</a>
-                        </li>
-                    </ul>
+{{--                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#smmnavbar">--}}
+{{--                    <div class="menu-icon">--}}
+{{--                        <span></span>--}}
+{{--                        <span></span>--}}
+{{--                        <span></span>--}}
+{{--                    </div>--}}
+{{--                </button>--}}
+{{--                <div class="collapse navbar-collapse" id="smmnavbar">--}}
+{{--                    <ul class="navbar-nav">--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link {{menuActive('home')}}" href="{{route('home')}}">@lang('Home')</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link {{menuActive('about')}}" href="{{route('about')}}">@lang('About Us')</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link {{menuActive('services')}}" href="{{route('services')}}">@lang('Services')</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link {{menuActive('blog')}}" href="{{route('blog')}}">@lang('Blog')</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link {{menuActive('contact')}}" href="{{route('contact')}}">@lang('Contact')</a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
 
-                    <ul class="navbar-nav nav-registration">
-                        @guest
-                            <li class="nav-item mr-5">
-                                <a class="{{menuActive('login')}} nav-link"
-                                   href="{{route('login')}}"><span>@lang('Login')</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="{{menuActive('register')}} nav-link active"
-                                   href="{{route('register')}}"><span>@lang('Sign up')</span></a>
-                            </li>
-                        @endguest
-                        @auth
-                            <li class="nav-item mr-5">
-                                <a class="{{menuActive('user.home')}} nav-link"
-                                   href="{{route('user.home')}}"><span>@lang('Dashboard')</span></a>
-                            </li>
+{{--                    <ul class="navbar-nav nav-registration">--}}
+{{--                        @guest--}}
+{{--                            <li class="nav-item mr-5">--}}
+{{--                                <a class="{{menuActive('login')}} nav-link"--}}
+{{--                                   href="{{route('login')}}"><span>@lang('Login')</span></a>--}}
+{{--                            </li>--}}
+{{--                            <li class="nav-item">--}}
+{{--                                <a class="{{menuActive('register')}} nav-link active"--}}
+{{--                                   href="{{route('register')}}"><span>@lang('Sign up')</span></a>--}}
+{{--                            </li>--}}
+{{--                        @endguest--}}
+{{--                        @auth--}}
+{{--                            <li class="nav-item mr-5">--}}
+{{--                                <a class="{{menuActive('user.home')}} nav-link"--}}
+{{--                                   href="{{route('user.home')}}"><span>@lang('Dashboard')</span></a>--}}
+{{--                            </li>--}}
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"><span>@lang('Logout')</span></a>
+{{--                            <li class="nav-item">--}}
+{{--                                <a class="nav-link" href="{{ route('logout') }}"--}}
+{{--                                   onclick="event.preventDefault();--}}
+{{--                                                     document.getElementById('logout-form').submit();"><span>@lang('Logout')</span></a>--}}
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </li>
-                        @endauth
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
+{{--                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">--}}
+{{--                                    @csrf--}}
+{{--                                </form>--}}
+{{--                            </li>--}}
+{{--                        @endauth--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </nav>--}}
 
 
-    @if(\Request::routeIs('home'))
-        @stack('banner')
-    @else
-        @include($theme.'partials.banner')
-    @endif
-</header>
+{{--    @if(\Request::routeIs('home'))--}}
+{{--        @stack('banner')--}}
+{{--    @else--}}
+{{--        @include($theme.'partials.banner')--}}
+{{--    @endif--}}
+{{--</header>--}}
 <!-- /HERO -->
 
 @yield('content')
@@ -123,7 +123,7 @@
 @stack('extra-content')
 
 
-@include($theme.'partials.footer')
+{{--@include($theme.'partials.footer')--}}
 
 @include('plugins')
 

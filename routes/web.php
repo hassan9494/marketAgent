@@ -431,7 +431,8 @@ Route::middleware('Maintenance')->group(function () {
     Route::get('/blog-details/{slug}/{id}', 'FrontendController@blogDetails')->name('blogDetails');
     Route::get('/blog', 'FrontendController@blog')->name('blog');
 
-    Route::get('/', 'FrontendController@index')->name('home');
+//    Route::get('/', 'FrontendController@index')->name('home');
+    Route::get('/', 'HomeController@index')->name('home');
     Route::get('/about', 'FrontendController@about')->name('about');
     Route::get('/services', 'FrontendController@services')->name('services');
     Route::get('/service-search', 'FrontendController@serviceSearch')->name('service.search');

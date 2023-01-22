@@ -194,24 +194,24 @@
                     </div>
                 </div>
 
-                <div class="card card-primary">
-                    <div class="card-body">
-                        <div class="form-group form-block mb-50 pr-15 pl-15">
-                            <h5 class="mb-15">@lang('Referral Link')</h5>
-                            <div class="input-group mb-50">
-                                <input type="text" value="{{route('register.sponsor',[Auth::user()->username])}}"
-                                       class="form-control form-control-lg bg-transparent" id="sponsorURL"
-                                       readonly>
-                                <div class="input-group-append">
-                                            <span class="input-group-text copytext" id="copyBoard"
-                                                  onclick="copyFunction()">
-                                                <i class="fa fa-copy"></i>
-                                            </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="card card-primary">--}}
+{{--                    <div class="card-body">--}}
+{{--                        <div class="form-group form-block mb-50 pr-15 pl-15">--}}
+{{--                            <h5 class="mb-15">@lang('Referral Link')</h5>--}}
+{{--                            <div class="input-group mb-50">--}}
+{{--                                <input type="text" value="{{route('register.sponsor',[Auth::user()->username])}}"--}}
+{{--                                       class="form-control form-control-lg bg-transparent" id="sponsorURL"--}}
+{{--                                       readonly>--}}
+{{--                                <div class="input-group-append">--}}
+{{--                                            <span class="input-group-text copytext" id="copyBoard"--}}
+{{--                                                  onclick="copyFunction()">--}}
+{{--                                                <i class="fa fa-copy"></i>--}}
+{{--                                            </span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
             </div>
 

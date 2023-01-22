@@ -122,12 +122,17 @@ class OrderController extends Controller
 //        dd($request);
         $req = Purify::clean($request->all());
         $rules = [
-            'category' => 'required|integer|min:1|not_in:0',
+//            'category' => 'required|integer|min:1|not_in:0',
             'service' => 'required|integer|min:1|not_in:0',
 //            'link' => 'required|url',
 //            'quantity' => 'required|integer',
 //            'check' => 'required',
         ];
+        if (!isset($request->drip_feed)) {
+//            $rules['runs'] = 'required|integer|not_in:0';
+//            $rules['interval'] = 'required|integer|not_in:0';
+        }
+//        dd($rules);
         $validator = Validator::make($req, $rules);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
@@ -135,36 +140,70 @@ class OrderController extends Controller
 
         $service = Service::userRate()->findOrFail($request->service);
 
+
         $basic = (object) config('basic');
-        if ($service->category->type == 'CODE' || $service->category->type == '5SIM')
-            $quantity = 1;
-        else
-            $quantity = $request->quantity;
 
         $quantity = $request->quantity;
 
-
+        if ($service->drip_feed == 1) {
+            if (!isset($request->drip_feed)) {
+                $rules['runs'] = 'required|integer|not_in:0';
+                $rules['interval'] = 'required|integer|not_in:0';
+                $validator = Validator::make($req, $rules);
+                if ($validator->fails()) {
+                    return back()->withErrors($validator)->withInput();
+                }
+                $quantity = $request->quantity * $request->runs;
+            }
+        }
         if ($service->min_amount <= $quantity && $service->max_amount >= $quantity) {
             $userRate = ($service->user_rate) ?? $service->price;
-            $price = round(($quantity * $userRate), 2);
+            $price = round(($quantity * $userRate) / 1000, $basic->fraction_number);
 
 
             $user = Auth::user();
             if ($user->balance < $price) {
                 return back()->with('error', "Insufficient balance in your wallet.")->withInput();
             }
-
             $order = new Order();
             $order->user_id = $user->id;
-            $order->category_id = $req['category'];
+            $order->category_id = $service->category;
             $order->service_id = $req['service'];
-            $order->link = $req['link'];
+//            $order->link = $req['link'];
+            $order->link = $req['alt'];
             $order->quantity = $req['quantity'];
             $order->status = 'processing';
             $order->price = $price;
             $order->runs = isset($req['runs']) && !empty($req['runs']) ? $req['runs'] : null;
             $order->interval = isset($req['interval']) && !empty($req['interval']) ? $req['interval'] : null;
 
+            if (isset($service->api_provider_id)) {
+                $apiproviderdata = ApiProvider::find($service->api_provider_id);
+                $postData = [
+                    'key' => $apiproviderdata['api_key'],
+                    'action' => 'add',
+                    'service' => $service->api_service_id,
+                    'link' => $req['link'],
+                    'quantity' => $req['quantity']
+                ];
+
+                if (isset($req['runs']))
+                    $postData['runs'] = $req['runs'];
+
+                if (isset($req['interval']))
+                    $postData['interval'] = $req['interval'];
+
+                $apiservicedata = Curl::to($apiproviderdata['url'])->withData($postData)->post();
+                $apidata = json_decode($apiservicedata);
+
+                if (isset($apidata->order)) {
+                    $order->status_description = "order: {$apidata->order}";
+                    $order->api_order_id = $apidata->order;
+                } else {
+//                    dd("error: {$apidata->errors->message}");
+                    $order->status_description = "error: {$apidata->errors->message}";
+                }
+            }
             $order->save();
             $user->balance -= $price;
             $user->save();
