@@ -61,11 +61,11 @@
                                                 <div class="service-title " style="font-weight:bold ;font-size: 13px;">
                                                     <span
                                                         class="">{{config('basic.currency_symbol')}} {{$service->price}} </span>
-                                                    <br><span
+                                                     | <span
                                                         class=""> ‎₺ {{$service->price * config('basic.exchange_rate')}}</span>
                                                     <br>
                                                     {{--                                                <span class="bx bxs-star text-warning"></span>--}}
-                                                    <span>{{$service->service_title}}</span>
+                                                    <span style="font-size: 17px">{{$service->service_title}}</span>
                                                 </div>
                                             </div>
                                         </li>
@@ -98,21 +98,21 @@
                     </div>
                     @if($service->category->type == "GAME")
                         <div class="row mt-3">
-                            <div class="col-4">
+                            <div class="col-6">
                                 <label>@lang('Player number') </label>
                                 <input oninvalid="setCustomValidity('أدخل رقم اللاعب من فضلك ')"
                                        onchange="try{setCustomValidity('')}catch(e){}"
                                        name="link" value="" class="form-control" id="player_number" required>
 
                             </div>
-                            <div class="col-2 d-flex align-items-center refresh mb-2">
-                                <!-- <i class="fas fa-sync-alt get-name"></i> -->
-                                <i class="fas fa-crosshairs get-name "></i>
-                            </div>
-                            <div class="col-6">
-                                <label>@lang('Player name') </label>
-                                <input name="player_name" value="" class="form-control" id="player_name">
-                            </div>
+{{--                            <div class="col-2 d-flex align-items-center refresh mb-2">--}}
+{{--                                <!-- <i class="fas fa-sync-alt get-name"></i> -->--}}
+{{--                                <i class="fas fa-crosshairs get-name "></i>--}}
+{{--                            </div>--}}
+{{--                            <div class="col-6">--}}
+{{--                                <label>@lang('Player name') </label>--}}
+{{--                                <input name="player_name" value="" class="form-control" id="player_name">--}}
+{{--                            </div>--}}
                         </div>
                     @elseif($service->category->type == "BALANCE" || $service->category->type == "OTHER")
                         <div class="row mt-3">

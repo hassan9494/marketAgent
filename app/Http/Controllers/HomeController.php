@@ -12,11 +12,14 @@ use App\Models\Language;
 use App\Models\Order;
 use App\Models\Ticket;
 use App\Models\Transaction;
+use App\Services\SymService;
 use DeviceDetector\Parser\Client\Browser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Validator;
+use Ixudra\Curl\Facades\Curl;
 use Stevebauman\Purify\Facades\Purify;
 
 class HomeController extends Controller
@@ -46,6 +49,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+
 
         $data['walletBalance'] = $this->user->balance;
         $data['totalTrx'] = Transaction::where('user_id', $this->user->id)->count();
