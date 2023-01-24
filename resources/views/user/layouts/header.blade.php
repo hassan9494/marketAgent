@@ -6,10 +6,14 @@
                 <img src="{{ getFile(config('location.logoIcon.path').'logo.png')}}" alt="homepage"
                      class="dark-logo" />
             </a>
-            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            <div class="navbar-toggler balance">
+                <span class="balance-span">{{Auth()->user()->balance}} {{config('basic.currency_symbol')}}</span>
+            </div>
+            <button class="navbar-toggler "  data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
@@ -120,7 +124,11 @@
 
             </div>
 
-
+            <div class="push-notification balance-div">
+                <div class=" balance">
+                    <span class="balance-span"> {{Auth()->user()->balance}} {{config('basic.currency_symbol')}}</span>
+                </div>
+            </div>
             <!-- Notification -->
             <div class="push-notification dropdown " id="pushNotificationArea">
 
@@ -172,13 +180,7 @@
             </div>
             <!-- End Notification -->
 
-{{--            <div class="push-notification">--}}
-{{--                <a onclick="darkMode()" class="nav-link dropdown-toggle pl-md-3 cursor-pointer"--}}
-{{--                   aria-expanded="false">--}}
-{{--                    <span><i class="far fa-moon bell-font"></i></span>--}}
-{{--                </a>--}}
-{{--            </div>--}}
-            <div class="push-notification">
+            <div class="push-notification language">
                 <a class="nav-link dropdown-toggle lin" href="#" id="navbarDropdown" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                    style="background-color: transparent;">

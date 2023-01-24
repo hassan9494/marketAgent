@@ -14,7 +14,7 @@
                                 <img src="{{ getFile(config('location.category.path').$category->image) }}" alt="user">
                             </div>
                             <div class="card-footer">
-                                <h4 class="text-dark">{{$category->category_title }}</h4>
+                                <h4 class="text-dark" style="font-size: 25px">{{$category->category_title }}</h4>
                             </div>
                         </div>
                     </a>

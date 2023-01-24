@@ -143,8 +143,8 @@
                                     <th scope="col">@lang('Order ID')</th>
                                     <th scope="col" class="order-details-column text-left">@lang('Order Details')</th>
                                     <th scope="col">@lang('Price')</th>
-                                    <th scope="col">@lang('Start Counter')</th>
-                                    <th scope="col">@lang('Remains')</th>
+                                    <th scope="col">@lang('Codes')</th>
+                                    <th scope="col">@lang('Details')</th>
                                     <th scope="col">@lang('Order AT')</th>
                                     <th scope="col">@lang('Status')</th>
                                     <th scope="col" >@lang('Note')</th>
@@ -160,8 +160,8 @@
                                             @lang('Quantity'): @lang($order->quantity) <br>
                                         </td>
                                         <td>@lang($order->price) @lang(config('basic.currency'))</td>
-                                        <td>@lang($order->start_counter?? 'N/A')</td>
-                                        <td>@lang($order->remains ?? 'N/A' )</td>
+                                        <td>@lang($order->codes)</td>
+                                        <td width="15%">@lang($order->details)</td>
                                         <td>@lang(dateTime($order->created_at, 'd/m/Y - h:i A' ))</td>
 
                                         <td>
