@@ -190,7 +190,7 @@ class OrderController extends Controller
                 $order->service_id = $req['service'];
                 $order->link = $req['link'];
                 $order->quantity = $req['quantity'];
-                $order->status = 'processing';
+                $order->status = isset($server_order['order_status']) ? $server_order['order_status'] : 'processing';
                 $order->price = $price;
                 $order->runs = isset($req['runs']) && !empty($req['runs']) ? $req['runs'] : null;
                 $order->interval = isset($req['interval']) && !empty($req['interval']) ? $req['interval'] : null;
