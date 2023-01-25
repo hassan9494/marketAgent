@@ -20,17 +20,18 @@
                     <div class="input-group mb-3">
                         <input class="form-control" type="text" name="username" value="{{old('username')}}"
                                placeholder="@lang('Email Or Username')">
-
+                    </div>
                         @error('username')<p class="text-danger  mt-1">{{ $message }}</p>@enderror
                         @error('email')<p class="text-danger  mt-1">{{ $message }}</p>@enderror
-                    </div>
+
                     <div class="input-group mb-4">
                         <input class="form-control " type="password" name="password"
                                placeholder="@lang('Password')">
+                    </div>
                         @error('password')
                         <p class="text-danger mt-1">{{ $message }}</p>
                         @enderror
-                    </div>
+
                     <div class="form-group text-right">
                         <div class="checkbox checkbox-fill d-inline">
                             <input type="checkbox" name="remember" id="remember"  {{ old('remember') ? 'checked' : '' }}>

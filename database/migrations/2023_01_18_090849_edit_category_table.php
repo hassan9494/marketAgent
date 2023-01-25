@@ -14,7 +14,7 @@ class EditCategoryTable extends Migration
     public function up()
     {
         Schema::table('categories', function (Blueprint $table) {
-            $table->enum('type', ['GAME', 'CODE', 'BALANCE', 'OTHER'])->default('GAME');
+            $table->enum('type', ['GAME', 'CODE', 'BALANCE', '5SIM'])->default('GAME');
             $table->string('special_field')->nullable();
             $table->string('slug',15)->nullable();
             $table->integer('sort')->nullable();

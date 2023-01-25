@@ -223,39 +223,39 @@
                 <li class="list-divider"></li>
 
 
-                <li class="nav-small-cap"><span class="hide-menu">@lang('Support Tickets')</span></li>
+{{--                <li class="nav-small-cap"><span class="hide-menu">@lang('Support Tickets')</span></li>--}}
 
-                <li class="sidebar-item">
-                    <a class="sidebar-link sidebar-link" href="{{route('admin.ticket')}}" aria-expanded="false">
-                        <i class="fas fa-ticket-alt"></i>
-                        <span class="hide-menu">@lang('All Tickets')</span>
-                    </a>
-                </li>
+{{--                <li class="sidebar-item">--}}
+{{--                    <a class="sidebar-link sidebar-link" href="{{route('admin.ticket')}}" aria-expanded="false">--}}
+{{--                        <i class="fas fa-ticket-alt"></i>--}}
+{{--                        <span class="hide-menu">@lang('All Tickets')</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
-                <li class="sidebar-item">
-                    <a class="sidebar-link sidebar-link" href="{{ route('admin.ticket',['open']) }}"
-                       aria-expanded="false">
-                        <i class="fas fa-spinner"></i>
-                        <span class="hide-menu">@lang('Open Ticket')</span>
-                    </a>
-                </li>
+{{--                <li class="sidebar-item">--}}
+{{--                    <a class="sidebar-link sidebar-link" href="{{ route('admin.ticket',['open']) }}"--}}
+{{--                       aria-expanded="false">--}}
+{{--                        <i class="fas fa-spinner"></i>--}}
+{{--                        <span class="hide-menu">@lang('Open Ticket')</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
-                <li class="sidebar-item">
-                    <a class="sidebar-link sidebar-link" href="{{ route('admin.ticket',['closed']) }}"
-                       aria-expanded="false">
-                        <i class="fas fa-times-circle"></i>
-                        <span class="hide-menu">@lang('Closed Ticket')</span>
-                    </a>
-                </li>
+{{--                <li class="sidebar-item">--}}
+{{--                    <a class="sidebar-link sidebar-link" href="{{ route('admin.ticket',['closed']) }}"--}}
+{{--                       aria-expanded="false">--}}
+{{--                        <i class="fas fa-times-circle"></i>--}}
+{{--                        <span class="hide-menu">@lang('Closed Ticket')</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
-                <li class="sidebar-item">
-                    <a class="sidebar-link sidebar-link" href="{{ route('admin.ticket',['answered']) }}"
-                       aria-expanded="false">
-                        <i class="fas fa-reply"></i>
-                        <span class="hide-menu">@lang('Answered Ticket')</span>
-                    </a>
-                </li>
-                <li class="list-divider"></li>
+{{--                <li class="sidebar-item">--}}
+{{--                    <a class="sidebar-link sidebar-link" href="{{ route('admin.ticket',['answered']) }}"--}}
+{{--                       aria-expanded="false">--}}
+{{--                        <i class="fas fa-reply"></i>--}}
+{{--                        <span class="hide-menu">@lang('Answered Ticket')</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                <li class="list-divider"></li>--}}
 
                 {{--///////////////////////START Subscriber/////////////////////////////--}}
 {{--                <li class="nav-small-cap"><span class="hide-menu">@lang('Subscriber')</span></li>--}}
@@ -270,21 +270,21 @@
 
                 <li class="nav-small-cap"><span class="hide-menu">@lang('Controls')</span></li>
 
-                <li class="sidebar-item">
-                    <a class="sidebar-link sidebar-link" href="{{route('admin.basic-controls')}}" aria-expanded="false">
-                        <i class="fas fa-cogs"></i>
-                        <span class="hide-menu">@lang('Basic Controls')</span>
-                    </a>
-                </li>
+{{--                <li class="sidebar-item">--}}
+{{--                    <a class="sidebar-link sidebar-link" href="{{route('admin.basic-controls')}}" aria-expanded="false">--}}
+{{--                        <i class="fas fa-cogs"></i>--}}
+{{--                        <span class="hide-menu">@lang('Basic Controls')</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
-                @if(config('basic.theme') == 'minimal' )
-                <li class="sidebar-item">
-                    <a class="sidebar-link sidebar-link" href="{{route('admin.color-settings')}}" aria-expanded="false">
-                        <i class="fas fa-paint-brush"></i>
-                        <span class="hide-menu">@lang('Color Settings')</span>
-                    </a>
-                </li>
-                @endif
+{{--                @if(config('basic.theme') == 'minimal' )--}}
+{{--                <li class="sidebar-item">--}}
+{{--                    <a class="sidebar-link sidebar-link" href="{{route('admin.color-settings')}}" aria-expanded="false">--}}
+{{--                        <i class="fas fa-paint-brush"></i>--}}
+{{--                        <span class="hide-menu">@lang('Color Settings')</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                @endif--}}
 
 {{--                <li class="sidebar-item">--}}
 {{--                    <a class="sidebar-link" href="{{route('admin.plugin.config')}}" aria-expanded="false">--}}

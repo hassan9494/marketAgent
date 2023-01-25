@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a7eff23-e428-4214-b8ae-75d970d66454" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/uploads/logo/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/uploads/logo/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/uploads/logo/footer-logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/uploads/logo/footer-logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/uploads/logo/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/uploads/logo/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2023_01_18_090849_edit_category_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2023_01_18_090849_edit_category_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/themes/minimal/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/themes/minimal/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/layouts/app.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,16 +184,16 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/themes/minimal/layouts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\SMM\smm\project\assets" />
       <recent name="D:\projects\SMM\smm\project\resources\views\themes\minimal\layouts" />
       <recent name="D:\projects\SMM\smm\project\public\assets\themes\minimal" />
       <recent name="D:\projects\SMM\smm\project\public\assets\uploads\logo" />
       <recent name="D:\projects\SMM\smm\project\public\assets\uploads\categories" />
-      <recent name="D:\projects\SMM\smm\project\app" />
     </key>
   </component>
   <component name="RunManager">
@@ -212,7 +219,7 @@
       <workItem from="1674123201642" duration="2979000" />
       <workItem from="1674370140662" duration="764000" />
       <workItem from="1674370927473" duration="15745000" />
-      <workItem from="1674471790693" duration="28054000" />
+      <workItem from="1674471790693" duration="30329000" />
     </task>
     <servers />
   </component>

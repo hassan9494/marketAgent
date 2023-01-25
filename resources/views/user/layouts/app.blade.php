@@ -9,7 +9,7 @@
 
     @include('user.layouts.header')
 
-    @include('user.layouts.side-notify')
+{{--    @include('user.layouts.side-notify')--}}
 
     <div class="page-wrapper d-block">
         @yield('content')
