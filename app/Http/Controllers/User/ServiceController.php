@@ -12,6 +12,7 @@ class ServiceController extends Controller
 {
     public function index()
     {
+
         $categories = Category::with(['service' => function ($query) {
             $query->userRate()->where('service_status', 1);
         }])

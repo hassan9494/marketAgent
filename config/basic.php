@@ -1,5 +1,5 @@
 <?php return array(
-    'site_title' => 'SMA',
+    'site_title' => 'WDM',
     'time_zone' => 'UTC',
     'base_color' => '#ff8503',
     'currency' => 'USD',

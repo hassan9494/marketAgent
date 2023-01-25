@@ -16,12 +16,12 @@
                 {{--Manage Service--}}
                 <li class="nav-small-cap"><span class="hide-menu">@lang('Manage Service')</span></li>
 
-                <li class="sidebar-item">
-                    <a class="sidebar-link sidebar-link" href="{{route('admin.service.add')}}" aria-expanded="false">
-                        <i data-feather="plus-circle" class="feather-icon"></i>
-                        <span class="hide-menu">@lang('Add Services')</span>
-                    </a>
-                </li>
+{{--                <li class="sidebar-item">--}}
+{{--                    <a class="sidebar-link sidebar-link" href="{{route('admin.service.add')}}" aria-expanded="false">--}}
+{{--                        <i data-feather="plus-circle" class="feather-icon"></i>--}}
+{{--                        <span class="hide-menu">@lang('Add Services')</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
                 <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="{{route('admin.service.show')}}" aria-expanded="false">
@@ -34,12 +34,12 @@
 
                 {{--Manage Category--}}
                 <li class="nav-small-cap"><span class="hide-menu">@lang('Manage Category')</span></li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link sidebar-link" href="{{route('admin.category.add')}}" aria-expanded="false">
-                        <i data-feather="plus-circle" class="feather-icon"></i>
-                        <span class="hide-menu">@lang('Add Category')</span>
-                    </a>
-                </li>
+{{--                <li class="sidebar-item">--}}
+{{--                    <a class="sidebar-link sidebar-link" href="{{route('admin.category.add')}}" aria-expanded="false">--}}
+{{--                        <i data-feather="plus-circle" class="feather-icon"></i>--}}
+{{--                        <span class="hide-menu">@lang('Add Category')</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
                 <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="{{route('admin.category.show')}}"
