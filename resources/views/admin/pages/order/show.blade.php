@@ -70,34 +70,34 @@
                                 @endif
                             </td>
                             <td data-label="@lang('Action')">
-                                <div class="dropdown show dropup">
-                                    <a class="dropdown-toggle p-3" href="#" id="dropdownMenuLink" data-toggle="dropdown"
-                                       aria-haspopup="true" aria-expanded="false">
-                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item"
-                                           href="{{ route('admin.order.edit',[$order->id]) }}"><i
-                                                class="fa fa-edit text-warning pr-2"
-                                                aria-hidden="true"></i> @lang('Edit')
-                                        </a>
-                                        <a href="javascript:void(0)" class="dropdown-item status-change" data-toggle="modal"
-                                           data-target="#statusMoldal"
-                                           data-route="{{ route('admin.order.status.change',['id'=>$order->id] ) }} ">
-                                            <i class="fa fa-check pr-2 text-success"
-                                               aria-hidden="true"></i> @lang('Change Status')
-                                        </a>
+{{--                                <div class="dropdown show dropup">--}}
+{{--                                    <a class="dropdown-toggle p-3" href="#" id="dropdownMenuLink" data-toggle="dropdown"--}}
+{{--                                       aria-haspopup="true" aria-expanded="false">--}}
+{{--                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>--}}
+{{--                                    </a>--}}
+{{--                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">--}}
+{{--                                        <a class="dropdown-item"--}}
+{{--                                           href="{{ route('admin.order.edit',[$order->id]) }}"><i--}}
+{{--                                                class="fa fa-edit text-warning pr-2"--}}
+{{--                                                aria-hidden="true"></i> @lang('Edit')--}}
+{{--                                        </a>--}}
+{{--                                        <a href="javascript:void(0)" class="dropdown-item status-change" data-toggle="modal"--}}
+{{--                                           data-target="#statusMoldal"--}}
+{{--                                           data-route="{{ route('admin.order.status.change',['id'=>$order->id] ) }} ">--}}
+{{--                                            <i class="fa fa-check pr-2 text-success"--}}
+{{--                                               aria-hidden="true"></i> @lang('Change Status')--}}
+{{--                                        </a>--}}
 
 
-                                        <a href="javascript:void(0)" class="dropdown-item delete-order" data-toggle="modal"
-                                           data-target="#deleteModal"
-                                           data-route="{{ route('admin.order.destroy',[$order->id])}} ">
-                                            <i class="fa fa-trash-alt pr-2 text-danger"
-                                               aria-hidden="true"></i> @lang('Delete')
-                                        </a>
+{{--                                        <a href="javascript:void(0)" class="dropdown-item delete-order" data-toggle="modal"--}}
+{{--                                           data-target="#deleteModal"--}}
+{{--                                           data-route="{{ route('admin.order.destroy',[$order->id])}} ">--}}
+{{--                                            <i class="fa fa-trash-alt pr-2 text-danger"--}}
+{{--                                               aria-hidden="true"></i> @lang('Delete')--}}
+{{--                                        </a>--}}
 
-                                    </div>
-                                </div>
+{{--                                    </div>--}}
+{{--                                </div>--}}
                             </td>
                         </tr>
                     @endforeach
