@@ -180,8 +180,8 @@ class OrderController extends Controller
             $order_param['link'] = $request['link'] ? $request['link'] : '-1';
             $order_param['quantity'] = $quantity;
             $server_order = $server_connection->serverRequest($order_param);
-//            dd($server_order);
-            if ($server_order){
+
+            if (!isset($server_order['errors'])){
 
                 DB::beginTransaction();
                 $order = new Order();
@@ -236,9 +236,8 @@ class OrderController extends Controller
                     'currency' => $basic->currency,
                     'transaction' => $transaction->trx_id,
                 ]);
-                dd($server_order);
             }else{
-                return back()->with('error', "There was an error communicating with the server")->withInput();
+                return back()->with('error', $server_order['errors']['message'])->withInput();
             }
             /////////////   End Test    /////////////////////
 

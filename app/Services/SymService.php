@@ -29,9 +29,8 @@ class SymService
         $result = curl_exec($ch);
         $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         if ($httpcode!=200) {
-            dd($result);
-            dd($httpcode);
-            return 0;
+
+            return json_decode($result, True);
         }
 
         curl_close($ch);

@@ -85,46 +85,49 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for="qty">@lang('Quantity')</label>
-                            <input name="quantity" value="1" class="form-control" id="qty" onchange="cal();"
-                                   onkeyup="cal()" type="number" placeholder="أدخل الكمية">
+                    <div class="service-form">
+                        <div class="row">
+                            <div class="col">
+                                <label for="qty">@lang('Quantity')</label>
+                                <input name="quantity" value="1" class="form-control" id="qty" onchange="cal();"
+                                       onkeyup="cal()" type="number" placeholder="أدخل الكمية">
+                            </div>
+                            <div class="col">
+                                <label for="total">@lang('Total')</label>
+                                <input name="total" value="" class="form-control" id="total" readonly="">
+                            </div>
                         </div>
-                        <div class="col">
-                            <label for="total">@lang('Total')</label>
-                            <input name="total" value="" class="form-control" id="total" readonly="">
-                        </div>
-                    </div>
-                    @if($service->category->type == "GAME")
-                        <div class="row mt-3">
-                            <div class="col-6">
-                                <label>@lang('Player number') </label>
-                                <input oninvalid="setCustomValidity('أدخل رقم اللاعب من فضلك ')"
-                                       onchange="try{setCustomValidity('')}catch(e){}"
-                                       name="link" value="" class="form-control" id="player_number" required>
+                        @if($category->type == "GAME")
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <label>@lang('Player number') </label>
+                                    <input oninvalid="setCustomValidity('أدخل رقم اللاعب من فضلك ')"
+                                           onchange="try{setCustomValidity('')}catch(e){}"
+                                           name="link" value="" class="form-control" id="player_number" required>
 
+                                </div>
+                                {{--                            <div class="col-2 d-flex align-items-center refresh mb-2">--}}
+                                {{--                                <!-- <i class="fas fa-sync-alt get-name"></i> -->--}}
+                                {{--                                <i class="fas fa-crosshairs get-name "></i>--}}
+                                {{--                            </div>--}}
+                                {{--                            <div class="col-6">--}}
+                                {{--                                <label>@lang('Player name') </label>--}}
+                                {{--                                <input name="player_name" value="" class="form-control" id="player_name">--}}
+                                {{--                            </div>--}}
                             </div>
-{{--                            <div class="col-2 d-flex align-items-center refresh mb-2">--}}
-{{--                                <!-- <i class="fas fa-sync-alt get-name"></i> -->--}}
-{{--                                <i class="fas fa-crosshairs get-name "></i>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-6">--}}
-{{--                                <label>@lang('Player name') </label>--}}
-{{--                                <input name="player_name" value="" class="form-control" id="player_name">--}}
-{{--                            </div>--}}
-                        </div>
-                    @elseif($service->category->type == "BALANCE" || $service->category->type == "OTHER")
-                        <div class="row mt-3">
-                            <div class="col-6">
-                                <label for="special_field">{{$service->category->special_field}}</label>
-                                <input name="special_field" value="" class="form-control" id="special_field"
-                                       placeholder="@lang('add') {{$service->category->special_field}}">
+                        @elseif($category->type == "BALANCE" || $category->type == "OTHER")
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <label for="special_field">{{$service->category->special_field}}</label>
+                                    <input name="special_field" value="" class="form-control" id="special_field"
+                                           placeholder="@lang('add') {{$service->category->special_field}}">
+                                </div>
                             </div>
-                        </div>
-                    @else
-                        <input type="hidden" name="link" value="">
-                    @endif
+                        @else
+                            <input type="hidden" name="link" value="">
+                        @endif
+                    </div>
+
                     {{--                    <div class="  mt-2">--}}
                     {{--                        <div class="ml-3 alert alert-info">--}}
                     {{--                            هذا المنتج يعمل بشكل آلي على مدار الساعة--}}
