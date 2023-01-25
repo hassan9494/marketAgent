@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" @if(session()->get('rtl') == 1) dir="rtl" @endif >
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,8 +10,19 @@
     <title>@lang($basic->site_title) | @yield('title')</title>
     @stack('style-lib')
     <link href="{{asset('assets/admin/css/all.min.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/admin/css/theme.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/admin/css/style.css')}}" rel="stylesheet">
+
+    @if(session()->get('rtl') == 1)
+        <link href="{{asset('assets/admin/css/theme_ar.css')}}" rel="stylesheet">
+    @else
+        <link href="{{asset('assets/admin/css/theme.css')}}" rel="stylesheet">
+    @endif
+
+    @if(session()->get('rtl') == 1)
+        <link href="{{asset('assets/admin/css/style_ar.css')}}" rel="stylesheet">
+    @else
+        <link href="{{asset('assets/admin/css/style.css')}}" rel="stylesheet">
+    @endif
+
     <link href="{{asset('assets/admin/css/select2.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/admin/css/custom.css')}}" rel="stylesheet">
     @stack('style')

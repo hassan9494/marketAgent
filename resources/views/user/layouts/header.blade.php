@@ -97,12 +97,12 @@
 {{--                                <i data-feather="key" class="svg-icon mr-2 ml-1"></i> @lang('API Setting')--}}
 {{--                            </a>--}}
 
-                            <a class="dropdown-item {{menuActive('user.ticket.create')}}" href="{{ route('user.ticket.create') }}">
-                                <i class="fab fa-hire-a-helper mr-2 ml-1 icon-color"></i>@lang('Open Ticket')
-                            </a>
-                            <a class="dropdown-item {{menuActive('user.ticket.list')}}" href="{{ route('user.ticket.list') }}">
-                                <i class="fas fa-ticket-alt mr-2 ml-1 icon-color"></i> @lang('Show Ticket')
-                            </a>
+{{--                            <a class="dropdown-item {{menuActive('user.ticket.create')}}" href="{{ route('user.ticket.create') }}">--}}
+{{--                                <i class="fab fa-hire-a-helper mr-2 ml-1 icon-color"></i>@lang('Open Ticket')--}}
+{{--                            </a>--}}
+{{--                            <a class="dropdown-item {{menuActive('user.ticket.list')}}" href="{{ route('user.ticket.list') }}">--}}
+{{--                                <i class="fas fa-ticket-alt mr-2 ml-1 icon-color"></i> @lang('Show Ticket')--}}
+{{--                            </a>--}}
 {{--                            <a class="dropdown-item {{menuActive(['user.twostep.security'])}}" href="{{route('user.twostep.security')}}">--}}
 {{--                                <i class="fas fa-lock mr-2 ml-1 icon-color"></i> @lang('2FA Security')--}}
 {{--                            </a>--}}
