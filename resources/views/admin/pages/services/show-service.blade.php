@@ -28,18 +28,6 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-4 col-xl-3">
-                            <div class="form-group">
-                                <select name="provider" id="provider" class="form-control statusfield">
-                                    <option value="-1"
-                                            @if(@request()->provider == '-1') selected @endif>@lang('All Provider')</option>
-                                    @foreach($apiProviders as $provider)
-                                        <option value="{{ $provider->id }}"
-                                                @if(@request()->provider == $provider->id) selected @endif>@lang($provider->api_name)</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
 
                         <div class="col-md-4 col-xl-3">
                             <div class="form-group">
@@ -65,32 +53,10 @@
                 </form>
             </div>
             <div class="col-xl-2">
-
-                <div class="d-flex justify-content-start justify-content-xl-end">
-
-                    <button type="button" class="btn btn-sm btn-primary  mr-3" data-toggle="modal"
-                            data-target="#importServiceModal">
-                        <span> @lang('Import Services')</span>
-                    </button>
-
-                    <div class="dropdown">
-                        <button class="btn btn-dark  btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span><i class="fas fa-bars pr-2"></i> @lang('Action')</span>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <button class="dropdown-item" type="button" data-toggle="modal"
-                                    data-target="#all_active">@lang('Active')</button>
-                            <button class="dropdown-item" type="button" data-toggle="modal"
-                                    data-target="#all_deactive">@lang('Inactive')</button>
-                            <button class="dropdown-item" type="button" data-toggle="modal"
-                                    data-target="#delete">@lang('Delete')</button>
-                        </div>
-                    </div>
-
-
-                </div>
-
+                <a href="{{route('admin.price_refresh')}}" class="btn btn-success w-100 w-sm-auto">
+                    @lang('Price Refresh')
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -124,8 +90,7 @@
 
                                     <th scope="col">@lang('ID')</th>
                                     <th scope="col" class="text-left">@lang('Name')</th>
-                                    <th scope="col">@lang('Provider')</th>
-                                    <th scope="col">@lang('Drip-Feed')</th>
+                                    <th scope="col">@lang('Price')</th>
                                     <th scope="col">@lang('Status')</th>
                                     <th scope="col">@lang('Action')</th>
                                 </tr>
@@ -150,17 +115,12 @@
                                                 {{\Str::limit($service->service_title, 30)}}
                                             </a>
                                         </td>
-
-                                        <td data-label="@lang('Provider')">
-                                            {{ optional($service->provider)->api_name ?? 'N/A' }}
-                                        </td>
-                                        <td data-label="@lang('Drip-Feed')">
-                                    <span
-                                        class="badge badge-pill {{ $service->drip_feed == 0 ? 'badge-danger' : 'badge-success' }}">{{ $service->drip_feed == 0 ? 'Inactive' : 'Active' }}</span>
-                                        </td>
-                                        <td data-label="@lang('Status')">
-                                    <span
-                                        class="badge badge-pill {{ $service->service_status == 0 ? 'badge-danger' : 'badge-success' }}">{{ $service->service_status == 0 ? 'Inactive' : 'Active' }}</span>
+                                        <td data-label="@lang('Price')">
+                                            {{ $service->price }} {{config('basic.currency_symbol')}}
+                                                </td>
+                                                <td data-label="@lang('Status')">
+                                            <span
+                                                class="badge badge-pill {{ $service->service_status == 0 ? 'badge-danger' : 'badge-success' }}">{{ $service->service_status == 0 ? 'Inactive' : 'Active' }}</span>
                                         </td>
                                         <td data-label="@lang('Action')">
                                             <a href="{{route('admin.service.edit',['id'=>$service->id])}}"
@@ -243,45 +203,6 @@
                         <button type="button" class="btn btn-light" data-dismiss="modal"><span>@lang('No')</span>
                         </button>
                         <button type="submit" class="btn btn-primary"><span>@lang('Yes')</span></button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="importServiceModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog " role="document">
-            <div class="modal-content">
-                <div class="modal-header modal-colored-header bg-primary">
-                    <h5 class="modal-title">@lang('Confirm Import Services')</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form action="{{ route('admin.api.services') }}" method="post" id="getServicesForm">
-                    @csrf
-                    <div class="modal-body">
-                        <div class="body-centent">
-                            <div class="dropdown">
-                                <select class="form-control" name="api_provider_id">
-                                    <option selected="" disabled>@lang('Select API Provider')</option>
-                                    @foreach($apiProviders as $apiProvider)
-                                        <option value="{{ $apiProvider->id }}">{{ $apiProvider->api_name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-
-                        <button type="button" class="btn btn-light" data-dismiss="modal">
-                            <span><i class="fas fa-power-off"></i> @lang('Cancel')</span>
-                        </button>
-
-                        <button type="submit" class="btn btn-primary">
-                            <span><i class="fas fa-search"></i> @lang('Get Services')</span>
-                        </button>
-
                     </div>
                 </form>
             </div>

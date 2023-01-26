@@ -6,6 +6,30 @@
 
     <div class="container-fluid">
         <div class="row admin-fa_icon">
+
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <div class="card shadow border-right">
+                    <div class="card-body">
+                        <div class="d-flex d-lg-flex d-md-block align-items-center">
+                            <div>
+                                <div class="d-inline-flex align-items-center">
+                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{$adminBalance}} </h2>
+                                </div>
+                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Balance In Server')</h6>
+                            </div>
+                            <div class="ml-auto mt-md-3 mt-lg-0">
+                                <span class="opacity-7 text-muted"><i class="fa fa-money-bill-alt fa-2x"></i></span>
+                                <a href="{{route('admin.dashboard')}}" class="">
+
+                                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card  shadow border-right">
                     <div class="card-body">
@@ -539,23 +563,11 @@
                                                         <i class="fa fa-edit text-warning pr-2"
                                                            aria-hidden="true"></i> @lang('Edit')
                                                     </a>
-                                                    <a class="dropdown-item"
-                                                       href="{{ route('admin.user.customRate',$user->id) }}">
-                                                        <i class="fa fa-money-bill-alt text-dark pr-2"
-                                                           aria-hidden="true"></i> @lang('Custom Rate')
-                                                    </a>
 
                                                     <a class="dropdown-item"
                                                        href="{{ route('admin.user-order',$user->id) }}">
                                                         <i class="fa fa-eye text-info pr-2"
                                                            aria-hidden="true"></i> @lang('Order')
-                                                    </a>
-                                                    <a class="dropdown-item loginAccount" href="javascript:void(0)"
-                                                       data-toggle="modal"
-                                                       data-target="#signIn"
-                                                       data-route="{{route('admin.user-loginAccount',$user->id)}}">
-                                                        <i class="fa fa-sign-in-alt text-primary pr-2"
-                                                           aria-hidden="true"></i> @lang('Login as User')
                                                     </a>
 
                                                     <a class="dropdown-item"

@@ -21,6 +21,8 @@
                         <th scope="col">@lang('Order No.')</th>
                         <th scope="col">@lang('User')</th>
                         <th scope="col">@lang('Order Details')</th>
+                        <th scope="col">@lang('Price')</th>
+                        <th scope="col">@lang('Quantity')</th>
                         <th scope="col">@lang('Created')</th>
                         <th scope="col">@lang('Status')</th>
                         <th scope="col">@lang('Action')</th>
@@ -48,6 +50,12 @@
                                 @lang('Quantity'): @lang($order->quantity)<br>
                                   @lang("Start counter:") {{ $order->start_counter }}<br>
                             	@lang('Remains:') {{ $order->remains }}
+                            </td>
+                            <td data-label="@lang('Price')">
+                                @lang($order->price) {{config('basic.currency_symbol')}}
+                            </td>
+                            <td data-label="@lang('Quantity')">
+                                @lang($order->quantity)
                             </td>
                             <td data-label="@lang('Created')">{{dateTime($order->created_at , 'd M Y, h:i A')}} </td>
                             <td data-label="@lang('Status')">

@@ -79,24 +79,11 @@
 
 
 
-                            <a href="{{ route('admin.user.customRate',$user->id) }}"
-                               class="btn btn-info waves-effect waves-light">
-                                <span class="btn-label"><i class="fa fa-tags"></i></span>
-                                @lang('Custom Rate')
-                            </a>
-
 
                             <a href="{{ route('admin.send-email',$user->id) }}"
                                class="btn btn-info waves-effect waves-light">
                                 <span class="btn-label"><i class="fas fa-envelope-open"></i></span> @lang('Send Email')
                             </a>
-
-                            <button class="btn btn-primary  loginAccount" type="button" data-toggle="modal"
-                                    data-target="#signIn"
-                                    data-route="{{route('admin.user-loginAccount',$user->id)}}">
-                                <span class="btn-label"><i class="fas fa-sign-in-alt"></i></span>
-                                @lang('Login as User')
-                            </button>
 
                             <a href="{{ route('admin.user.fundLog',$user->id) }}"
                                class="btn btn-info waves-effect waves-light">
@@ -236,48 +223,6 @@
                                                        id="status" {{ $user->status == 0 ? 'checked' : '' }} >
                                                 <label class="custom-switch-checkbox-label" for="status">
                                                     <span class="status custom-switch-checkbox-inner"></span>
-                                                    <span class="custom-switch-checkbox-switch"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="col-sm-3">
-                                            <label>@lang('Email Verification')</label>
-                                            <div class="custom-switch-btn w-md-80">
-                                                <input type='hidden' value='1' name='email_verification'>
-                                                <input type="checkbox" name="email_verification"
-                                                       class="custom-switch-checkbox"
-                                                       id="email_verification" {{ $user->email_verification == 0 ? 'checked' : '' }}>
-                                                <label class="custom-switch-checkbox-label" for="email_verification">
-                                                    <span class="verify custom-switch-checkbox-inner"></span>
-                                                    <span class="custom-switch-checkbox-switch"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <label>@lang('SMS Verification')</label>
-                                            <div class="custom-switch-btn w-md-80">
-                                                <input type='hidden' value='1' name='sms_verification'>
-                                                <input type="checkbox" name="sms_verification"
-                                                       class="custom-switch-checkbox"
-                                                       id="sms_verification" {{ $user->sms_verification == 0 ? 'checked' : '' }}>
-                                                <label class="custom-switch-checkbox-label" for="sms_verification">
-                                                    <span class="verify custom-switch-checkbox-inner"></span>
-                                                    <span class="custom-switch-checkbox-switch"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-3">
-                                            <label>@lang('2FA Security')</label>
-                                            <div class="custom-switch-btn w-md-80">
-                                                <input type='hidden' value='0' name='two_fa_verify'>
-                                                <input type="checkbox" name="two_fa_verify"
-                                                       class="custom-switch-checkbox"
-                                                       id="two_fa_verify" {{ $user->two_fa_verify == 1 ? 'checked' : '' }}>
-                                                <label class="custom-switch-checkbox-label" for="two_fa_verify">
-                                                    <span class="custom-switch-checkbox-inner"></span>
                                                     <span class="custom-switch-checkbox-switch"></span>
                                                 </label>
                                             </div>

@@ -13,6 +13,7 @@ use App\Models\Ticket;
 use App\Models\Transaction;
 use App\Models\User;
 use App\Rules\FileTypeValidate;
+use App\Services\SymService;
 use Illuminate\Http\Request;
 
 use Carbon\Carbon;
@@ -37,6 +38,7 @@ class DashboardController extends Controller
 
     public function dashboard()
     {
+//        dd('sasfasf');
         $last30 = date('Y-m-d', strtotime('-30 days'));
 
         $data['totalAmountReceived'] = Fund::where('status', 1)->sum('amount');
@@ -145,6 +147,16 @@ class DashboardController extends Controller
         }
 
         $data['latestUser'] = User::latest()->limit(5)->get();
+        $data['adminBalance'] = 0 ;
+        $server_connection = new SymService();
+        $order_param = array();
+        $order_param['action'] = 'balance';
+        $server_services = $server_connection->serverRequest($order_param);
+        if (!isset($server_services['errors'])){
+            if (isset($server_services['balance'])){
+                $data['adminBalance'] = $server_services['balance'] ;
+            }
+        }
 
 
         return view('admin.pages.dashboard', $data, compact('statistics'));

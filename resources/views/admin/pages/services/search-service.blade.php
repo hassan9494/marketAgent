@@ -34,18 +34,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-4 col-xl-3">
-                            <div class="form-group">
-                                <select name="provider" id="provider" class="form-control statusfield">
-                                    <option value="-1"
-                                            @if(@request()->provider == '-1') selected @endif>@lang('All Provider')</option>
-                                    @foreach($apiProviders as $provider)
-                                        <option value="{{ $provider->id }}"
-                                                @if(@request()->provider == $provider->id) selected @endif>@lang($provider->api_name)</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
+
 
                         <div class="col-md-4 col-xl-3">
                             <div class="form-group">
@@ -71,29 +60,6 @@
                 </form>
             </div>
 
-            <div class="col-xl-2 ">
-
-                <div class="d-flex justify-content-start justify-content-xl-end">
-                    <button type="button" class="btn btn-sm btn-primary  mr-3" data-toggle="modal"
-                            data-target="#importServiceModal">
-                        <span> @lang('Import Services')</span>
-                    </button>
-
-                    <div class="dropdown">
-                        <button class="btn btn-dark  btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span><i class="fas fa-bars pr-2"></i> @lang('Action')</span>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <button class="dropdown-item" type="button" data-toggle="modal"
-                                    data-target="#all_active">@lang('Active')</button>
-                            <button class="dropdown-item" type="button" data-toggle="modal"
-                                    data-target="#all_deactive">@lang('Inactive')</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
 
         </div>
     </div>
@@ -128,8 +94,7 @@
                                     </th>
                                     <th scope="col">@lang('ID')</th>
                                     <th scope="col" class="text-left">@lang('Name')</th>
-                                    <th scope="col">@lang('Provider')</th>
-                                    <th scope="col">@lang('Drip-Feed')</th>
+                                    <th scope="col">@lang('Price')</th>
                                     <th scope="col">@lang('Status')</th>
                                     <th scope="col">@lang('Action')</th>
                                 </tr>
@@ -151,14 +116,8 @@
                                                 {{\Str::limit($row->service_title, 30)}}
                                             </a>
                                         </td>
-                                        <td data-label="@lang('Provider')">
-                                            {{ optional($row->provider)->api_name ?? 'N/A' }}
-                                        </td>
-
-
-                                        <td data-label="@lang('Drip-Feed')">
-                                            <span
-                                                class="badge badge-pill {{ $row->drip_feed == 0 ? 'badge-danger' : 'badge-success' }}">{{ $row->drip_feed == 0 ? 'Inactive' : 'Active' }}</span>
+                                        <td data-label="@lang('Price')">
+                                            {{ $row->price }} {{config('basic.currency_symbol')}}
                                         </td>
                                         <td data-label="@lang('Status')">
                                             <span

@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a7eff23-e428-4214-b8ae-75d970d66454" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/ServiceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/uploads/logo/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/uploads/logo/favicon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/basic.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/basic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/uploads/logo/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/uploads/logo/favicon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/sidebar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/admin/css/style-ar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/admin/css/theme_ar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/admin/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/admin/css/theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/user/css/color.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/themes/user/css/color.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/user/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/themes/user/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/user/css/style_ar.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/themes/user/css/style_ar.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,16 +183,16 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/uploads/logo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/themes/user" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\SMM\smm\project\assets\themes\user" />
+      <recent name="D:\projects\SMM\smm\project\assets\admin" />
       <recent name="D:\projects\SMM\smm\project\assets\uploads\logo" />
       <recent name="D:\projects\SMM\smm\project\assets" />
       <recent name="D:\projects\SMM\smm\project\resources\views\themes\minimal\layouts" />
-      <recent name="D:\projects\SMM\smm\project\public\assets\themes\minimal" />
-      <recent name="D:\projects\SMM\smm\project\public\assets\uploads\logo" />
     </key>
   </component>
   <component name="RunManager">
@@ -218,12 +218,23 @@
       <workItem from="1674123201642" duration="2979000" />
       <workItem from="1674370140662" duration="764000" />
       <workItem from="1674370927473" duration="15745000" />
-      <workItem from="1674471790693" duration="33061000" />
+      <workItem from="1674471790693" duration="49496000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="493" y="243" key="#Composer" timestamp="1673330922666">
@@ -234,10 +245,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="376" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1674558707506" />
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1674645537663">
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1674732462025">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1674645537663" />
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1674732462025" />
     <state x="517" y="287" key="NewPhpFileDialog" timestamp="1674555623777">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
