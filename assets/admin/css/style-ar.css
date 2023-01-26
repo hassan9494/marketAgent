@@ -1,3 +1,13 @@
+.logo-text img{
+    width: 100%;
+}
+
+.table-responsive {
+    overflow-x: initial;
+}
+.breadcrumb {
+    text-transform: capitalize;
+}
 .navbar-search-form{
     position: relative;
 }
@@ -56,6 +66,7 @@
     background: #f0f8ff;
 }
 
+.image-input #admin_image,
 .image-input #image,
 .image-input #favicon,
 .image-input #meta_image
@@ -70,6 +81,7 @@
     cursor: pointer;
 }
 
+.image-input #admin_image-label,
 .image-input #image-label,
 .image-input #favicon-label,
 .image-input #meta_image-label
@@ -112,9 +124,6 @@
     background: #65ab84;
     padding: 0px 5px;
     bottom: 1px;
-    font-size: 65%;
-    text-align: center;
-    vertical-align: baseline;
 }
 /*.table-header-right .show-hide-icon i{*/
 /*    transition: all 10s ease-out;*/
@@ -234,7 +243,7 @@ input[type="checkbox"].tic-check + label:before {
     display: block;
     width: 15px;
     height: 15px;
-    border: 2px solid #000;
+    border: 2px solid #22ca80;
     position: absolute;
     left: 0;
     top: 0;
@@ -435,7 +444,10 @@ input[type="checkbox"].tic-check:checked + label:before {
     }
 }
 
+
 /* Custom end */
+
+
 
 
 .custom-switch-btn {
@@ -702,12 +714,6 @@ table th {
 .right-dropdown {
     right: -12px !important;
 }
-.table .thead-primary th,
-.table .thead-dark th {
-    color: #fff;
-    background-color: #5f76e8;
-    border-color: #5f76e8;
-}
 
 @media screen and (max-width: 991px) {
     table {
@@ -729,6 +735,8 @@ table th {
         /*border-bottom: none;*/
         display: block;
         margin-bottom: .625em;
+
+        padding: 0;
     }
 
 
@@ -751,11 +759,6 @@ table th {
     .table td {
         max-width: 100%;
     }
-}
-
-
-.admin-fa_icon h2.text-dark.mb-1.font-weight-medium{
-    font-size: 1.25rem
 }
 
 .invalid-text{
@@ -798,16 +801,115 @@ table th {
     background: #555;
 }
 .copytext{cursor: pointer}
-.dark-logo{
-    max-width: 180px;
+
+.page-breadcrumb {
+    text-transform: capitalize;
 }
-@media only screen and (max-width: 767px) {
-    .dark-logo{
-        max-height: 65px;
+.page-title{
+    text-transform: capitalize;
+}
+
+
+
+#feature .nav-link {
+    position: relative;
+    background: transparent;
+    margin-bottom: 20px;
+    border: 1px solid #e5e5e5;
+    color: #000;
+    transition: all .2s ease;
+    display: block;
+}
+#feature .nav-link:hover,
+#feature .nav-link.active {
+    background:#5f76e8;
+    color:#fff;
+
+}
+#feature .nav-link::after {
+    content:"";
+    height:20px;
+    width:2px;
+    background:#e5e5e5;
+    position: absolute;
+    top:100%;
+    left:calc(50% - 1px);
+}
+#feature .nav-link:last-child::after {
+    display: none;
+}
+#feature .tab-content {
+    flex: 1;
+    display: block;
+    border:1px solid #e5e5e5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    height: 100%;
+    margin-left: 20px;
+    padding:15px;
+}
+
+#feature .card-body .nav {
+    flex-direction: column;
+    text-align:center;
+}
+@media screen and (max-width: 575px) {
+    #feature .card-body > div {
+        flex-direction: column;
+    }
+    #feature .card-body .nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #feature .card-body .nav .nav-link {
+        flex:1;
+        min-width: 90px;
+        margin: 5px;
+    }
+    #feature .nav-link::after {
+        display: none;
+    }
+    #feature .tab-content {
+        width:100%;
+        margin-left:0;
+        margin-top:5px;
     }
 }
 
 
+/*Escrow Details*/
+
+.post-details .post-inner .post-header h6 {
+    font-size: 22px!important;
+}
+
+
+.post-details .post-header .title {
+    margin-bottom: 36px;
+}
+
+@media (min-width: 576px) {
+    .post-details .post-header .title {
+        font-weight: 700;
+    }
+}
+
+@media (min-width: 992px) {
+    .post-details .post-header .title {
+        font-size: 46px;
+        line-height: 55px;
+    }
+}
+
+.post-details .post-content {
+    align-items: start;
+}
+
+
+.post-details .post-content .entry-content p {
+    margin-bottom: 40px;
+}
 .text--base{
     color: #1c2d41;
 }
@@ -819,6 +921,7 @@ table th {
 .admin-fa_icon  span.opacity-7.text-muted .feather
 {
     color: #6777ef!important;
+
 }
 
 
@@ -846,24 +949,157 @@ table th {
     border-top: 1px solid #eee !important;
 }
 
-.admin-fa_icon span.opacity-7.text-muted .fa-2x{
-    font-size: 22px;
+/*WA chat Css Start*/
+
+/*WA CHat Box*/
+
+.report .card {
+    border: none;
+    border-radius: 15px;
+    background-image: linear-gradient( rgb(193 165 137 / 55%), rgb(193 165 137 / 55%)), url(../../../assets/uploads/logo/wa-white.jpg);
+    background-repeat-x: initial;
 }
-@media (max-width: 994px) {
-    .table .table-minimal-data-span {
-        position: inherit;
+.report img{
+    border-radius: 20px;
+}
+
+
+.report .adiv {
+    background: rgb(132 132 132 / 80%);
+    border-radius: 15px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    font-size: 12px;
+    height: 46px
+}
+.report .adiv p{
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.report .chat {
+    border: none;
+    background-color: #fffafa;
+    font-size: 14px;
+    border-radius: 5px;
+    color: #635a5a;
+    line-height: 1.8;
+}
+
+.report .bg-white {
+    border: 1px solid #d1c2b2;
+    border-bottom: 2px solid #d1c2b2;
+    font-size: 14px;
+    border-radius: 10px;
+    background-color: #dcf8c6 !important;
+}
+
+.text-wa {
+    color: #635a5a;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.report .myvideo img {
+    border-radius: 20px
+}
+
+.writing-box{
+    background: rgb(132 132 132 / 80%);
+}
+
+.writing-box .send{
+    padding-right: 25px;
+}
+
+.report .writing-box .input--group.px-3 {
+    padding: 25px 15px 0 20px !important;
+    width: 100%;
+}
+
+.report .form--control {
+    background: #fff;
+    border-radius: 15px;
+    min-height: 20px;
+    max-height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-size: 15px;
+    font-weight: 400;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    outline: none;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.report .form-control:focus {
+    box-shadow: none
+}
+
+.report .form-control::placeholder {
+    color:#4a4a4a !important;
+}
+
+.timmer{
+    font-size: 10px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    color: #888181;
+}
+
+.chat-length{
+    min-height: 450px;
+    max-height: 600px;
+    overflow-x: hidden;
+}
+
+.type_msg{
+    background-color: rgb(255 255 255 / 80%) !important;
+    border:0 !important;
+    color:#4a4a4a !important;
+    height: 60px !important;
+    overflow-y: auto;
+}
+.type_msg:focus{
+    box-shadow:none !important;
+    outline:0 !important;
+}
+.mw-130{
+    min-width: 130px;
+}
+.btn--success{
+    background-color: #2ecc71 !important;
+    border-color: #2ecc71 !important;
+}
+
+.border-success{
+    border: 1px solid #22ca80!important ;
+}
+.border-primary{
+    border: 1px solid #5f76e8!important ;
+}
+
+/* End WA chat*/
+
+@media only screen and (max-width: 1169px){
+#main-wrapper[data-layout=vertical][data-sidebartype=mini-sidebar] .topbar .top-navbar .navbar-header .logo-text {
+     display: initial;
+}
+}
+@media only screen and (max-width: 767px) {
+    .dark-logo {
+        max-width: 200px !important;
+    }
+    .light-logo {
+        max-width: 200px !important;
     }
 }
-@media (max-width: 375px) {
-    ol.breadcrumb.m-0.p-0 {
-        display: none;
-    }
-    .admin-fa_icon span.opacity-7.text-muted .fa-2x{
-        font-size: 20px;
-    }
-}
-@media (max-width: 314px) {
-    .admin-fa_icon span.opacity-7.text-muted .fa-2x{
-        font-size: 16px;
-    }
+
+
+.text--site{
+    color: #1fd3c6!important;
 }

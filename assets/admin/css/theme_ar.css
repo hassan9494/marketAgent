@@ -143,8 +143,8 @@ svg {
 
 .fa-ul {
     list-style-type: none;
-    margin-left: 2.5em;
-    padding-left: 0
+    margin-right: 2.5em;
+    padding-right: 0
 }
 
 .fa-ul>li {
@@ -152,7 +152,7 @@ svg {
 }
 
 .fa-li {
-    left: -2em;
+    right: -2em;
     position: absolute;
     width: 2em;
     line-height: inherit
@@ -185,7 +185,7 @@ svg {
 .fal.fa-pull-right,
 .far.fa-pull-right,
 .fas.fa-pull-right {
-    margin-left: .3em
+    margin-right: .3em
 }
 
 .fa-spin {
@@ -302,7 +302,7 @@ sup {
 
 body,
 caption {
-    text-align: left
+    text-align: right
 }
 
 .fa-stack-1x {
@@ -6403,7 +6403,7 @@ dt {
 }
 
 dd {
-    margin-left: 0
+    margin-right: 0
 }
 
 blockquote,
@@ -6795,7 +6795,7 @@ kbd kbd {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
-    margin-left: auto;
+    margin-right: auto;
     width: 100%
 }
 
@@ -6858,12 +6858,12 @@ pre code {
     display: flex;
     flex-wrap: wrap;
     margin-right: -15px;
-    margin-left: -15px
+    margin-right: -15px
 }
 
 .no-gutters {
     margin-right: 0;
-    margin-left: 0
+    margin-right: 0
 }
 
 .no-gutters>.col,
@@ -7079,47 +7079,47 @@ pre code {
 }
 
 .offset-1 {
-    margin-left: 8.33333%
+    margin-right: 8.33333%
 }
 
 .offset-2 {
-    margin-left: 16.66667%
+    margin-right: 16.66667%
 }
 
 .offset-3 {
-    margin-left: 25%
+    margin-right: 25%
 }
 
 .offset-4 {
-    margin-left: 33.33333%
+    margin-right: 33.33333%
 }
 
 .offset-5 {
-    margin-left: 41.66667%
+    margin-right: 41.66667%
 }
 
 .offset-6 {
-    margin-left: 50%
+    margin-right: 50%
 }
 
 .offset-7 {
-    margin-left: 58.33333%
+    margin-right: 58.33333%
 }
 
 .offset-8 {
-    margin-left: 66.66667%
+    margin-right: 66.66667%
 }
 
 .offset-9 {
-    margin-left: 75%
+    margin-right: 75%
 }
 
 .offset-10 {
-    margin-left: 83.33333%
+    margin-right: 83.33333%
 }
 
 .offset-11 {
-    margin-left: 91.66667%
+    margin-right: 91.66667%
 }
 
 @media (min-width:576px) {
@@ -7227,40 +7227,40 @@ pre code {
         order: 12
     }
     .offset-sm-0 {
-        margin-left: 0
+        margin-right: 0
     }
     .offset-sm-1 {
-        margin-left: 8.33333%
+        margin-right: 8.33333%
     }
     .offset-sm-2 {
-        margin-left: 16.66667%
+        margin-right: 16.66667%
     }
     .offset-sm-3 {
-        margin-left: 25%
+        margin-right: 25%
     }
     .offset-sm-4 {
-        margin-left: 33.33333%
+        margin-right: 33.33333%
     }
     .offset-sm-5 {
-        margin-left: 41.66667%
+        margin-right: 41.66667%
     }
     .offset-sm-6 {
-        margin-left: 50%
+        margin-right: 50%
     }
     .offset-sm-7 {
-        margin-left: 58.33333%
+        margin-right: 58.33333%
     }
     .offset-sm-8 {
-        margin-left: 66.66667%
+        margin-right: 66.66667%
     }
     .offset-sm-9 {
-        margin-left: 75%
+        margin-right: 75%
     }
     .offset-sm-10 {
-        margin-left: 83.33333%
+        margin-right: 83.33333%
     }
     .offset-sm-11 {
-        margin-left: 91.66667%
+        margin-right: 91.66667%
     }
 }
 
@@ -7369,40 +7369,40 @@ pre code {
         order: 12
     }
     .offset-md-0 {
-        margin-left: 0
+        margin-right: 0
     }
     .offset-md-1 {
-        margin-left: 8.33333%
+        margin-right: 8.33333%
     }
     .offset-md-2 {
-        margin-left: 16.66667%
+        margin-right: 16.66667%
     }
     .offset-md-3 {
-        margin-left: 25%
+        margin-right: 25%
     }
     .offset-md-4 {
-        margin-left: 33.33333%
+        margin-right: 33.33333%
     }
     .offset-md-5 {
-        margin-left: 41.66667%
+        margin-right: 41.66667%
     }
     .offset-md-6 {
-        margin-left: 50%
+        margin-right: 50%
     }
     .offset-md-7 {
-        margin-left: 58.33333%
+        margin-right: 58.33333%
     }
     .offset-md-8 {
-        margin-left: 66.66667%
+        margin-right: 66.66667%
     }
     .offset-md-9 {
-        margin-left: 75%
+        margin-right: 75%
     }
     .offset-md-10 {
-        margin-left: 83.33333%
+        margin-right: 83.33333%
     }
     .offset-md-11 {
-        margin-left: 91.66667%
+        margin-right: 91.66667%
     }
 }
 
@@ -7511,40 +7511,40 @@ pre code {
         order: 12
     }
     .offset-lg-0 {
-        margin-left: 0
+        margin-right: 0
     }
     .offset-lg-1 {
-        margin-left: 8.33333%
+        margin-right: 8.33333%
     }
     .offset-lg-2 {
-        margin-left: 16.66667%
+        margin-right: 16.66667%
     }
     .offset-lg-3 {
-        margin-left: 25%
+        margin-right: 25%
     }
     .offset-lg-4 {
-        margin-left: 33.33333%
+        margin-right: 33.33333%
     }
     .offset-lg-5 {
-        margin-left: 41.66667%
+        margin-right: 41.66667%
     }
     .offset-lg-6 {
-        margin-left: 50%
+        margin-right: 50%
     }
     .offset-lg-7 {
-        margin-left: 58.33333%
+        margin-right: 58.33333%
     }
     .offset-lg-8 {
-        margin-left: 66.66667%
+        margin-right: 66.66667%
     }
     .offset-lg-9 {
-        margin-left: 75%
+        margin-right: 75%
     }
     .offset-lg-10 {
-        margin-left: 83.33333%
+        margin-right: 83.33333%
     }
     .offset-lg-11 {
-        margin-left: 91.66667%
+        margin-right: 91.66667%
     }
 }
 
@@ -7653,40 +7653,40 @@ pre code {
         order: 12
     }
     .offset-xl-0 {
-        margin-left: 0
+        margin-right: 0
     }
     .offset-xl-1 {
-        margin-left: 8.33333%
+        margin-right: 8.33333%
     }
     .offset-xl-2 {
-        margin-left: 16.66667%
+        margin-right: 16.66667%
     }
     .offset-xl-3 {
-        margin-left: 25%
+        margin-right: 25%
     }
     .offset-xl-4 {
-        margin-left: 33.33333%
+        margin-right: 33.33333%
     }
     .offset-xl-5 {
-        margin-left: 41.66667%
+        margin-right: 41.66667%
     }
     .offset-xl-6 {
-        margin-left: 50%
+        margin-right: 50%
     }
     .offset-xl-7 {
-        margin-left: 58.33333%
+        margin-right: 58.33333%
     }
     .offset-xl-8 {
-        margin-left: 66.66667%
+        margin-right: 66.66667%
     }
     .offset-xl-9 {
-        margin-left: 75%
+        margin-right: 75%
     }
     .offset-xl-10 {
-        margin-left: 83.33333%
+        margin-right: 83.33333%
     }
     .offset-xl-11 {
-        margin-left: 91.66667%
+        margin-right: 91.66667%
     }
 }
 
@@ -8197,7 +8197,7 @@ textarea.form-control {
     display: flex;
     flex-wrap: wrap;
     margin-right: -5px;
-    margin-left: -5px
+    margin-right: -5px
 }
 
 .form-row>.col,
@@ -8215,7 +8215,7 @@ textarea.form-control {
 .form-check-input {
     position: absolute;
     margin-top: .3rem;
-    margin-left: -1.25rem
+    margin-right: -1.25rem
 }
 
 .form-check-input:disabled~.form-check-label {
@@ -8237,7 +8237,7 @@ textarea.form-control {
     position: static;
     margin-top: 0;
     margin-right: .3125rem;
-    margin-left: 0
+    margin-right: 0
 }
 
 .invalid-tooltip,
@@ -8542,7 +8542,7 @@ textarea.form-control.is-invalid {
         flex-shrink: 0;
         margin-top: 0;
         margin-right: .25rem;
-        margin-left: 0
+        margin-right: 0
     }
     .form-inline .custom-control {
         align-items: center;
@@ -9427,7 +9427,7 @@ fieldset:disabled a.btn {
 }
 
 .dropdown-toggle::after {
-    margin-left: .255em;
+    margin-right: .255em;
     border-top: .3em solid;
     border-right: .3em solid transparent;
     border-bottom: 0;
@@ -9435,7 +9435,7 @@ fieldset:disabled a.btn {
 }
 
 .dropdown-toggle:empty::after {
-    margin-left: 0
+    margin-right: 0
 }
 
 .dropdown-menu {
@@ -9520,7 +9520,7 @@ fieldset:disabled a.btn {
 
 .dropup .dropdown-toggle::after {
     display: inline-block;
-    margin-left: .255em;
+    margin-right: .255em;
     border-top: 0;
     border-right: .3em solid transparent;
     border-bottom: .3em solid;
@@ -9535,7 +9535,7 @@ fieldset:disabled a.btn {
 }
 
 .dropup .dropdown-toggle:empty::after {
-    margin-left: 0
+    margin-right: 0
 }
 
 .dropright .dropdown-menu {
@@ -9543,19 +9543,19 @@ fieldset:disabled a.btn {
     right: auto;
     left: 100%;
     margin-top: 0;
-    margin-left: .125rem
+    margin-right: .125rem
 }
 
 .dropright .dropdown-toggle::after {
     display: inline-block;
-    margin-left: .255em;
+    margin-right: .255em;
     border-right: 0;
     border-left: .3em solid;
     vertical-align: 0
 }
 
 .dropright .dropdown-toggle:empty::after {
-    margin-left: 0
+    margin-right: 0
 }
 
 .dropleft .dropdown-menu {
@@ -9567,7 +9567,7 @@ fieldset:disabled a.btn {
 }
 
 .dropleft .dropdown-toggle::after {
-    margin-left: .255em;
+    margin-right: .255em;
     vertical-align: .255em;
     content: "";
     display: none
@@ -9581,7 +9581,7 @@ fieldset:disabled a.btn {
 }
 
 .dropleft .dropdown-toggle:empty::after {
-    margin-left: 0
+    margin-right: 0
 }
 
 .dropdown-menu[x-placement^=top],
@@ -9712,7 +9712,7 @@ fieldset:disabled a.btn {
 
 .btn-group>.btn-group:not(:first-child),
 .btn-group>.btn:not(:first-child) {
-    margin-left: -1px
+    margin-right: -1px
 }
 
 .dropdown-toggle-split {
@@ -9723,7 +9723,7 @@ fieldset:disabled a.btn {
 .dropdown-toggle-split::after,
 .dropright .dropdown-toggle-split::after,
 .dropup .dropdown-toggle-split::after {
-    margin-left: 0
+    margin-right: 0
 }
 
 .input-group-append,
@@ -9747,7 +9747,7 @@ fieldset:disabled a.btn {
 .input-group>.form-control-plaintext+.custom-file,
 .input-group>.form-control-plaintext+.custom-select,
 .input-group>.form-control-plaintext+.form-control {
-    margin-left: -1px
+    margin-right: -1px
 }
 
 .dropleft .dropdown-toggle-split::before {
@@ -10290,7 +10290,7 @@ fieldset:disabled a.btn {
     height: 1rem;
     margin-top: 0;
     margin-right: .2rem;
-    margin-left: .2rem;
+    margin-right: .2rem;
     background-color: #5f76e8;
     border: 0;
     border-radius: 1rem;
@@ -10808,7 +10808,7 @@ fieldset:disabled a.btn {
 
 .card>hr {
     margin-right: 0;
-    margin-left: 0
+    margin-right: 0
 }
 
 .card>.list-group:first-child .list-group-item:first-child {
@@ -10847,13 +10847,13 @@ fieldset:disabled a.btn {
 }
 
 .card-link+.card-link {
-    margin-left: 25px
+    margin-right: 25px
 }
 
 .card-header-pills,
 .card-header-tabs {
     margin-right: -12.5px;
-    margin-left: -12.5px
+    margin-right: -12.5px
 }
 
 .card-header {
@@ -10926,7 +10926,7 @@ fieldset:disabled a.btn {
     .card-deck {
         flex-flow: row wrap;
         margin-right: -15px;
-        margin-left: -15px
+        margin-right: -15px
     }
     .card-deck .card {
         display: flex;
@@ -10934,7 +10934,7 @@ fieldset:disabled a.btn {
         flex-direction: column;
         margin-right: 15px;
         margin-bottom: 0;
-        margin-left: 15px
+        margin-right: 15px
     }
 }
 
@@ -10956,7 +10956,7 @@ fieldset:disabled a.btn {
         margin-bottom: 0
     }
     .card-group>.card+.card {
-        margin-left: 0;
+        margin-right: 0;
         border-left: 0
     }
     .card-group>.card:not(:last-child) {
@@ -11060,7 +11060,7 @@ fieldset:disabled a.btn {
 .page-link {
     display: block;
     padding: .5rem .75rem;
-    margin-left: -1px;
+    margin-right: -1px;
     line-height: 1.25;
     color: #5f76e8;
     background-color: #fff;
@@ -11093,7 +11093,7 @@ fieldset:disabled a.btn {
 }
 
 .page-item:first-child .page-link {
-    margin-left: 0
+    margin-right: 0
 }
 
 .page-item.active .page-link {
@@ -12253,7 +12253,7 @@ a.close.disabled {
 }
 
 .modal-footer>:not(:first-child) {
-    margin-left: .25rem
+    margin-right: .25rem
 }
 
 .modal-footer>:not(:last-child) {
@@ -12458,7 +12458,7 @@ a.close.disabled {
 
 .bs-popover-auto[x-placement^=right],
 .bs-popover-right {
-    margin-left: .5rem
+    margin-right: .5rem
 }
 
 .bs-popover-auto[x-placement^=right]>.arrow,
@@ -12514,7 +12514,7 @@ a.close.disabled {
     left: 50%;
     display: block;
     width: 1rem;
-    margin-left: -.5rem;
+    margin-right: -.5rem;
     content: "";
     border-bottom: 1px solid #f7f7f7
 }
@@ -12710,7 +12710,7 @@ a.close.disabled {
     justify-content: center;
     padding-left: 0;
     margin-right: 15%;
-    margin-left: 15%;
+    margin-right: 15%;
     list-style: none
 }
 
@@ -12726,7 +12726,7 @@ a.close.disabled {
     width: 30px;
     height: 3px;
     margin-right: 3px;
-    margin-left: 3px;
+    margin-right: 3px;
     text-indent: -999px;
     cursor: pointer;
     background-color: #fff;
@@ -14340,7 +14340,7 @@ button.bg-purple:hover {
 
 .ml-0,
 .mx-0 {
-    margin-left: 0 !important
+    margin-right: 0 !important
 }
 
 .m-1 {
@@ -14364,7 +14364,7 @@ button.bg-purple:hover {
 
 .ml-1,
 .mx-1 {
-    margin-left: .25rem !important
+    margin-right: .25rem !important
 }
 
 .m-2 {
@@ -14388,7 +14388,7 @@ button.bg-purple:hover {
 
 .ml-2,
 .mx-2 {
-    margin-left: .5rem !important
+    margin-right: .5rem !important
 }
 
 .m-3 {
@@ -14412,7 +14412,7 @@ button.bg-purple:hover {
 
 .ml-3,
 .mx-3 {
-    margin-left: 1rem !important
+    margin-right: 1rem !important
 }
 
 .m-4 {
@@ -14436,7 +14436,7 @@ button.bg-purple:hover {
 
 .ml-4,
 .mx-4 {
-    margin-left: 1.5rem !important
+    margin-right: 1.5rem !important
 }
 
 .m-5 {
@@ -14460,7 +14460,7 @@ button.bg-purple:hover {
 
 .ml-5,
 .mx-5 {
-    margin-left: 3rem !important
+    margin-right: 3rem !important
 }
 
 .p-0 {
@@ -14628,7 +14628,7 @@ button.bg-purple:hover {
 
 .ml-n1,
 .mx-n1 {
-    margin-left: -.25rem !important
+    margin-right: -.25rem !important
 }
 
 .m-n2 {
@@ -14652,7 +14652,7 @@ button.bg-purple:hover {
 
 .ml-n2,
 .mx-n2 {
-    margin-left: -.5rem !important
+    margin-right: -.5rem !important
 }
 
 .m-n3 {
@@ -14676,7 +14676,7 @@ button.bg-purple:hover {
 
 .ml-n3,
 .mx-n3 {
-    margin-left: -1rem !important
+    margin-right: -1rem !important
 }
 
 .m-n4 {
@@ -14700,7 +14700,7 @@ button.bg-purple:hover {
 
 .ml-n4,
 .mx-n4 {
-    margin-left: -1.5rem !important
+    margin-right: -1.5rem !important
 }
 
 .m-n5 {
@@ -14724,7 +14724,7 @@ button.bg-purple:hover {
 
 .ml-n5,
 .mx-n5 {
-    margin-left: -3rem !important
+    margin-right: -3rem !important
 }
 
 .m-auto {
@@ -14748,7 +14748,7 @@ button.bg-purple:hover {
 
 .ml-auto,
 .mx-auto {
-    margin-left: auto !important
+    margin-right: auto !important
 }
 
 @media (min-width:576px) {
@@ -14769,7 +14769,7 @@ button.bg-purple:hover {
     }
     .ml-sm-0,
     .mx-sm-0 {
-        margin-left: 0 !important
+        margin-right: 0 !important
     }
     .m-sm-1 {
         margin: .25rem !important
@@ -14788,7 +14788,7 @@ button.bg-purple:hover {
     }
     .ml-sm-1,
     .mx-sm-1 {
-        margin-left: .25rem !important
+        margin-right: .25rem !important
     }
     .m-sm-2 {
         margin: .5rem !important
@@ -14807,7 +14807,7 @@ button.bg-purple:hover {
     }
     .ml-sm-2,
     .mx-sm-2 {
-        margin-left: .5rem !important
+        margin-right: .5rem !important
     }
     .m-sm-3 {
         margin: 1rem !important
@@ -14826,7 +14826,7 @@ button.bg-purple:hover {
     }
     .ml-sm-3,
     .mx-sm-3 {
-        margin-left: 1rem !important
+        margin-right: 1rem !important
     }
     .m-sm-4 {
         margin: 1.5rem !important
@@ -14845,7 +14845,7 @@ button.bg-purple:hover {
     }
     .ml-sm-4,
     .mx-sm-4 {
-        margin-left: 1.5rem !important
+        margin-right: 1.5rem !important
     }
     .m-sm-5 {
         margin: 3rem !important
@@ -14864,7 +14864,7 @@ button.bg-purple:hover {
     }
     .ml-sm-5,
     .mx-sm-5 {
-        margin-left: 3rem !important
+        margin-right: 3rem !important
     }
     .p-sm-0 {
         padding: 0 !important
@@ -14997,7 +14997,7 @@ button.bg-purple:hover {
     }
     .ml-sm-n1,
     .mx-sm-n1 {
-        margin-left: -.25rem !important
+        margin-right: -.25rem !important
     }
     .m-sm-n2 {
         margin: -.5rem !important
@@ -15016,7 +15016,7 @@ button.bg-purple:hover {
     }
     .ml-sm-n2,
     .mx-sm-n2 {
-        margin-left: -.5rem !important
+        margin-right: -.5rem !important
     }
     .m-sm-n3 {
         margin: -1rem !important
@@ -15035,7 +15035,7 @@ button.bg-purple:hover {
     }
     .ml-sm-n3,
     .mx-sm-n3 {
-        margin-left: -1rem !important
+        margin-right: -1rem !important
     }
     .m-sm-n4 {
         margin: -1.5rem !important
@@ -15054,7 +15054,7 @@ button.bg-purple:hover {
     }
     .ml-sm-n4,
     .mx-sm-n4 {
-        margin-left: -1.5rem !important
+        margin-right: -1.5rem !important
     }
     .m-sm-n5 {
         margin: -3rem !important
@@ -15073,7 +15073,7 @@ button.bg-purple:hover {
     }
     .ml-sm-n5,
     .mx-sm-n5 {
-        margin-left: -3rem !important
+        margin-right: -3rem !important
     }
     .m-sm-auto {
         margin: auto !important
@@ -15092,7 +15092,7 @@ button.bg-purple:hover {
     }
     .ml-sm-auto,
     .mx-sm-auto {
-        margin-left: auto !important
+        margin-right: auto !important
     }
 }
 
@@ -15114,7 +15114,7 @@ button.bg-purple:hover {
     }
     .ml-md-0,
     .mx-md-0 {
-        margin-left: 0 !important
+        margin-right: 0 !important
     }
     .m-md-1 {
         margin: .25rem !important
@@ -15133,7 +15133,7 @@ button.bg-purple:hover {
     }
     .ml-md-1,
     .mx-md-1 {
-        margin-left: .25rem !important
+        margin-right: .25rem !important
     }
     .m-md-2 {
         margin: .5rem !important
@@ -15152,7 +15152,7 @@ button.bg-purple:hover {
     }
     .ml-md-2,
     .mx-md-2 {
-        margin-left: .5rem !important
+        margin-right: .5rem !important
     }
     .m-md-3 {
         margin: 1rem !important
@@ -15171,7 +15171,7 @@ button.bg-purple:hover {
     }
     .ml-md-3,
     .mx-md-3 {
-        margin-left: 1rem !important
+        margin-right: 1rem !important
     }
     .m-md-4 {
         margin: 1.5rem !important
@@ -15190,7 +15190,7 @@ button.bg-purple:hover {
     }
     .ml-md-4,
     .mx-md-4 {
-        margin-left: 1.5rem !important
+        margin-right: 1.5rem !important
     }
     .m-md-5 {
         margin: 3rem !important
@@ -15209,7 +15209,7 @@ button.bg-purple:hover {
     }
     .ml-md-5,
     .mx-md-5 {
-        margin-left: 3rem !important
+        margin-right: 3rem !important
     }
     .p-md-0 {
         padding: 0 !important
@@ -15342,7 +15342,7 @@ button.bg-purple:hover {
     }
     .ml-md-n1,
     .mx-md-n1 {
-        margin-left: -.25rem !important
+        margin-right: -.25rem !important
     }
     .m-md-n2 {
         margin: -.5rem !important
@@ -15361,7 +15361,7 @@ button.bg-purple:hover {
     }
     .ml-md-n2,
     .mx-md-n2 {
-        margin-left: -.5rem !important
+        margin-right: -.5rem !important
     }
     .m-md-n3 {
         margin: -1rem !important
@@ -15380,7 +15380,7 @@ button.bg-purple:hover {
     }
     .ml-md-n3,
     .mx-md-n3 {
-        margin-left: -1rem !important
+        margin-right: -1rem !important
     }
     .m-md-n4 {
         margin: -1.5rem !important
@@ -15399,7 +15399,7 @@ button.bg-purple:hover {
     }
     .ml-md-n4,
     .mx-md-n4 {
-        margin-left: -1.5rem !important
+        margin-right: -1.5rem !important
     }
     .m-md-n5 {
         margin: -3rem !important
@@ -15418,7 +15418,7 @@ button.bg-purple:hover {
     }
     .ml-md-n5,
     .mx-md-n5 {
-        margin-left: -3rem !important
+        margin-right: -3rem !important
     }
     .m-md-auto {
         margin: auto !important
@@ -15437,7 +15437,7 @@ button.bg-purple:hover {
     }
     .ml-md-auto,
     .mx-md-auto {
-        margin-left: auto !important
+        margin-right: auto !important
     }
 }
 
@@ -15517,7 +15517,7 @@ button.bg-purple:hover {
     }
     .ml-lg-0,
     .mx-lg-0 {
-        margin-left: 0 !important
+        margin-right: 0 !important
     }
     .m-lg-1 {
         margin: .25rem !important
@@ -15536,7 +15536,7 @@ button.bg-purple:hover {
     }
     .ml-lg-1,
     .mx-lg-1 {
-        margin-left: .25rem !important
+        margin-right: .25rem !important
     }
     .m-lg-2 {
         margin: .5rem !important
@@ -15555,7 +15555,7 @@ button.bg-purple:hover {
     }
     .ml-lg-2,
     .mx-lg-2 {
-        margin-left: .5rem !important
+        margin-right: .5rem !important
     }
     .m-lg-3 {
         margin: 1rem !important
@@ -15574,7 +15574,7 @@ button.bg-purple:hover {
     }
     .ml-lg-3,
     .mx-lg-3 {
-        margin-left: 1rem !important
+        margin-right: 1rem !important
     }
     .m-lg-4 {
         margin: 1.5rem !important
@@ -15593,7 +15593,7 @@ button.bg-purple:hover {
     }
     .ml-lg-4,
     .mx-lg-4 {
-        margin-left: 1.5rem !important
+        margin-right: 1.5rem !important
     }
     .m-lg-5 {
         margin: 3rem !important
@@ -15612,7 +15612,7 @@ button.bg-purple:hover {
     }
     .ml-lg-5,
     .mx-lg-5 {
-        margin-left: 3rem !important
+        margin-right: 3rem !important
     }
     .p-lg-0 {
         padding: 0 !important
@@ -15745,7 +15745,7 @@ button.bg-purple:hover {
     }
     .ml-lg-n1,
     .mx-lg-n1 {
-        margin-left: -.25rem !important
+        margin-right: -.25rem !important
     }
     .m-lg-n2 {
         margin: -.5rem !important
@@ -15764,7 +15764,7 @@ button.bg-purple:hover {
     }
     .ml-lg-n2,
     .mx-lg-n2 {
-        margin-left: -.5rem !important
+        margin-right: -.5rem !important
     }
     .m-lg-n3 {
         margin: -1rem !important
@@ -15783,7 +15783,7 @@ button.bg-purple:hover {
     }
     .ml-lg-n3,
     .mx-lg-n3 {
-        margin-left: -1rem !important
+        margin-right: -1rem !important
     }
     .m-lg-n4 {
         margin: -1.5rem !important
@@ -15802,7 +15802,7 @@ button.bg-purple:hover {
     }
     .ml-lg-n4,
     .mx-lg-n4 {
-        margin-left: -1.5rem !important
+        margin-right: -1.5rem !important
     }
     .m-lg-n5 {
         margin: -3rem !important
@@ -15821,7 +15821,7 @@ button.bg-purple:hover {
     }
     .ml-lg-n5,
     .mx-lg-n5 {
-        margin-left: -3rem !important
+        margin-right: -3rem !important
     }
     .m-lg-auto {
         margin: auto !important
@@ -15840,7 +15840,7 @@ button.bg-purple:hover {
     }
     .ml-lg-auto,
     .mx-lg-auto {
-        margin-left: auto !important
+        margin-right: auto !important
     }
     .text-lg-left {
         text-align: left !important
@@ -15871,7 +15871,7 @@ button.bg-purple:hover {
     }
     .ml-xl-0,
     .mx-xl-0 {
-        margin-left: 0 !important
+        margin-right: 0 !important
     }
     .m-xl-1 {
         margin: .25rem !important
@@ -15890,7 +15890,7 @@ button.bg-purple:hover {
     }
     .ml-xl-1,
     .mx-xl-1 {
-        margin-left: .25rem !important
+        margin-right: .25rem !important
     }
     .m-xl-2 {
         margin: .5rem !important
@@ -15909,7 +15909,7 @@ button.bg-purple:hover {
     }
     .ml-xl-2,
     .mx-xl-2 {
-        margin-left: .5rem !important
+        margin-right: .5rem !important
     }
     .m-xl-3 {
         margin: 1rem !important
@@ -15928,7 +15928,7 @@ button.bg-purple:hover {
     }
     .ml-xl-3,
     .mx-xl-3 {
-        margin-left: 1rem !important
+        margin-right: 1rem !important
     }
     .m-xl-4 {
         margin: 1.5rem !important
@@ -15947,7 +15947,7 @@ button.bg-purple:hover {
     }
     .ml-xl-4,
     .mx-xl-4 {
-        margin-left: 1.5rem !important
+        margin-right: 1.5rem !important
     }
     .m-xl-5 {
         margin: 3rem !important
@@ -15966,7 +15966,7 @@ button.bg-purple:hover {
     }
     .ml-xl-5,
     .mx-xl-5 {
-        margin-left: 3rem !important
+        margin-right: 3rem !important
     }
     .p-xl-0 {
         padding: 0 !important
@@ -16099,7 +16099,7 @@ button.bg-purple:hover {
     }
     .ml-xl-n1,
     .mx-xl-n1 {
-        margin-left: -.25rem !important
+        margin-right: -.25rem !important
     }
     .m-xl-n2 {
         margin: -.5rem !important
@@ -16118,7 +16118,7 @@ button.bg-purple:hover {
     }
     .ml-xl-n2,
     .mx-xl-n2 {
-        margin-left: -.5rem !important
+        margin-right: -.5rem !important
     }
     .m-xl-n3 {
         margin: -1rem !important
@@ -16137,7 +16137,7 @@ button.bg-purple:hover {
     }
     .ml-xl-n3,
     .mx-xl-n3 {
-        margin-left: -1rem !important
+        margin-right: -1rem !important
     }
     .m-xl-n4 {
         margin: -1.5rem !important
@@ -16156,7 +16156,7 @@ button.bg-purple:hover {
     }
     .ml-xl-n4,
     .mx-xl-n4 {
-        margin-left: -1.5rem !important
+        margin-right: -1.5rem !important
     }
     .m-xl-n5 {
         margin: -3rem !important
@@ -16175,7 +16175,7 @@ button.bg-purple:hover {
     }
     .ml-xl-n5,
     .mx-xl-n5 {
-        margin-left: -3rem !important
+        margin-right: -3rem !important
     }
     .m-xl-auto {
         margin: auto !important
@@ -16194,7 +16194,7 @@ button.bg-purple:hover {
     }
     .ml-xl-auto,
     .mx-xl-auto {
-        margin-left: auto !important
+        margin-right: auto !important
     }
     .text-xl-left {
         text-align: left !important
@@ -16515,7 +16515,7 @@ a.text-purple:hover {
     width: calc(100% - 260px);
     min-height: calc(100vh - 64px);
     overflow: auto;
-    margin-left: 260px
+    margin-right: 260px
 }
 
 .reverse-mode .left-part {
@@ -16529,12 +16529,12 @@ a.text-purple:hover {
 }
 
 .reverse-mode .right-part {
-    margin-left: 0;
+    margin-right: 0;
     margin-right: 260px
 }
 
 #main-wrapper[data-layout=vertical][data-sidebartype=full] .page-wrapper {
-    margin-left: 260px
+    margin-right: 260px
 }
 
 #main-wrapper[data-layout=vertical][data-sidebar-position=fixed] .topbar .top-navbar .navbar-header {
@@ -16571,11 +16571,11 @@ a.text-purple:hover {
         width: 260px
     }
     #main-wrapper[data-layout=vertical][data-sidebar-position=fixed][data-sidebartype=full] .topbar .top-navbar .navbar-collapse {
-        margin-left: 260px
+        margin-right: 260px
     }
     #main-wrapper[data-layout=vertical][data-sidebar-position=fixed][data-sidebartype=mini-sidebar] .topbar .top-navbar .navbar-collapse,
     #main-wrapper[data-layout=vertical][data-sidebartype=mini-sidebar] .page-wrapper {
-        margin-left: 65px
+        margin-right: 65px
     }
     #main-wrapper[data-layout=vertical][data-sidebartype=mini-sidebar] .topbar .top-navbar .navbar-header {
         width: 65px
@@ -16611,7 +16611,7 @@ a.text-purple:hover {
     #main-wrapper[data-layout=vertical][data-sidebartype=mini-sidebar] .sidebar-nav ul .sidebar-item .sidebar-link .feather-icon,
     #main-wrapper[data-layout=vertical][data-sidebartype=mini-sidebar] .sidebar-nav ul .sidebar-item .sidebar-link i {
         margin-right: 0;
-        margin-left: 7px
+        margin-right: 7px
     }
     #main-wrapper[data-layout=vertical][data-sidebartype=mini-sidebar] .left-sidebar {
         width: 65px
@@ -16628,7 +16628,7 @@ a.text-purple:hover {
     #main-wrapper[data-layout=vertical][data-sidebartype=mini-sidebar] .left-sidebar:hover .sidebar-nav ul .sidebar-item .sidebar-link .feather-icon,
     #main-wrapper[data-layout=vertical][data-sidebartype=mini-sidebar] .left-sidebar:hover .sidebar-nav ul .sidebar-item .sidebar-link i {
         margin-right: 8px;
-        margin-left: 0
+        margin-right: 0
     }
     #main-wrapper[data-layout=vertical][data-sidebartype=mini-sidebar] .left-sidebar:hover .sidebar-nav .has-arrow:after,
     #main-wrapper[data-layout=vertical][data-sidebartype=mini-sidebar] .left-sidebar:hover .sidebar-nav .hide-menu,
@@ -16675,7 +16675,7 @@ a.text-purple:hover {
     }
     .right-part {
         width: 100%;
-        margin-left: 0
+        margin-right: 0
     }
 }
 
@@ -17065,7 +17065,7 @@ a.text-purple:hover {
 .sidebar-nav .base-level-line {
     border-left: 1px solid rgba(0, 0, 0, .1);
     position: relative;
-    margin-left: 40px;
+    margin-right: 40px;
     display: none
 }
 
@@ -17094,7 +17094,7 @@ a.text-purple:hover {
     border-width: 1px 0 0 1px;
     border-style: solid;
     border-color: #fff;
-    margin-left: 10px;
+    margin-right: 10px;
     -webkit-transform: rotate(223deg) translate(0, -50%);
     -ms-transform: rotate(223deg) translate(0, -50%);
     -o-transform: rotate(223deg) translate(0, -50%);
@@ -17341,13 +17341,13 @@ body {
 }
 
 .btn-list {
-    margin-left: -8px;
+    margin-right: -8px;
     margin-bottom: -12px
 }
 
 .btn-list .btn {
     margin-bottom: 12px;
-    margin-left: 8px
+    margin-right: 8px
 }
 
 * {
@@ -17651,7 +17651,7 @@ ul.list-style-none li a:hover {
 }
 
 .popover-item {
-    margin-left: -15px;
+    margin-right: -15px;
     border: 2px solid #fff
 }
 
@@ -17663,12 +17663,12 @@ ul.list-style-none li a:hover {
 .activity .border-left-line {
     border-left: 1px solid #edf2f9;
     position: relative;
-    margin-left: 17px
+    margin-right: 17px
 }
 
 .activity .border-left-line .btn-item {
     z-index: 1;
-    margin-left: -22px
+    margin-right: -22px
 }
 
 .activity .border-left-line:last-child {
@@ -17694,7 +17694,7 @@ ul.list-style-none li a:hover {
 }
 
 .chat-list .chat-item .chat-time {
-    margin-left: 65px
+    margin-right: 65px
 }
 
 .chat-list .chat-item.odd .chat-content {
@@ -18230,7 +18230,7 @@ ul.list-style-none li a:hover {
     left: 50%;
     width: 0;
     height: 0;
-    margin-left: -5px;
+    margin-right: -5px;
     border: 5px solid transparent;
     border-top-color: #5f76e8
 }

@@ -2,31 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a7eff23-e428-4214-b8ae-75d970d66454" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/UpdateOrdersStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/UpdateOrdersStatus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ServiceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/seo.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/seo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/css/theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/css/theme_ar.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/css/theme_ar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/themes/user/css/color.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/themes/user/css/color.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/themes/user/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/themes/user/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/themes/user/css/style_ar.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/themes/user/css/style_ar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/uploads/logo/meta.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/uploads/logo/meta.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/order/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/order/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/services/edit-service.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/services/edit-service.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/services/search-service.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/services/search-service.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/services/show-category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/services/show-category.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/services/show-service.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/services/show-service.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/users/edit-user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/users/edit-user.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/users/show-user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/users/show-user.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/pages/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/pages/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/pages/services/show-services.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/pages/services/show-services.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/admin/css/style-ar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/admin/css/theme_ar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/admin/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/admin/css/theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/user/css/color.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/themes/user/css/color.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/user/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/themes/user/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/themes/user/css/style_ar.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/themes/user/css/style_ar.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,16 +183,16 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/uploads/logo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/themes/user" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\SMM\smm\project\assets\themes\user" />
+      <recent name="D:\projects\SMM\smm\project\assets\admin" />
       <recent name="D:\projects\SMM\smm\project\assets\uploads\logo" />
       <recent name="D:\projects\SMM\smm\project\assets" />
       <recent name="D:\projects\SMM\smm\project\resources\views\themes\minimal\layouts" />
-      <recent name="D:\projects\SMM\smm\project\public\assets\themes\minimal" />
-      <recent name="D:\projects\SMM\smm\project\public\assets\uploads\logo" />
     </key>
   </component>
   <component name="RunManager">
@@ -236,12 +218,23 @@
       <workItem from="1674123201642" duration="2979000" />
       <workItem from="1674370140662" duration="764000" />
       <workItem from="1674370927473" duration="15745000" />
-      <workItem from="1674471790693" duration="49131000" />
+      <workItem from="1674471790693" duration="49496000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="493" y="243" key="#Composer" timestamp="1673330922666">
