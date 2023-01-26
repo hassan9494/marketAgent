@@ -4,6 +4,7 @@ namespace App\Console;
 
 use App\Console\Commands\BlockIoIPN;
 use App\Console\Commands\Cron;
+use App\Console\Commands\UpdateOrdersStatus;
 use App\Models\Gateway;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -27,7 +28,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+         $schedule->command('updateOrders:status')->everyMinute();
 
         $blockIoGateway = Gateway::where(['code' => 'blockio', 'status' => 1])->count();
         if ($blockIoGateway == 1) {
