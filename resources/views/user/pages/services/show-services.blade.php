@@ -152,7 +152,10 @@
 @endsection
 @push('js')
     <script>
+$('#productForm').on("submit",function (){
 
+    $('#submit-button').attr("disabled","");
+})
         $(".get-name").on("click", function() {
             var category_id = $('.inp-hid-catg').val();
             var player_number = $('#player_number').val();
@@ -309,5 +312,8 @@
 
             // desc1.innerHTML =
         }
+
+
+
     </script>
 @endpush

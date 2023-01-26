@@ -72,22 +72,6 @@
                 </div>
             </div>
 
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card shadow">
-                    <div class="card-body">
-                        <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
-                            <div>
-                                <h2 class="text-dark mb-1 font-weight-medium">{{getAmount($ticket)}}</h2>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Total Tickets')</h6>
-                            </div>
-
-                            <div class="mt-md-3 mt-lg-0">
-                                <span class="opacity-7 text-muted"><i class="fas fa-ticket-alt fa-2x"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card shadow">

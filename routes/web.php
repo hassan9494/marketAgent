@@ -52,37 +52,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::match(['get', 'post'], 'pusher-config', 'SiteNotificationController@pusherConfig')->name('pusher.config');
 
 
-        Route::get('/referral-commission', 'Admin\DashboardController@referralCommission')->name('referral-commission');
-        Route::post('/referral-commission', 'Admin\DashboardController@referralCommissionStore')->name('referral-commission.store');
-        Route::post('/referral-commission/action', 'Admin\DashboardController@referralCommissionAction')->name('referral-commission.action');
-
 
         Route::get('/profile', 'Admin\DashboardController@profile')->name('profile');
         Route::put('/profile', 'Admin\DashboardController@profileUpdate')->name('profileUpdate');
         Route::get('/password', 'Admin\DashboardController@password')->name('password');
         Route::put('/password', 'Admin\DashboardController@passwordUpdate')->name('passwordUpdate');
 
-
-        Route::get('payment-methods', 'Admin\PaymentMethodController@index')->name('payment.methods');
-        Route::post('payment-methods/deactivate', 'Admin\PaymentMethodController@deactivate')->name('payment.methods.deactivate');
-        Route::get('payment-methods/deactivate', 'Admin\PaymentMethodController@deactivate')->name('payment.methods.deactivate');
-        Route::post('sort-payment-methods', 'Admin\PaymentMethodController@sortPaymentMethods')->name('sort.payment.methods');
-        Route::get('payment-methods/edit/{id}', 'Admin\PaymentMethodController@edit')->name('edit.payment.methods');
-        Route::put('payment-methods/update/{id}', 'Admin\PaymentMethodController@update')->name('update.payment.methods');
-
-
-        // Manual Methods
-        Route::get('payment-methods/manual', 'Admin\ManualGatewayController@index')->name('deposit.manual.index');
-        Route::get('payment-methods/manual/new', 'Admin\ManualGatewayController@create')->name('deposit.manual.create');
-        Route::post('payment-methods/manual/new', 'Admin\ManualGatewayController@store')->name('deposit.manual.store');
-        Route::get('payment-methods/manual/edit/{id}', 'Admin\ManualGatewayController@edit')->name('deposit.manual.edit');
-        Route::put('payment-methods/manual/update/{id}', 'Admin\ManualGatewayController@update')->name('deposit.manual.update');
-
-
-        Route::get('payment/pending', 'Admin\PaymentLogController@pending')->name('payment.pending');
-        Route::put('payment/action/{id}', 'Admin\PaymentLogController@action')->name('payment.action');
-        Route::get('payment/log', 'Admin\PaymentLogController@index')->name('payment.log');
-        Route::get('payment/search', 'Admin\PaymentLogController@search')->name('payment.search');
 
 
         Route::get('/users', 'Admin\UsersController@index')->name('users');
@@ -100,7 +75,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::post('/user/loginAccount/{id}', 'Admin\UsersController@loginAccount')->name('user-loginAccount');
 
 
-        Route::get('/user/custom-rate/{id}', 'Admin\UsersController@customRate')->name('user.customRate');
         Route::get('/user/getService', 'Admin\UsersController@getService')->name('user.getService');
         Route::post('/user/setServiceRate', 'Admin\UsersController@setServiceRate')->name('user.setServiceRate');
 
@@ -133,11 +107,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/users-order/refunded', 'Admin\OrderManageController@refundedMultiple')->name('user-order-multiple-refunded');
 
 
-        Route::get('/service', 'ServiceController@create')->name('service.add');
         Route::get('/services', 'ServiceController@index')->name('service.show');
-        Route::post('/services', 'ServiceController@store')->name('service.store');
         Route::get('/search-service', 'ServiceController@search')->name('service-search');
         Route::post('/search-service/status/{id?}', 'ServiceController@statusChange')->name('service.status.change');
+        Route::get('/price_refresh','ServiceController@priceRefresh')->name('price_refresh');
 
         Route::get('/service-active', 'ServiceController@serviceActive')->name('service-active');
         Route::get('/service-deActive', 'ServiceController@serviceDeActive')->name('service-deactive');
@@ -149,8 +122,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/service-multiple-delete', 'ServiceController@deleteMultiple')->name('service-multiple-delete');
 
 
-        Route::get('/category/add', 'CategoryController@create')->name('category.add');
-        Route::post('/category', 'CategoryController@store')->name('category.store');
 
         Route::get('/category-active', 'CategoryController@categoryActive')->name('category-active');
         Route::get('/category-deactive', 'CategoryController@categoryDeactive')->name('category-deactive');
@@ -165,42 +136,25 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/category-multiple-deactive', 'CategoryController@deactiveMultiple')->name('category-multiple-deactive');
 
 
-        Route::resource('api-provider', 'ApiProviderController', ['as' => 'provider']);
-        // search
-        Route::get('/search-provider', 'ApiProviderController@search')->name('provider-search');
 
-        Route::post('api-provider/status{id}', 'ApiProviderController@changeStatus')->name('provider.status');
-        Route::post('api-provider/priceUpdate/{id}', 'ApiProviderController@priceUpdate')->name('provider.priceUpdate');
-        Route::post('api-provider/balanceUpdate/{id}', 'ApiProviderController@balanceUpdate')->name('provider.balanceUpdate');
+//        Route::post('api-provider/status{id}', 'ApiProviderController@changeStatus')->name('provider.status');
+//        Route::post('api-provider/priceUpdate/{id}', 'ApiProviderController@priceUpdate')->name('provider.priceUpdate');
+//        Route::post('api-provider/balanceUpdate/{id}', 'ApiProviderController@balanceUpdate')->name('provider.balanceUpdate');
+//
+//        Route::post('/api-services', 'ApiProviderController@getApiServices')->name('api.services');
+//        Route::post('/api-services/import', 'ApiProviderController@import')->name('api.service.import');
+//        Route::post('/api-services/import/multi', 'ApiProviderController@importMulti')->name('api.service.import.multi');
+//        // jquery autocomplete search
+//        Route::get('/get-provider', 'ApiProviderController@providerShow')->name('get.provider');
+//        //api provider multiple
+//        Route::get('/apiprovider-multiple-active', 'ApiProviderController@activeMultiple')->name('apiprovider-multiple-active');
+//        Route::get('/apiprovider-multiple-deactive', 'ApiProviderController@deActiveMultiple')->name('apiprovider-multiple-deactive');
 
-        Route::post('/api-services', 'ApiProviderController@getApiServices')->name('api.services');
-        Route::post('/api-services/import', 'ApiProviderController@import')->name('api.service.import');
-        Route::post('/api-services/import/multi', 'ApiProviderController@importMulti')->name('api.service.import.multi');
-        // jquery autocomplete search
-        Route::get('/get-provider', 'ApiProviderController@providerShow')->name('get.provider');
-        //api provider multiple
-        Route::get('/apiprovider-multiple-active', 'ApiProviderController@activeMultiple')->name('apiprovider-multiple-active');
-        Route::get('/apiprovider-multiple-deactive', 'ApiProviderController@deActiveMultiple')->name('apiprovider-multiple-deactive');
-
-
-        /* ===== ADMIN Mange Theme ===== */
-        Route::get('/manage/theme', 'ControlController@manageTheme')->name('manage.theme');
-        Route::put('/activate/theme/{name}', 'ControlController@activateTheme')->name('activate.themeUpdate');
-
-        /* ======== Plugin =======*/
-        Route::get('/plugin-config', 'ControlController@pluginConfig')->name('plugin.config');
-        Route::match(['get', 'post'], 'tawk-config', 'ControlController@tawkConfig')->name('tawk.control');
-        Route::match(['get', 'post'], 'fb-messenger-config', 'ControlController@fbMessengerConfig')->name('fb.messenger.control');
-        Route::match(['get', 'post'], 'google-recaptcha', 'ControlController@googleRecaptchaConfig')->name('google.recaptcha.control');
-        Route::match(['get', 'post'], 'google-analytics', 'ControlController@googleAnalyticsConfig')->name('google.analytics.control');
-        Route::match(['get', 'post'], 'currency-exchange-api-config', 'ControlController@currencyExchangeApiConfig')->name('currency.exchange.api.config');
 
         Route::get('/logo-seo', 'ControlController@logoSeo')->name('logo-seo');
         Route::put('/logoUpdate', 'ControlController@logoUpdate')->name('logoUpdate');
         Route::put('/seoUpdate', 'ControlController@seoUpdate')->name('seoUpdate');
 
-        Route::get('/breadcrumb', 'ControlController@breadcrumb')->name('breadcrumb');
-        Route::put('/breadcrumb', 'ControlController@breadcrumbUpdate')->name('breadcrumbUpdate');
 
 
         Route::any('/basic-controls', 'ControlController@index')->name('basic-controls');
@@ -214,33 +168,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::post('/email-controls/action', 'EmailTemplateController@emailControlAction')->name('email-controls.action');
         Route::post('/email/test', 'EmailTemplateController@testEmail')->name('testEmail');
 
-        Route::get('/email-template', 'EmailTemplateController@show')->name('email-template.show');
-        Route::get('/email-template/edit/{id}', 'EmailTemplateController@edit')->name('email-template.edit');
-        Route::post('/email-template/update/{id}', 'EmailTemplateController@update')->name('email-template.update');
-
-        //sms control
-        Route::match(['get', 'post'], '/sms-controls', 'SmsControlController@smsConfig')->name('sms.config');
-        Route::post('/sms-controls/action', 'SmsControlController@smsControlAction')->name('sms-controls.action');
-
-        Route::get('/sms/control-delete/{id}', 'SmsControlController@destroy')->name('smsControl_delete');
-        Route::get('/sms-template', 'SmsTemplateController@show')->name('sms-template');
-        Route::get('/sms-template/edit/{id}', 'SmsTemplateController@edit')->name('sms-template.edit');
-        Route::post('/sms-template/update/{id}', 'SmsTemplateController@update')->name('sms-template.update');
-
-
-        Route::get('/notify-config', 'Admin\NotifyController@notifyConfig')->name('notify-config');
-        Route::post('/notify-config', 'Admin\NotifyController@notifyConfigUpdate')->name('notify-config.update');
-
-        Route::get('/notify-template', 'Admin\NotifyController@show')->name('notify-template.show');
-        Route::get('/notify-template/edit/{id}', 'Admin\NotifyController@edit')->name('notify-template.edit');
-        Route::post('/notify-template/update/{id}', 'Admin\NotifyController@update')->name('notify-template.update');
 
 
         Route::get('/order', 'OrderController@index')->name('order');
         Route::post('/order/status', 'OrderController@statusChange')->name('order.status.change');
-        Route::get('/order/edit/{id}', 'OrderController@edit')->name('order.edit');
-        Route::post('/order/update/{id}', 'OrderController@update')->name('order.update');
-        Route::delete('/order/destroy/{id}', 'OrderController@destroy')->name('order.destroy');
         Route::get('/get-service', 'OrderController@getservice')->name('get.service');
         Route::get('/get-user', 'OrderController@getuser')->name('get.user');
         Route::get('/search-order', 'OrderController@search')->name('order-search');
@@ -262,13 +193,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         // search
 
 
-        /* ===== Support Ticket ===== */
-        Route::get('tickets/{status?}', 'Admin\TicketController@tickets')->name('ticket');
-        Route::get('tickets/search', 'Admin\TicketController@ticketSearch')->name('ticket.search');
-        Route::get('tickets/view/{id}', 'Admin\TicketController@ticketReply')->name('ticket.view');
-        Route::put('ticket/reply/{id}', 'Admin\TicketController@ticketReplySend')->name('ticket.reply');
-        Route::get('ticket/download/{ticket}', 'Admin\TicketController@ticketDownload')->name('ticket.download');
-        Route::post('ticket/delete', 'Admin\TicketController@ticketDelete')->name('ticket.delete');
 
 
         Route::post('/service', function (Request $request) {
@@ -278,19 +202,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         })->name('service');
 
 
-        Route::get('notice', 'Admin\NoticeController@index')->name('notice');
-        Route::get('notice/create', 'Admin\NoticeController@create')->name('notice.create');
-        Route::post('notice/create', 'Admin\NoticeController@store')->name('notice.store');
-        Route::get('notice/edit/{id}', 'Admin\NoticeController@edit')->name('notice.edit');
-        Route::put('notice/edit/{id}', 'Admin\NoticeController@update')->name('notice.update');
-        Route::delete('notice/delete/{id}', 'Admin\NoticeController@delete')->name('notice.delete');
-
-
-        /* ===== ADMIN Subscriber SETTINGS ===== */
-        Route::get('subscriber', 'Admin\SubscriberController@index')->name('subscriber.index');
-        Route::post('subscriber/remove', 'Admin\SubscriberController@remove')->name('subscriber.remove');
-        Route::get('subscriber/send-email', 'Admin\SubscriberController@sendEmailForm')->name('subscriber.sendEmail');
-        Route::post('subscriber/send-email', 'Admin\SubscriberController@sendEmail')->name('subscriber.mail');
 
 
         /* ===== ADMIN Language SETTINGS ===== */
@@ -311,17 +222,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::delete('delete-key/{id}', 'Admin\LanguageController@deleteKey')->name('language.deleteKey');
 
 
-        /* ===== ADMIN TEMPLATE SETTINGS ===== */
-        Route::get('template/{section}', 'Admin\TemplateController@show')->name('template.show');
-        Route::put('template/{section}/{language}', 'Admin\TemplateController@update')->name('template.update');
-
-        Route::get('contents/{content}', 'Admin\ContentController@index')->name('content.index');
-        Route::get('content-create/{content}', 'Admin\ContentController@create')->name('content.create');
-        Route::put('content-create/{content}/{language?}', 'Admin\ContentController@store')->name('content.store');
-        Route::get('content-show/{content}', 'Admin\ContentController@show')->name('content.show');
-        Route::put('content-update/{content}/{language?}', 'Admin\ContentController@update')->name('content.update');
-        Route::delete('contents/{id}', 'Admin\ContentController@contentDelete')->name('content.delete');
-    });
+   });
 
 });
 
@@ -347,29 +248,18 @@ Route::middleware('Maintenance')->group(function () {
 
             Route::get('/dashboard', 'HomeController@index')->name('home');
 
-            Route::get('add-fund', 'HomeController@addFund')->name('addFund');
-            Route::post('add-fund', 'PaymentController@addFundRequest')->name('addFund.request');
-            Route::get('addFundConfirm', 'PaymentController@depositConfirm')->name('addFund.confirm');
-            Route::post('addFundConfirm', 'PaymentController@fromSubmit')->name('addFund.fromSubmit');
 
 
             //transaction
             Route::get('/transaction', 'HomeController@transaction')->name('transaction');
             Route::get('/transaction-search', 'HomeController@transactionSearch')->name('transaction.search');
-            Route::get('fund-history', 'HomeController@fundHistory')->name('fund-history');
-            Route::get('fund-history-search', 'HomeController@fundHistorySearch')->name('fund-history.search');
 
             Route::get('/profile', 'HomeController@profile')->name('profile');
             Route::post('/updateProfile', 'HomeController@updateProfile')->name('updateProfile');
             Route::put('/updateInformation', 'HomeController@updateInformation')->name('updateInformation');
             Route::post('/updatePassword', 'HomeController@updatePassword')->name('updatePassword');
 
-            Route::get('/apiKey', 'HomeController@apiKey')->name('apiKey');
 
-
-            Route::get('/referral', 'HomeController@referral')->name('referral');
-            Route::get('/referral-bonus', 'HomeController@referralBonus')->name('referral.bonus');
-            Route::get('/referral-bonus-search', 'HomeController@referralBonusSearch')->name('referral.bonus.search');
 
 
             //order
@@ -386,23 +276,7 @@ Route::middleware('Maintenance')->group(function () {
             Route::get('/service-search', 'User\ServiceController@search')->name('service.search');
             Route::get('/services/{id}', 'User\ServiceController@service')->name('services.show');
 
-            Route::get('/api/docs', 'User\ApiController@index')->name('api.docs');
-            Route::post('/keyGenerate', 'User\ApiController@apiGenerate')->name('keyGenerate');
 
-            // TWO-FACTOR SECURITY
-            Route::get('/twostep-security', 'HomeController@twoStepSecurity')->name('twostep.security');
-            Route::post('twoStep-enable', 'HomeController@twoStepEnable')->name('twoStepEnable');
-            Route::post('twoStep-disable', 'HomeController@twoStepDisable')->name('twoStepDisable');
-
-            // Support Ticket
-            Route::group(['prefix' => 'ticket', 'as' => 'ticket.'], function () {
-                Route::get('/', 'User\SupportController@index')->name('list');
-                Route::get('/create', 'User\SupportController@create')->name('create');
-                Route::post('/create', 'User\SupportController@store')->name('store');
-                Route::get('/view/{ticket}', 'User\SupportController@view')->name('view');
-                Route::put('/reply/{ticket}', 'User\SupportController@reply')->name('reply');
-                Route::get('/download/{ticket}', 'User\SupportController@download')->name('download');
-            });
 
             Route::post('/service', function (Request $request) {
                 $parent_id = $request->cat_id;
@@ -427,25 +301,10 @@ Route::middleware('Maintenance')->group(function () {
 
     Route::get('/language/{code?}', 'FrontendController@language')->name('language');
 
-
-    Route::get('/blog-details/{slug}/{id}', 'FrontendController@blogDetails')->name('blogDetails');
-    Route::get('/blog', 'FrontendController@blog')->name('blog');
-
 //    Route::get('/', 'FrontendController@index')->name('home');
     Route::get('/', 'HomeController@index')->name('home');
-    Route::get('/about', 'FrontendController@about')->name('about');
-    Route::get('/services', 'FrontendController@services')->name('services');
-    Route::get('/service-search', 'FrontendController@serviceSearch')->name('service.search');
 
 
-    Route::post('/subscribe', 'FrontendController@subscribe')->name('subscribe');
-
-
-    Route::get('/faq', 'FrontendController@faq')->name('faq');
-    Route::get('/api-docs', 'FrontendController@apiDocs')->name('apiDocs');
-    Route::get('/contact', 'FrontendController@contact')->name('contact');
-    Route::post('/contact', 'FrontendController@contactSend')->name('contact.send');
-    Route::get('/{getLink}/{content_id}', 'FrontendController@getLink')->name('getLink');
 
 });
 

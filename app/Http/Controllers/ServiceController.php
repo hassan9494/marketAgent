@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\ApiProvider;
 use App\Models\Category;
 use App\Models\Service;
+use App\Services\SymService;
+use http\Exception\BadHeaderException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Ixudra\Curl\Facades\Curl;
@@ -23,6 +25,35 @@ class ServiceController extends Controller
 
         $apiProviders = ApiProvider::all();
         return view('admin.pages.services.show-service', compact('categories', 'apiProviders'));
+    }
+
+    public function priceRefresh()
+    {
+        $server_connection = new SymService();
+        $order_param = array();
+        $order_param['action'] = 'services';
+        $server_services = $server_connection->serverRequest($order_param);
+        if (!isset($server_services['errors'])){
+            $services = Service::where('service_status', 1)->orderBy('category_id', 'asc')->get();
+            $updated_services = [];
+            foreach ($server_services as $server_service) {
+                $service = $services->find($server_service['service']);
+                if ($service) {
+                    if ($service->price != $server_service['rate']) {
+                        $service->price = $server_service['rate'];
+                        array_push($updated_services, $service);
+                    }
+                }
+            }
+            foreach ($updated_services as $updated_service){
+                $updated_service->save();
+            }
+            return back()->with('success','Prices Updated Successfully');
+        }else{
+            return back()->with('error', $server_services['errors']['message'])->withInput();
+        }
+
+
     }
 
     /*
@@ -74,7 +105,7 @@ class ServiceController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -164,20 +195,19 @@ class ServiceController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Service $service)
     {
         $req = Purify::clean($request->all());
-        //        return $req;
         $rules = [
             'service_title' => 'required|string|max:150',
             'category_id' => 'required|string',
             'min_amount' => 'required|numeric',
             'max_amount' => 'required|numeric',
             'price' => 'required|numeric',
-            'manual_api' => 'required|numeric|in:0,1',
+//            'manual_api' => 'required|numeric|in:0,1',
             'api_provider_id' => 'exclude_if:manual_api,0|exists:api_providers,id',
             'api_service_id' => 'exclude_if:manual_api,0|numeric|not_in:0',
         ];
@@ -192,27 +222,28 @@ class ServiceController extends Controller
         $service->max_amount = $req['max_amount'];
         $service->price = $req['price'];
         $service->service_status = $req['service_status'];
-        $service->api_provider_id = $req['api_provider_id'] == 0 ? null : $req['api_provider_id'];
-        $service->api_service_id = $req['api_service_id'];
-        $service->drip_feed = $req['drip_feed'];
+//        $service->api_provider_id = $req['api_provider_id'] == 0 ? null : $req['api_provider_id'];
+//        $service->api_service_id = $req['api_service_id'];
+//        $service->drip_feed = $req['drip_feed'];
         $service->description = $req['description'];
-        $provider = ApiProvider::find($req['api_provider_id']);
-        if ($req['manual_api'] == 1):
-            $apiLiveData = Curl::to($provider['url'])->withData(['key' => $provider['api_key'], 'action' => 'services'])->post();
-            $apiServiceData = json_decode($apiLiveData);
-            foreach ($apiServiceData as $current):
-                if ($current->service == $req['api_service_id']):
-                    $success = "Successfully Update Api service";
-                    $service->api_provider_price = $current->rate;
-                    break;
-                endif;
-            endforeach;
-            if (!isset($success)):
-                return back()->with('error', 'Please Check again Api Service ID')->withInput();
-            endif;
-        else:
-            $success = "Successfully Updated";
-        endif;
+//        $provider = ApiProvider::find($req['api_provider_id']);
+//        if ($req['manual_api'] == 1):
+//            $apiLiveData = Curl::to($provider['url'])->withData(['key' => $provider['api_key'], 'action' => 'services'])->post();
+//            $apiServiceData = json_decode($apiLiveData);
+//            foreach ($apiServiceData as $current):
+//                if ($current->service == $req['api_service_id']):
+//                    $success = "Successfully Update Api service";
+//                    $service->api_provider_price = $current->rate;
+//                    break;
+//                endif;
+//            endforeach;
+//            if (!isset($success)):
+//                return back()->with('error', 'Please Check again Api Service ID')->withInput();
+//            endif;
+//        else:
+//            $success = "Successfully Updated";
+//        endif;
+        $success = "Successfully Updated";
         $service->save();
         return back()->with('success', $success);
     }
@@ -293,7 +324,7 @@ class ServiceController extends Controller
     {
         $cat = Service::find($id);
 
-        if(!$cat){
+        if (!$cat) {
             return back()->with('error', 'Data Not Found');
         }
         if ($cat['service_status'] == 0) {

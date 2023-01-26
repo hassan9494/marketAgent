@@ -40,28 +40,6 @@
                     </div>
                 </form>
             </div>
-            <div class="col-xl-2">
-                <div class="d-flex justify-content-start justify-content-xl-end">
-
-                    <a href="{{route('admin.category.add')}}"
-                       class="btn btn-primary btn-sm mr-3"><span>@lang('Add Category')</span></a>
-
-                    <div class="dropdown">
-                        <button class="btn btn-sm btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span><i class="fas fa-bars pr-2"></i> @lang('Action')</span>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <button class="dropdown-item" type="button" data-toggle="modal"
-                                    data-target="#all_active">@lang('Active')</button>
-                            <button class="dropdown-item" type="button" data-toggle="modal"
-                                    data-target="#all_deactive">@lang('Inactive')</button>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
         </div>
     </div>
 

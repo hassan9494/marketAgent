@@ -606,7 +606,7 @@ vertical-align: top;
 border-top: none;
 }
 .right-dropdown {
-right: -12px !important;
+right: -12px ;
 }
 .right-dropdown.dropdown-menu.dropdown-menu-right.mailbox.animated.bounceInDown.show {
 width: 380px;

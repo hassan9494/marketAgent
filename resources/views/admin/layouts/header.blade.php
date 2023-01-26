@@ -6,7 +6,7 @@
                     class="ti-menu ti-close"></i></a>
 
             <div class="navbar-brand">
-                <a href="{{url('/')}}">
+                <a href="{{route('admin.dashboard')}}">
 
 
                     <span class="logo-text">

@@ -217,7 +217,7 @@ cardinput{
 
 .column .card .card-footer h4{
     margin-bottom: 0;
-    font-family: cursive;
+    font-family: lato;
     font-weight: bold;
 }
 
@@ -686,19 +686,19 @@ cardinput{
 }
 
 .service-title span{
-    font-family: cursive;
+    font-family: lato;
 }
 
 .slogan {
-    font-family: cursive;
+    font-family: lato;
 }
 
 .search-button{
-    font-family: cursive;
+    font-family: lato;
 }
 
 #productForm{
-     font-family: cursive;
+     font-family: lato;
  }
 
 .disable::after{

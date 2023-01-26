@@ -123,20 +123,10 @@
                                             <i class="fa fa-edit text-warning pr-2"
                                                aria-hidden="true"></i> @lang('Edit')
                                         </a>
-                                        <a class="dropdown-item" href="{{ route('admin.user.customRate',$user->id) }}">
-                                            <i class="fa fa-money-bill-alt text-dark pr-2"
-                                               aria-hidden="true"></i> @lang('Custom Rate')
-                                        </a>
+
 
                                         <a class="dropdown-item" href="{{ route('admin.user-order',$user->id) }}">
                                             <i class="fa fa-eye text-info pr-2" aria-hidden="true"></i> @lang('Order')
-                                        </a>
-                                        <a class="dropdown-item loginAccount" href="javascript:void(0)"
-                                           data-toggle="modal"
-                                           data-target="#signIn"
-                                           data-route="{{route('admin.user-loginAccount',$user->id)}}">
-                                            <i class="fa fa-sign-in-alt text-primary pr-2"
-                                               aria-hidden="true"></i> @lang('Login as User')
                                         </a>
 
                                         <a class="dropdown-item" href="{{ route('admin.send-email',$user->id) }}">

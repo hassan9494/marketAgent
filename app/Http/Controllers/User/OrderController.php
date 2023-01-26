@@ -242,7 +242,7 @@ class OrderController extends Controller
             /////////////   End Test    /////////////////////
 
 
-            return back()->with('success', 'Your order has been submitted');
+            return redirect()->route('user.order.index')->with('success', 'Your order has been submitted');
 
         } else {
             return back()->with('error', "Order quantity should be minimum {$service->min_amount} and maximum {$service->max_amount}")->withInput();

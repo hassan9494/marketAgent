@@ -2,12 +2,17 @@
 
 namespace App\Console\Commands;
 
+use App\Http\Traits\Notify;
 use App\Models\Order;
+use App\Models\Transaction;
 use App\Services\SymService;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UpdateOrdersStatus extends Command
 {
+    use Notify;
     /**
      * The name and signature of the console command.
      *
@@ -48,7 +53,37 @@ class UpdateOrdersStatus extends Command
             if (isset($order))
                 if ($order->status != $server_order['status']){
                     $order->status = $server_order['status'];
-                    $order->save();
+                    DB::beginTransaction();
+                    if ($order->save()){
+                        if ($server_order['status'] == 'refunded'){
+                            $user = $order->users;
+                            $user->balance += $order->price;
+                            $transaction = new Transaction();
+                            $transaction->user_id = $user->id;
+                            $transaction->trx_type = '+';
+                            $transaction->amount = $order->price;
+                            $transaction->remarks = 'استرجاع الرصيد بعد تحويل حالة الطلب الى مسترجع';
+                            $transaction->trx_id = strRandom();
+                            $transaction->charge = 0;
+
+                            if ($user->save()){
+                                $transaction->save();
+
+                                $msg = [
+                                    'order_id' => $order->id,
+                                    'status' => $order
+                                ];
+                                $action = [
+                                    "link" => '#',
+                                    "icon" => "fas fa-cart-plus text-white"
+                                ];
+                                @$this->userPushNotification($order->users, 'ORDER_STATUS_CHANGED', $msg, $action);
+
+                            }
+                        }
+                    }
+
+                    DB::commit();
                 }
         }
 

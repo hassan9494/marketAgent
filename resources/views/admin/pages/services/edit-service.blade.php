@@ -52,7 +52,7 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <label>@lang('Rate per 1000') </label>
+                            <label>@lang('Price') </label>
                             <input type="text" class="form-control square" name="price" placeholder="50.25"
                                    value="{{old('price',$service->price)}}">
                             @if($errors->has('price'))
@@ -85,71 +85,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6">
-                                <div class="form-group ">
-                                    <label class="d-block">@lang('Drip feed')</label>
-                                    <div class="custom-switch-btn">
-                                        <input type='hidden' value='1' name='drip_feed'>
-                                        <input type="checkbox" name="drip_feed" class="custom-switch-checkbox"
-                                               id="drip_feed"
-                                               value="0" {{ $service->drip_feed == '0' ? 'checked': '' }} >
-                                        <label class="custom-switch-checkbox-label" for="drip_feed">
-                                            <span class="custom-switch-checkbox-inner"></span>
-                                            <span class="custom-switch-checkbox-switch"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="divider"></div>
-                <h5 class="table-group-title text-primary mb-2 mb-md-3"><span>@lang('Type & Details') </span></h5>
-                <div class="form-group ">
-                    <div class="switch-field d-flex">
-                        <div class="form-check p-0">
-                            <input class="form-check-input" type="radio" name="manual_api" id="less"
-                                   value="0" {{ old('manual_api') == 0 || !isset($service->api_provider_id) || !isset($service->api_service_id) ? 'checked' : '' }}>
-                            <label class="form-check-label" for="less">
-                                @lang('Manual')
-                            </label>
-                        </div>
-                        <div class="form-check p-0">
-                            <input class="form-check-input" type="radio" name="manual_api" id="more"
-                                   value="1" {{ old('manual_api') == 1 || isset($service->api_provider_id, $service->api_service_id) ? 'checked' : '' }}>
-                            <label class="form-check-label" for="more">
-                                @lang('Api')
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row moreField {{ old('manual_api') == 1 || isset($service->api_provider_id, $service->api_service_id) ? '' : 'd-none'  }}">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="control-label " for="apiprovider">@lang('API Provider Name')</label>
-                            <select class="form-control" name="api_provider_id">
-                                <option value="0">@lang('Select API Provider name')</option>
-                                @foreach($apiProviders as $apiProvider)
-                                    <option value="{{ $apiProvider->id }}" {{ old('api_provider_id', $service->api_provider_id) == $apiProvider->id ? 'selected' : '' }}>{{ $apiProvider->api_name  }}</option>
-                                @endforeach
-                            </select>
-                            @if($errors->has('api_provider_id'))
-                                <div class="error text-danger">@lang($errors->first('api_provider_id')) </div>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>@lang('API Service ID')</label>
-                            <input type="text" class="form-control square" name="api_service_id"
-                                   value="{{old('api_service_id', $service->api_service_id == null ? null :$service->api_service_id )}}"
-                                   placeholder="@lang('Api Service ID')">
-                            @if($errors->has('api_service_id'))
-                                <div class="error text-danger">@lang($errors->first('api_service_id')) </div>
-                            @endif
-                        </div>
-                    </div>
-                </div>
                 <div class="form-group">
                     <label class="control-label " for="description">@lang('Description')</label>
                     <textarea class="form-control" rows="8"
