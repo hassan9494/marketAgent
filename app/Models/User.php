@@ -67,6 +67,12 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Fund::class)->latest()->where('status', '!=', 0);
     }
 
+
+    public function debts()
+    {
+        return $this->hasMany(Debt::class,'user_id');
+    }
+
     public function order()
     {
         return $this->hasMany(Order::class)->latest();

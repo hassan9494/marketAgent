@@ -15,11 +15,11 @@
                                 <div class="d-inline-flex align-items-center">
                                     <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{$adminBalance}} </h2>
                                 </div>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Balance In Server')</h6>
+                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Syriamarket balance Usable balance')</h6>
                             </div>
                             <div class="ml-auto mt-md-3 mt-lg-0">
-                                <span class="opacity-7 text-muted"><i class="fa fa-money-bill-alt fa-2x"></i></span>
-                                <a href="{{route('admin.dashboard')}}" class="">
+                                <span class="opacity-7 text-muted"><i class="fa fa-suitcase fa-2x"></i></span>
+                                <a href="{{route('admin.balance.refresh')}}" class="">
 
                                     <i class="fa fa-refresh" aria-hidden="true"></i>
                                 </a>
@@ -29,20 +29,18 @@
                 </div>
             </div>
 
-
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card  shadow border-right">
+                <div class="card shadow border-right">
                     <div class="card-body">
                         <div class="d-flex d-lg-flex d-md-block align-items-center">
                             <div>
                                 <div class="d-inline-flex align-items-center">
-                                    <h2 class="text-dark mb-1 font-weight-medium">{{number_format($userRecord['totalUser'])}}</h2>
+                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{$adminBalance - getAmount($userRecord['totalUserBalance'])}} </h2>
                                 </div>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Total Users')
-                                </h6>
+                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Total Balance')</h6>
                             </div>
                             <div class="ml-auto mt-md-3 mt-lg-0">
-                                <span class="opacity-7 text-muted"><i data-feather="users" class="fa-2x"></i></span>
+                                <span class="opacity-7 text-muted"><i class="fas fa-credit-card m-2"></i></span>
                             </div>
                         </div>
                     </div>
@@ -57,10 +55,125 @@
                                 <div class="d-inline-flex align-items-center">
                                     <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($userRecord['totalUserBalance'])}} </h2>
                                 </div>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Total Balance')</h6>
+                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Total User Balances')</h6>
                             </div>
                             <div class="ml-auto mt-md-3 mt-lg-0">
                                 <span class="opacity-7 text-muted"><i class="fa fa-money-bill-alt fa-2x"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <div class="card shadow border-right">
+                    <div class="card-body">
+                        <div class="d-flex d-lg-flex d-md-block align-items-center">
+                            <div>
+                                <div class="d-inline-flex align-items-center">
+                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($allDebts)}} </h2>
+                                </div>
+                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Total User Debts')</h6>
+                            </div>
+                            <div class="ml-auto mt-md-3 mt-lg-0">
+                                <span class="opacity-7 text-muted"><i class="fas fa-clipboard-list m-2"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <div class="card shadow border-right">
+                    <div class="card-body">
+                        <div class="d-flex d-lg-flex d-md-block align-items-center">
+                            <div>
+                                <div class="d-inline-flex align-items-center">
+                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($priceDifference['prices'] - $priceDifference['serverPrices'])}}</h2>
+                                </div>
+                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Total Profit')</h6>
+                            </div>
+                            <div class="ml-auto mt-md-3 mt-lg-0">
+                                <span class="opacity-7 text-muted"><i class="fas fa-list-alt m-2"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <div class="card shadow border-right">
+                    <div class="card-body">
+                        <div class="d-flex d-lg-flex d-md-block align-items-center">
+                            <div>
+                                <div class="d-inline-flex align-items-center">
+                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($priceDifferenceMonth['prices'] - $priceDifferenceMonth['serverPrices'])}}</h2>
+                                </div>
+                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Last 30 Days Profit')</h6>
+                            </div>
+                            <div class="ml-auto mt-md-3 mt-lg-0">
+                                <span class="opacity-7 text-muted"><i class="fas fa-table m-2"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <div class="card shadow border-right">
+                    <div class="card-body">
+                        <div class="d-flex d-lg-flex d-md-block align-items-center">
+                            <div>
+                                <div class="d-inline-flex align-items-center">
+                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($priceDifferenceToday['prices'] - $priceDifferenceToday['serverPrices'])}}</h2>
+                                </div>
+                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Today Profit')</h6>
+                            </div>
+                            <div class="ml-auto mt-md-3 mt-lg-0">
+                                <span class="opacity-7 text-muted"><i class="fa fa-hand-holding-usd fa-2x"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <div class="card shadow border-right">
+                    <div class="card-body">
+                        <div class="d-flex d-lg-flex d-md-block align-items-center">
+                            <div>
+                                <div class="d-inline-flex align-items-center">
+                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($transactionProfit['profit_30_days'])}} </h2>
+                                </div>
+                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Last 30 days Sales')</h6>
+                            </div>
+                            <div class="ml-auto mt-md-3 mt-lg-0">
+                                <span class="opacity-7 text-muted"><i class="fab fa-jedi-order m-2"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <div class="card shadow border-right">
+                    <div class="card-body">
+                        <div class="d-flex d-lg-flex d-md-block align-items-center">
+                            <div>
+                                <div class="d-inline-flex align-items-center">
+                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($transactionProfit['profit_today'])}}</h2>
+                                </div>
+                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Today Sale')</h6>
+                            </div>
+                            <div class="ml-auto mt-md-3 mt-lg-0">
+                                <span class="opacity-7 text-muted"><i class="fas fa-exchange-alt fa-2x"></i></span>
                             </div>
                         </div>
                     </div>
@@ -87,60 +200,23 @@
             </div>
 
 
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card shadow border-right">
-                    <div class="card-body">
-                        <div class="d-flex d-lg-flex d-md-block align-items-center">
-                            <div>
-                                <div class="d-inline-flex align-items-center">
-                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($totalAmountReceived)}} </h2>
-                                </div>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Fund Collected')</h6>
-                            </div>
-                            <div class="ml-auto mt-md-3 mt-lg-0">
-                                <span class="opacity-7 text-muted"><i class="fa fa-hand-holding-usd fa-2x"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card shadow border-right">
-                    <div class="card-body">
-                        <div class="d-flex d-lg-flex d-md-block align-items-center">
-                            <div>
-                                <div class="d-inline-flex align-items-center">
-                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($transactionProfit['profit_30_days'])}} </h2>
-                                </div>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Last 30 days')</h6>
-                            </div>
-                            <div class="ml-auto mt-md-3 mt-lg-0">
-                                <span class="opacity-7 text-muted"><i class="fa fa-hand-holding-usd fa-2x"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card shadow border-right">
-                    <div class="card-body">
-                        <div class="d-flex d-lg-flex d-md-block align-items-center">
-                            <div>
-                                <div class="d-inline-flex align-items-center">
-                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($transactionProfit['profit_today'])}}</h2>
-                                </div>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Today Profit')</h6>
-                            </div>
-                            <div class="ml-auto mt-md-3 mt-lg-0">
-                                <span class="opacity-7 text-muted"><i class="fa fa-money-bill-alt fa-2x"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+{{--            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">--}}
+{{--                <div class="card shadow border-right">--}}
+{{--                    <div class="card-body">--}}
+{{--                        <div class="d-flex d-lg-flex d-md-block align-items-center">--}}
+{{--                            <div>--}}
+{{--                                <div class="d-inline-flex align-items-center">--}}
+{{--                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($totalAmountReceived)}} </h2>--}}
+{{--                                </div>--}}
+{{--                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Fund Collected')</h6>--}}
+{{--                            </div>--}}
+{{--                            <div class="ml-auto mt-md-3 mt-lg-0">--}}
+{{--                                <span class="opacity-7 text-muted"><i class="fa fa-hand-holding-usd fa-2x"></i></span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card shadow border-right">
@@ -160,6 +236,24 @@
                 </div>
             </div>
 
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <div class="card  shadow border-right">
+                    <div class="card-body">
+                        <div class="d-flex d-lg-flex d-md-block align-items-center">
+                            <div>
+                                <div class="d-inline-flex align-items-center">
+                                    <h2 class="text-dark mb-1 font-weight-medium">{{number_format($userRecord['totalUser'])}}</h2>
+                                </div>
+                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Total Users')
+                                </h6>
+                            </div>
+                            <div class="ml-auto mt-md-3 mt-lg-0">
+                                <span class="opacity-7 text-muted"><i data-feather="users" class="fa-2x"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card shadow border-right">
                     <div class="card-body">

@@ -6,7 +6,7 @@
 
     <div class="page-header card card-primary m-0 m-md-4 my-4 m-md-0 p-5 shadow">
         <div class="row ">
-            <div class="col-xl-10">
+            <div class="col-xl-7">
                 <form action="{{ route('admin.service-search') }}" method="get">
                     <div class="row">
                         <div class="col-md-4 col-xl-3">
@@ -52,11 +52,20 @@
                     </div>
                 </form>
             </div>
+            <div class="col-xl-3">
+                <button class="btn btn-success w-100 " type="button" data-toggle="modal"
+                        data-target="#balance_refresh">
+                    @lang('Get Syrian Market Price')
+                    <span class="btn-label"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+
+                </button>
+            </div>
             <div class="col-xl-2">
-                <a href="{{route('admin.price_refresh')}}" class="btn btn-success w-100 w-sm-auto">
-                    @lang('Price Refresh')
-                    <i class="fa fa-refresh" aria-hidden="true"></i>
-                </a>
+                <button class="btn btn-success w-100" type="button" data-toggle="modal"
+                        data-target="#balance">@lang('Update Price')
+                    <span class="btn-label"><i class="fa fa-plus" aria-hidden="true"></i></span>
+
+                </button>
             </div>
         </div>
     </div>
@@ -281,30 +290,70 @@
         </div>
     </div>
 
-    <div class="modal fade" id="delete" role="dialog">
-        <div class="modal-dialog">
+    <div class="modal fade" id="balance">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header modal-colored-header bg-primary">
-                    <h4 class="modal-title" id="title">@lang('Delete Confirmation')</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
+                <form method="post" action="{{ route('admin.update_price') }}"
+                      enctype="multipart/form-data">
+                @csrf
+                <!-- Modal Header -->
+                    <div class="modal-header modal-colored-header bg-primary">
+                        <h4 class="modal-title">@lang('Update Price')</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="form-group ">
+                            <p>Are you really want to chnage the price of All Services?</p>
+                            <label>@lang('Select Percentage Increase')</label>
+                            <select class="form-control" name="Percentage">
+                                @for($i = 1 ; $i <= 100 ;$i++)
+                                    <option value="{{$i}}">
+                                        {{$i}} %
+                                    </option>
+                                @endfor
+                            </select>
+                        </div>
 
-                <div class="modal-body">
-                    <h2><i class="fas fa-trash position-absolute"></i></h2>
-                    <div class="body-centent pl-5">
-                        <p>@lang('Are you really want to delete the service?')</p>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal"><span>@lang('Close')</span>
+                        </button>
+                        <button type="submit" class=" btn btn-primary balanceSave"><span>@lang('Submit')</span>
+                        </button>
                     </div>
 
-                    <small class="text-danger p-0 m-0">@lang('*Note : Service which have order can\'t be deleted.')</small>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-dismiss="modal">@lang('No')
-                    </button>
-                    <form action="" method="post">
-                        @csrf
-                        <a href="" class="btn btn-primary delete-yes"><span>@lang('Yes')</span></a>
-                    </form>
-                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="balance_refresh">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                    <div class="modal-header modal-colored-header bg-primary">
+                        <h4 class="modal-title">@lang('Price Refresh')</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="form-group ">
+                            <p>@lang('Are you really want to refresh the price of All Services From Syrian Market?')</p>
+
+                            <p>@lang('You will lose all previous price updates')</p>
+                        </div>
+
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal"><span>@lang('Close')</span>
+                        </button>
+                        <a href="{{route('admin.price_refresh')}}" class=" btn btn-primary balanceSave"><span>@lang('Submit')</span>
+                        </a>
+                    </div>
             </div>
         </div>
     </div>

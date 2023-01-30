@@ -40,7 +40,7 @@
                     </div>
                     <button class="btn btn-primary shadow-2 mb-4" type="submit">@lang('Login')</button>
                     <p class="mb-2 text-muted"> <a href="{{ route('password.request') }}"> Reset </a> @lang('Forgot password? ')</p>
-                    <p class="mb-0 text-muted"><a href="{{ route('register') }}">Signup</a> @lang('Don’t have an account?') </p>
+{{--                    <p class="mb-0 text-muted"><a href="{{ route('register') }}">Signup</a> @lang('Don’t have an account?') </p>--}}
                 </div>
             </div>
         </form>

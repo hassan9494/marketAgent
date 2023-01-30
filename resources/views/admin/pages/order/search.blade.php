@@ -23,6 +23,8 @@
                         <th scope="col">@lang('Order No.')</th>
                         <th scope="col">@lang('User')</th>
                         <th scope="col">@lang('Order Details')</th>
+                        <th scope="col">@lang('Price')</th>
+                        <th scope="col">@lang('profit')</th>
                         <th scope="col">@lang('Created')</th>
                         <th scope="col">@lang('Status')</th>
                         <th scope="col">@lang('Action')</th>
@@ -47,8 +49,12 @@
                             <h5>{{ optional($order->service)->service_title }}</h5>
                             @lang('Link:') {{ $order->link }}<br>
                             @lang('quantity:') {{ $order->quantity }} <br>
-                            @lang("Start counter:") {{ $order->start_counter }}<br>
-                            @lang('Remains:') {{ $order->remains }}
+                        </td>
+                        <td data-label="@lang('Price')">
+                            @lang($order->price) {{config('basic.currency_symbol')}}
+                        </td>
+                        <td data-label="@lang('profit')">
+                            @lang($order->price - $order->server_price) {{config('basic.currency_symbol')}}
                         </td>
 
                         <td data-label="@lang('Created')">{{dateTime($order->created_at , 'd M Y, h:i A')}} </td>

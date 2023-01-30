@@ -74,7 +74,9 @@
                             <td data-label="@lang('Username')"><a
                                     href="{{route('admin.user-edit', $fund->user_id)}}" target="_blank">{{ optional($fund->user)->username }}</a>
                             </td>
-                            <td data-label="@lang('Method')">{{ optional($fund->gateway)->name }}</td>
+                            <td data-label="@lang('Method')">
+                                {{ isset($fund->gateway->name) ? $fund->gateway->name : 'Add Balance From Admin' }}
+                            </td>
                             <td data-label="@lang('Amount')"
                                 class="font-weight-bold">{{ $basic->currency_symbol}}{{ getAmount($fund->amount ) }}</td>
                             <td data-label="@lang('Charge')"

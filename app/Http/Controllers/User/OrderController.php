@@ -197,6 +197,7 @@ class OrderController extends Controller
                 $order->details = $server_order['details'];
                 $order->codes = $server_order['code'];
                 $order->api_order_id = $server_order['order'];
+                $order->server_price = isset($server_order['price']) ? $server_order['price'] : 0 ;
 
                 $order->save();
                 $user->balance -= $price;
@@ -219,7 +220,7 @@ class OrderController extends Controller
                     'currency' => $basic->currency
                 ];
                 $action = [
-                    "link" => route('admin.order.edit',$order->id),
+                    "link" => '#',
                     "icon" => "fas fa-cart-plus text-white"
                 ];
                 $this->adminPushNotification('ORDER_CREATE', $msg, $action);

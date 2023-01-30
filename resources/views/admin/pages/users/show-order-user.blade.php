@@ -78,31 +78,6 @@
     <div class="card card-primary m-0 m-md-4 my-4 m-md-0 shadow">
 
         <div class="card-body">
-            <div class="dropdown mb-2 text-right">
-                <button class="btn btn-sm btn-swap dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span><i class="fas fa-bars pr-2"></i> @lang('Action')</span>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <button class="dropdown-item usersOrderChangeStatus" type="button" data-toggle="modal"
-                            data-target="#usersOrderChangeStatus" data-status="awaiting">@lang('Awaiting')</button>
-                    <button class="dropdown-item usersOrderChangeStatus" type="button" data-toggle="modal"
-                            data-target="#usersOrderChangeStatus usersOrderChangeStatus"
-                            data-status="pending">@lang('Pending')</button>
-                    <button class="dropdown-item usersOrderChangeStatus" type="button" data-toggle="modal"
-                            data-target="#usersOrderChangeStatus" data-status="processing">@lang('Processing')</button>
-                    <button class="dropdown-item usersOrderChangeStatus" type="button" data-toggle="modal"
-                            data-target="#usersOrderChangeStatus" data-status="progress">@lang('In Progress')</button>
-                    <button class="dropdown-item usersOrderChangeStatus" type="button" data-toggle="modal"
-                            data-target="#usersOrderChangeStatus" data-status="completed">@lang('Completed')</button>
-                    <button class="dropdown-item usersOrderChangeStatus" type="button" data-toggle="modal"
-                            data-target="#usersOrderChangeStatus" data-status="partial">@lang('Partial')</button>
-                    <button class="dropdown-item usersOrderChangeStatus" type="button" data-toggle="modal"
-                            data-target="#usersOrderChangeStatus" data-status="canceled">@lang('Canceled')</button>
-                    <button class="dropdown-item usersOrderChangeStatus" type="button" data-toggle="modal"
-                            data-target="#usersOrderChangeStatus" data-status="refunded">@lang('Refunded')</button>
-                </div>
-            </div>
             <div class="table-responsive">
                 <table class="categories-show-table table table-hover table-striped table-bordered">
                     <thead class="thead-primary">
@@ -115,9 +90,12 @@
                         <th scope="col">@lang('Order No.')</th>
                         <th scope="col">@lang('User')</th>
                         <th scope="col">@lang('Order Details')</th>
+                        <th scope="col">@lang('Price')</th>
+                        <th scope="col">@lang('profit')</th>
+                        <th scope="col">@lang('Quantity')</th>
                         <th scope="col">@lang('Created')</th>
                         <th scope="col">@lang('Status')</th>
-                        <th scope="col">@lang('Action')</th>
+{{--                        <th scope="col">@lang('Action')</th>--}}
                     </tr>
                     </thead>
 
@@ -141,8 +119,15 @@
                                 <h5>@lang(optional($order->service)->service_title) </h5>
                                 @lang('Link'): @lang($order->link)<br>
                                 @lang('Quantity'): @lang($order->quantity)<br>
-                                @lang('Start counter'):<br>
-                                @lang('Start counter'):
+                            </td>
+                            <td data-label="@lang('Price')">
+                                @lang($order->price) {{config('basic.currency_symbol')}}
+                            </td>
+                            <td data-label="@lang('profit')">
+                                @lang($order->price - $order->server_price) {{config('basic.currency_symbol')}}
+                            </td>
+                            <td data-label="@lang('Quantity')">
+                                @lang($order->quantity)
                             </td>
                             <td data-label="@lang('Created')">{{dateTime($order->created_at , 'd/m/Y')}} </td>
                             <td data-label="@lang('Status')">
@@ -164,36 +149,9 @@
                                     class="badge badge-pill badge-danger">{{'Refunded'}}</span>
                                 @endif
                             </td>
-                            <td data-label="@lang('Action')">
-                                <div class="dropdown show dropup">
-                                    <a class="dropdown-toggle p-3" href="#" id="dropdownMenuLink" data-toggle="dropdown"
-                                       aria-haspopup="true" aria-expanded="false">
-                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item"
-                                           href="{{ route('admin.order.edit',[$order->id]) }}"><i
-                                                class="fa fa-edit text-warning pr-2"
-                                                aria-hidden="true"></i> @lang('Edit')
-                                        </a>
+{{--                            <td data-label="@lang('Action')">--}}
 
-                                        <a href="javascript:void(0)" class="dropdown-item status-change" data-toggle="modal"
-                                           data-target="#statusMoldal"
-                                           data-route="{{ route('admin.order.status.change',['id'=>$order->id] ) }} ">
-                                            <i class="fa fa-check pr-2 text-success"
-                                               aria-hidden="true"></i> @lang('Change Status')
-                                        </a>
-
-                                        <form action="{{ route('admin.order.destroy',[$order->id]) }} " method="POST">
-                                            @method('DELETE')
-                                            @csrf
-                                            <button type="submit" class="submit-a-btn dropdown-item"><span><i
-                                                        class="fas fa-trash-alt pr-2 text-danger"></i> @lang('Delete')</span>
-                                            </button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </td>
+{{--                            </td>--}}
                         </tr>
                     @empty
                         <tr>

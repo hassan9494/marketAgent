@@ -45,7 +45,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     Route::group(['middleware' => ['auth:admin']], function () {
         Route::get('/dashboard', 'Admin\DashboardController@dashboard')->name('dashboard');
-
+        Route::get('/balance_refresh','Admin\DashboardController@refreshServerBalance')->name('balance.refresh');
         Route::get('push-notification-show', 'SiteNotificationController@showByAdmin')->name('push.notification.show');
         Route::get('push.notification.readAll', 'SiteNotificationController@readAllByAdmin')->name('push.notification.readAll');
         Route::get('push-notification-readAt/{id}', 'SiteNotificationController@readAt')->name('push.notification.readAt');
@@ -60,6 +60,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
 
 
+        Route::Post('/pay-a-debt/{id}', 'Admin\UsersController@payDebt')->name('pay-a-debt');
+
         Route::get('/users', 'Admin\UsersController@index')->name('users');
         Route::get('/users/search', 'Admin\UsersController@search')->name('users.search');
         Route::post('/users-active', 'Admin\UsersController@activeMultiple')->name('user-multiple-active');
@@ -70,10 +72,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::post('/user/update/{id}', 'Admin\UsersController@userUpdate')->name('user-update');
         Route::post('/user/password/{id}', 'Admin\UsersController@passwordUpdate')->name('userPasswordUpdate');
         Route::post('/user/balance-update/{id}', 'Admin\UsersController@userBalanceUpdate')->name('user-balance-update');
+        Route::post('/user/sub-balance/{id}', 'Admin\UsersController@userSubBalance')->name('user-sub-balance');
         Route::get('/user/send-email/{id}', 'Admin\UsersController@sendEmail')->name('send-email');
         Route::post('/user/send-email/{id}', 'Admin\UsersController@sendMailUser')->name('user.email-send');
         Route::post('/user/loginAccount/{id}', 'Admin\UsersController@loginAccount')->name('user-loginAccount');
 
+        Route::get('payment/search', 'Admin\PaymentLogController@search')->name('payment.search');
 
         Route::get('/user/getService', 'Admin\UsersController@getService')->name('user.getService');
         Route::post('/user/setServiceRate', 'Admin\UsersController@setServiceRate')->name('user.setServiceRate');
@@ -112,6 +116,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::post('/search-service/status/{id?}', 'ServiceController@statusChange')->name('service.status.change');
         Route::get('/price_refresh','ServiceController@priceRefresh')->name('price_refresh');
 
+        Route::Post('/update_price','ServiceController@updatePrice')->name('update_price');
+
         Route::get('/service-active', 'ServiceController@serviceActive')->name('service-active');
         Route::get('/service-deActive', 'ServiceController@serviceDeActive')->name('service-deactive');
         Route::get('/service/{id}', 'ServiceController@edit')->name('service.edit');
@@ -137,6 +143,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
 
 
+        Route::get('/debts', 'Admin\DebtController@index')->name('debt.show');
 //        Route::post('api-provider/status{id}', 'ApiProviderController@changeStatus')->name('provider.status');
 //        Route::post('api-provider/priceUpdate/{id}', 'ApiProviderController@priceUpdate')->name('provider.priceUpdate');
 //        Route::post('api-provider/balanceUpdate/{id}', 'ApiProviderController@balanceUpdate')->name('provider.balanceUpdate');
@@ -230,11 +237,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 Route::middleware('Maintenance')->group(function () {
     Route::get('/user', 'Auth\LoginController@showLoginForm')->name('login');
 
-    Auth::routes(['verify' => true]);
+    Auth::routes(['verify' => true,'register' => false]);
 
-    Route::group(['middleware' => ['guest']], function () {
-        Route::get('register/{sponsor?}', 'Auth\RegisterController@sponsor')->name('register.sponsor');
-    });
+
+//    Route::group(['middleware' => ['guest']], function () {
+//        Route::get('register/{sponsor?}', 'Auth\RegisterController@sponsor')->name('register.sponsor');
+//    });
 
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], function () {
@@ -300,9 +308,8 @@ Route::middleware('Maintenance')->group(function () {
 
 
     Route::get('/language/{code?}', 'FrontendController@language')->name('language');
+    Route::get('/', 'User\ServiceController@index')->middleware('auth')->name('home');
 
-//    Route::get('/', 'FrontendController@index')->name('home');
-    Route::get('/', 'HomeController@index')->name('home');
 
 
 
