@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Traits\Upload;
 use App\Models\ApiProvider;
 use App\Models\Configure;
+use App\Models\Debt;
 use App\Models\Fund;
 use App\Models\Order;
 use App\Models\Referral;
@@ -49,7 +50,6 @@ class DashboardController extends Controller
             ->selectRaw('SUM(balance) AS totalUserBalance')
             ->selectRaw('COUNT((CASE WHEN created_at >= CURDATE()  THEN id END)) AS todayJoin')
             ->get()->makeHidden(['fullname', 'mobile'])->toArray();
-
         $data['userRecord'] = collect($users)->collapse();
 
 
@@ -147,19 +147,52 @@ class DashboardController extends Controller
         }
 
         $data['latestUser'] = User::latest()->limit(5)->get();
-        $data['adminBalance'] = 0 ;
+        $data['adminBalance'] = Auth::user()->server_balance ;
+        $debts = Debt::selectRaw('SUM(debt) AS debts')->where('is_paid',0)->first()->debts;
+        $credets = Debt::selectRaw('SUM(debt) AS debts')->where('is_paid',1)->first()->debts;
+        $totalDebts = User::selectRaw('SUM(debt) AS debts')->first()->debts;
+        if($totalDebts != $debts - $credets){
+            $data['allDebts'] = $debts - $credets;
+        }else{
+            $data['allDebts'] =  $totalDebts;
+        }
+
+        $priceDifference = Order::selectRaw('SUM(server_price) AS serverPrices')
+            ->selectRaw('SUM(price) AS prices')
+            ->where('status','<>','refunded')->first();
+        $data['priceDifference'] = $priceDifference;
+
+
+        $priceDifferenceMonth = Order::selectRaw('SUM(server_price) AS serverPrices')
+            ->selectRaw('SUM(price) AS prices')
+            ->where('created_at', '>', Carbon::now()->subDays(30))
+            ->where('status','<>','refunded')->first();
+        $data['priceDifferenceMonth'] = $priceDifferenceMonth;
+
+        $priceDifferenceToday = Order::selectRaw('SUM((CASE WHEN created_at >= CURDATE()   THEN server_price END)) AS serverPrices')
+            ->selectRaw('SUM((CASE WHEN created_at >= CURDATE()   THEN price END)) AS prices')
+            ->where('status','<>','refunded')->first();
+        $data['priceDifferenceToday'] = $priceDifferenceToday;
+
+//        dd($priceDifferenceToday);
+
+
+        return view('admin.pages.dashboard', $data, compact('statistics'));
+    }
+
+    public function refreshServerBalance(){
         $server_connection = new SymService();
         $order_param = array();
         $order_param['action'] = 'balance';
         $server_services = $server_connection->serverRequest($order_param);
         if (!isset($server_services['errors'])){
             if (isset($server_services['balance'])){
-                $data['adminBalance'] = $server_services['balance'] ;
+                $admin = Auth::user();
+                $admin->server_balance = $server_services['balance'];
+                $admin->save();
             }
         }
-
-
-        return view('admin.pages.dashboard', $data, compact('statistics'));
+        return back()->with('success',trans('balance updated successfully'));
     }
 
     public function referralCommission()

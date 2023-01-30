@@ -8,6 +8,7 @@ use App\Models\Service;
 use App\Services\SymService;
 use http\Exception\BadHeaderException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Ixudra\Curl\Facades\Curl;
 use Stevebauman\Purify\Facades\Purify;
@@ -54,6 +55,31 @@ class ServiceController extends Controller
         }
 
 
+    }
+
+
+    public function updatePrice(Request $request)
+    {
+
+        $userData = Purify::clean($request->all());
+        if ($userData['Percentage'] == null) {
+            return back()->with('error', 'Percentage Value Empty!');
+        } else {
+            try {
+                $services = Service::all();
+                DB::beginTransaction();
+                foreach ($services as $service){
+                    $service->price += $service->price * $userData['Percentage'] / 100;
+                    $service->save();
+                }
+                DB::commit();
+                return back()->with('success','Prices Updated Successfully');
+            }catch (\Exception $exception){
+                return back()->with('error', 'There Was An Error Try Again Later!');
+            }
+
+
+        }
     }
 
     /*

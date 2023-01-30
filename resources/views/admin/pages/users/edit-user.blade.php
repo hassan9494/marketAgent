@@ -2,6 +2,17 @@
 @section('title')
     @lang($user->username)
 @endsection
+@push('style')
+    <style>
+        .custom-switch-checkbox-inner:after {
+            content: "No"!important;
+        }
+
+        .custom-switch-checkbox-inner:before {
+            content: "Yes"!important;
+        }
+    </style>
+@endpush
 @section('content')
 
 
@@ -61,9 +72,14 @@
                             <button class="btn btn-primary waves-effect waves-light" type="button" data-toggle="modal"
                                     data-target="#balance">
                                 <span class="btn-label"><i class="fas fa-hand-holding-usd"></i></span>
-                                @lang('Add/Subtract Balance')
+                                @lang('Add Balance')
                             </button>
 
+                            <button class="btn btn-primary waves-effect waves-light" type="button" data-toggle="modal"
+                                    data-target="#sub_balance">
+                                <span class="btn-label"><i class="fas fa-hand-holding-usd"></i></span>
+                                @lang('Subtract Balance')
+                            </button>
 
 
                             <a href="{{ route('admin.user-order',$user->id) }}"
@@ -90,7 +106,10 @@
                                 <span class="btn-label"><i class="fas fa-money-bill-alt"></i></span> @lang('Fund Log')
                             </a>
 
-
+                            <button class="btn btn-primary waves-effect waves-light" type="button" data-toggle="modal"
+                                    data-target="#debt">
+                                <span class="btn-label"><i class="fas fa-hand-holding-usd"></i></span> @lang('Add Debt Payment')
+                            </button>
 
                         </div>
 
@@ -297,26 +316,94 @@
                 @csrf
                 <!-- Modal Header -->
                     <div class="modal-header modal-colored-header bg-primary">
-                        <h4 class="modal-title">@lang('Add / Subtract Balance')</h4>
+                        <h4 class="modal-title">@lang('Add Balance')</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <!-- Modal body -->
                     <div class="modal-body">
                         <div class="form-group ">
                             <label>@lang('Amount')</label>
-                            <input class="form-control" type="text" name="balance" id="balance">
+                            <input class="form-control" type="text" name="balance" id="balance" required>
                         </div>
 
                         <div class="form-group">
+                            <label>@lang('Is Debt')</label>
                             <div class="custom-switch-btn w-md-100">
-                                <input type='hidden' value='1' name='add_status'>
-                                <input type="checkbox" name="add_status" class="custom-switch-checkbox" id="add_status"
+                                <input type='hidden' value='1' name='is_debt'>
+                                <input type="checkbox" name="is_debt" class="custom-switch-checkbox" id="is_debt"
                                        value="0">
-                                <label class="custom-switch-checkbox-label" for="add_status">
+                                <label class="custom-switch-checkbox-label" for="is_debt">
                                     <span class="modal_status custom-switch-checkbox-inner"></span>
                                     <span class="custom-switch-checkbox-switch"></span>
                                 </label>
                             </div>
+                        </div>
+
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal"><span>@lang('Close')</span>
+                        </button>
+                        <button type="submit" class=" btn btn-primary balanceSave"><span>@lang('Submit')</span>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="sub_balance">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form method="post" action="{{ route('admin.user-sub-balance',$user->id) }}"
+                      enctype="multipart/form-data">
+                @csrf
+                <!-- Modal Header -->
+                    <div class="modal-header modal-colored-header bg-primary">
+                        <h4 class="modal-title">@lang('Subtract Balance')</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="form-group ">
+                            <label>@lang('Amount')</label>
+                            <input class="form-control" type="text" name="amount" id="amount">
+                        </div>
+
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal"><span>@lang('Close')</span>
+                        </button>
+                        <button type="submit" class=" btn btn-primary balanceSave"><span>@lang('Submit')</span>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- The Modal -->
+    <div class="modal fade" id="debt">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form method="post" action="{{ route('admin.pay-a-debt',$user->id) }}"
+                      enctype="multipart/form-data">
+                @csrf
+                <!-- Modal Header -->
+                    <div class="modal-header modal-colored-header bg-primary">
+                        <h4 class="modal-title">@lang('Add Debt Payment')</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="form-group ">
+                            <label>@lang('Amount')</label>
+                            <input class="form-control" type="text" name="amount" id="amount">
                         </div>
 
                     </div>

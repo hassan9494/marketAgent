@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Traits\Notify;
+use App\Models\Admin;
 use App\Models\Category;
+use App\Models\Debt;
+use App\Models\Fund;
 use App\Models\Language;
 use App\Models\Service;
 use App\Models\Transaction;
@@ -14,6 +17,7 @@ use App\Rules\FileTypeValidate;
 use Illuminate\Http\Request;
 use App\Http\Traits\Upload;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Stevebauman\Purify\Facades\Purify;
@@ -197,65 +201,118 @@ class UsersController extends Controller
             $control = (object)config('basic');
             $user = User::findOrFail($id);
 
+            $users = User::selectRaw('SUM(balance) AS totalUserBalance')
+                ->first();
+            $admin = Admin::first();
 
-            if ($userData['add_status'] == "1") {
-                $user->balance += $userData['balance'];
-                $user->save();
+            if ($userData['balance'] > $admin->server_balance - $users->totalUserBalance){
 
-                $transaction = new Transaction();
-                $transaction->user_id = $user->id;
-                $transaction->trx_type = '+';
-                $transaction->amount = $userData['balance'];
-                $transaction->charge = 0;
-                $transaction->remarks = 'Add Balance';
-                $transaction->trx_id = strRandom();
-                $transaction->save();
+                return back()->with('error', 'You Do Not have enough balance ,You have just '.($admin->server_balance - $users->totalUserBalance) . ' '.$control->currency_symbol);
+            }
+                try {
+
+                    DB::beginTransaction();
+
+                    $fund = new Fund();
+                    $fund->user_id = $user->id;
+                    $fund->gateway_id = 0;
+                    $fund->gateway_currency = 'USD';
+                    $fund->amount = $userData['balance'];
+                    $fund->charge = 0;
+                    $fund->rate = 0;
+                    $fund->final_amount = $userData['balance'];
+                    $fund->btc_amount = 0;
+                    $fund->btc_wallet = "";
+                    $fund->transaction = strRandom();
+                    $fund->try = 0;
+                    $fund->status = 1;
+                    $fund->save();
+
+                    $user->balance += $userData['balance'];
+                    $user->save();
+
+                    $transaction = new Transaction();
+                    $transaction->user_id = $user->id;
+                    $transaction->trx_type = '+';
+                    $transaction->amount = $userData['balance'];
+                    $transaction->charge = 0;
+                    $transaction->remarks = 'Add Balance';
+                    $transaction->trx_id = strRandom();
+                    $transaction->save();
+                    if ($userData['is_debt'] == "1") {
+                            $user->debt += $userData['balance'];
+                            $user->save();
+                            $debt = new Debt();
+                            $debt->user_id = $user->id;
+                            $debt->debt = $userData['balance'];
+                            $debt->status = 1;
+                            $debt->is_paid = 0;
+                            $debt->save();
+                    }
+                    DB::commit();
+
+                    $msg = [
+                        'amount' => getAmount($userData['balance']),
+                        'currency' => $control->currency,
+                        'main_balance' => $user->balance,
+                        'transaction' => $transaction->trx_id
+                    ];
+                    $action = [
+                        "link" => '#',
+                        "icon" => "fa fa-money-bill-alt text-white"
+                    ];
+
+                    $this->userPushNotification($user, 'ADD_BALANCE', $msg, $action);
 
 
-                $msg = [
-                    'amount' => getAmount($userData['balance']),
-                    'currency' => $control->currency,
-                    'main_balance' => $user->balance,
-                    'transaction' => $transaction->trx_id
-                ];
-                $action = [
-                    "link" => '#',
-                    "icon" => "fa fa-money-bill-alt text-white"
-                ];
+                    $this->sendMailSms($user, 'ADD_BALANCE', [
+                        'amount' => getAmount($userData['balance']),
+                        'currency' => $control->currency,
+                        'main_balance' => $user->balance,
+                        'transaction' => $transaction->trx_id
+                    ]);
 
-                $this->userPushNotification($user, 'ADD_BALANCE', $msg, $action);
-
-
-                $this->sendMailSms($user, 'ADD_BALANCE', [
-                    'amount' => getAmount($userData['balance']),
-                    'currency' => $control->currency,
-                    'main_balance' => $user->balance,
-                    'transaction' => $transaction->trx_id
-                ]);
-
-                return back()->with('success', 'Balance Add Successfully.');
-
-            } else {
-
-                if ($userData['balance'] > $user->balance) {
-                    return back()->with('error', 'Insufficient Balance to deducted.');
+                    return back()->with('success', 'Balance Add Successfully.');
+                }catch (\Exception $exception){
+                    DB::rollBack();
+                    return back()->with('error', $exception->getMessage());
                 }
-                $user->balance -= $userData['balance'];
+
+
+        }
+
+
+    }
+
+    public function userSubBalance(Request $request, $id)
+    {
+        $userData = Purify::clean($request->all());
+        if ($userData['amount'] == null) {
+            return back()->with('error',trans('Balance Value Empty!') );
+        } else {
+            $control = (object)config('basic');
+            $user = User::findOrFail($id);
+            if ($userData['amount'] > $user->balance) {
+                return back()->with('error', trans('Insufficient Balance to deducted.'));
+            }
+            try {
+                $user->balance -= $userData['amount'];
+                DB::beginTransaction();
                 $user->save();
 
 
                 $transaction = new Transaction();
                 $transaction->user_id = $user->id;
                 $transaction->trx_type = '-';
-                $transaction->amount = $userData['balance'];
+                $transaction->amount = $userData['amount'];
                 $transaction->charge = 0;
-                $transaction->remarks = 'Add Balance';
+                $transaction->remarks = 'Subtract Balance';
                 $transaction->trx_id = strRandom();
                 $transaction->save();
 
-
+                DB::commit();
                 $msg = [
-                    'amount' => getAmount($userData['balance']),
+                    'amount' => getAmount($userData['amount']),
                     'currency' => $control->currency,
                     'main_balance' => $user->balance,
                     'transaction' => $transaction->trx_id
@@ -269,17 +326,19 @@ class UsersController extends Controller
 
 
                 $this->sendMailSms($user, 'DEDUCTED_BALANCE', [
-                    'amount' => getAmount($userData['balance']),
+                    'amount' => getAmount($userData['amount']),
                     'currency' => $control->currency,
                     'main_balance' => $user->balance,
                     'transaction' => $transaction->trx_id,
                 ]);
 
 
-                return back()->with('success', 'Balance deducted Successfully.');
+                return back()->with('success', trans('Balance deducted Successfully.'));
+            }catch (\Exception $exception){
+                return back()->with('error', trans($exception->getMessage()));
             }
-        }
 
+        }
 
     }
 
@@ -473,5 +532,46 @@ class UsersController extends Controller
     {
         Auth::guard('web')->loginUsingId($id);
         return redirect()->route('user.home');
+    }
+
+    public function payDebt(Request $request, $id)
+    {
+
+        $req = Purify::clean($request->all());
+        $rules = [
+            'amount' => 'required|numeric|min:0',
+        ];
+
+        $message = [
+            'amount.required' => 'Balance is required',
+            'amount.numeric' => 'Balance is Must Be Number',
+        ];
+        $Validator = Validator::make($req, $rules, $message);
+
+        if ($Validator->fails()) {
+            return back()->withErrors($Validator)->withInput();
+        }
+        $user = User::findOrFail($id);
+        $balance = $req['amount'];
+
+
+        if ($balance <= $user->debt) {
+            DB::beginTransaction();
+            $user->debt -= $balance;
+            $user->save();
+            $debt = new Debt();
+            $debt->user_id = $user->id;
+            $debt->debt = $balance;
+            $debt->status = 1;
+            $debt->is_paid = 1;
+            $debt->save();
+            DB::commit();
+        } else {
+
+            return back()->with('error', trans( 'The debt payment must not be greater than the debt.'));
+
+        }
+
+
     }
 }

@@ -51,6 +51,9 @@
                 <li class="list-divider"></li>
 
 
+
+
+
                 {{--Manage API Providers--}}
 {{--                <li class="nav-small-cap"><span class="hide-menu">@lang('Api Providers')</span></li>--}}
 {{--                <li class="sidebar-item">--}}
@@ -221,7 +224,17 @@
                     </a>
                 </li>
                 <li class="list-divider"></li>
+                {{--Manage Category--}}
+                <li class="nav-small-cap"><span class="hide-menu">@lang('User Debts')</span></li>
 
+                <li class="sidebar-item">
+                    <a class="sidebar-link sidebar-link" href="{{route('admin.debt.show')}}"
+                       aria-expanded="false">
+                        <i class="fas fa-clipboard-list m-2"></i>
+                        <span class="hide-menu">@lang('Show User Debts')</span>
+                    </a>
+                </li>
+                <li class="list-divider"></li>
 
 {{--                <li class="nav-small-cap"><span class="hide-menu">@lang('Support Tickets')</span></li>--}}
 
