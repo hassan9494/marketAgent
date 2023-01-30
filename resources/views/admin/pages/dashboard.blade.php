@@ -15,7 +15,7 @@
                                 <div class="d-inline-flex align-items-center">
                                     <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{$adminBalance}} </h2>
                                 </div>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Syriamarket balance Usable balance')</h6>
+                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Syriamarket balance')</h6>
                             </div>
                             <div class="ml-auto mt-md-3 mt-lg-0">
                                 <span class="opacity-7 text-muted"><i class="fa fa-suitcase fa-2x"></i></span>
@@ -37,7 +37,7 @@
                                 <div class="d-inline-flex align-items-center">
                                     <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{$adminBalance - getAmount($userRecord['totalUserBalance'])}} </h2>
                                 </div>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Total Balance')</h6>
+                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Usable balance')</h6>
                             </div>
                             <div class="ml-auto mt-md-3 mt-lg-0">
                                 <span class="opacity-7 text-muted"><i class="fas fa-credit-card m-2"></i></span>
