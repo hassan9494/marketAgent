@@ -147,6 +147,7 @@ class DashboardController extends Controller
         }
 
         $data['latestUser'] = User::latest()->limit(5)->get();
+        $this->refreshServerBalanceAuto();
         $data['adminBalance'] = Auth::user()->server_balance ;
         $debts = Debt::selectRaw('SUM(debt) AS debts')->where('is_paid',0)->first()->debts;
         $credets = Debt::selectRaw('SUM(debt) AS debts')->where('is_paid',1)->first()->debts;
@@ -178,6 +179,19 @@ class DashboardController extends Controller
 
 
         return view('admin.pages.dashboard', $data, compact('statistics'));
+    }
+    public function refreshServerBalanceAuto(){
+        $server_connection = new SymService();
+        $order_param = array();
+        $order_param['action'] = 'balance';
+        $server_services = $server_connection->serverRequest($order_param);
+        if (!isset($server_services['errors'])){
+            if (isset($server_services['balance'])){
+                $admin = Auth::user();
+                $admin->server_balance = $server_services['balance'];
+                $admin->save();
+            }
+        }
     }
 
     public function refreshServerBalance(){
