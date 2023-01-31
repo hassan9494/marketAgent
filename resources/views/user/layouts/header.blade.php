@@ -4,12 +4,12 @@
         <nav class="navbar navbar-expand-xl navbar-light  mx-lg-5" id="boltd">
             <a class="navbar-brand" href="{{route('home')}}">
                 <img src="{{ getFile(config('location.logoIcon.path').'logo.png')}}" alt="homepage"
-                     class="dark-logo" />
+                     class="dark-logo"/>
             </a>
             <div class="navbar-toggler balance">
                 <span class="balance-span">{{Auth()->user()->balance}} {{config('basic.currency_symbol')}}</span>
             </div>
-            <button class="navbar-toggler "  data-toggle="collapse" data-target="#navbarSupportedContent"
+            <button class="navbar-toggler " data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,49 +25,52 @@
                     </li>
 
 
-
                     <li class="nav-item">
                         <a class="nav-link {{ Request::routeIs('user.order.index')  ? 'active' : '' }}"
                            href="{{ route('user.order.index') }}">@lang('Order') </a>
                     </li>
 
-{{--                    <li class="nav-item dropdown {{ Request::routeIs('user.order*') ? 'active' : '' }}">--}}
-{{--                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"--}}
-{{--                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                            @lang('Order')--}}
-{{--                            <i data-feather="chevron-down" class="svg-icon"></i>--}}
-{{--                        </a>--}}
-{{--                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
-{{--                            <a class="dropdown-item {{menuActive('user.order.create')}}" href="{{ route('user.order.create') }}">@lang('New Order')</a>--}}
-{{--                            <a class="dropdown-item {{menuActive('user.order.mass')}}" href="{{ route('user.order.mass') }}">@lang('Mass Order')</a>--}}
-{{--                            <a class="dropdown-item {{menuActive('user.order.index')}}" href="{{ route('user.order.index') }}">@lang('All Order')</a>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
+                    {{--                    <li class="nav-item dropdown {{ Request::routeIs('user.order*') ? 'active' : '' }}">--}}
+                    {{--                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"--}}
+                    {{--                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+                    {{--                            @lang('Order')--}}
+                    {{--                            <i data-feather="chevron-down" class="svg-icon"></i>--}}
+                    {{--                        </a>--}}
+                    {{--                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
+                    {{--                            <a class="dropdown-item {{menuActive('user.order.create')}}" href="{{ route('user.order.create') }}">@lang('New Order')</a>--}}
+                    {{--                            <a class="dropdown-item {{menuActive('user.order.mass')}}" href="{{ route('user.order.mass') }}">@lang('Mass Order')</a>--}}
+                    {{--                            <a class="dropdown-item {{menuActive('user.order.index')}}" href="{{ route('user.order.index') }}">@lang('All Order')</a>--}}
+                    {{--                        </div>--}}
+                    {{--                    </li>--}}
 
                     <li class="nav-item">
                         <a class="nav-link {{ Request::routeIs('user.service*')  ? 'active' : '' }}"
                            href="{{ route('user.service.show') }}">@lang('Services') </a>
                     </li>
-{{--                    <li class="nav-item  ">--}}
-{{--                        <a class="nav-link {{ Request::routeIs('user.addFund*')  ? 'active' : '' }}"--}}
-{{--                           href="{{route('user.addFund')}}">@lang('Add Fund')</a>--}}
-{{--                    </li>--}}
+                    {{--                    <li class="nav-item  ">--}}
+                    {{--                        <a class="nav-link {{ Request::routeIs('user.addFund*')  ? 'active' : '' }}"--}}
+                    {{--                           href="{{route('user.addFund')}}">@lang('Add Fund')</a>--}}
+                    {{--                    </li>--}}
 
 
 
-{{--                    <li class="nav-item ">--}}
-{{--                        <a class="nav-link {{ Request::routeIs('user.fund-history') ? 'active' : '' }}"--}}
-{{--                           href="{{ route('user.fund-history') }}">@lang('Fund History')</a>--}}
-{{--                    </li>--}}
+                    {{--                    <li class="nav-item ">--}}
+                    {{--                        <a class="nav-link {{ Request::routeIs('user.fund-history') ? 'active' : '' }}"--}}
+                    {{--                           href="{{ route('user.fund-history') }}">@lang('Fund History')</a>--}}
+                    {{--                    </li>--}}
 
                     <li class="nav-item ">
                         <a class="nav-link {{ Request::routeIs('user.transaction') ? 'active' : '' }}"
                            href="{{ route('user.transaction') }}">@lang('Transactions') </a>
                     </li>
 
+                    <li class="nav-item ">
+                        <a class="nav-link {{ Request::routeIs('user.debt') ? 'active' : '' }}"
+                           href="{{ route('user.debt') }}">@lang('Debt') </a>
+                    </li>
 
-                    <li class="nav-item dropdown {{
-    (Request::routeIs('user.profile') || Request::routeIs('user.api.docs') || Request::routeIs('user.ticket*') || Request::routeIs('user.referral') || Request::routeIs('user.referral.bonus*')) ? 'active' : '' }}">
+
+                    <li class="nav-item dropdown {{(Request::routeIs('user.profile') || Request::routeIs('user.api.docs') || Request::routeIs('user.ticket*') || Request::routeIs('user.referral') || Request::routeIs('user.referral.bonus*')) ? 'active' : '' }}">
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdownUser"
                            role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -82,30 +85,30 @@
                                 <i data-feather="user" class="svg-icon mr-2 ml-1"></i>
                                 @lang('My Profile')</a>
 
-{{--                            <a class="dropdown-item {{menuActive('user.referral')}}" href="{{ route('user.referral') }}">--}}
-{{--                                <i data-feather="users" class="svg-icon mr-2 ml-1"></i>--}}
-{{--                                @lang('My Referral')</a>--}}
+                            {{--                            <a class="dropdown-item {{menuActive('user.referral')}}" href="{{ route('user.referral') }}">--}}
+                            {{--                                <i data-feather="users" class="svg-icon mr-2 ml-1"></i>--}}
+                            {{--                                @lang('My Referral')</a>--}}
 
-{{--                            <a class="dropdown-item {{menuActive(['user.referral.bonus','user.referral.bonus.search'])}}" href="{{ route('user.referral.bonus') }}">--}}
-{{--                                <i data-feather="list" class="svg-icon mr-2 ml-1"></i>--}}
-{{--                                @lang('Referral Bonus')</a>--}}
-
-
+                            {{--                            <a class="dropdown-item {{menuActive(['user.referral.bonus','user.referral.bonus.search'])}}" href="{{ route('user.referral.bonus') }}">--}}
+                            {{--                                <i data-feather="list" class="svg-icon mr-2 ml-1"></i>--}}
+                            {{--                                @lang('Referral Bonus')</a>--}}
 
 
-{{--                            <a class="dropdown-item {{menuActive('user.api.docs')}}" href="{{ route('user.api.docs') }}">--}}
-{{--                                <i data-feather="key" class="svg-icon mr-2 ml-1"></i> @lang('API Setting')--}}
-{{--                            </a>--}}
 
-{{--                            <a class="dropdown-item {{menuActive('user.ticket.create')}}" href="{{ route('user.ticket.create') }}">--}}
-{{--                                <i class="fab fa-hire-a-helper mr-2 ml-1 icon-color"></i>@lang('Open Ticket')--}}
-{{--                            </a>--}}
-{{--                            <a class="dropdown-item {{menuActive('user.ticket.list')}}" href="{{ route('user.ticket.list') }}">--}}
-{{--                                <i class="fas fa-ticket-alt mr-2 ml-1 icon-color"></i> @lang('Show Ticket')--}}
-{{--                            </a>--}}
-{{--                            <a class="dropdown-item {{menuActive(['user.twostep.security'])}}" href="{{route('user.twostep.security')}}">--}}
-{{--                                <i class="fas fa-lock mr-2 ml-1 icon-color"></i> @lang('2FA Security')--}}
-{{--                            </a>--}}
+
+                            {{--                            <a class="dropdown-item {{menuActive('user.api.docs')}}" href="{{ route('user.api.docs') }}">--}}
+                            {{--                                <i data-feather="key" class="svg-icon mr-2 ml-1"></i> @lang('API Setting')--}}
+                            {{--                            </a>--}}
+
+                            {{--                            <a class="dropdown-item {{menuActive('user.ticket.create')}}" href="{{ route('user.ticket.create') }}">--}}
+                            {{--                                <i class="fab fa-hire-a-helper mr-2 ml-1 icon-color"></i>@lang('Open Ticket')--}}
+                            {{--                            </a>--}}
+                            {{--                            <a class="dropdown-item {{menuActive('user.ticket.list')}}" href="{{ route('user.ticket.list') }}">--}}
+                            {{--                                <i class="fas fa-ticket-alt mr-2 ml-1 icon-color"></i> @lang('Show Ticket')--}}
+                            {{--                            </a>--}}
+                            {{--                            <a class="dropdown-item {{menuActive(['user.twostep.security'])}}" href="{{route('user.twostep.security')}}">--}}
+                            {{--                                <i class="fas fa-lock mr-2 ml-1 icon-color"></i> @lang('2FA Security')--}}
+                            {{--                            </a>--}}
 
 
                             <div class="dropdown-divider"></div>
@@ -154,8 +157,9 @@
                                                 </span>
 
                                     <div class="d-inline-block v-middle pl-2">
-                                        <span class="font-12  d-block text-muted"  v-cloak v-html="item.description.text"></span>
-                                        <span class="font-12  d-block text-muted text-truncate"  v-cloak>@{{ item.formatted_date }}</span>
+                                        <span class="font-12  d-block text-muted" v-cloak
+                                              v-html="item.description.text"></span>
+                                        <span class="font-12  d-block text-muted text-truncate" v-cloak>@{{ item.formatted_date }}</span>
                                     </div>
                                 </a>
 
@@ -163,7 +167,8 @@
                         </li>
 
                         <li>
-                            <a class="nav-link pt-3 text-center text-dark notification-clear-btn" href="javascript:void(0);"
+                            <a class="nav-link pt-3 text-center text-dark notification-clear-btn"
+                               href="javascript:void(0);"
                                v-if="items.length > 0" @click.prevent="readAll">
                                 <strong>@lang('Clear all')</strong>
                             </a>
@@ -196,23 +201,23 @@
                     @endforeach
                 </div>
             </div>
-{{--            <li class="nav-item dropdown d-flex align-items-center">--}}
-{{--                <i class="fa fa-globe m-2"></i>--}}
-{{--                <a class="nav-link dropdown-toggle lin" href="#" id="navbarDropdown" role="button"--}}
-{{--                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"--}}
-{{--                   style="background-color: transparent;">--}}
-{{--                    @lang('Languages')--}}
-{{--                    <i class="fa fa-globe m-2"></i>--}}
-{{--                </a>--}}
-{{--                <div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
+            {{--            <li class="nav-item dropdown d-flex align-items-center">--}}
+            {{--                <i class="fa fa-globe m-2"></i>--}}
+            {{--                <a class="nav-link dropdown-toggle lin" href="#" id="navbarDropdown" role="button"--}}
+            {{--                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"--}}
+            {{--                   style="background-color: transparent;">--}}
+            {{--                    @lang('Languages')--}}
+            {{--                    <i class="fa fa-globe m-2"></i>--}}
+            {{--                </a>--}}
+            {{--                <div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
 
-{{--                    @foreach(getLanguges() as $language)--}}
-{{--                        <a class="dropdown-item" href="{{route('language',[$language->short_name])}}">--}}
-{{--                            {{$language->name}}--}}
-{{--                        </a>--}}
-{{--                    @endforeach--}}
-{{--                </div>--}}
-{{--            </li>--}}
+            {{--                    @foreach(getLanguges() as $language)--}}
+            {{--                        <a class="dropdown-item" href="{{route('language',[$language->short_name])}}">--}}
+            {{--                            {{$language->name}}--}}
+            {{--                        </a>--}}
+            {{--                    @endforeach--}}
+            {{--                </div>--}}
+            {{--            </li>--}}
 
         </nav>
 

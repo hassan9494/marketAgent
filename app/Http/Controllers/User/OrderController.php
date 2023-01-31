@@ -122,12 +122,14 @@ class OrderController extends Controller
     public function store(Request $request)
     {
 //        dd($request);
+        $service = Service::userRate()->findOrFail($request->service);
+//        $min = $service->
         $req = Purify::clean($request->all());
         $rules = [
             'category' => 'required|integer|min:1|not_in:0',
             'service' => 'required|integer|min:1|not_in:0',
 //            'link' => 'required|url',
-//            'quantity' => 'required|integer',
+//            'quantity' => 'required|integer|min:'.$service->min_amount.'|max:'.$service->max_amount,
 //            'check' => 'required',
         ];
         $validator = Validator::make($req, $rules);
@@ -152,6 +154,7 @@ class OrderController extends Controller
         if ($service->min_amount <= $quantity && $service->max_amount >= $quantity) {
             $userRate = ($service->user_rate) ?? $service->price;
             $price = round(($quantity * $userRate), 2);
+            $server_price = round(($quantity * $service->server_price), 2);
 
             $user = Auth::user();
             if ($user->balance < $price) {
@@ -197,7 +200,7 @@ class OrderController extends Controller
                 $order->details = $server_order['details'];
                 $order->codes = $server_order['code'];
                 $order->api_order_id = $server_order['order'];
-                $order->server_price = isset($server_order['price']) ? $server_order['price'] : 0 ;
+                $order->server_price = isset($server_order['price']) ? $server_order['price'] : $server_price ;
 
                 $order->save();
                 $user->balance -= $price;

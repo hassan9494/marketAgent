@@ -6,6 +6,7 @@ use App\Helper\GoogleAuthenticator;
 use App\Http\Traits\Notify;
 use App\Http\Traits\Upload;
 use App\Models\Category;
+use App\Models\Debt;
 use App\Models\Fund;
 use App\Models\Gateway;
 use App\Models\Language;
@@ -61,7 +62,9 @@ class HomeController extends Controller
         $order['pending'] = Order::where('user_id', $this->user->id)->where('status', 'pending')->count();
         $order['completed'] = Order::where('user_id', $this->user->id)->where('status', 'completed')->count();
         $data['transactions'] = Transaction::where('user_id', $this->user->id)->orderBy('id', 'DESC')->limit(5)->get();
-
+        $data['debts'] = Debt::where('user_id',$this->user->id)->where('is_paid',0)->sum('debt');
+        $data['credit'] = Debt::where('user_id',$this->user->id)->where('is_paid',1)->sum('debt');
+        $data['totalDebt'] = $data['debts'] - $data['credit'];
         return view('user.pages.dashboard', $data, compact('order'));
     }
 
@@ -94,6 +97,37 @@ class HomeController extends Controller
         return view('user.pages.transaction.index', compact('transactions'));
 
     }
+
+
+
+    public function debt()
+    {
+        $debts = $this->user->debts()->orderBy('id', 'DESC')->paginate(config('basic.paginate'));
+        return view('user.pages.debt.index', compact('debts'));
+    }
+
+    public function debtSearch(Request $request)
+    {
+        $search = $request->all();
+        $dateSearch = $request->datetrx;
+        $date = preg_match("/^[0-9]{2,4}\-[0-9]{1,2}\-[0-9]{1,2}$/", $dateSearch);
+        $debt = Debt::where('user_id', $this->user->id)->with('user')
+            ->when(@$search['debt_id'], function ($query) use ($search) {
+                return $query->where('id', 'LIKE', "%{$search['debt_id']}%");
+            })
+            ->when(@$search['is_paid'] != -1 , function ($query) use ($search) {
+                return $query->where('is_paid', $search['is_paid']);
+            })
+            ->when($date == 1, function ($query) use ($dateSearch) {
+                return $query->whereDate("created_at", $dateSearch);
+            })
+            ->paginate(config('basic.paginate'));
+        $debts = $debt->appends($search);
+
+        return view('user.pages.debt.index', compact('debts'));
+
+    }
+
 
     public function fundHistory()
     {

@@ -40,8 +40,8 @@ class ServiceController extends Controller
             foreach ($server_services as $server_service) {
                 $service = $services->find($server_service['service']);
                 if ($service) {
-                    if ($service->price != $server_service['rate']) {
-                        $service->price = $server_service['rate'];
+                    if ($service->server_price != $server_service['rate']) {
+                        $service->server_price = $server_service['rate'];
                         array_push($updated_services, $service);
                     }
                 }

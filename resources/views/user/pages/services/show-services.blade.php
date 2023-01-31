@@ -49,7 +49,7 @@
                                         <li data-title=" {{$service->service_title }}"
                                             class="{{$service->is_available  != 1 ? 'disable ' : ''}} col-4 pr-0 pl-0"
                                             id="box{{$key+1}}"
-                                            onclick="{{$service->is_available}} == 1 ? as(this,'{{$key+1}}','9','{{$service->price}}','{{$service->id}}') : ''"
+                                            onclick="{{$service->is_available}} == 1 ? as(this,'{{$key+1}}','9','{{$service->price}}','{{$service->id}}',{{$service->min_amount}},{{$service->max_amount}}) : ''"
                                             style="width:32.3%; flex:1 1 25cm; list-style-type:none ; display:inline-block ; max-width:175px ; opacity: 1 ;">
                                             <div class="product_group">
                                                 <img
@@ -60,9 +60,9 @@
                                                 {{--                                            </div>--}}
                                                 <div class="service-title " style="font-weight:bold ;font-size: 13px;">
                                                     <span
-                                                        class="">{{config('basic.currency_symbol')}} {{$service->price}} </span>
-                                                     | <span
-                                                        class=""> ‎₺ {{$service->price * config('basic.exchange_rate')}}</span>
+                                                        class="">{{config('basic.currency_symbol')}} {{getAmount($service->price,4)}} </span>
+{{--                                                     | <span--}}
+{{--                                                        class=""> ‎₺ {{$service->price * config('basic.exchange_rate')}}</span>--}}
                                                     <br>
                                                     {{--                                                <span class="bx bxs-star text-warning"></span>--}}
                                                     <span style="font-size: 17px">{{$service->service_title}}</span>
@@ -91,6 +91,9 @@
                                 <label for="qty">@lang('Quantity')</label>
                                 <input name="quantity" value="1" class="form-control" id="qty" onchange="cal();"
                                        onkeyup="cal()" type="number" placeholder="أدخل الكمية">
+                                @if($errors->has('quantity'))
+                                    <div class="error text-danger">@lang($errors->first('quantity')) </div>
+                                @endif
                             </div>
                             <div class="col">
                                 <label for="total">@lang('Total')</label>
@@ -220,7 +223,7 @@ $('#productForm').on("submit",function (){
             var price = sessionStorage.getItem('price')
             var qty = document.getElementById('qty').value;
             var totals = document.getElementById('total');
-            totals.value = price * qty;
+            totals.value =(price * qty).toFixed(4);
         }
 
         function as2(app, i, e, price, id) {
@@ -278,7 +281,7 @@ $('#productForm').on("submit",function (){
 
         }
 
-        function as(app, i, e, price, id) {
+        function as(app, i, e, price, id,min,max) {
             //  $("#box"+i).append(`<i class="fa fa-check text-success"></i>`);
             $('#submit-button').removeAttr("disabled");
             document.getElementById('box' + i).style.opacity = "1";
@@ -298,8 +301,13 @@ $('#productForm').on("submit",function (){
                 }
             }
             var qty = document.getElementById('qty').value;
+            var qanty = document.getElementById('qty');
+            qanty.value = min;
+
+            $('#qty').attr("min",min);
+            $('#qty').attr("max",max);
             var total = document.getElementById('total');
-            total.value = price * qty;
+            total.value = (price * qty).toFixed(4);
             sessionStorage.setItem('price', price);
 
             var product = document.getElementById('product_id');

@@ -52,21 +52,11 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <label>@lang('Price') </label>
+                            <label>@lang('Selling Price') </label>
                             <input type="text" class="form-control square" name="price" placeholder="50.25"
                                    value="{{old('price',$service->price)}}">
                             @if($errors->has('price'))
                                 <div class="error text-danger">@lang($errors->first('price')) </div>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>@lang('Maximum Amount')</label>
-                            <input type="number" class="form-control square" name="max_amount"
-                                   value="{{old('max_amount',$service->max_amount)}}">
-                            @if($errors->has('max_amount'))
-                                <div class="error text-danger">@lang($errors->first('max_amount')) </div>
                             @endif
                         </div>
                         <div class="row">
@@ -86,6 +76,22 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>@lang('Maximum Amount')</label>
+                            <input type="number" class="form-control square" name="max_amount"
+                                   value="{{old('max_amount',$service->max_amount)}}">
+                            @if($errors->has('max_amount'))
+                                <div class="error text-danger">@lang($errors->first('max_amount')) </div>
+                            @endif
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('Capital Price') </label>
+                            <input readonly type="text" class="form-control square"
+                                   value="{{old('price',$service->server_price)}}">
+                        </div>
+
                     </div>
                 </div>
                 <div class="divider"></div>

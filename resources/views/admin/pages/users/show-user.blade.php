@@ -94,7 +94,7 @@
                         <th scope="col">@lang('Action')</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody style="{{count($users) < 2 ? 'height:100px;' : ''}}">
                     @forelse($users as $user)
                         <tr>
                             <td class="text-center">
