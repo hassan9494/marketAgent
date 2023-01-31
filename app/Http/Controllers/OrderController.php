@@ -21,7 +21,7 @@ class OrderController extends Controller
     public function index()
     {
         $page_title = "All Orders";
-        $orders = Order::with('service', 'users')->has('service')->paginate(config('basic..paginate'));
+        $orders = Order::with('service', 'users')->orderBy('id','desc')->has('service')->paginate(config('basic..paginate'));
         return view('admin.pages.order.show', compact('orders', 'page_title'));
     }
 

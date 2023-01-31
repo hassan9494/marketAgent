@@ -99,7 +99,8 @@
 
                                     <th scope="col">@lang('ID')</th>
                                     <th scope="col" class="text-left">@lang('Name')</th>
-                                    <th scope="col">@lang('Price')</th>
+                                    <th scope="col">@lang('Selling Price')</th>
+                                    <th scope="col">@lang('Capital Price')</th>
                                     <th scope="col">@lang('Status')</th>
                                     <th scope="col">@lang('Action')</th>
                                 </tr>
@@ -124,10 +125,13 @@
                                                 {{\Str::limit($service->service_title, 30)}}
                                             </a>
                                         </td>
-                                        <td data-label="@lang('Price')">
+                                        <td data-label="@lang('Selling Price')">
                                             {{ $service->price }} {{config('basic.currency_symbol')}}
-                                                </td>
-                                                <td data-label="@lang('Status')">
+                                        </td>
+                                        <td data-label="@lang('Capital Price')">
+                                            {{ $service->server_price }} {{config('basic.currency_symbol')}}
+                                        </td>
+                                        <td data-label="@lang('Status')">
                                             <span
                                                 class="badge badge-pill {{ $service->service_status == 0 ? 'badge-danger' : 'badge-success' }}">{{ $service->service_status == 0 ? 'Inactive' : 'Active' }}</span>
                                         </td>
@@ -334,26 +338,27 @@
             <div class="modal-content">
 
                 <!-- Modal Header -->
-                    <div class="modal-header modal-colored-header bg-primary">
-                        <h4 class="modal-title">@lang('Price Refresh')</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <div class="form-group ">
-                            <p>@lang('Are you really want to refresh the price of All Services From Syrian Market?')</p>
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h4 class="modal-title">@lang('Price Refresh')</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="form-group ">
+                        <p>@lang('Are you really want to refresh the price of All Services From Syrian Market?')</p>
 
-                            <p>@lang('You will lose all previous price updates')</p>
-                        </div>
+                        <p>@lang('You will lose all previous price updates')</p>
+                    </div>
 
-                    </div>
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light" data-dismiss="modal"><span>@lang('Close')</span>
-                        </button>
-                        <a href="{{route('admin.price_refresh')}}" class=" btn btn-primary balanceSave"><span>@lang('Submit')</span>
-                        </a>
-                    </div>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal"><span>@lang('Close')</span>
+                    </button>
+                    <a href="{{route('admin.price_refresh')}}"
+                       class=" btn btn-primary balanceSave"><span>@lang('Submit')</span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

@@ -146,6 +146,24 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
+                            <div>
+                                <h2 class="text-dark mb-1 font-weight-medium"><sup class="set-doller">{{config('basic.currency_symbol')}}</sup>{{getAmount($totalDebt)}}</h2>
+                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Total Debt')</h6>
+                            </div>
+
+                            <div class=" mt-md-3 mt-lg-0">
+                                <span class="opacity-7 text-muted"><i class="fas fa-clipboard-list m-2 fa-2x"></i></span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="row">

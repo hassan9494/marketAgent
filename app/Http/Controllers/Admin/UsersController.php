@@ -32,6 +32,59 @@ class UsersController extends Controller
         return view('admin.pages.users.show-user', compact('users'));
     }
 
+    public function create()
+    {
+        $languages = Language::where('is_active', 1)->orderBy('short_name')->get();
+        return view('admin.pages.users.create-user', compact( 'languages'));
+    }
+
+    public function store(Request $request){
+
+        $userData = Purify::clean($request->except('image', '_token', '_method'));
+
+
+        $rules = [
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'username' => 'required|unique:users,username,',
+            'email' => 'required|email|unique:users,email,',
+            'phone' => 'required',
+            'language_id' => 'required',
+            'password' => 'required|min:5|same:password_confirmation',
+        ];
+        $message = [
+            'firstname.required' => 'First Name is required',
+            'lastname.required' => 'Last Name is required',
+        ];
+
+        $Validator = Validator::make($userData, $rules, $message);
+
+        if ($Validator->fails()) {
+            return back()->withErrors($Validator)->withInput();
+        }
+        $user = new User();
+
+        $user->firstname = $userData['firstname'];
+        $user->lastname = $userData['lastname'];
+        $user->username = $userData['username'];
+        $user->email = $userData['email'];
+        $user->phone = $userData['phone'];
+        $user->address = $userData['address'];
+        $user->password = bcrypt($userData['password']);
+        $user->status = 1;
+        $user->email_verification = 1;
+        $user->sms_verification = 1;
+        $user->two_fa_verify = 1;
+
+        if (isset($userData['language_id'])) {
+            $user->language_id = @$userData['language_id'];
+        }
+
+        $user->save();
+
+        return back()->with('success', 'Created Successfully.');
+    }
+
     public function search(Request $request)
     {
         $search = $request->all();
@@ -46,7 +99,6 @@ class UsersController extends Controller
             ->when(isset($search['phone']), function ($query) use ($search) {
                 return $query->where('phone', 'LIKE', "%{$search['phone']}%");
             })
-
             ->when($date == 1, function ($query) use ($dateSearch) {
                 return $query->whereDate("created_at", $dateSearch);
             })
@@ -162,9 +214,9 @@ class UsersController extends Controller
         $user->phone = $userData['phone'];
         $user->address = $userData['address'];
         $user->status = ($userData['status'] == 'on') ? 0 : 1;
-        $user->email_verification =  1;
-        $user->sms_verification =  1;
-        $user->two_fa_verify =  1;
+        $user->email_verification = 1;
+        $user->sms_verification = 1;
+        $user->two_fa_verify = 1;
 
         if (isset($userData['language_id'])) {
             $user->language_id = @$userData['language_id'];
@@ -205,78 +257,81 @@ class UsersController extends Controller
                 ->first();
             $admin = Admin::first();
 
-            if ($userData['balance'] > $admin->server_balance - $users->totalUserBalance){
+            if ($userData['balance'] > $admin->server_balance - $users->totalUserBalance) {
 
-                return back()->with('error', 'You Do Not have enough balance ,You have just '.($admin->server_balance - $users->totalUserBalance) . ' '.$control->currency_symbol);
+                return back()->with('error', 'You Do Not have enough balance ,You have just ' . ($admin->server_balance - $users->totalUserBalance) . ' ' . $control->currency_symbol);
             }
-                try {
+            try {
 
-                    DB::beginTransaction();
+                DB::beginTransaction();
 
-                    $fund = new Fund();
-                    $fund->user_id = $user->id;
-                    $fund->gateway_id = 0;
-                    $fund->gateway_currency = 'USD';
-                    $fund->amount = $userData['balance'];
-                    $fund->charge = 0;
-                    $fund->rate = 0;
-                    $fund->final_amount = $userData['balance'];
-                    $fund->btc_amount = 0;
-                    $fund->btc_wallet = "";
-                    $fund->transaction = strRandom();
-                    $fund->try = 0;
-                    $fund->status = 1;
-                    $fund->save();
+                $fund = new Fund();
+                $fund->user_id = $user->id;
+                $fund->gateway_id = 0;
+                $fund->gateway_currency = 'USD';
+                $fund->amount = $userData['balance'];
+                $fund->charge = 0;
+                $fund->rate = 0;
+                $fund->final_amount = $userData['balance'];
+                $fund->btc_amount = 0;
+                $fund->btc_wallet = "";
+                $fund->transaction = strRandom();
+                $fund->try = 0;
+                $fund->status = 1;
+                $fund->save();
 
-                    $user->balance += $userData['balance'];
+                $user->balance += $userData['balance'];
+                $user->save();
+
+                $transaction = new Transaction();
+                $transaction->user_id = $user->id;
+                $transaction->trx_type = '+';
+                $transaction->amount = $userData['balance'];
+                $transaction->charge = 0;
+                $transaction->remarks = 'Add Balance';
+                $transaction->trx_id = strRandom();
+
+                if ($userData['is_debt'] == "1") {
+                    $user->debt += $userData['balance'];
                     $user->save();
+                    $debt = new Debt();
+                    $debt->user_id = $user->id;
+                    $debt->debt = $userData['balance'];
+                    $debt->status = 1;
+                    $debt->is_paid = 0;
+                    $debt->save();
+                    $transaction->remarks = 'Add Balance As Debt';
 
-                    $transaction = new Transaction();
-                    $transaction->user_id = $user->id;
-                    $transaction->trx_type = '+';
-                    $transaction->amount = $userData['balance'];
-                    $transaction->charge = 0;
-                    $transaction->remarks = 'Add Balance';
-                    $transaction->trx_id = strRandom();
-                    $transaction->save();
-                    if ($userData['is_debt'] == "1") {
-                            $user->debt += $userData['balance'];
-                            $user->save();
-                            $debt = new Debt();
-                            $debt->user_id = $user->id;
-                            $debt->debt = $userData['balance'];
-                            $debt->status = 1;
-                            $debt->is_paid = 0;
-                            $debt->save();
-                    }
-                    DB::commit();
-
-                    $msg = [
-                        'amount' => getAmount($userData['balance']),
-                        'currency' => $control->currency,
-                        'main_balance' => $user->balance,
-                        'transaction' => $transaction->trx_id
-                    ];
-                    $action = [
-                        "link" => '#',
-                        "icon" => "fa fa-money-bill-alt text-white"
-                    ];
-
-                    $this->userPushNotification($user, 'ADD_BALANCE', $msg, $action);
-
-
-                    $this->sendMailSms($user, 'ADD_BALANCE', [
-                        'amount' => getAmount($userData['balance']),
-                        'currency' => $control->currency,
-                        'main_balance' => $user->balance,
-                        'transaction' => $transaction->trx_id
-                    ]);
-
-                    return back()->with('success', 'Balance Add Successfully.');
-                }catch (\Exception $exception){
-                    DB::rollBack();
-                    return back()->with('error', $exception->getMessage());
                 }
+                $transaction->save();
+                DB::commit();
+
+                $msg = [
+                    'amount' => getAmount($userData['balance']),
+                    'currency' => $control->currency,
+                    'main_balance' => $user->balance,
+                    'transaction' => $transaction->trx_id
+                ];
+                $action = [
+                    "link" => '#',
+                    "icon" => "fa fa-money-bill-alt text-white"
+                ];
+
+                $this->userPushNotification($user, 'ADD_BALANCE', $msg, $action);
+
+
+                $this->sendMailSms($user, 'ADD_BALANCE', [
+                    'amount' => getAmount($userData['balance']),
+                    'currency' => $control->currency,
+                    'main_balance' => $user->balance,
+                    'transaction' => $transaction->trx_id
+                ]);
+
+                return back()->with('success', 'Balance Add Successfully.');
+            } catch (\Exception $exception) {
+                DB::rollBack();
+                return back()->with('error', $exception->getMessage());
+            }
 
 
         }
@@ -288,7 +343,7 @@ class UsersController extends Controller
     {
         $userData = Purify::clean($request->all());
         if ($userData['amount'] == null) {
-            return back()->with('error',trans('Balance Value Empty!') );
+            return back()->with('error', trans('Balance Value Empty!'));
         } else {
             $control = (object)config('basic');
             $user = User::findOrFail($id);
@@ -334,7 +389,7 @@ class UsersController extends Controller
 
 
                 return back()->with('success', trans('Balance deducted Successfully.'));
-            }catch (\Exception $exception){
+            } catch (\Exception $exception) {
                 return back()->with('error', trans($exception->getMessage()));
             }
 
@@ -568,7 +623,7 @@ class UsersController extends Controller
             DB::commit();
         } else {
 
-            return back()->with('error', trans( 'The debt payment must not be greater than the debt.'));
+            return back()->with('error', trans('The debt payment must not be greater than the debt.'));
 
         }
 

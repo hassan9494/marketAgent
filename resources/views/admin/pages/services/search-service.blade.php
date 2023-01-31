@@ -94,7 +94,8 @@
                                     </th>
                                     <th scope="col">@lang('ID')</th>
                                     <th scope="col" class="text-left">@lang('Name')</th>
-                                    <th scope="col">@lang('Price')</th>
+                                    <th scope="col">@lang('Selling Price')</th>
+                                    <th scope="col">@lang('Capital Price')</th>
                                     <th scope="col">@lang('Status')</th>
                                     <th scope="col">@lang('Action')</th>
                                 </tr>
@@ -116,8 +117,11 @@
                                                 {{\Str::limit($row->service_title, 30)}}
                                             </a>
                                         </td>
-                                        <td data-label="@lang('Price')">
+                                        <td data-label="@lang('Selling Price')">
                                             {{ $row->price }} {{config('basic.currency_symbol')}}
+                                        </td>
+                                        <td data-label="@lang('Capital Price')">
+                                            {{ $row->server_price }} {{config('basic.currency_symbol')}}
                                         </td>
                                         <td data-label="@lang('Status')">
                                             <span
@@ -201,36 +205,6 @@
                         <button type="button" class="btn btn-light" data-dismiss="modal"><span> @lang('Cancel')</span>
                         </button>
                         <button type="submit" class="btn btn-primary"><span>  @lang('Change Status')</span></button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="importServiceModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog " role="document">
-            <div class="modal-content">
-                <div class="modal-header modal-colored-header bg-primary">
-                    <h5 class="modal-title">@lang('Confirm Import Services')</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form action="{{ route('admin.api.services') }}" method="post" id="getServicesForm">
-                    @csrf
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <select class="form-control" name="api_provider_id">
-                                <option selected="" disabled>@lang('Select API Provider')</option>
-                                @foreach($apiProviders as $apiProvider)
-                                    <option value="{{ $apiProvider->id }}">@lang($apiProvider->api_name)</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light" data-dismiss="modal"><span> @lang('Cancel')</span>
-                        </button>
-                        <button type="submit" class="btn btn-primary"><span>  @lang('Get Services')</span></button>
                     </div>
                 </form>
             </div>

@@ -19,9 +19,7 @@ Route::get('queue-work', function () {
 Route::get('schedule-run', function () {
     return Illuminate\Support\Facades\Artisan::call('schedule:run');
 });
-Route::get('migrate', function () {
-    return Illuminate\Support\Facades\Artisan::call('migrate');
-});
+
 
 Route::get('/themeMode/{themeType?}', function ($themeType = 'true') {
     session()->put('dark-mode', $themeType);
@@ -44,6 +42,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
 
     Route::group(['middleware' => ['auth:admin']], function () {
+        Route::get('migrate', function () {
+            return Illuminate\Support\Facades\Artisan::call('migrate');
+        });
+
+
         Route::get('/dashboard', 'Admin\DashboardController@dashboard')->name('dashboard');
         Route::get('/balance_refresh','Admin\DashboardController@refreshServerBalance')->name('balance.refresh');
         Route::get('push-notification-show', 'SiteNotificationController@showByAdmin')->name('push.notification.show');
@@ -76,6 +79,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/user/send-email/{id}', 'Admin\UsersController@sendEmail')->name('send-email');
         Route::post('/user/send-email/{id}', 'Admin\UsersController@sendMailUser')->name('user.email-send');
         Route::post('/user/loginAccount/{id}', 'Admin\UsersController@loginAccount')->name('user-loginAccount');
+        Route::get('/user/create', 'Admin\UsersController@create')->name('user.create');
+        Route::post('/user/store', 'Admin\UsersController@store')->name('user.store');
 
         Route::get('payment/search', 'Admin\PaymentLogController@search')->name('payment.search');
 
@@ -269,6 +274,9 @@ Route::middleware('Maintenance')->group(function () {
 
 
 
+            //debt
+            Route::get('/debt', 'HomeController@debt')->name('debt');
+            Route::get('/debt-search', 'HomeController@debtSearch')->name('debt.search');
 
             //order
             Route::resource('order', 'User\OrderController');

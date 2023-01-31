@@ -156,6 +156,12 @@
                         <span class="hide-menu">@lang('All User')</span>
                     </a>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link sidebar-link" href="{{ route('admin.user.create') }}" aria-expanded="false">
+                        <i class="fas fa-user-plus"></i>
+                        <span class="hide-menu">@lang('Add User')</span>
+                    </a>
+                </li>
 
 {{--                <li class="sidebar-item">--}}
 {{--                    <a class="sidebar-link sidebar-link" href="{{ route('admin.users.email-send') }}"--}}
