@@ -6,6 +6,7 @@ use App\Http\Traits\Notify;
 use App\Models\Order;
 use App\Models\Transaction;
 use App\Services\SymService;
+use App\Services\TransactionService;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -59,16 +60,18 @@ class UpdateOrdersStatus extends Command
                     if ($server_order['status'] == 'refunded') {
                         $user = $order->users;
                         $user->balance += $order->price;
-                        $transaction = new Transaction();
-                        $transaction->user_id = $user->id;
-                        $transaction->trx_type = '+';
-                        $transaction->amount = $order->price;
-                        $transaction->remarks = 'Retrieving the balance after change the order status to a refund';
-                        $transaction->trx_id = strRandom();
-                        $transaction->charge = 0;
+
+                        $transaction = new TransactionService();
+                        $trx_id = $transaction->transaction($user->id, '+', $order->price, 'Retrieving the balance after change the order status to a refund');
+//                        $transaction = new Transaction();
+//                        $transaction->user_id = $user->id;
+//                        $transaction->trx_type = '+';
+//                        $transaction->amount = $order->price;
+//                        $transaction->remarks = 'Retrieving the balance after change the order status to a refund';
+//                        $transaction->trx_id = strRandom();
+//                        $transaction->charge = 0;
 
                         $user->save();
-                        $transaction->save();
 
                         $msg = [
                             'order_id' => $order->id,

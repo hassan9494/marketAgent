@@ -1,5 +1,15 @@
 @extends('user.layouts.app')
 @section('title',__('Orders'))
+@push('style')
+    <style>
+        @media (min-width:1199.98px){
+            .details_table {
+                width: 15%;
+            }
+        }
+
+    </style>
+@endpush
 @section('content')
 
 
@@ -161,10 +171,10 @@
                                         </td>
                                         <td>@lang($order->price) @lang(config('basic.currency'))</td>
                                         <td>@lang($order->codes)</td>
-                                        <td width="15%">@lang($order->details)</td>
+                                        <td class="details_table">@lang($order->details)</td>
                                         <td>@lang(dateTime($order->created_at, 'd/m/Y - h:i A' ))</td>
 
-                                        <td>
+                                        <td >
                                             @if($order->status=='Awaiting') <span
                                                 class="badge badge-pill badge-danger">{{trans('Awaiting')}}</span>
                                             @elseif($order->status == 'pending') <span

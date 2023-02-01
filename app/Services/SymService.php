@@ -35,7 +35,6 @@ class SymService
 
         curl_close($ch);
         $result = json_decode($result, True);
-//        dd()
         return $result;
     }
 
