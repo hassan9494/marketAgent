@@ -21,23 +21,17 @@
   <component name="ChangeListManager">
     <list default="true" id="1a7eff23-e428-4214-b8ae-75d970d66454" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/UpdateOrdersStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/UpdateOrdersStatus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ServiceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ao.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ao.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/services/edit-service.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/services/edit-service.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/services/search-service.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/services/search-service.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/sy.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/sy.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/services/show-service.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/services/show-service.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/users/show-user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/users/show-user.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/layouts/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/pages/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/pages/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/pages/order/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/pages/order/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user/pages/services/show-services.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/pages/services/show-services.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +244,7 @@
       <workItem from="1674123201642" duration="2979000" />
       <workItem from="1674370140662" duration="764000" />
       <workItem from="1674370927473" duration="15745000" />
-      <workItem from="1674471790693" duration="91334000" />
+      <workItem from="1674471790693" duration="101251000" />
     </task>
     <servers />
   </component>
@@ -273,22 +267,27 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="493" y="243" key="#Composer/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1673330922666" />
-    <state x="376" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1674558707506">
+    <state x="376" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1675243409467">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="376" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1675243409467" />
     <state x="376" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1674558707506" />
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1675077929684">
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1675244356406">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1675077929684" />
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1675244356406" />
+    <state x="474" y="86" key="NewPhpClassDialog" timestamp="1675243115839">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="474" y="86" key="NewPhpClassDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1675243115839" />
     <state x="517" y="287" key="NewPhpFileDialog" timestamp="1674555623777">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1674555623777" />
-    <state x="389" y="97" width="587" height="534" key="find.popup" timestamp="1675077900679">
+    <state x="389" y="97" width="587" height="534" key="find.popup" timestamp="1675243251826">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="389" y="97" width="587" height="534" key="find.popup/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1675077900679" />
+    <state x="389" y="97" width="587" height="534" key="find.popup/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1675243251826" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1675162525903">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

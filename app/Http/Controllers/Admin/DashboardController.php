@@ -14,6 +14,7 @@ use App\Models\Ticket;
 use App\Models\Transaction;
 use App\Models\User;
 use App\Rules\FileTypeValidate;
+use App\Services\AdminServerBalanceUpdateService;
 use App\Services\SymService;
 use Illuminate\Http\Request;
 
@@ -39,7 +40,6 @@ class DashboardController extends Controller
 
     public function dashboard()
     {
-//        dd('sasfasf');
         $last30 = date('Y-m-d', strtotime('-30 days'));
 
         $data['totalAmountReceived'] = Fund::where('status', 1)->sum('amount');
@@ -52,11 +52,10 @@ class DashboardController extends Controller
             ->get()->makeHidden(['fullname', 'mobile'])->toArray();
         $data['userRecord'] = collect($users)->collapse();
 
-
         $transactions = Transaction::selectRaw('SUM((CASE WHEN remarks LIKE "DEPOSIT Via%" AND created_at >=' . $last30 . ' THEN charge WHEN remarks LIKE "Place order%" AND created_at >=' . $last30 . ' THEN amount END)) AS profit_30_days')
             ->selectRaw('SUM((CASE WHEN remarks LIKE "DEPOSIT Via%" AND created_at >= CURDATE() THEN charge WHEN remarks LIKE "Place order%" AND created_at >= CURDATE() THEN amount END)) AS profit_today')
             ->get()->toArray();
-        $data['transactionProfit'] = collect($transactions)->collapse();;
+        $data['transactionProfit'] = collect($transactions)->collapse();
 
 
         $tickets = Ticket::where('created_at', '>', Carbon::now()->subDays(30))
@@ -163,7 +162,6 @@ class DashboardController extends Controller
             ->where('status','<>','refunded')->first();
         $data['priceDifference'] = $priceDifference;
 
-
         $priceDifferenceMonth = Order::selectRaw('SUM(server_price) AS serverPrices')
             ->selectRaw('SUM(price) AS prices')
             ->where('created_at', '>', Carbon::now()->subDays(30))
@@ -175,37 +173,20 @@ class DashboardController extends Controller
             ->where('status','<>','refunded')->first();
         $data['priceDifferenceToday'] = $priceDifferenceToday;
 
-//        dd($priceDifferenceToday);
 
 
         return view('admin.pages.dashboard', $data, compact('statistics'));
     }
     public function refreshServerBalanceAuto(){
-        $server_connection = new SymService();
-        $order_param = array();
-        $order_param['action'] = 'balance';
-        $server_services = $server_connection->serverRequest($order_param);
-        if (!isset($server_services['errors'])){
-            if (isset($server_services['balance'])){
-                $admin = Auth::user();
-                $admin->server_balance = $server_services['balance'];
-                $admin->save();
-            }
-        }
+        $adminBalanceUpdate = new AdminServerBalanceUpdateService();
+        $admin = Auth::user();
+        $adminBalanceUpdate->updateBalance($admin);
     }
 
     public function refreshServerBalance(){
-        $server_connection = new SymService();
-        $order_param = array();
-        $order_param['action'] = 'balance';
-        $server_services = $server_connection->serverRequest($order_param);
-        if (!isset($server_services['errors'])){
-            if (isset($server_services['balance'])){
-                $admin = Auth::user();
-                $admin->server_balance = $server_services['balance'];
-                $admin->save();
-            }
-        }
+        $adminBalanceUpdate = new AdminServerBalanceUpdateService();
+        $admin = Auth::user();
+        $adminBalanceUpdate->updateBalance($admin);
         return back()->with('success',trans('balance updated successfully'));
     }
 

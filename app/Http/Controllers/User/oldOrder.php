@@ -119,7 +119,6 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request);
         $req = Purify::clean($request->all());
         $rules = [
 //            'category' => 'required|integer|min:1|not_in:0',
@@ -132,7 +131,6 @@ class OrderController extends Controller
 //            $rules['runs'] = 'required|integer|not_in:0';
 //            $rules['interval'] = 'required|integer|not_in:0';
         }
-//        dd($rules);
         $validator = Validator::make($req, $rules);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
@@ -200,7 +198,6 @@ class OrderController extends Controller
                     $order->status_description = "order: {$apidata->order}";
                     $order->api_order_id = $apidata->order;
                 } else {
-//                    dd("error: {$apidata->errors->message}");
                     $order->status_description = "error: {$apidata->errors->message}";
                 }
             }

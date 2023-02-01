@@ -60,7 +60,7 @@
                                                 {{--                                            </div>--}}
                                                 <div class="service-title " style="font-weight:bold ;font-size: 13px;">
                                                     <span
-                                                        class="">{{config('basic.currency_symbol')}} {{getAmount($service->price,4)}} </span>
+                                                        class="">{{config('basic.currency_symbol')}} {{getAmount($service->price,2)}} </span>
 {{--                                                     | <span--}}
 {{--                                                        class=""> ‎₺ {{$service->price * config('basic.exchange_rate')}}</span>--}}
                                                     <br>
@@ -307,7 +307,7 @@ $('#productForm').on("submit",function (){
             $('#qty').attr("min",min);
             $('#qty').attr("max",max);
             var total = document.getElementById('total');
-            total.value = (price * qty).toFixed(4);
+            total.value = (price * min).toFixed(4);
             sessionStorage.setItem('price', price);
 
             var product = document.getElementById('product_id');

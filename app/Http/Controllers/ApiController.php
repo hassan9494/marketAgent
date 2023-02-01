@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\Service;
 use App\Models\Transaction;
 use App\Models\User;
+use App\Services\TransactionService;
 use Illuminate\Http\Request;
 use Ixudra\Curl\Facades\Curl;
 use Illuminate\Support\Facades\Validator;
@@ -136,15 +137,18 @@ class ApiController extends Controller
 
                 $user->balance -= $price;
                 $user->save();
+                $transaction = new TransactionService();
+                $trx_id = $transaction->transaction($user->id, '-', $price, 'Place order');
+                //////////////old transaction
+//                $transaction = new Transaction();
+//                $transaction->user_id = $user->id;
+//                $transaction->trx_type = '-';
+//                $transaction->amount = $price;
+//                $transaction->remarks = 'Place order';
+//                $transaction->trx_id = strRandom();
+//                $transaction->charge = 0;
+//                $transaction->save();
 
-                $transaction = new Transaction();
-                $transaction->user_id = $user->id;
-                $transaction->trx_type = '-';
-                $transaction->amount = $price;
-                $transaction->remarks = 'Place order';
-                $transaction->trx_id = strRandom();
-                $transaction->charge = 0;
-                $transaction->save();
 
                 $this->sendMailSms($user, 'ORDER_CONFIRM', [
                     'order_id' => $order->id,
@@ -154,7 +158,8 @@ class ApiController extends Controller
                     'paid_amount' => $price,
                     'remaining_balance' => $user->balance,
                     'currency' => $basic->currency,
-                    'transaction' => $transaction->trx_id,
+                    'transaction' => $trx_id
+                //                    'transaction' => $transaction->trx_id,
                 ]);
 
                 $result['status'] = 'success';

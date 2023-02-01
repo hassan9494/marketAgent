@@ -14,6 +14,7 @@ use App\Models\Transaction;
 use App\Models\User;
 use App\Models\UserServiceRate;
 use App\Rules\FileTypeValidate;
+use App\Services\TransactionService;
 use Illuminate\Http\Request;
 use App\Http\Traits\Upload;
 use Illuminate\Support\Facades\Auth;
@@ -283,13 +284,13 @@ class UsersController extends Controller
                 $user->balance += $userData['balance'];
                 $user->save();
 
-                $transaction = new Transaction();
-                $transaction->user_id = $user->id;
-                $transaction->trx_type = '+';
-                $transaction->amount = $userData['balance'];
-                $transaction->charge = 0;
-                $transaction->remarks = 'Add Balance';
-                $transaction->trx_id = strRandom();
+//                $transaction = new Transaction();
+//                $transaction->user_id = $user->id;
+//                $transaction->trx_type = '+';
+//                $transaction->amount = $userData['balance'];
+//                $transaction->charge = 0;
+//                $transaction->remarks = 'Add Balance';
+//                $transaction->trx_id = strRandom();
 
                 if ($userData['is_debt'] == "1") {
                     $user->debt += $userData['balance'];
@@ -300,17 +301,23 @@ class UsersController extends Controller
                     $debt->status = 1;
                     $debt->is_paid = 0;
                     $debt->save();
-                    $transaction->remarks = 'Add Balance As Debt';
+
+                    $transaction = new TransactionService();
+                    $trx_id = $transaction->transaction($user->id, '+', $userData['balance'], 'Add Balance As Debt');
+
+                }else{
+
+                    $transaction = new TransactionService();
+                    $trx_id = $transaction->transaction($user->id, '+', $userData['balance'], 'Add Balance');
 
                 }
-                $transaction->save();
                 DB::commit();
 
                 $msg = [
                     'amount' => getAmount($userData['balance']),
                     'currency' => $control->currency,
                     'main_balance' => $user->balance,
-                    'transaction' => $transaction->trx_id
+                    'transaction' => $trx_id
                 ];
                 $action = [
                     "link" => '#',
@@ -324,7 +331,7 @@ class UsersController extends Controller
                     'amount' => getAmount($userData['balance']),
                     'currency' => $control->currency,
                     'main_balance' => $user->balance,
-                    'transaction' => $transaction->trx_id
+                    'transaction' => $trx_id
                 ]);
 
                 return back()->with('success', 'Balance Add Successfully.');
@@ -356,21 +363,23 @@ class UsersController extends Controller
                 $user->save();
 
 
-                $transaction = new Transaction();
-                $transaction->user_id = $user->id;
-                $transaction->trx_type = '-';
-                $transaction->amount = $userData['amount'];
-                $transaction->charge = 0;
-                $transaction->remarks = 'Subtract Balance';
-                $transaction->trx_id = strRandom();
-                $transaction->save();
+                $transaction = new TransactionService();
+                $trx_id = $transaction->transaction($user->id, '-', $userData['amount'], 'Subtract Balance');
+//                $transaction = new Transaction();
+//                $transaction->user_id = $user->id;
+//                $transaction->trx_type = '-';
+//                $transaction->amount = $userData['amount'];
+//                $transaction->charge = 0;
+//                $transaction->remarks = 'Subtract Balance';
+//                $transaction->trx_id = strRandom();
+//                $transaction->save();
 
                 DB::commit();
                 $msg = [
                     'amount' => getAmount($userData['amount']),
                     'currency' => $control->currency,
                     'main_balance' => $user->balance,
-                    'transaction' => $transaction->trx_id
+                    'transaction' => $trx_id
                 ];
                 $action = [
                     "link" => '#',
@@ -384,7 +393,7 @@ class UsersController extends Controller
                     'amount' => getAmount($userData['amount']),
                     'currency' => $control->currency,
                     'main_balance' => $user->balance,
-                    'transaction' => $transaction->trx_id,
+                    'transaction' => $trx_id,
                 ]);
 
 

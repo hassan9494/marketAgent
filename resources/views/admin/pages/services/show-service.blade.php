@@ -2,6 +2,21 @@
 @section('title')
     @lang('Service Show')
 @endsection
+@push('style')
+    <style>
+        .custom-switch-checkbox-inner:after {
+            content: "No"!important;
+        }
+
+        .custom-switch-checkbox-inner:before {
+            content: "Yes"!important;
+        }
+
+        .modal-header .close{
+            margin: -1rem -1rem!important;
+        }
+    </style>
+@endpush
 @section('content')
 
     <div class="page-header card card-primary m-0 m-md-4 my-4 m-md-0 p-5 shadow">
@@ -308,7 +323,7 @@
                     <!-- Modal body -->
                     <div class="modal-body">
                         <div class="form-group ">
-                            <p>Are you really want to chnage the price of All Services?</p>
+                            <p>@lang('Are you really want to chnage the price of All Services?')</p>
                             <label>@lang('Select Percentage Increase')</label>
                             <select class="form-control" name="Percentage">
                                 @for($i = 1 ; $i <= 100 ;$i++)
@@ -317,6 +332,18 @@
                                     </option>
                                 @endfor
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('Do you want to update the current selling price?')</label>
+                            <div class="custom-switch-btn w-md-100">
+                                <input type='hidden' value='1' name='selling'>
+                                <input type="checkbox" name="selling" class="custom-switch-checkbox" id="selling"
+                                       value="0">
+                                <label class="custom-switch-checkbox-label" for="selling">
+                                    <span class="modal_status custom-switch-checkbox-inner"></span>
+                                    <span class="custom-switch-checkbox-switch"></span>
+                                </label>
+                            </div>
                         </div>
 
                     </div>

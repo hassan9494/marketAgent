@@ -4,12 +4,15 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Traits\Notify;
+use App\Models\Admin;
 use App\Models\ApiProvider;
 use App\Models\Category;
 use App\Models\Order;
 use App\Models\Service;
 use App\Models\Transaction;
+use App\Services\AdminServerBalanceUpdateService;
 use App\Services\SymService;
+use App\Services\TransactionService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -20,6 +23,7 @@ use Stevebauman\Purify\Facades\Purify;
 class OrderController extends Controller
 {
     use Notify;
+
     public function __construct()
     {
         $this->middleware(function ($request, $next) {
@@ -35,7 +39,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::with([ 'users','service'])->latest()->where('user_id', Auth::id())->paginate();
+        $orders = Order::with(['users', 'service'])->latest()->where('user_id', Auth::id())->paginate();
         return view('user.pages.order.show', compact('orders'));
     }
 
@@ -91,7 +95,7 @@ class OrderController extends Controller
 
         if (isset($serviceId)) {
             $data['selectService'] = Service::where('service_status', 1)->userRate()->with('category')->find($serviceId);
-        }else{
+        } else {
             $data['selectService'] = null;
         }
 
@@ -100,7 +104,7 @@ class OrderController extends Controller
             ->whereHas('service', function ($query) {
                 $query->where('service_status', 1)->userRate();
             })
-            ->where('status',1)
+            ->where('status', 1)
             ->get();
 
         return view('user.pages.order.add', $data, compact('serviceId'));
@@ -121,9 +125,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request);
         $service = Service::userRate()->findOrFail($request->service);
-//        $min = $service->
         $req = Purify::clean($request->all());
         $rules = [
             'category' => 'required|integer|min:1|not_in:0',
@@ -141,14 +143,12 @@ class OrderController extends Controller
         $service = Service::userRate()->findOrFail($request->service);
 
 
-        $basic = (object) config('basic');
+        $basic = (object)config('basic');
 
         if ($service->category->type == 'CODE' || $service->category->type == '5SIM')
             $quantity = 1;
         else
             $quantity = $request->quantity;
-
-
 
 
         if ($service->min_amount <= $quantity && $service->max_amount >= $quantity) {
@@ -167,24 +167,25 @@ class OrderController extends Controller
             $param['action'] = 'balance';
             $server_connection = new SymService();
             $agent_balance = $server_connection->serverRequest($param);
-            if ($agent_balance){
-                if ( $agent_balance['balance'] < $price * $quantity){
+            if ($agent_balance) {
+                if ($agent_balance['balance'] < $price * $quantity) {
                     return back()->with('error', "There was an error ,Please contact admin to resolve it")->withInput();
                 }
-            }else{
+            } else {
                 return back()->with('error', "There was an error communicating with the server")->withInput();
             }
             /////////////   End Test    /////////////////////
 
-            ///////////  place order from serve ///////////////
+            ///////////  place order from server ///////////////
             $order_param = array();
             $order_param['action'] = 'add';
             $order_param['service'] = $service->id;
             $order_param['link'] = $request['link'] ? $request['link'] : '-1';
             $order_param['quantity'] = $quantity;
             $server_order = $server_connection->serverRequest($order_param);
-
-            if (!isset($server_order['errors'])){
+            /////////////   End Test    /////////////////////
+            /////////////  place order   /////////////////////
+            if (!isset($server_order['errors'])) {
 
                 DB::beginTransaction();
                 $order = new Order();
@@ -200,23 +201,25 @@ class OrderController extends Controller
                 $order->details = $server_order['details'];
                 $order->codes = $server_order['code'];
                 $order->api_order_id = $server_order['order'];
-                $order->server_price = isset($server_order['price']) ? $server_order['price'] : $server_price ;
+                $order->server_price = isset($server_order['price']) ? $server_order['price'] : $server_price;
 
                 $order->save();
                 $user->balance -= $price;
                 $user->save();
 
-                $transaction = new Transaction();
-                $transaction->user_id = $user->id;
-                $transaction->trx_type = '-';
-                $transaction->amount = $price;
-                $transaction->remarks = 'Place order';
-                $transaction->trx_id = strRandom();
-                $transaction->charge = 0;
-                $transaction->save();
+
+                $transaction = new TransactionService();
+                $trx_id = $transaction->transaction($user->id,'-',$price,'Place order');
+//                $transaction = new Transaction();
+//                $transaction->user_id = $user->id;
+//                $transaction->trx_type = '-';
+//                $transaction->amount = $price;
+//                $transaction->remarks = 'Place order';
+//                $transaction->trx_id = strRandom();
+//                $transaction->charge = 0;
+//                $transaction->save();
 
                 DB::commit();
-
                 $msg = [
                     'username' => $user->username,
                     'price' => $price,
@@ -229,7 +232,6 @@ class OrderController extends Controller
                 $this->adminPushNotification('ORDER_CREATE', $msg, $action);
 
 
-
                 $this->sendMailSms($user, 'ORDER_CONFIRM', [
                     'order_id' => $order->id,
                     'order_at' => $order->created_at,
@@ -238,14 +240,16 @@ class OrderController extends Controller
                     'paid_amount' => $price,
                     'remaining_balance' => $user->balance,
                     'currency' => $basic->currency,
-                    'transaction' => $transaction->trx_id,
+                    'transaction' => $trx_id,
                 ]);
-            }else{
+            } else {
                 return back()->with('error', $server_order['errors']['message'])->withInput();
             }
-            /////////////   End Test    /////////////////////
+            /////////////   End place order    /////////////////////
 
-
+            $adminBalanceUpdate = new AdminServerBalanceUpdateService();
+            $admin = Admin::first();
+            $adminBalanceUpdate->updateBalance($admin);
             return redirect()->route('user.order.index')->with('success', 'Your order has been submitted');
 
         } else {
@@ -310,15 +314,15 @@ class OrderController extends Controller
         }
         $orders = explode("\r\n", $req['mass_order']);
 
-        $basic = (object) config('basic');
+        $basic = (object)config('basic');
 
         foreach ($orders as $order) {
             $singleOrder = explode("|", trim($order));
-            if(count($singleOrder) != 3){
+            if (count($singleOrder) != 3) {
                 continue;
             }
 
-            if (fmod($singleOrder[0], 1) != 0 || fmod($singleOrder[1], 1) != 0){
+            if (fmod($singleOrder[0], 1) != 0 || fmod($singleOrder[1], 1) != 0) {
                 continue;
             }
 
@@ -365,14 +369,16 @@ class OrderController extends Controller
                                     }
                                     $orderM->save();
 
-                                    $transaction = new Transaction();
-                                    $transaction->user_id = $user->id;
-                                    $transaction->trx_type = '-';
-                                    $transaction->amount = $orderM->price;
-                                    $transaction->charge = 0;
-                                    $transaction->remarks = 'Place order';
-                                    $transaction->trx_id = strRandom();
-                                    $transaction->save();
+                                    $transaction = new TransactionService();
+                                    $trx_id = $transaction->transaction($user->id, '-', $orderM->price, 'Place order');
+//                                    $transaction = new Transaction();
+//                                    $transaction->user_id = $user->id;
+//                                    $transaction->trx_type = '-';
+//                                    $transaction->amount = $orderM->price;
+//                                    $transaction->charge = 0;
+//                                    $transaction->remarks = 'Place order';
+//                                    $transaction->trx_id = strRandom();
+//                                    $transaction->save();
 
                                     $this->sendMailSms($user, 'ORDER_CONFIRM', [
                                         'order_id' => $orderM->id,
@@ -382,14 +388,13 @@ class OrderController extends Controller
                                         'paid_amount' => $orderM->price,
                                         'remaining_balance' => $user->balance,
                                         'currency' => $basic->currency,
-                                        'transaction' => $transaction->trx_id,
+                                        'transaction' => $trx_id,
                                     ]);
 
 
-
-                                    $msg = ['username' => $user->username,'price' => $orderM->price,'currency' => $basic->currency];
+                                    $msg = ['username' => $user->username, 'price' => $orderM->price, 'currency' => $basic->currency];
                                     $action = [
-                                        "link" => route('admin.order.edit',$orderM->id),
+                                        "link" => route('admin.order.edit', $orderM->id),
                                         "icon" => "fas fa-cart-plus text-white"
                                     ];
                                     $this->adminPushNotification('ORDER_CREATE', $msg, $action);

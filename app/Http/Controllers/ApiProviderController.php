@@ -56,7 +56,6 @@ class ApiProviderController extends Controller
         $ApiProvider->url = $apiProviderData['url'];
         $apiLiveData = Curl::to($apiProviderData['url'])->withData(['key' => $apiProviderData['api_key'], 'action' => 'balance'])->post();
         $currencyData = json_decode($apiLiveData);
-//        dd($currencyData);
         if (isset($currencyData->balance)):
             $ApiProvider->balance = $currencyData->balance;
             $ApiProvider->currency = $currencyData->currency;
@@ -217,7 +216,6 @@ class ApiProviderController extends Controller
 
     public function getApiServices(Request $request)
     {
-//        dd($request);
         $rules = [
             'api_provider_id' => 'required|string|max:150'
         ];
