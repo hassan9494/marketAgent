@@ -34,6 +34,7 @@ class ServiceController extends Controller
         $order_param = array();
         $order_param['action'] = 'services';
         $server_services = $server_connection->serverRequest($order_param);
+//        dd($server_services);
         if (!isset($server_services['errors'])){
             $services = Service::where('service_status', 1)->orderBy('category_id', 'asc')->get();
             $updated_services = [];

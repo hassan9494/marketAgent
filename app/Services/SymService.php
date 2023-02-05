@@ -5,12 +5,13 @@ namespace App\Services;
 class SymService
 {
     private $key ='';
-    private $base_url='https://provider.market-syria.com/api/v1';
+    private $base_url='';
 
     public function serverRequest($params = [])
     {
         $this->key = env("PROVIDER_API_KEY", "test");
-
+        $this->base_url = env("PROVIDER_URL", "https://dev.market-syria.com/api/v1");
+//dd($this->key);
         $ch = curl_init();
         $par = '';
         foreach ($params as $key=>$param){

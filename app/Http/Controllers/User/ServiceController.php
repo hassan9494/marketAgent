@@ -31,7 +31,7 @@ class ServiceController extends Controller
         $services=Service::where('category_id', $id)->where('service_status',1)->get();
 
 
-
+//dd('dfsdfsdf');
         return view('user.pages.services.show-services', compact('services','category'));
     }
 
