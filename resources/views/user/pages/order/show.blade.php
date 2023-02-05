@@ -154,7 +154,7 @@
                                     <th scope="col" class="order-details-column text-left">@lang('Order Details')</th>
                                     <th scope="col">@lang('Price')</th>
                                     <th scope="col">@lang('Codes')</th>
-                                    <th scope="col">@lang('Details')</th>
+{{--                                    <th scope="col">@lang('Details')</th>--}}
                                     <th scope="col">@lang('Order AT')</th>
                                     <th scope="col">@lang('Status')</th>
                                     <th scope="col" >@lang('Note')</th>
@@ -171,7 +171,7 @@
                                         </td>
                                         <td>@lang($order->price) @lang(config('basic.currency'))</td>
                                         <td>@lang($order->codes)</td>
-                                        <td class="details_table">@lang($order->details)</td>
+{{--                                        <td class="details_table">@lang($order->details)</td>--}}
                                         <td>@lang(dateTime($order->created_at, 'd/m/Y - h:i A' ))</td>
 
                                         <td >

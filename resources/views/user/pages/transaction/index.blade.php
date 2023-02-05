@@ -63,7 +63,7 @@
                                 <thead>
                                 <tr>
                                     <th>@lang('SL No.')</th>
-                                    <th >@lang('Transaction ID')</th>
+{{--                                    <th >@lang('Transaction ID')</th>--}}
                                     <th >@lang('Amount')</th>
                                     <th >@lang('Remarks')</th>
                                     <th>@lang('Time')</th>
@@ -73,7 +73,7 @@
                                 @foreach($transactions as $transaction)
                                     <tr>
                                         <td data-label="@lang('SL No.')">{{loopIndex($transactions) + $loop->index}}</td>
-                                        <td data-label="@lang('Transaction ID')">@lang($transaction->trx_id)</td>
+{{--                                        <td data-label="@lang('Transaction ID')">@lang($transaction->trx_id)</td>--}}
                                         <td data-label="@lang('Amount')">
                                         <span
                                             class="font-weight-bold text-{{($transaction->trx_type == "+") ? 'success': 'danger'}}">{{($transaction->trx_type == "+") ? '+': '-'}}{{getAmount($transaction->amount, config('basic.fraction_number')). ' ' . trans(config('basic.currency'))}}</span>
