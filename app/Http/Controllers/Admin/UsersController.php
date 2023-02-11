@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Debt;
 use App\Models\Fund;
 use App\Models\Language;
+use App\Models\Order;
 use App\Models\Service;
 use App\Models\Transaction;
 use App\Models\User;
@@ -257,10 +258,14 @@ class UsersController extends Controller
             $users = User::selectRaw('SUM(balance) AS totalUserBalance')
                 ->first();
             $admin = Admin::first();
+            $priceDifference = Order::selectRaw('SUM(server_price) AS serverPrices')
+                ->selectRaw('SUM(price) AS prices')
+                ->where('status','<>','refunded')->first();
+            $profit = $priceDifference['prices'] - $priceDifference['serverPrices'];
+//dd($profit);
+            if ($userData['balance'] > ($admin->server_balance - $users->totalUserBalance) -$profit) {
 
-            if ($userData['balance'] > $admin->server_balance - $users->totalUserBalance) {
-
-                return back()->with('error', 'You Do Not have enough balance ,You have just ' . ($admin->server_balance - $users->totalUserBalance) . ' ' . $control->currency_symbol);
+                return back()->with('error', 'You Do Not have enough balance ,You have just ' . ($admin->server_balance - $users->totalUserBalance - $profit)  . ' ' . $control->currency_symbol);
             }
             try {
 

@@ -75,7 +75,7 @@ class UpdateOrdersStatus extends Command
 
                         $msg = [
                             'order_id' => $order->id,
-                            'status' => $order
+                            'status' => $order->status
                         ];
                         $action = [
                             "link" => '#',
