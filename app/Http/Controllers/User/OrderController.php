@@ -153,7 +153,7 @@ class OrderController extends Controller
 
         if ($service->min_amount <= $quantity && $service->max_amount >= $quantity) {
             $userRate = ($service->user_rate) ?? $service->price;
-            $price = round(($quantity * $userRate), 2);
+            $price = ($quantity * $userRate);
             $server_price = round(($quantity * $service->server_price), 2);
 
             $user = Auth::user();
@@ -168,7 +168,8 @@ class OrderController extends Controller
             $server_connection = new SymService();
             $agent_balance = $server_connection->serverRequest($param);
             if ($agent_balance) {
-                if ($agent_balance['balance'] < $price * $quantity) {
+                if ($agent_balance['balance'] < $price) {
+
                     return back()->with('error', "There was an error ,Please contact admin to resolve it")->withInput();
                 }
             } else {
@@ -198,8 +199,8 @@ class OrderController extends Controller
                 $order->price = $price;
                 $order->runs = isset($req['runs']) && !empty($req['runs']) ? $req['runs'] : null;
                 $order->interval = isset($req['interval']) && !empty($req['interval']) ? $req['interval'] : null;
-                $order->details = $server_order['details'];
-                $order->codes = $server_order['code'];
+                $order->details = isset($server_order['details']) ? $server_order['details'] : null;
+                $order->codes = isset($server_order['code']) ? $server_order['code'] : null;
                 $order->api_order_id = $server_order['order'];
                 $order->server_price = isset($server_order['price']) ? $server_order['price'] : $server_price;
 
