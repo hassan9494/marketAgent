@@ -18,7 +18,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Ixudra\Curl\Facades\Curl;
+use Illuminate\Support\Facades\Log;
+
 use Stevebauman\Purify\Facades\Purify;
+
 
 class OrderController extends Controller
 {
@@ -168,7 +171,7 @@ class OrderController extends Controller
             $server_connection = new SymService();
             $agent_balance = $server_connection->serverRequest($param);
             if ($agent_balance) {
-                if ($agent_balance['balance'] < $price) {
+                if (10000 < $price) {
 
                     return back()->with('error', "There was an error ,Please contact admin to resolve it")->withInput();
                 }
@@ -187,64 +190,64 @@ class OrderController extends Controller
             /////////////   End Test    /////////////////////
             /////////////  place order   /////////////////////
             if (!isset($server_order['errors'])) {
+                Log::info($server_order);
+                if (isset($server_order['order'])){
+                    DB::beginTransaction();
+                    $order = new Order();
+                    $order->user_id = $user->id;
+                    $order->category_id = $req['category'];
+                    $order->service_id = $req['service'];
+                    $order->link = $req['link'];
+                    $order->quantity = $req['quantity'];
+                    $order->status = isset($server_order['order_status']) ? $server_order['order_status'] : 'processing';
+                    $order->price = $price;
+                    $order->runs = isset($req['runs']) && !empty($req['runs']) ? $req['runs'] : null;
+                    $order->interval = isset($req['interval']) && !empty($req['interval']) ? $req['interval'] : null;
+                    $order->details = isset($server_order['details']) ? $server_order['details'] : null;
+                    $order->codes = isset($server_order['code']) ? $server_order['code'] : null;
+                    $order->api_order_id = isset($server_order['order']) ? $server_order['order'] : null;
+                    $order->server_price = isset($server_order['price']) ? $server_order['price'] : $server_price;
 
-                DB::beginTransaction();
-                $order = new Order();
-                $order->user_id = $user->id;
-                $order->category_id = $req['category'];
-                $order->service_id = $req['service'];
-                $order->link = $req['link'];
-                $order->quantity = $req['quantity'];
-                $order->status = isset($server_order['order_status']) ? $server_order['order_status'] : 'processing';
-                $order->price = $price;
-                $order->runs = isset($req['runs']) && !empty($req['runs']) ? $req['runs'] : null;
-                $order->interval = isset($req['interval']) && !empty($req['interval']) ? $req['interval'] : null;
-                $order->details = isset($server_order['details']) ? $server_order['details'] : null;
-                $order->codes = isset($server_order['code']) ? $server_order['code'] : null;
-                $order->api_order_id = $server_order['order'];
-                $order->server_price = isset($server_order['price']) ? $server_order['price'] : $server_price;
-
-                $order->save();
-                $user->balance -= $price;
-                $user->save();
-
-
-                $transaction = new TransactionService();
-                $trx_id = $transaction->transaction($user->id,'-',$price,'Place order');
-//                $transaction = new Transaction();
-//                $transaction->user_id = $user->id;
-//                $transaction->trx_type = '-';
-//                $transaction->amount = $price;
-//                $transaction->remarks = 'Place order';
-//                $transaction->trx_id = strRandom();
-//                $transaction->charge = 0;
-//                $transaction->save();
-
-                DB::commit();
-                $msg = [
-                    'username' => $user->username,
-                    'price' => $price,
-                    'currency' => $basic->currency
-                ];
-                $action = [
-                    "link" => '#',
-                    "icon" => "fas fa-cart-plus text-white"
-                ];
-                $this->adminPushNotification('ORDER_CREATE', $msg, $action);
+                    $order->save();
+                    $user->balance -= $price;
+                    $user->save();
 
 
-                $this->sendMailSms($user, 'ORDER_CONFIRM', [
-                    'order_id' => $order->id,
-                    'order_at' => $order->created_at,
-                    'service' => optional($order->service)->service_title,
-                    'status' => $order->status,
-                    'paid_amount' => $price,
-                    'remaining_balance' => $user->balance,
-                    'currency' => $basic->currency,
-                    'transaction' => $trx_id,
-                ]);
+                    $transaction = new TransactionService();
+                    $trx_id = $transaction->transaction($user->id,'-',$price,'Place order');
+
+                    DB::commit();
+                    $msg = [
+                        'username' => $user->username,
+                        'price' => $price,
+                        'currency' => $basic->currency
+                    ];
+                    $action = [
+                        "link" => '#',
+                        "icon" => "fas fa-cart-plus text-white"
+                    ];
+                    $this->adminPushNotification('ORDER_CREATE', $msg, $action);
+
+
+                    $this->sendMailSms($user, 'ORDER_CONFIRM', [
+                        'order_id' => $order->id,
+                        'order_at' => $order->created_at,
+                        'service' => optional($order->service)->service_title,
+                        'status' => $order->status,
+                        'paid_amount' => $price,
+                        'remaining_balance' => $user->balance,
+                        'currency' => $basic->currency,
+                        'transaction' => $trx_id,
+                    ]);
+                }else{
+                    Log::info($server_order);
+                    return back()->with('error', "There was an error ,Please contact admin to resolve it")->withInput();
+                }
+
             } else {
-                return back()->with('error', $server_order['errors']['message'])->withInput();
+                $error = isset($server_order['errors']['message']) ? $server_order['errors']['message']:"There was an error ,Please contact admin to resolve it";
+//                dd($error);
+                return back()->with('error', $error)->withInput();
             }
             /////////////   End place order    /////////////////////
 

@@ -21,7 +21,15 @@
   <component name="ChangeListManager">
     <list default="true" id="1a7eff23-e428-4214-b8ae-75d970d66454" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/SymService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/SymService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/basic.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/basic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/sy.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/sy.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/order/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/order/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/users/edit-user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/users/edit-user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/users/show-user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/users/show-user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/pages/transaction/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/pages/transaction/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +246,7 @@
       <workItem from="1675247300631" duration="19428000" />
       <workItem from="1676181394734" duration="383000" />
       <workItem from="1676181808836" duration="57000" />
-      <workItem from="1676204583530" duration="3083000" />
+      <workItem from="1676204583530" duration="13042000" />
     </task>
     <servers />
   </component>
@@ -284,10 +292,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1674555623777" />
-    <state x="389" y="97" width="587" height="534" key="find.popup" timestamp="1676204964902">
+    <state x="389" y="97" width="587" height="556" key="find.popup" timestamp="1676357775509">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="389" y="97" width="587" height="534" key="find.popup/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1676204964902" />
+    <state x="389" y="97" width="587" height="556" key="find.popup/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1676357775509" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1675162525903">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

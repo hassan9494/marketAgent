@@ -58,6 +58,9 @@
                             <li class="list-group-item d-flex justify-content-between align-items-center">@lang('Balance')
                                 <span>{{ getAmount($user->balance, config('basic.fraction_number')) }} @lang(config('basic.currency')) </span>
                             </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">@lang('Debt')
+                                <span>{{ getAmount($user->debt, config('basic.fraction_number')) }} @lang(config('basic.currency')) </span>
+                            </li>
                         </ul>
                     </div>
                 </div>
