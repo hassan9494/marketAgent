@@ -19,6 +19,7 @@
                             <label for="check-all"></label>
                         </th>
                         <th scope="col">@lang('Order No.')</th>
+                        <th scope="col">@lang('Syrian Market Order No.')</th>
                         <th scope="col">@lang('User')</th>
                         <th scope="col">@lang('Order Details')</th>
                         <th scope="col">@lang('Price')</th>
@@ -38,6 +39,7 @@
                                 <label for="chk-{{ $order->id }}"></label>
                             </td>
                             <td data-label="@lang('Order No.')">{{$order->id}}</td>
+                            <td data-label="@lang('Syrian Market Order No.')">{{$order->api_order_id}}</td>
                             <td data-label="@lang('User')">
                                 <a href="{{route('admin.user-edit',$order->user_id)}}" target="_blank">
                                     @lang(optional($order->users)->username)
@@ -53,7 +55,7 @@
                                 @lang($order->price) {{config('basic.currency_symbol')}}
                             </td>
                             <td data-label="@lang('profit')">
-                                @lang($order->price - $order->server_price) {{config('basic.currency_symbol')}}
+                                @lang(getAmount($order->price - $order->server_price,4)) {{config('basic.currency_symbol')}}
                             </td>
                             <td data-label="@lang('Quantity')">
                                 @lang($order->quantity)

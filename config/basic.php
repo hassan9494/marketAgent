@@ -1,6 +1,6 @@
 <?php return array(
     'site_title' => 'WDM',
-    'time_zone' => 'UTC',
+    'time_zone' => 'Europe/Istanbul',
     'base_color' => '#ff8503',
     'currency' => 'USD',
     'currency_symbol' => '$',

@@ -2,6 +2,9 @@
 
 namespace App\Services;
 
+
+use Illuminate\Support\Facades\Log;
+
 class SymService
 {
     private $key ='';
@@ -10,8 +13,7 @@ class SymService
     public function serverRequest($params = [])
     {
         $this->key = env("PROVIDER_API_KEY", "test");
-        $this->base_url = env("PROVIDER_URL", "https://dev.market-syria.com/api/v1");
-//dd($this->key);
+        $this->base_url = env("PROVIDER_URL", "https://market-syria.com/api/v1");
         $ch = curl_init();
         $par = '';
         foreach ($params as $key=>$param){
@@ -30,7 +32,6 @@ class SymService
         $result = curl_exec($ch);
         $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         if ($httpcode!=200) {
-
             return json_decode($result, True);
         }
 

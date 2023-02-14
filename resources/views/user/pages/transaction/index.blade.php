@@ -76,7 +76,7 @@
 {{--                                        <td data-label="@lang('Transaction ID')">@lang($transaction->trx_id)</td>--}}
                                         <td data-label="@lang('Amount')">
                                         <span
-                                            class="font-weight-bold text-{{($transaction->trx_type == "+") ? 'success': 'danger'}}">{{($transaction->trx_type == "+") ? '+': '-'}}{{getAmount($transaction->amount, config('basic.fraction_number')). ' ' . trans(config('basic.currency'))}}</span>
+                                            class="font-weight-bold text-{{($transaction->trx_type == "+") ? 'success': 'danger'}}">{{($transaction->trx_type == "+") ? '+': '-'}}{{getAmount($transaction->amount, 4). ' ' . trans(config('basic.currency'))}}</span>
                                         </td>
                                         <td data-label="@lang('Remarks')"> @lang($transaction->remarks)</td>
                                         <td data-label="@lang('Time')">
