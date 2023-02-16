@@ -75,6 +75,20 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-6">
+                                <div class="form-group ">
+                                    <label class="d-block">@lang('Available')</label>
+                                    <div class="custom-switch-btn">
+                                        <input type='hidden' value='1' name='is_available'>
+                                        <input type="checkbox" name="is_available" class="custom-switch-checkbox"
+                                               id="is_available" value="0" {{ $service->is_available == 0 ? 'checked': '' }} >
+                                        <label class="custom-switch-checkbox-label" for="is_available">
+                                            <span class="custom-switch-checkbox-inner"></span>
+                                            <span class="custom-switch-checkbox-switch"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -93,6 +107,7 @@
                         </div>
 
                     </div>
+
                 </div>
                 <div class="divider"></div>
                 <div class="form-group">

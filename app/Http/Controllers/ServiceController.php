@@ -267,6 +267,7 @@ class ServiceController extends Controller
 //        $service->api_service_id = $req['api_service_id'];
 //        $service->drip_feed = $req['drip_feed'];
         $service->description = $req['description'];
+        $service->is_available = $req['is_available'];
 //        $provider = ApiProvider::find($req['api_provider_id']);
 //        if ($req['manual_api'] == 1):
 //            $apiLiveData = Curl::to($provider['url'])->withData(['key' => $provider['api_key'], 'action' => 'services'])->post();
