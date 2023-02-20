@@ -54,7 +54,7 @@
                             @lang(getAmount($order->price,2)) {{config('basic.currency_symbol')}}
                         </td>
                         <td data-label="@lang('profit')">
-                            @lang(getAmount($order->price - $order->server_price),2) {{config('basic.currency_symbol')}}
+                            @lang(getAmount($order->price - $order->server_price,2)) {{config('basic.currency_symbol')}}
                         </td>
 
                         <td data-label="@lang('Created')">{{dateTime($order->created_at , 'd M Y, h:i A')}} </td>
