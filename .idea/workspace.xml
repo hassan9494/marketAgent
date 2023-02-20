@@ -20,10 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a7eff23-e428-4214-b8ae-75d970d66454" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ServiceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/SymService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/SymService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/services/edit-service.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/services/edit-service.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/services/show-service.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/services/show-service.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,19 +195,19 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../mik/mikroshop-main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/pages" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\projects\SMM\smm\project\resources\lang" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\SMM\smm\project\resources\views\admin\pages" />
       <recent name="D:\projects\SMM\smm\project\resources\lang\en" />
       <recent name="D:\projects\SMM\smm\project\resources\views\admin\pages\users" />
       <recent name="D:\projects\SMM\smm\project\resources\views\user\pages\debt" />
       <recent name="D:\projects\SMM\smm\project\resources\views\admin\pages\debt" />
-      <recent name="D:\projects\SMM\smm\project\assets\themes\user" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\projects\SMM\smm\project\resources\lang" />
     </key>
   </component>
   <component name="RunManager">
@@ -241,7 +238,8 @@
       <workItem from="1676181394734" duration="383000" />
       <workItem from="1676181808836" duration="57000" />
       <workItem from="1676204583530" duration="16387000" />
-      <workItem from="1676528736831" duration="312000" />
+      <workItem from="1676528736831" duration="3287000" />
+      <workItem from="1676802325909" duration="14988000" />
     </task>
     <servers />
   </component>
@@ -265,15 +263,15 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="493" y="243" key="#Composer/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1673330922666" />
-    <state x="376" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1675243409467">
+    <state x="376" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1676882736014">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="376" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1675243409467" />
+    <state x="376" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1676882736014" />
     <state x="376" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1674558707506" />
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1676122493577">
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1676889707139">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1675855354740" />
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1676889707139" />
     <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1676122493577" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1676116039462">
       <screen x="0" y="0" width="1366" height="728" />
@@ -287,10 +285,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1674555623777" />
-    <state x="389" y="97" width="587" height="556" key="find.popup" timestamp="1676357867113">
+    <state x="389" y="97" width="587" height="556" key="find.popup" timestamp="1676891295969">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="389" y="97" width="587" height="556" key="find.popup/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1676357867113" />
+    <state x="389" y="97" width="587" height="556" key="find.popup/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1676891295969" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1675162525903">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

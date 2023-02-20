@@ -34,6 +34,7 @@ class SymService
         if ($httpcode!=200) {
             Log::info($httpcode);
             Log::info(curl_getinfo($ch));
+            Log::info(json_decode($result, True));
             return json_decode($result, True);
         }
 

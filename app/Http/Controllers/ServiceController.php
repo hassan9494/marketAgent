@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Traits\Notify;
 use App\Models\ApiProvider;
 use App\Models\Category;
 use App\Models\Service;
@@ -15,6 +16,8 @@ use Stevebauman\Purify\Facades\Purify;
 
 class ServiceController extends Controller
 {
+    use Notify;
+
     /**
      * Display a listing of the resource.
      *
@@ -34,8 +37,7 @@ class ServiceController extends Controller
         $order_param = array();
         $order_param['action'] = 'services';
         $server_services = $server_connection->serverRequest($order_param);
-//        dd($server_services);
-        if (!isset($server_services['errors'])){
+        if (!isset($server_services['errors'])) {
             $services = Service::where('service_status', 1)->orderBy('category_id', 'asc')->get();
             $updated_services = [];
             foreach ($server_services as $server_service) {
@@ -47,11 +49,11 @@ class ServiceController extends Controller
                     }
                 }
             }
-            foreach ($updated_services as $updated_service){
+            foreach ($updated_services as $updated_service) {
                 $updated_service->save();
             }
-            return back()->with('success','Prices Updated Successfully');
-        }else{
+            return back()->with('success', 'Prices Updated Successfully');
+        } else {
             return back()->with('error', $server_services['errors']['message'])->withInput();
         }
 
@@ -66,30 +68,30 @@ class ServiceController extends Controller
             return back()->with('error', 'Percentage Value Empty!');
         } else {
             try {
-                if ($userData['selling'] == 0){
+                if ($userData['selling'] == 0) {
 
                     $this->priceRefresh();
                     $services = Service::all();
                     DB::beginTransaction();
-                    foreach ($services as $service){
+                    foreach ($services as $service) {
 
-                        $service->price = $service->server_price+ $service->server_price * $userData['Percentage'] / 100;
+                        $service->price = $service->server_price + $service->server_price * $userData['Percentage'] / 100;
 
                         $service->save();
                     }
                     DB::commit();
-                }else{
+                } else {
                     $services = Service::all();
                     DB::beginTransaction();
-                    foreach ($services as $service){
+                    foreach ($services as $service) {
                         $service->price += $service->price * $userData['Percentage'] / 100;
                         $service->save();
                     }
                     DB::commit();
                 }
 
-                return back()->with('success','Prices Updated Successfully');
-            }catch (\Exception $exception){
+                return back()->with('success', 'Prices Updated Successfully');
+            } catch (\Exception $exception) {
                 return back()->with('error', 'There Was An Error Try Again Later!');
             }
 

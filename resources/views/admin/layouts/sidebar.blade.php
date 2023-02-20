@@ -405,12 +405,13 @@
                             class="hide-menu">@lang('Manage Logo & SEO')</span>
                     </a>
                 </li>
-{{--                <li class="sidebar-item">--}}
-{{--                    <a class="sidebar-link sidebar-link" href="{{route('admin.breadcrumb')}}" aria-expanded="false">--}}
-{{--                        <i class="fas fa-file-image"></i><span--}}
-{{--                            class="hide-menu">@lang('Manage Breadcrumb')</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link sidebar-link" href="{{route('admin.profit-settings')}}" aria-expanded="false">
+                        <i class="fas fa-file-image"></i><span
+                            class="hide-menu">@lang('Profit Settings')</span>
+                    </a>
+                </li>
 
 
 {{--                <li class="sidebar-item {{menuActive(['admin.template.show*'],3)}}">--}}
