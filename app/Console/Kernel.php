@@ -32,6 +32,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
          $schedule->command('updateOrders:status')->everyMinute();
+        $schedule->command('services:sync')->everyMinute();
 
         $blockIoGateway = Gateway::where(['code' => 'blockio', 'status' => 1])->count();
         if ($blockIoGateway == 1) {
