@@ -52,10 +52,10 @@
                                 @lang('Quantity'): @lang($order->quantity)<br>
                             </td>
                             <td data-label="@lang('Price')">
-                                @lang($order->price) {{config('basic.currency_symbol')}}
+                                @lang(getAmount($order->price,2)) {{config('basic.currency_symbol')}}
                             </td>
                             <td data-label="@lang('profit')">
-                                @lang(getAmount($order->price - $order->server_price,4)) {{config('basic.currency_symbol')}}
+                                @lang(getAmount($order->price - $order->server_price,2)) {{config('basic.currency_symbol')}}
                             </td>
                             <td data-label="@lang('Quantity')">
                                 @lang($order->quantity)
