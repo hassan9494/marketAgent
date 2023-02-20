@@ -35,7 +35,7 @@
                         <div class="d-flex d-lg-flex d-md-block align-items-center">
                             <div>
                                 <div class="d-inline-flex align-items-center">
-                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{($adminBalance - getAmount($userRecord['totalUserBalance']) - (getAmount($priceDifference['prices'] - $priceDifference['serverPrices'])))}} </h2>
+                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{($adminBalance - getAmount($userRecord['totalUserBalance'],config('basic.fraction_number')) - (getAmount($priceDifference['prices'] - $priceDifference['serverPrices'],config('basic.fraction_number'))))}} </h2>
                                 </div>
                                 <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Usable balance')</h6>
                             </div>
@@ -53,7 +53,7 @@
                         <div class="d-flex d-lg-flex d-md-block align-items-center">
                             <div>
                                 <div class="d-inline-flex align-items-center">
-                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($userRecord['totalUserBalance'])}} </h2>
+                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($userRecord['totalUserBalance'],config('basic.fraction_number'))}} </h2>
                                 </div>
                                 <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Total User Balances')</h6>
                             </div>
@@ -71,7 +71,7 @@
                         <div class="d-flex d-lg-flex d-md-block align-items-center">
                             <div>
                                 <div class="d-inline-flex align-items-center">
-                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($allDebts)}} </h2>
+                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($allDebts,config('basic.fraction_number'))}} </h2>
                                 </div>
                                 <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Total User Debts')</h6>
                             </div>
@@ -90,7 +90,7 @@
                         <div class="d-flex d-lg-flex d-md-block align-items-center">
                             <div>
                                 <div class="d-inline-flex align-items-center">
-                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($priceDifference['prices'] - $priceDifference['serverPrices'])}}</h2>
+                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($priceDifference['prices'] - $priceDifference['serverPrices'],config('basic.fraction_number'))}}</h2>
                                 </div>
                                 <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Total Profit')</h6>
                             </div>
@@ -109,7 +109,7 @@
                         <div class="d-flex d-lg-flex d-md-block align-items-center">
                             <div>
                                 <div class="d-inline-flex align-items-center">
-                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($priceDifferenceMonth['prices'] - $priceDifferenceMonth['serverPrices'])}}</h2>
+                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($priceDifferenceMonth['prices'] - $priceDifferenceMonth['serverPrices'],config('basic.fraction_number'))}}</h2>
                                 </div>
                                 <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Last 30 Days Profit')</h6>
                             </div>
@@ -128,7 +128,7 @@
                         <div class="d-flex d-lg-flex d-md-block align-items-center">
                             <div>
                                 <div class="d-inline-flex align-items-center">
-                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($priceDifferenceToday['prices'] - $priceDifferenceToday['serverPrices'])}}</h2>
+                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($priceDifferenceToday['prices'] - $priceDifferenceToday['serverPrices'],config('basic.fraction_number'))}}</h2>
                                 </div>
                                 <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Today Profit')</h6>
                             </div>
@@ -149,7 +149,7 @@
                         <div class="d-flex d-lg-flex d-md-block align-items-center">
                             <div>
                                 <div class="d-inline-flex align-items-center">
-                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($transactionProfit['profit_30_days'])}} </h2>
+                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($transactionProfit['profit_30_days'],config('basic.fraction_number'))}} </h2>
                                 </div>
                                 <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Last 30 days Sales')</h6>
                             </div>
@@ -168,7 +168,7 @@
                         <div class="d-flex d-lg-flex d-md-block align-items-center">
                             <div>
                                 <div class="d-inline-flex align-items-center">
-                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($transactionProfit['profit_today'])}}</h2>
+                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{getAmount($transactionProfit['profit_today'],config('basic.fraction_number'))}}</h2>
                                 </div>
                                 <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Today Sale')</h6>
                             </div>
@@ -639,7 +639,7 @@
                                         <td data-label="@lang('Username')">@lang($user->username)</td>
                                         <td data-label="@lang('Email')">@lang($user->email)</td>
                                         <td data-label="@lang('Phone')">@lang(($user->phone)? : 'N/A')</td>
-                                        <td data-label="@lang('Balance')">{{getAmount($user->balance)}} {{trans(config('basic.currency'))}}</td>
+                                        <td data-label="@lang('Balance')">{{getAmount($user->balance,config('basic.fraction_number'))}} {{trans(config('basic.currency'))}}</td>
                                         <td data-label="@lang('Status')">
                                             <span
                                                 class="badge badge-pill {{ $user->status == 0 ? 'badge-danger' : 'badge-success' }}">{{ $user->status == 0 ? 'Inactive' : 'Active' }}</span>
