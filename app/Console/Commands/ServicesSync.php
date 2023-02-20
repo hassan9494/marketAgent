@@ -114,11 +114,13 @@ class ServicesSync extends Command
 
                     if (config('basic.automatic_price_refresh') == 1) {
                         $service->price = $server_service['rate'] + $server_service['rate'] * (config('basic.percentage_profit') / 100);
+                        $newService->service_status = 1;
                     }else{
                         $newService->price = $server_service['rate'];
+                        $newService->service_status = 0;
                     }
 
-                    $newService->service_status = 0;
+
                     $newService->is_available = $server_service['is_available'];
                     $newService->server_price = $server_service['rate'];
                     $newService->save();
