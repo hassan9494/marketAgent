@@ -135,7 +135,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/search-service', 'ServiceController@search')->name('service-search');
         Route::post('/search-service/status/{id?}', 'ServiceController@statusChange')->name('service.status.change');
         Route::get('/price_refresh','ServiceController@priceRefresh')->name('price_refresh');
-        Route::get('/service_refresh','ServiceController@serviceStatusRefresh')->name('service_refresh');
 
         Route::Post('/update_price','ServiceController@updatePrice')->name('update_price');
 

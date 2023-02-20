@@ -61,54 +61,6 @@ class ServiceController extends Controller
     }
 
 
-    public function serviceStatusRefresh()
-    {
-        $server_connection = new SymService();
-        $order_param = array();
-        $order_param['action'] = 'services';
-        $server_services = $server_connection->serverRequest($order_param);
-        if (!isset($server_services['errors'])) {
-            $services = Service::orderBy('category_id', 'asc')->get();
-            foreach ($server_services as $server_service) {
-                $service = $services->find($server_service['service']);
-                if ($service) {
-                    if ($service->server_price != $server_service['rate']) {
-                        $service->server_price = $server_service['rate'];
-                        if (config('basic.automatic_price_refresh') == 1) {
-                            $service->price = $server_service['rate'] + $server_service['rate'] * (config('basic.percentage_profit') / 100);
-                            $msg = [
-                                'service_id' => $service->id,
-                            ];
-                            $action = [
-                                "link" => route('admin.service.edit', ['id' => $service->id]),
-                                "icon" => "fas fa-cart-plus text-white"
-                            ];
-                            $this->adminPushNotification('UPDATE_SERVICE_PRICE_AUTO', $msg, $action);
-                            $service->save();
-                        }else{
-                            $service->service_status = 0;
-                            $msg = [
-                                'service_id' => $service->id,
-                            ];
-                            $action = [
-                                "link" => route('admin.service.edit', ['id' => $service->id]),
-                                "icon" => "fas fa-cart-plus text-white"
-                            ];
-                            $this->adminPushNotification('UPDATE_SERVICE_PRICE', $msg, $action);
-                            $service->save();
-                        }
-
-                    }
-                }
-            }
-
-            return back()->with('success', 'Services Updated Successfully');
-        } else {
-            return back()->with('error', $server_services['errors']['message'])->withInput();
-        }
-    }
-
-
     public function updatePrice(Request $request)
     {
         $userData = Purify::clean($request->all());

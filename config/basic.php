@@ -13,7 +13,7 @@
   'sms_notification' => 1,
   'sender_email' => 'support@domain.com',
   'sender_email_name' => 'Bug Finder',
-  'email_configuration' => 
+  'email_configuration' =>
   array (
     'name' => 'smtp',
     'smtp_host' => 'domain.com',
@@ -38,6 +38,6 @@
   'MEASUREMENT_ID' => 'G-TFQZ8YZ468',
   'analytic_status' => 0,
   'exchange_rate' => 10,
-  'percentage_profit' => 13,
+  'percentage_profit' => 10,
   'automatic_price_refresh' => 0,
 );
