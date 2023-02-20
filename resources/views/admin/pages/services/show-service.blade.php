@@ -82,6 +82,13 @@
 
                 </button>
             </div>
+
+            <div class="col-xl-2">
+                <a class="btn btn-success w-100" href="{{route('admin.service_refresh')}}">@lang('Update service')
+                    <span class="btn-label"><i class="fa fa-plus" aria-hidden="true"></i></span>
+
+                </a>
+            </div>
         </div>
     </div>
 

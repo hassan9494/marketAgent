@@ -81,6 +81,36 @@ class ControlController extends Controller
     }
 
 
+    public function editProfitSettings()
+    {
+        $control =   Configure::firstOrNew();
+        return view('admin.pages.profit-settings', compact('control'));
+    }
+
+    public function updateProfitSettings (Request $request)
+    {
+        $configure = Configure::firstOrNew();
+        $reqData = Purify::clean($request->except('_token', '_method'));
+
+
+
+
+
+        config(['basic.percentage_profit' => (int)$reqData['percentage_profit']]);
+        config(['basic.automatic_price_refresh' => (int)$reqData['automatic_price_refresh']]);
+
+        $fp = fopen(base_path() . '/config/basic.php', 'w');
+        fwrite($fp, '<?php return ' . var_export(config('basic'), true) . ';');
+        fclose($fp);
+        $configure->fill($reqData)->save();
+        session()->flash('success', ' Updated Successfully');
+        Artisan::call('optimize:clear');
+        Artisan::call('config:clear');
+        Artisan::call('view:clear');
+        return back();
+    }
+
+
     public function colorSettings()
     {
         $configure = Color::firstOrNew();

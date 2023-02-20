@@ -4,6 +4,7 @@ namespace App\Console;
 
 use App\Console\Commands\BlockIoIPN;
 use App\Console\Commands\Cron;
+use App\Console\Commands\ServicesSync;
 use App\Console\Commands\UpdateOrdersStatus;
 use App\Models\Gateway;
 use Illuminate\Console\Scheduling\Schedule;
@@ -18,6 +19,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         BlockIoIPN::class,
+        UpdateOrdersStatus::class,
+        ServicesSync::class,
     ];
 
     /**

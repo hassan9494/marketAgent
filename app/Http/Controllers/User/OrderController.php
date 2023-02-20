@@ -171,7 +171,7 @@ class OrderController extends Controller
             $server_connection = new SymService();
             $agent_balance = $server_connection->serverRequest($param);
             if ($agent_balance) {
-                if (10000 < $price) {
+                if ($agent_balance < $price) {
 
                     return back()->with('error', "There was an error ,Please contact admin to resolve it")->withInput();
                 }
