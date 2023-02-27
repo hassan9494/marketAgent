@@ -258,14 +258,9 @@ class UsersController extends Controller
             $users = User::selectRaw('SUM(balance) AS totalUserBalance')
                 ->first();
             $admin = Admin::first();
-            $priceDifference = Order::selectRaw('SUM(server_price) AS serverPrices')
-                ->selectRaw('SUM(price) AS prices')
-                ->where('status','<>','refunded')->first();
-            $profit = $priceDifference['prices'] - $priceDifference['serverPrices'];
-//dd($profit);
-            if ($userData['balance'] > ($admin->server_balance - $users->totalUserBalance) -$profit) {
+            if ($userData['balance'] > ($admin->server_balance - $users->totalUserBalance)) {
 
-                return back()->with('error', 'You Do Not have enough balance ,You have just ' . ($admin->server_balance - $users->totalUserBalance - $profit)  . ' ' . $control->currency_symbol);
+                return back()->with('error', 'You Do Not have enough balance ,You have just ' . ($admin->server_balance - $users->totalUserBalance )  . ' ' . $control->currency_symbol);
             }
             try {
 
@@ -288,14 +283,6 @@ class UsersController extends Controller
 
                 $user->balance += $userData['balance'];
                 $user->save();
-
-//                $transaction = new Transaction();
-//                $transaction->user_id = $user->id;
-//                $transaction->trx_type = '+';
-//                $transaction->amount = $userData['balance'];
-//                $transaction->charge = 0;
-//                $transaction->remarks = 'Add Balance';
-//                $transaction->trx_id = strRandom();
 
                 if ($userData['is_debt'] == "1") {
                     $user->debt += $userData['balance'];
@@ -370,14 +357,7 @@ class UsersController extends Controller
 
                 $transaction = new TransactionService();
                 $trx_id = $transaction->transaction($user->id, '-', $userData['amount'], 'Subtract Balance');
-//                $transaction = new Transaction();
-//                $transaction->user_id = $user->id;
-//                $transaction->trx_type = '-';
-//                $transaction->amount = $userData['amount'];
-//                $transaction->charge = 0;
-//                $transaction->remarks = 'Subtract Balance';
-//                $transaction->trx_id = strRandom();
-//                $transaction->save();
+
 
                 DB::commit();
                 $msg = [
