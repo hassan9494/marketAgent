@@ -831,3 +831,10 @@ cardinput{
     padding: 15px;
 }
 
+
+.page-wrapper {
+    background-image: url(../../../../public/assets/images/back.jpg)!important;
+    padding-bottom: 50px;
+    background-size: contain!important;
+}
+
