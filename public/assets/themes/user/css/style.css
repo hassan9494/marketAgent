@@ -834,4 +834,5 @@ cardinput{
 .page-wrapper {
     background-image: url(../../../images/back.jpg)!important;
     padding-bottom: 50px;
+    background-size: contain!important;
 }
