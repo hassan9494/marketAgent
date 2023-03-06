@@ -824,3 +824,9 @@ cardinput{
     border-radius: 10px;
     padding: 15px;
 }
+
+
+.page-wrapper {
+    background-image: url(../../../images/back.jpg)!important;
+    padding-bottom: 50px;
+}
