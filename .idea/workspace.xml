@@ -21,8 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1a7eff23-e428-4214-b8ae-75d970d66454" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/user/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/themes/user/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/themes/user/css/style_ar.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/themes/user/css/style_ar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/dashboard.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +246,8 @@
       <workItem from="1677391983082" duration="3000" />
       <workItem from="1677438679238" duration="896000" />
       <workItem from="1677439841753" duration="2218000" />
-      <workItem from="1678093364895" duration="1337000" />
+      <workItem from="1678093364895" duration="1670000" />
+      <workItem from="1678105029328" duration="945000" />
     </task>
     <servers />
   </component>
@@ -293,10 +293,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1674555623777" />
-    <state x="389" y="97" width="587" height="556" key="find.popup" timestamp="1676891295969">
+    <state x="389" y="97" width="587" height="556" key="find.popup" timestamp="1678105494715">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="389" y="97" width="587" height="556" key="find.popup/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1676891295969" />
+    <state x="389" y="97" width="587" height="556" key="find.popup/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1678105494715" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1675162525903">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
