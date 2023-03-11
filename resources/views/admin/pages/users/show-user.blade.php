@@ -125,8 +125,10 @@
                                             <i class="fa fa-edit text-warning pr-2"
                                                aria-hidden="true"></i> @lang('Edit')
                                         </a>
-
-
+                                        <a class="dropdown-item" href="{{ route('admin.user.customRate',$user->id) }}">
+                                            <i class="fa fa-money-bill-alt text-dark pr-2"
+                                               aria-hidden="true"></i> @lang('Custom Rate')
+                                        </a>
                                         <a class="dropdown-item" href="{{ route('admin.user-order',$user->id) }}">
                                             <i class="fa fa-eye text-info pr-2" aria-hidden="true"></i> @lang('Order')
                                         </a>
@@ -135,6 +137,7 @@
                                             <i class="fa fa-envelope text-success pr-2"
                                                aria-hidden="true"></i> @lang('Send Email')
                                         </a>
+
                                     </div>
                                 </div>
                             </td>

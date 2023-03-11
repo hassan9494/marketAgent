@@ -312,12 +312,12 @@
 {{--                    </a>--}}
 {{--                </li>--}}
 
-{{--                <li class="sidebar-item">--}}
-{{--                    <a class="sidebar-link sidebar-link" href="{{route('admin.notice')}}" aria-expanded="false">--}}
-{{--                       <i class="fas fa-bullhorn"></i>--}}
-{{--                        <span class="hide-menu">@lang('Notice')</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
+                <li class="sidebar-item">
+                    <a class="sidebar-link sidebar-link" href="{{route('admin.notice')}}" aria-expanded="false">
+                       <i class="fas fa-bullhorn"></i>
+                        <span class="hide-menu">@lang('Notice')</span>
+                    </a>
+                </li>
 {{--                <li class="sidebar-item">--}}
 {{--                    <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">--}}
 {{--                        <i class="fas fa-envelope"></i>--}}
@@ -453,8 +453,6 @@
 
 
                 <li class="list-divider"></li>
-
-
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

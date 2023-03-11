@@ -98,7 +98,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::post('/user/store', 'Admin\UsersController@store')->name('user.store');
 
         Route::get('payment/search', 'Admin\PaymentLogController@search')->name('payment.search');
-
+        Route::get('/user/custom-rate/{id}', 'Admin\UsersController@customRate')->name('user.customRate');
         Route::get('/user/getService', 'Admin\UsersController@getService')->name('user.getService');
         Route::post('/user/setServiceRate', 'Admin\UsersController@setServiceRate')->name('user.setServiceRate');
 
@@ -146,6 +146,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/service-multiple-active', 'ServiceController@activeMultiple')->name('service-multiple-active');
         Route::get('/service-multiple-deActive', 'ServiceController@deactiveMultiple')->name('service-multiple-deactive');
         Route::get('/service-multiple-delete', 'ServiceController@deleteMultiple')->name('service-multiple-delete');
+
 
 
 
@@ -198,8 +199,26 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::post('/email-controls', 'EmailTemplateController@emailConfigure')->name('email-controls.update');
         Route::post('/email-controls/action', 'EmailTemplateController@emailControlAction')->name('email-controls.action');
         Route::post('/email/test', 'EmailTemplateController@testEmail')->name('testEmail');
+        /* ===== ADMIN Mange Theme ===== */
+        Route::get('/manage/theme', 'ControlController@manageTheme')->name('manage.theme');
+        Route::put('/activate/theme/{name}', 'ControlController@activateTheme')->name('activate.themeUpdate');
+        /* ===== ADMIN TEMPLATE SETTINGS ===== */
+        Route::get('template/{section}', 'Admin\TemplateController@show')->name('template.show');
+        Route::put('template/{section}/{language}', 'Admin\TemplateController@update')->name('template.update');
 
+        Route::get('contents/{content}', 'Admin\ContentController@index')->name('content.index');
+        Route::get('content-create/{content}', 'Admin\ContentController@create')->name('content.create');
+        Route::put('content-create/{content}/{language?}', 'Admin\ContentController@store')->name('content.store');
+        Route::get('content-show/{content}', 'Admin\ContentController@show')->name('content.show');
+        Route::put('content-update/{content}/{language?}', 'Admin\ContentController@update')->name('content.update');
+        Route::delete('contents/{id}', 'Admin\ContentController@contentDelete')->name('content.delete');
 
+        Route::get('notice', 'Admin\NoticeController@index')->name('notice');
+        Route::get('notice/create', 'Admin\NoticeController@create')->name('notice.create');
+        Route::post('notice/create', 'Admin\NoticeController@store')->name('notice.store');
+        Route::get('notice/edit/{id}', 'Admin\NoticeController@edit')->name('notice.edit');
+        Route::put('notice/edit/{id}', 'Admin\NoticeController@update')->name('notice.update');
+        Route::delete('notice/delete/{id}', 'Admin\NoticeController@delete')->name('notice.delete');
 
         Route::get('/order', 'OrderController@index')->name('order');
         Route::post('/order/status', 'OrderController@statusChange')->name('order.status.change');
@@ -310,6 +329,7 @@ Route::middleware('Maintenance')->group(function () {
             Route::get('/services', 'User\ServiceController@index')->name('service.show');
             Route::get('/service-search', 'User\ServiceController@search')->name('service.search');
             Route::get('/services/{id}', 'User\ServiceController@service')->name('services.show');
+            Route::get('/player/{serviceid}/{playerid}', 'User\ServiceController@getPlayerName')->name('service.player');
 
 
 
@@ -336,7 +356,8 @@ Route::middleware('Maintenance')->group(function () {
 
     Route::get('/language/{code?}', 'FrontendController@language')->name('language');
     Route::get('/', 'User\ServiceController@index')->middleware('auth')->name('home');
-
+    Route::get('/about', 'FrontendController@about')->name('about');
+    Route::get('/{getLink}/{content_id}', 'FrontendController@getLink')->name('getLink');
 
 
 

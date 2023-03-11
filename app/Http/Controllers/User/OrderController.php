@@ -141,10 +141,7 @@ class OrderController extends Controller
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
-
-
         $service = Service::userRate()->findOrFail($request->service);
-
 
         $basic = (object)config('basic');
 
