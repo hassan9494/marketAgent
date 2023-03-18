@@ -1,6 +1,6 @@
-{{--<div class="fixed-icon rfixedicon">--}}
-{{--    <i class="fa fa-envelope-open"></i>--}}
-{{--</div>--}}
+<div class="fixed-icon rfixedicon">
+    <i class="fa fa-envelope-open"></i>
+</div>
 
 <div class="fixedsidebar rfixed">
     <div class="fs-header d-flex align-items-center justify-content-between">

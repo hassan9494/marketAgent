@@ -48,6 +48,9 @@ class AppServiceProvider extends ServiceProvider
             view()->composer('user.layouts.side-notify', function ($view) {
                 $view->with('notices', Notice::where('status', 1)->get());
             });
+            view()->composer('user.layouts.breaking-news', function ($view) {
+                $view->with('notices', Notice::where('status', 1)->get());
+            });
 
             view()->composer($data['theme'] . 'partials.footer', function ($view) {
                 $view->with('languages', Language::orderBy('name')->where('is_active', 1)->get());

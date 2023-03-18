@@ -17,7 +17,7 @@ class ServiceController extends Controller
             $query->userRate()->where('service_status', 1);
         }])
             ->where('status', 1)
-            ->where('type','<>','5SIM')
+            ->where('type', '<>', '5SIM')
             ->get();
         return view('user.pages.services.categories', compact('categories'));
     }
@@ -25,14 +25,11 @@ class ServiceController extends Controller
     public function service($id)
     {
 
-        $category=Category::find($id);
+        $category = Category::find($id);
         if ($category->type == '5SIM')
             return redirect()->route('user.service.show');
-        $services=Service::where('category_id', $id)->where('service_status',1)->get();
-
-
-//dd('dfsdfsdf');
-        return view('user.pages.services.show-services', compact('services','category'));
+        $services = Service::where('category_id', $id)->userRate()->where('service_status', 1)->get();
+        return view('user.pages.services.show-services', compact('services', 'category'));
     }
 
 
@@ -52,5 +49,11 @@ class ServiceController extends Controller
             ->get()
             ->groupBy('category.category_title');
         return view('user.pages.services.search-service', compact('services', 'categories'));
+    }
+
+    public function getPlayerName($player, $category)
+    {
+        $player = (new \App\Services\SymService)->getPlayerName($category, $player);
+        return $player;
     }
 }

@@ -10,7 +10,7 @@
     @include('user.layouts.header')
 
 {{--    @include('user.layouts.side-notify')--}}
-
+        @include('user.layouts.breaking-news')
     <div class="page-wrapper d-block">
         @yield('content')
     </div>

@@ -380,4 +380,6 @@ class ServiceController extends Controller
         $cat->save();
         return back()->with('success', 'Successfully Updated');
     }
+
+
 }

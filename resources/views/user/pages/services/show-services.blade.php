@@ -5,6 +5,7 @@
 
 @section('styles')
     <style>
+
     </style>
 @endsection
 
@@ -45,11 +46,12 @@
                                 <ul class="products_list" id="myUL">
                                     @foreach($services as $key=>$service)
                                         <input type="hidden" value="pubg" id="operator">
-                                        <input class="inp-hid-catg" type="text" name="category" value="{{$service->category->id}}" hidden>
+                                        <input class="inp-hid-catg" type="text" name="category"
+                                               value="{{$service->category->id}}" hidden>
                                         <li data-title=" {{$service->service_title }}"
                                             class="{{$service->is_available  != 1 ? 'disable ' : ''}} col-4 pr-0 pl-0"
                                             id="box{{$key+1}}"
-                                            onclick="{{$service->is_available}} == 1 ? as(this,'{{$key+1}}','9','{{$service->price}}','{{$service->id}}',{{$service->min_amount}},{{$service->max_amount}}) : ''"
+                                            onclick="{{$service->is_available}} == 1 ? as(this,'{{$key+1}}','9','{{$service->user_rate ?? $service->price}}','{{$service->id}}',{{$service->min_amount}},{{$service->max_amount}}) : ''"
                                             style="width:32.3%; flex:1 1 25cm; list-style-type:none ; display:inline-block ; max-width:175px ; opacity: 1 ;">
                                             <div class="product_group">
                                                 <img
@@ -60,9 +62,9 @@
                                                 {{--                                            </div>--}}
                                                 <div class="service-title " style="font-weight:bold ;font-size: 13px;">
                                                     <span
-                                                        class="">{{config('basic.currency_symbol')}} {{getAmount($service->price,2)}} </span>
-{{--                                                     | <span--}}
-{{--                                                        class=""> ‎₺ {{$service->price * config('basic.exchange_rate')}}</span>--}}
+                                                        class="">{{config('basic.currency_symbol')}} {{getAmount(isset($service->user_rate) ? $service->user_rate : $service->price ,2)}} </span>
+                                                    {{--                                                     | <span--}}
+                                                    {{--                                                        class=""> ‎₺ {{$service->price * config('basic.exchange_rate')}}</span>--}}
                                                     <br>
                                                     {{--                                                <span class="bx bxs-star text-warning"></span>--}}
                                                     <span style="font-size: 17px">{{$service->service_title}}</span>
@@ -86,6 +88,11 @@
                         </div>
                     </div>
                     <div class="service-form">
+                        <div>
+                            <div class="alert alert-info  pull-right" style="background:#089dda ;color:#fff; ">
+                                <div class="pull-right w-100">{{$category->category_description}}</div>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col">
                                 <label for="qty">@lang('Quantity')</label>
@@ -107,16 +114,15 @@
                                     <input oninvalid="setCustomValidity('أدخل رقم اللاعب من فضلك ')"
                                            onchange="try{setCustomValidity('')}catch(e){}"
                                            name="link" value="" class="form-control" id="player_number" required>
-
                                 </div>
-                                {{--                            <div class="col-2 d-flex align-items-center refresh mb-2">--}}
-                                {{--                                <!-- <i class="fas fa-sync-alt get-name"></i> -->--}}
-                                {{--                                <i class="fas fa-crosshairs get-name "></i>--}}
-                                {{--                            </div>--}}
-                                {{--                            <div class="col-6">--}}
-                                {{--                                <label>@lang('Player name') </label>--}}
-                                {{--                                <input name="player_name" value="" class="form-control" id="player_name">--}}
-                                {{--                            </div>--}}
+                                <div class=" d-flex refresh mb-3">
+                                    <!-- <i class="fas fa-sync-alt get-name"></i> -->
+                                    <i class="fas fa-sync get-name "></i>
+                                </div>
+                                <div class="col">
+                                    <label>@lang('Player name') </label>
+                                    <input name="player_name" value="" class="form-control" id="player_name">
+                                </div>
                             </div>
                         @elseif($category->type == "BALANCE" || $category->type == "OTHER")
                             <div class="row mt-3">
@@ -155,42 +161,41 @@
 @endsection
 @push('js')
     <script>
-$('#productForm').on("submit",function (){
+        $('#productForm').on("submit", function () {
 
-    $('#submit-button').attr("disabled","");
-})
-        $(".get-name").on("click", function() {
+            $('#submit-button').attr("disabled", "");
+        })
+        $(".get-name").on("click", function () {
             var category_id = $('.inp-hid-catg').val();
             var player_number = $('#player_number').val();
-            if(player_number == ""){
+            if (player_number == "") {
                 $('.vald-player-number').addClass('active');
-            }
-            else{
+            } else {
                 $('#player_name').val('please wait');
                 $(".get-name").addClass('fa-spinner active');
                 $.ajax({
-                    url:'/user/player/'+category_id+'/'+player_number,
-                    type:"GET",
-                    success:function(response){
+                    url: '/user/player/' + category_id + '/' + player_number,
+                    type: "GET",
+                    success: function (response) {
                         console.log(response);
-                        $('#player_name').val(response.username);
+                        $('#player_name').val(response);
                         $(".get-name").removeClass('fa-spinner active');
                     },
-                    error : function (xhr, b, c) {
+                    error: function (xhr, b, c) {
                         console.log("xhr=" + xhr + " b=" + b + " c=" + c);
                     }
                 })
             }
         });
         // fun 2
-        $("#player_number").on("keyup", function() {
-            if(player_number != ""){
+        $("#player_number").on("keyup", function () {
+            if (player_number != "") {
                 $('.vald-player-number').removeClass('active');
-            }
-            else{
+            } else {
                 $('.vald-player-number').addClass('active');
             }
         });
+
         function clearSearch() {
             document.getElementById('myInput').value = '';
             myFunction()
@@ -223,7 +228,7 @@ $('#productForm').on("submit",function (){
             var price = sessionStorage.getItem('price')
             var qty = document.getElementById('qty').value;
             var totals = document.getElementById('total');
-            totals.value =(price * qty).toFixed(4);
+            totals.value = (price * qty).toFixed(4);
         }
 
         function as2(app, i, e, price, id) {
@@ -281,7 +286,7 @@ $('#productForm').on("submit",function (){
 
         }
 
-        function as(app, i, e, price, id,min,max) {
+        function as(app, i, e, price, id, min, max) {
             //  $("#box"+i).append(`<i class="fa fa-check text-success"></i>`);
             $('#submit-button').removeAttr("disabled");
             document.getElementById('box' + i).style.opacity = "1";
@@ -304,8 +309,8 @@ $('#productForm').on("submit",function (){
             var qanty = document.getElementById('qty');
             qanty.value = min;
 
-            $('#qty').attr("min",min);
-            $('#qty').attr("max",max);
+            $('#qty').attr("min", min);
+            $('#qty').attr("max", max);
             var total = document.getElementById('total');
             total.value = (price * min).toFixed(4);
             sessionStorage.setItem('price', price);
@@ -320,7 +325,6 @@ $('#productForm').on("submit",function (){
 
             // desc1.innerHTML =
         }
-
 
 
     </script>
