@@ -46,7 +46,7 @@ class SymService
     public function getPlayerName($player,$category)
     {
         $this->key = env("PROVIDER_API_KEY", "test");
-        $this->base_url = env("https://dev.market-syria.com/api/v1", "https://dev.market-syria.com/api/v1");
+        $this->base_url = env("PROVIDER_URL", "https://dev.market-syria.com/api/v1");
         $ch = curl_init();
         $url = $this->base_url .'?key='. $this->key.'&action=player&category='.$category.'&player='.$player;
         curl_setopt($ch, CURLOPT_URL, $url);

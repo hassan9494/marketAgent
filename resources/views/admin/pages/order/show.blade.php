@@ -27,6 +27,7 @@
                         <th scope="col">@lang('Quantity')</th>
                         <th scope="col">@lang('Created')</th>
                         <th scope="col">@lang('Status')</th>
+                        <th scope="col" style="width: 5%">@lang('Action')</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -79,6 +80,24 @@
                                 @elseif($order->status == 'refunded') <span
                                     class="badge badge-pill badge-danger">{{'Refunded'}}</span>
                                 @endif
+                            </td>
+                            <td data-label="@lang('Action')">
+                                <div class="dropdown show">
+                                    <a class="dropdown-toggle p-3" href="#" id="dropdownMenuLink" data-toggle="dropdown"
+                                       aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+                                        <a href="javascript:void(0)" class="dropdown-item status-change"
+                                           data-toggle="modal"
+                                           data-target="#statusMoldal"
+                                           data-route="{{ route('admin.order.status.change',['id'=>$order->id] ) }} ">
+                                            <i class="fa fa-check pr-2 text-success"
+                                               aria-hidden="true"></i> @lang('Change Status')
+                                        </a>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                     @endforeach

@@ -150,7 +150,6 @@ class OrderController extends Controller
         else
             $quantity = $request->quantity;
 
-
         if ($service->min_amount <= $quantity && $service->max_amount >= $quantity) {
             $userRate = ($service->user_rate) ?? $service->price;
             $price = ($quantity * $userRate);
@@ -163,32 +162,29 @@ class OrderController extends Controller
 
 
             ///////////  Test whether the agent's balance is sufficient for the purchase process ///////////////
-            $param = array();
-            $param['action'] = 'balance';
-            $server_connection = new SymService();
-            $agent_balance = $server_connection->serverRequest($param);
-            if ($agent_balance) {
-                if ($agent_balance < $price) {
-
-                    return back()->with('error', "There was an error ,Please contact admin to resolve it")->withInput();
-                }
-            } else {
-                return back()->with('error', "There was an error communicating with the server")->withInput();
-            }
+//            $param = array();
+//            $param['action'] = 'balance';
+//            $server_connection = new SymService();
+//            $agent_balance = $server_connection->serverRequest($param);
+//            if ($agent_balance) {
+//                if ($agent_balance < $price) {
+//
+//                    return back()->with('error', "There was an error ,Please contact admin to resolve it")->withInput();
+//                }
+//            } else {
+//                return back()->with('error', "There was an error communicating with the server")->withInput();
+//            }
             /////////////   End Test    /////////////////////
 
             ///////////  place order from server ///////////////
-            $order_param = array();
-            $order_param['action'] = 'add';
-            $order_param['service'] = $service->id;
-            $order_param['link'] = $request['link'] ? $request['link'] : '-1';
-            $order_param['quantity'] = $quantity;
-            $server_order = $server_connection->serverRequest($order_param);
+//            $order_param = array();
+//            $order_param['action'] = 'add';
+//            $order_param['service'] = $service->id;
+//            $order_param['link'] = $request['link'] ? $request['link'] : '-1';
+//            $order_param['quantity'] = $quantity;
+//            $server_order = $server_connection->serverRequest($order_param);
             /////////////   End Test    /////////////////////
             /////////////  place order   /////////////////////
-            if (!isset($server_order['errors'])) {
-                Log::info($server_order);
-                if (isset($server_order['order'])){
                     DB::beginTransaction();
                     $order = new Order();
                     $order->user_id = $user->id;
@@ -209,7 +205,6 @@ class OrderController extends Controller
                     $user->balance -= $price;
                     $user->save();
 
-
                     $transaction = new TransactionService();
                     $trx_id = $transaction->transaction($user->id,'-',$price,'Place order');
 
@@ -225,7 +220,6 @@ class OrderController extends Controller
                     ];
                     $this->adminPushNotification('ORDER_CREATE', $msg, $action);
 
-
                     $this->sendMailSms($user, 'ORDER_CONFIRM', [
                         'order_id' => $order->id,
                         'order_at' => $order->created_at,
@@ -236,26 +230,14 @@ class OrderController extends Controller
                         'currency' => $basic->currency,
                         'transaction' => $trx_id,
                     ]);
-                }else{
-                    Log::info($server_order);
-                    return back()->with('error', "There was an error ,Please contact admin to resolve it")->withInput();
                 }
 
-            } else {
-                $error = isset($server_order['errors']['message']) ? $server_order['errors']['message']:"There was an error ,Please contact admin to resolve it";
-//                dd($error);
-                return back()->with('error', $error)->withInput();
-            }
             /////////////   End place order    /////////////////////
-
             $adminBalanceUpdate = new AdminServerBalanceUpdateService();
             $admin = Admin::first();
             $adminBalanceUpdate->updateBalance($admin);
             return redirect()->route('user.order.index')->with('success', 'Your order has been submitted');
 
-        } else {
-            return back()->with('error', "Order quantity should be minimum {$service->min_amount} and maximum {$service->max_amount}")->withInput();
-        }
     }
 
 

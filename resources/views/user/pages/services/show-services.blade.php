@@ -51,7 +51,7 @@
                                         <li data-title=" {{$service->service_title }}"
                                             class="{{$service->is_available  != 1 ? 'disable ' : ''}} col-4 pr-0 pl-0"
                                             id="box{{$key+1}}"
-                                            onclick="{{$service->is_available}} == 1 ? as(this,'{{$key+1}}','9','{{$service->price}}','{{$service->id}}',{{$service->min_amount}},{{$service->max_amount}}) : ''"
+                                            onclick="{{$service->is_available}} == 1 ? as(this,'{{$key+1}}','9','{{$service->user_rate ?? $service->price}}','{{$service->id}}',{{$service->min_amount}},{{$service->max_amount}}) : ''"
                                             style="width:32.3%; flex:1 1 25cm; list-style-type:none ; display:inline-block ; max-width:175px ; opacity: 1 ;">
                                             <div class="product_group">
                                                 <img
@@ -117,7 +117,7 @@
                                 </div>
                                 <div class=" d-flex refresh mb-3">
                                     <!-- <i class="fas fa-sync-alt get-name"></i> -->
-                                    <i class="fas fa-crosshairs get-name "></i>
+                                    <i class="fas fa-sync get-name "></i>
                                 </div>
                                 <div class="col">
                                     <label>@lang('Player name') </label>
