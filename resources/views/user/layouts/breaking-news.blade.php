@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="max-width: 100%">
     <div class="row" style="background-color:#1491d0 ">
         <div>
             <div class="d-flex justify-content-between align-items-center breaking-news"
