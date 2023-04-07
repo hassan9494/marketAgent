@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\ApiProvider;
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Service;
+use App\Services\SymService;
 use Illuminate\Http\Request;
 use Ixudra\Curl\Facades\Curl;
 use Stevebauman\Purify\Facades\Purify;
@@ -32,7 +34,7 @@ class ApiProviderController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -191,10 +193,10 @@ class ApiProviderController extends Controller
         $apiLiveData = Curl::to($provider->url)->withData(['key' => $provider->api_key, 'action' => 'services'])->post();
         $currencyData = json_decode($apiLiveData);
         foreach ($provider->services as $k => $data) {
-            if (isset($data->price)){
+            if (isset($data->price)) {
                 $data->update([
                     'api_provider_price' => collect($currencyData)->where('service', $data->api_service_id)->pluck('price')[0] ?? $data->api_provider_price ?? $data->price,
-                     'price' => collect($currencyData)->where('service', $data->api_service_id)->pluck('price')[0] ?? $data->price
+                    'price' => collect($currencyData)->where('service', $data->api_service_id)->pluck('price')[0] ?? $data->price
                 ]);
             }
         }
@@ -361,5 +363,26 @@ class ApiProviderController extends Controller
         })->get();
         $api_providers->append($search);
         return view('admin.pages.api_providers.show', compact('api_providers'));
+    }
+
+    public function checkSMS($orderID)
+    {
+        $order = Order::find($orderID);
+        $id = $order->order_id_api;
+        $apiproviderdata = new SymService();
+        $params = [
+            'action' => 'smscode',
+            'order' => $order->api_order_id
+        ];
+        $response = Curl::to($apiproviderdata->url)
+            ->withData($params)->post();
+        $response = json_decode($response, 1);
+        if (isset($response['status']) && $response['status'] == 'success') {
+            $code = $response['smsCode'];
+            if (isset($code)) {
+                $res = (new OrderController())->finish5SImOrder($order, $response);
+            }
+            return $code;
+        } else return '0';
     }
 }

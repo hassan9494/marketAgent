@@ -255,4 +255,32 @@ class OrderController extends Controller
 
         return view('admin.pages.transaction.index', compact('transaction'));
     }
+
+    public function finish5SImOrder($id, $result)
+    {
+        $order = Order::find($id);
+        $user = $order->user;
+        if ($user->balance < $order->price) {
+            $notify[] = ['error', 'Insufficient balance. Please deposit and try again!'];
+            return back()->withNotify($notify);
+        }
+        $user->balance -= $order->price;
+        $user->save();
+        $order->status = 'completed';
+        $order->verify = $result['sms'][0]['code'] ?? $result['smsCode'] ?? ' ';
+        $order->save();
+
+        //Create Transaction
+        $transaction = new Transaction();
+        $transaction->user_id = $user->id;
+        $transaction->trx_type = '-';
+        $transaction->amount = $order->price;
+        $transaction->remarks = 'Place order';
+        $transaction->trx_id = strRandom();
+        $transaction->charge = 0;
+        $transaction->save();
+
+        return $result['sms'][0]['code'];
+
+    }
 }

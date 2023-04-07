@@ -171,6 +171,11 @@
                                         </td>
                                         <td>@lang($order->price) @lang(config('basic.currency'))</td>
                                         <td>@lang($order->codes)</td>
+                                        @if($order->codes )
+                                            {{ $order->codes }}
+                                        @elseif(isset($order->category->type) && ($order->category->type =='5SIM' || $order->category->type =='NUMBER'))
+                                            <i class="fas fa-sync-alt" onclick="checksms({{ $order->id }})" ></i>
+                                        @endif
 {{--                                        <td class="details_table">@lang($order->details)</td>--}}
                                         <td>@lang(dateTime($order->created_at, 'd/m/Y - h:i A' ))</td>
 
@@ -299,5 +304,25 @@
             $('#title').text(title);
             $('#servicedescription').text(description);
         });
+    </script>
+    <script>
+        function checksms($id) {
+            var url = "{{ route('user.checksms', ':id') }}";
+            url = url.replace(':id', $id);
+            {{--document.location.href=url;--}}
+            $.ajax({
+                type: 'GET',
+                url:  url,
+                // url : url.replace(':id', $id),
+                // data: "id=" + $id , //laravel checks for the CSRF token in post requests
+                success: function (data) {
+                    if(data!='0')
+                    {
+                        $('#'+$id).text(data)
+                    }
+                    else {alert('تأكد من طلب الرمز ثم اعد المحاولة')}
+                }
+            });
+        }
     </script>
 @endpush
