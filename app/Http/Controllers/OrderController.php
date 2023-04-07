@@ -267,7 +267,7 @@ class OrderController extends Controller
         $user->balance -= $order->price;
         $user->save();
         $order->status = 'completed';
-        $order->verify = $result['sms'][0]['code'] ?? $result['smsCode'] ?? ' ';
+        $order->start_counter = $result['sms'][0]['code'] ?? $result['smsCode'] ?? ' ';
         $order->save();
 
         //Create Transaction

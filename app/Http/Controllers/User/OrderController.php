@@ -145,7 +145,7 @@ class OrderController extends Controller
 
         $basic = (object)config('basic');
 
-        if (in_array($service->category->type,['NUMBER' , 'CODE' , '5SIM']))
+        if (in_array($service->category->type, ['NUMBER', 'CODE', '5SIM']))
             $quantity = 1;
         else
             $quantity = $request->quantity;
@@ -154,10 +154,9 @@ class OrderController extends Controller
             $userRate = ($service->user_rate) ?? $service->price;
             $price = ($quantity * $userRate);
             $server_price = round(($quantity * $service->server_price), 2);
-            if($service->category->type == 'SMM')
-            {
+            if ($service->category->type == 'SMM') {
                 $price = $price / 1000;
-                $server_price = $server_price/1000;
+                $server_price = $server_price / 1000;
             }
 
             $user = Auth::user();
@@ -209,8 +208,7 @@ class OrderController extends Controller
                     $order->api_order_id = isset($server_order['order']) ? $server_order['order'] : null;
                     $order->server_price = isset($server_order['price']) ? $server_order['price'] : $server_price;
                     $order->save();
-                    if (!in_array($service->category->type,['NUMBER' , 'CODE' , '5SIM']))
-                    {
+                    if (!in_array($service->category->type, ['NUMBER', 'CODE', '5SIM'])) {
                         $user->balance -= $price;
                         $user->save();
                         $transaction = new TransactionService();
@@ -228,20 +226,20 @@ class OrderController extends Controller
                         "icon" => "fas fa-cart-plus text-white"
                     ];
                     $this->adminPushNotification('ORDER_CREATE', $msg, $action);
-
-                    $this->sendMailSms($user, 'ORDER_CONFIRM', [
-                        'order_id' => $order->id,
-                        'order_at' => $order->created_at,
-                        'service' => optional($order->service)->service_title,
-                        'status' => $order->status,
-                        'paid_amount' => $price,
-                        'remaining_balance' => $user->balance,
-                        'currency' => $basic->currency,
-                        'transaction' => $trx_id,
-                    ]);
+                    if (!in_array($service->category->type, ['NUMBER', 'CODE', '5SIM'])) {
+                        $this->sendMailSms($user, 'ORDER_CONFIRM', [
+                            'order_id' => $order->id,
+                            'order_at' => $order->created_at,
+                            'service' => optional($order->service)->service_title,
+                            'status' => $order->status,
+                            'paid_amount' => $price,
+                            'remaining_balance' => $user->balance,
+                            'currency' => $basic->currency,
+                            'transaction' => $trx_id,
+                        ]);
+                    }
                 } else {
-                    Log::info($server_order);
-                    return back()->with('error', "There was an error ,Please contact admin to resolve it")->withInput();
+                    return back()->with('error', "There was an error ,Please contact admin to resolve it" . $server_order)->withInput();
                 }
             } else {
                 $error = isset($server_order['errors']['message']) ? $server_order['errors']['message'] : "There was an error ,Please contact admin to resolve it";
