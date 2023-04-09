@@ -7,7 +7,7 @@ use App\Models\Category;
 use App\Models\Service;
 use App\Services\SymService;
 use Illuminate\Console\Command;
-
+use Illuminate\Support\Facades\Log;
 class ServicesSync extends Command
 {
     use Notify;
@@ -47,7 +47,7 @@ class ServicesSync extends Command
         $activeServerServiceIds = array();
         $order_param['action'] = 'services';
         $server_services = $server_connection->serverRequest($order_param);
-        if (!isset($server_services['errors'])){
+        if (!isset($server_services['errors']) && $server_services){
             $services = Service::orderBy('category_id', 'asc')->get();
             foreach ($server_services as $server_service) {
                 array_push($activeServerServiceIds,$server_service['service']);
@@ -94,6 +94,7 @@ class ServicesSync extends Command
                     $category = Category::find($server_service['category_id']['id']);
                     if ($category){
                         $newService->category_id = $server_service['category_id']['id'];
+
                     }else{
                         $newCategory = new Category();
                         $newCategory->id = $server_service['category_id']['id'];
@@ -112,13 +113,13 @@ class ServicesSync extends Command
                     $newService->min_amount = $server_service['min'];
                     $newService->max_amount = $server_service['max'];
 
-                    if (config('basic.automatic_price_refresh') == 1) {
-                        $service->price = $server_service['rate'] + $server_service['rate'] * (config('basic.percentage_profit') / 100);
-                        $newService->service_status = 1;
-                    }else{
-                        $newService->price = $server_service['rate'];
-                        $newService->service_status = 0;
-                    }
+                     if (config('basic.automatic_price_refresh') == 1) {
+                         $service->price = $server_service['rate'] + $server_service['rate'] * (config('basic.percentage_profit') / 100);
+                         $newService->service_status = 1;
+                     }else{
+                    $newService->price = $server_service['rate'];
+                    $newService->service_status = 0;
+                     }
 
 
                     $newService->is_available = $server_service['is_available'];

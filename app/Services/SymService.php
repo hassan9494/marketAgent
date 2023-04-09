@@ -32,12 +32,9 @@ class SymService
         $result = curl_exec($ch);
         $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         if ($httpcode!=200) {
-            Log::info($httpcode);
-            Log::info(curl_getinfo($ch));
             Log::info(json_decode($result, True));
             return json_decode($result, True);
         }
-
         curl_close($ch);
         $result = json_decode($result, True);
         return $result;

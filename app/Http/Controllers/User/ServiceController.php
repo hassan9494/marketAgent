@@ -17,7 +17,7 @@ class ServiceController extends Controller
             $query->userRate()->where('service_status', 1);
         }])
             ->where('status', 1)
-            ->where('type', '<>', '5SIM')
+//            ->where('type', '<>', '5SIM')
             ->get();
         return view('user.pages.services.categories', compact('categories'));
     }
@@ -26,8 +26,8 @@ class ServiceController extends Controller
     {
 
         $category = Category::find($id);
-        if ($category->type == '5SIM')
-            return redirect()->route('user.service.show');
+//        if ($category->type == '5SIM')
+//            return redirect()->route('user.service.show');
         $services = Service::where('category_id', $id)->userRate()->where('service_status', 1)->get();
         return view('user.pages.services.show-services', compact('services', 'category'));
     }

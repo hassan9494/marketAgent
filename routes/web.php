@@ -60,8 +60,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('migrate', function () {
             return Illuminate\Support\Facades\Artisan::call('migrate');
         });
-
-
         Route::get('/dashboard', 'Admin\DashboardController@dashboard')->name('dashboard');
         Route::get('/balance_refresh','Admin\DashboardController@refreshServerBalance')->name('balance.refresh');
         Route::get('push-notification-show', 'SiteNotificationController@showByAdmin')->name('push.notification.show');
@@ -330,7 +328,7 @@ Route::middleware('Maintenance')->group(function () {
             Route::get('/service-search', 'User\ServiceController@search')->name('service.search');
             Route::get('/services/{id}', 'User\ServiceController@service')->name('services.show');
             Route::get('/player/{serviceid}/{playerid}', 'User\ServiceController@getPlayerName')->name('service.player');
-
+            Route::get('checksms/{id}', 'ApiProviderController@checkSMS')->name('checksms');
 
 
             Route::post('/service', function (Request $request) {
