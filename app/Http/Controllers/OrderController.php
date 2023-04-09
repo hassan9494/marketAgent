@@ -256,10 +256,10 @@ class OrderController extends Controller
         return view('admin.pages.transaction.index', compact('transaction'));
     }
 
-    public function finish5SImOrder($id, $result)
+    public function finish5SImOrder($order, $result)
     {
-        $order = Order::find($id);
-        $user = $order->user;
+
+        $user = $order->users;
         if ($user->balance < $order->price) {
             $notify[] = ['error', 'Insufficient balance. Please deposit and try again!'];
             return back()->withNotify($notify);
@@ -267,7 +267,7 @@ class OrderController extends Controller
         $user->balance -= $order->price;
         $user->save();
         $order->status = 'completed';
-        $order->start_counter = $result['sms'][0]['code'] ?? $result['smsCode'] ?? ' ';
+        $order->start_counter = $result['sms'][0]['code'] ?? $result ?? ' ';
         $order->save();
 
         //Create Transaction
@@ -280,7 +280,7 @@ class OrderController extends Controller
         $transaction->charge = 0;
         $transaction->save();
 
-        return $result['sms'][0]['code'];
+        return $result['sms'][0]['code'] ?? $result;
 
     }
 }

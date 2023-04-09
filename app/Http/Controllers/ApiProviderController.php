@@ -370,19 +370,19 @@ class ApiProviderController extends Controller
         $order = Order::find($orderID);
         $id = $order->order_id_api;
         $apiproviderdata = new SymService();
+        $key = env("PROVIDER_API_KEY", "test");
         $params = [
             'action' => 'smscode',
-            'order' => $order->api_order_id
+            'order' => $order->api_order_id,
+            'key' =>$key
         ];
-        $response = Curl::to($apiproviderdata->url)
+        $base_url = env("PROVIDER_URL", "https://market-syria.com/api/v1");
+        $response = Curl::to($base_url)
             ->withData($params)->post();
         $response = json_decode($response, 1);
-        if (isset($response['status']) && $response['status'] == 'success') {
-            $code = $response['smsCode'];
-            if (isset($code)) {
-                $res = (new OrderController())->finish5SImOrder($order, $response);
-            }
-            return $code;
+        if (isset($response)) {
+            $res = (new OrderController())->finish5SImOrder($order, $response);
+            return $res;
         } else return '0';
     }
 }

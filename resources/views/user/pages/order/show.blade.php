@@ -2,7 +2,7 @@
 @section('title',__('Orders'))
 @push('style')
     <style>
-        @media (min-width:1199.98px){
+        @media (min-width: 1199.98px) {
             .details_table {
                 width: 15%;
             }
@@ -11,7 +11,6 @@
     </style>
 @endpush
 @section('content')
-
 
     <div class="container-fluid px-3 user-service-list ">
         <div class="row my-3 justify-content-between mx-lg-5">
@@ -154,10 +153,10 @@
                                     <th scope="col" class="order-details-column text-left">@lang('Order Details')</th>
                                     <th scope="col">@lang('Price')</th>
                                     <th scope="col">@lang('Codes')</th>
-{{--                                    <th scope="col">@lang('Details')</th>--}}
+                                    <th scope="col">@lang('Details')</th>
                                     <th scope="col">@lang('Order AT')</th>
                                     <th scope="col">@lang('Status')</th>
-                                    <th scope="col" >@lang('Note')</th>
+                                    <th scope="col">@lang('Note')</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -171,46 +170,56 @@
                                         </td>
                                         <td>@lang($order->price) @lang(config('basic.currency'))</td>
                                         <td>@lang($order->codes)</td>
-                                        @if($order->codes )
-                                            {{ $order->codes }}
-                                        @elseif(isset($order->category->type) && ($order->category->type =='5SIM' || $order->category->type =='NUMBER'))
-                                            <i class="fas fa-sync-alt" onclick="checksms({{ $order->id }})" ></i>
-                                        @endif
-{{--                                        <td class="details_table">@lang($order->details)</td>--}}
+                                        <td>
+                                            @if($order->start_counter )
+                                                {{ $order->start_counter }}
+                                            @elseif(isset($order->category->type) && ($order->category->type =='5SIM' || $order->category->type =='NUMBER'))
+                                                <i class="fas fa-sync-alt" onclick="checksms({{ $order->id }})"></i>
+                                            @endif
+                                        </td>
+                                        {{--                                        <td class="details_table">@lang($order->details)</td>--}}
                                         <td>@lang(dateTime($order->created_at, 'd/m/Y - h:i A' ))</td>
 
-                                        <td >
-                                            @if($order->status=='Awaiting') <span
-                                                class="badge badge-pill badge-danger">{{trans('Awaiting')}}</span>
-                                            @elseif($order->status == 'pending') <span
-                                                class="badge badge-pill badge-info">{{trans('Pending')}}</span>
-                                            @elseif($order->status == 'processing') <span
-                                                class="badge badge-pill badge-info">{{trans('Processing')}}</span>
-                                            @elseif($order->status == 'progress') <span
-                                                class="badge badge-pill badge-warning">{{trans('In progress')}}</span>
-                                            @elseif($order->status == 'completed') <span
-                                                class="badge badge-pill badge-success">{{trans('Completed')}}</span>
-                                            @elseif($order->status == 'partial') <span
-                                                class="badge badge-pill badge-warning">{{trans('Partial')}}</span>
-                                            @elseif($order->status == 'canceled') <span
-                                                class="badge badge-pill badge-danger">{{trans('Canceled')}}</span>
-                                            @elseif($order->status == 'refunded') <span
-                                                class="badge badge-pill badge-danger">{{trans('Refunded')}}</span>
+                                        <td>
+                                            @if($order->status=='Awaiting')
+                                                <span
+                                                    class="badge badge-pill badge-danger">{{trans('Awaiting')}}</span>
+                                            @elseif($order->status == 'pending')
+                                                <span
+                                                    class="badge badge-pill badge-info">{{trans('Pending')}}</span>
+                                            @elseif($order->status == 'processing')
+                                                <span
+                                                    class="badge badge-pill badge-info">{{trans('Processing')}}</span>
+                                            @elseif($order->status == 'progress')
+                                                <span
+                                                    class="badge badge-pill badge-warning">{{trans('In progress')}}</span>
+                                            @elseif($order->status == 'completed')
+                                                <span
+                                                    class="badge badge-pill badge-success">{{trans('Completed')}}</span>
+                                            @elseif($order->status == 'partial')
+                                                <span
+                                                    class="badge badge-pill badge-warning">{{trans('Partial')}}</span>
+                                            @elseif($order->status == 'canceled')
+                                                <span
+                                                    class="badge badge-pill badge-danger">{{trans('Canceled')}}</span>
+                                            @elseif($order->status == 'refunded')
+                                                <span
+                                                    class="badge badge-pill badge-danger">{{trans('Refunded')}}</span>
                                             @endif
 
                                         </td>
                                         <td>
 
-{{--                                            @if(optional($order->service)->service_status == 1)--}}
-{{--                                                <button type="button"--}}
-{{--                                                        class="btn btn-sm btn-success  orderBtn" data-toggle="modal"--}}
-{{--                                                        data-target="#description" id="details"--}}
-{{--                                                        data-service_id="{{$order->service_id}}"--}}
-{{--                                                        data-servicetitle="{{optional($order->service)->service_title}}"--}}
-{{--                                                        data-description="{{optional($order->service)->description}}">--}}
-{{--                                                    <i class="fa fa-cart-plus"></i>--}}
-{{--                                                </button>--}}
-{{--                                            @endif--}}
+                                            {{--                                            @if(optional($order->service)->service_status == 1)--}}
+                                            {{--                                                <button type="button"--}}
+                                            {{--                                                        class="btn btn-sm btn-success  orderBtn" data-toggle="modal"--}}
+                                            {{--                                                        data-target="#description" id="details"--}}
+                                            {{--                                                        data-service_id="{{$order->service_id}}"--}}
+                                            {{--                                                        data-servicetitle="{{optional($order->service)->service_title}}"--}}
+                                            {{--                                                        data-description="{{optional($order->service)->description}}">--}}
+                                            {{--                                                    <i class="fa fa-cart-plus"></i>--}}
+                                            {{--                                                </button>--}}
+                                            {{--                                            @endif--}}
 
                                             @if($order->reason)
                                                 <button type="button"
@@ -312,15 +321,15 @@
             {{--document.location.href=url;--}}
             $.ajax({
                 type: 'GET',
-                url:  url,
+                url: url,
                 // url : url.replace(':id', $id),
                 // data: "id=" + $id , //laravel checks for the CSRF token in post requests
                 success: function (data) {
-                    if(data!='0')
-                    {
-                        $('#'+$id).text(data)
+                    if (data != '0') {
+                        $('#' + $id).text(data)
+                    } else {
+                        alert('تأكد من طلب الرمز ثم اعد المحاولة')
                     }
-                    else {alert('تأكد من طلب الرمز ثم اعد المحاولة')}
                 }
             });
         }
