@@ -380,7 +380,7 @@ class ApiProviderController extends Controller
         $response = Curl::to($base_url)
             ->withData($params)->post();
         $response = json_decode($response, 1);
-        if (isset($response)) {
+        if (isset($response) && $response !=0) {
             $res = (new OrderController())->finish5SImOrder($order, $response);
             return $res;
         } else return '0';
