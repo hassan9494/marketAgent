@@ -172,7 +172,6 @@ class OrderController extends Controller
             $agent_balance = $server_connection->serverRequest($param);
             if ($agent_balance) {
                 if ($agent_balance < $price) {
-
                     return back()->with('error', "There was an error ,Please contact admin to resolve it")->withInput();
                 }
             } else {
@@ -184,7 +183,7 @@ class OrderController extends Controller
             $order_param = array();
             $order_param['action'] = 'add';
             $order_param['service'] = $service->id;
-            $order_param['link'] = $request['link'] ? $request['link'] : '-1';
+            $order_param['link'] = $request['link'] ;
             $order_param['quantity'] = $quantity;
             $server_order = $server_connection->serverRequest($order_param);
             /////////////   End Test    /////////////////////
