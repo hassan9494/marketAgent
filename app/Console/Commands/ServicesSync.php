@@ -54,7 +54,8 @@ class ServicesSync extends Command
                 $service = $services->find($server_service['service']);
                 if ($service) {
                     if ($service->is_available != $server_service['is_available'] || $service->min_amount != $server_service['min'] || $service->max_amount != $server_service['max']) {
-                        $service->is_available = $server_service['is_available'];
+                        if($server_service['category_id']['type'] != 'NUMBER')
+                            $service->is_available = $server_service['is_available'];
                         $service->min_amount = $server_service['min'];
                         $service->max_amount = $server_service['max'];
                         $service->save();
@@ -114,7 +115,7 @@ class ServicesSync extends Command
                     $newService->max_amount = $server_service['max'];
 
                      if (config('basic.automatic_price_refresh') == 1) {
-                         $service->price = $server_service['rate'] + $server_service['rate'] * (config('basic.percentage_profit') / 100);
+                         $newService->price = $server_service['rate'] + $server_service['rate'] * (config('basic.percentage_profit') / 100);
                          $newService->service_status = 1;
                      }else{
                     $newService->price = $server_service['rate'];
@@ -122,7 +123,7 @@ class ServicesSync extends Command
                      }
 
 
-                    $newService->is_available = $server_service['is_available'];
+                    // $newService->is_available = $server_service['is_available'];
                     $newService->server_price = $server_service['rate'];
                     $newService->save();
                     $msg = [
