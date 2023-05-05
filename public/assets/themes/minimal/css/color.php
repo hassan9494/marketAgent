@@ -4320,3 +4320,7 @@ padding: .25em;
 .bg-transparent{
 background: transparent !important;
 }
+.Privacy-Policy .text {
+    font-size: 20px;
+    line-height: 45px;
+}
