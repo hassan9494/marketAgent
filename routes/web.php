@@ -355,6 +355,7 @@ Route::middleware('Maintenance')->group(function () {
     Route::get('/language/{code?}', 'FrontendController@language')->name('language');
     Route::get('/', 'User\ServiceController@index')->middleware('auth')->name('home');
     Route::get('/about', 'FrontendController@about')->name('about');
+    Route::get('/privacy-policy', 'FrontendController@privacyPolicy')->name('privacy-policy');
     Route::get('/{getLink}/{content_id}', 'FrontendController@getLink')->name('getLink');
 
 

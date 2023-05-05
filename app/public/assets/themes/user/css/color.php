@@ -219,9 +219,9 @@ width: 100%;
 align-items: flex-end !important;
 text-align: right;
 }
-.headerNav .navbar-collapse .navbar-nav {
+<!-- .headerNav .navbar-collapse .navbar-nav {
 align-items: flex-end !important;
-}
+} -->
 .headerNav .navbar{
 padding-right: 0px;
 }
@@ -1037,7 +1037,7 @@ color: #000;
 font-weight: 500;
 border-radius: 6px;}
 }
-}
+
 
 
 

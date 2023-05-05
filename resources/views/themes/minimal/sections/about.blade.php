@@ -1,6 +1,10 @@
-@if(isset($templates['about-us'][0]) && $aboutUs = $templates['about-us'][0])
 
+@extends('user.layouts.app')
+@section('title',__('About'))
+
+@section('content')
     <!-- ABOUT-US -->
+    @if(isset($templates['about-us'][0]) && $aboutUs = $templates['about-us'][0])
     <section id="about-us">
         <div class="shape-circle wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.35s">
             <div class="circle"></div>
@@ -60,4 +64,6 @@
         @endif
     @endpush
 
-@endif
+    @endif        
+@endsection
+
