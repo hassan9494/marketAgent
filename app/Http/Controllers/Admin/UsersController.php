@@ -255,13 +255,13 @@ class UsersController extends Controller
             $control = (object)config('basic');
             $user = User::findOrFail($id);
 
-            $users = User::selectRaw('SUM(balance) AS totalUserBalance')
-                ->first();
-            $admin = Admin::first();
-            if ($userData['balance'] > ($admin->server_balance - $users->totalUserBalance)) {
+            // $users = User::selectRaw('SUM(balance) AS totalUserBalance')
+            //     ->first();
+            // $admin = Admin::first();
+            // if ($userData['balance'] > ($admin->server_balance - $users->totalUserBalance)) {
 
-                return back()->with('error', 'You Do Not have enough balance ,You have just ' . ($admin->server_balance - $users->totalUserBalance )  . ' ' . $control->currency_symbol);
-            }
+            //     return back()->with('error', 'You Do Not have enough balance ,You have just ' . ($admin->server_balance - $users->totalUserBalance )  . ' ' . $control->currency_symbol);
+            // }
             try {
 
                 DB::beginTransaction();

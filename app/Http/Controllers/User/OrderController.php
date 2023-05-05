@@ -168,15 +168,15 @@ class OrderController extends Controller
             ///////////  Test whether the agent's balance is sufficient for the purchase process ///////////////
             $param = array();
             $param['action'] = 'balance';
-            $server_connection = new SymService();
-            $agent_balance = $server_connection->serverRequest($param);
-            if ($agent_balance) {
-                if ($agent_balance < $price) {
-                    return back()->with('error', "There was an error ,Please contact admin to resolve it")->withInput();
-                }
-            } else {
-                return back()->with('error', "There was an error communicating with the server")->withInput();
-            }
+            // $server_connection = new SymService();
+            // $agent_balance = $server_connection->serverRequest($param);
+            // if ($agent_balance) {
+            //     if ($agent_balance < $price) {
+            //         return back()->with('error', "There was an error ,Please contact admin to resolve it")->withInput();
+            //     }
+            // } else {
+            //     return back()->with('error', "There was an error communicating with the server")->withInput();
+            // }
             /////////////   End Test    /////////////////////
 
             ///////////  place order from server ///////////////
@@ -185,12 +185,13 @@ class OrderController extends Controller
             $order_param['service'] = $service->id;
             $order_param['link'] = $request['link'] ;
             $order_param['quantity'] = $quantity;
-            $server_order = $server_connection->serverRequest($order_param);
+            $server_order = [];
+            // $server_order = $server_connection->serverRequest($order_param);
             /////////////   End Test    /////////////////////
             /////////////  place order   /////////////////////
-            if (!isset($server_order['errors'])) {
-                Log::info($server_order);
-                if (isset($server_order['order'])) {
+            if (1==1) {
+                // Log::info($server_order);
+                if (1==1) {
                     DB::beginTransaction();
                     $order = new Order();
                     $order->user_id = $user->id;
@@ -238,7 +239,7 @@ class OrderController extends Controller
                         ]);
                     }
                 } else {
-                    return back()->with('error', "There was an error ,Please contact admin to resolve it" . $server_order)->withInput();
+                    return back()->with('error', "There was an error ,Please contact admin to resolve it" . @$server_order)->withInput();
                 }
             } else {
                 $error = isset($server_order['errors']['message']) ? $server_order['errors']['message'] : "There was an error ,Please contact admin to resolve it";

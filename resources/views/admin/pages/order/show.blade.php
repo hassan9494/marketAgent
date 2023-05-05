@@ -87,16 +87,16 @@
                                        aria-haspopup="true" aria-expanded="false">
                                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                     </a>
-{{--                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">--}}
+                                   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 
-{{--                                        <a href="javascript:void(0)" class="dropdown-item status-change"--}}
-{{--                                           data-toggle="modal"--}}
-{{--                                           data-target="#statusMoldal"--}}
-{{--                                           data-route="{{ route('admin.order.status.change',['id'=>$order->id] ) }} ">--}}
-{{--                                            <i class="fa fa-check pr-2 text-success"--}}
-{{--                                               aria-hidden="true"></i> @lang('Change Status')--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
+                                        <a href="javascript:void(0)" class="dropdown-item status-change"
+                                           data-toggle="modal"--}}
+                                           data-target="#statusMoldal"
+                                           data-route="{{ route('admin.order.status.change',['id'=>$order->id] ) }} ">
+                                           <i class="fa fa-check pr-2 text-success"
+                                               aria-hidden="true"></i> @lang('Change Status')
+                                       </a>
+                                    </div>
                                 </div>
                             </td>
                         </tr>
