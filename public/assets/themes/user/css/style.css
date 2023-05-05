@@ -836,3 +836,7 @@ cardinput{
     padding-bottom: 50px;
     background-size: contain!important;
 }
+.Privacy-Policy .text {
+    font-size: 20px;
+    line-height: 45px;
+}

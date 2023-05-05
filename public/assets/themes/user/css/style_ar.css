@@ -836,3 +836,14 @@ cardinput{
 .news{width: 160px}
 .news-scroll a{text-decoration: none}
 .dot{height: 6px;width: 6px;margin-left: 3px;margin-right: 3px;margin-top: 2px !important;border-radius: 50%;display: inline-block}
+.headerNav .navbar-collapse .navbar-nav a.nav-link:hover{
+    background: #1491d0 !important;
+}
+.headerNav .navbar-collapse .navbar-nav .nav-item.dropdown a.nav-link:hover{
+    background: unset !important;
+}
+@media screen and (max-width: 991px) {
+    .navbar-nav{
+        align-items: center !important;
+    }
+}
