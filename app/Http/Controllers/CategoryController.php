@@ -73,6 +73,7 @@ class CategoryController extends Controller
         $cat->category_title = $req['category_title'];
         $cat->category_description = $req['category_description'];
         $cat->status = $req['status'];
+        $cat->type = $req['type'];
         $cat->save();
         return back()->with('success', 'Successfully Updated');
     }
@@ -131,6 +132,7 @@ class CategoryController extends Controller
         $cat->category_title = $catData['category_title'];
         $cat->category_description = $catData['category_description'];
         $cat->status = $catData['status'];
+        $cat->type = $catData['type'];
         $cat->save();
         return back()->with('success', 'Successfully Updated');
     }
@@ -161,7 +163,7 @@ class CategoryController extends Controller
                 continue;
             }else{
                 $re->status = 0;
-                $re->save();   
+                $re->save();
             }
         }
         return back()->with('success', 'Successfully Updated');

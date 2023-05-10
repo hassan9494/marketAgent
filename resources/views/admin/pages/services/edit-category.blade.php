@@ -14,10 +14,7 @@
                                 <label for="image-upload" id="image-label"><i class="fas fa-upload"></i></label>
                                 <input type="file" name="image" placeholder="Choose image" id="image">
                                 <img src="{{ getFile(config('location.category.path').$category->image)}}" alt="category thum" id="image_preview_container" class="img-fluid preview-image">
-
-
                             </div>
-
                             @error('image')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -31,6 +28,22 @@
                             @error('category_title')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>@lang('Select Type')</label>
+                            <select class="form-control" id="type" name="type">
+                                <option value={{$category->type}} selected
+                                        hidden>{{$category->type}}</option>
+                                <option value="GAME">@lang('GAME')</option>
+                                <option value="CODE">@lang('CODE')</option>
+                                <option value="BALANCE">@lang('BALANCE')</option>
+                                <option value="5SIM">@lang('5SIM')</option>
+                                <option value="SMM">@lang('SMM')</option>
+                                <option value="NUMBER">@lang('NUMBER')</option>
+                            </select>
+                            @if($errors->has('type'))
+                                <div class="error text-danger">@lang($errors->first('type')) </div>
+                            @endif
                         </div>
                         <div class="form-group">
                             <label for="category_description">@lang('Category Description')</label>

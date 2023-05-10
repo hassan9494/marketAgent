@@ -73,7 +73,6 @@ class OrderController extends Controller
         return view('user.pages.order.show', compact('orders'));
     }
 
-
     public function statusSearch(Request $request, $name = 'awaiting')
     {
         $status = @$name;
@@ -150,111 +149,78 @@ class OrderController extends Controller
         else
             $quantity = $request->quantity;
 
-        if ($service->min_amount <= $quantity && $service->max_amount >= $quantity) {
-            $userRate = ($service->user_rate) ?? $service->price;
-            $price = ($quantity * $userRate);
-            $server_price = round(($quantity * $service->server_price), 2);
-            if ($service->category->type == 'SMM') {
-                $price = $price / 1000;
-                $server_price = $server_price / 1000;
-            }
-
-            $user = Auth::user();
-            if ($user->balance < $price) {
-                return back()->with('error', "Insufficient balance in your wallet.")->withInput();
-            }
-
-
-            ///////////  Test whether the agent's balance is sufficient for the purchase process ///////////////
-            $param = array();
-            $param['action'] = 'balance';
-            // $server_connection = new SymService();
-            // $agent_balance = $server_connection->serverRequest($param);
-            // if ($agent_balance) {
-            //     if ($agent_balance < $price) {
-            //         return back()->with('error', "There was an error ,Please contact admin to resolve it")->withInput();
-            //     }
-            // } else {
-            //     return back()->with('error', "There was an error communicating with the server")->withInput();
-            // }
-            /////////////   End Test    /////////////////////
-
-            ///////////  place order from server ///////////////
-            $order_param = array();
-            $order_param['action'] = 'add';
-            $order_param['service'] = $service->id;
-            $order_param['link'] = $request['link'] ;
-            $order_param['quantity'] = $quantity;
-            $server_order = [];
-            // $server_order = $server_connection->serverRequest($order_param);
-            /////////////   End Test    /////////////////////
-            /////////////  place order   /////////////////////
-            if (1==1) {
-                // Log::info($server_order);
-                if (1==1) {
-                    DB::beginTransaction();
-                    $order = new Order();
-                    $order->user_id = $user->id;
-                    $order->category_id = $req['category'];
-                    $order->service_id = $req['service'];
-                    $order->link = $req['link'];
-                    $order->quantity = $req['quantity'];
-                    $order->status = isset($server_order['order_status']) ? $server_order['order_status'] : 'processing';
-                    $order->price = $price;
-                    $order->runs = isset($req['runs']) && !empty($req['runs']) ? $req['runs'] : null;
-                    $order->interval = isset($req['interval']) && !empty($req['interval']) ? $req['interval'] : null;
-                    $order->details = isset($server_order['details']) ? $server_order['details'] : null;
-                    $order->codes = isset($server_order['code']) ? $server_order['code'] : null;
-                    $order->api_order_id = isset($server_order['order']) ? $server_order['order'] : null;
-                    $order->server_price = isset($server_order['price']) ? $server_order['price'] : $server_price;
-                    $order->save();
-                    if (!in_array($service->category->type, ['NUMBER', 'CODE', '5SIM'])) {
-                        $user->balance -= $price;
-                        $user->save();
-                        $transaction = new TransactionService();
-                        $trx_id = $transaction->transaction($user->id, '-', $price, 'Place order');
-                    }
-
-                    DB::commit();
-                    $msg = [
-                        'username' => $user->username,
-                        'price' => $price,
-                        'currency' => $basic->currency
-                    ];
-                    $action = [
-                        "link" => '#',
-                        "icon" => "fas fa-cart-plus text-white"
-                    ];
-                    $this->adminPushNotification('ORDER_CREATE', $msg, $action);
-                    if (!in_array($service->category->type, ['NUMBER', 'CODE', '5SIM'])) {
-                        $this->sendMailSms($user, 'ORDER_CONFIRM', [
-                            'order_id' => $order->id,
-                            'order_at' => $order->created_at,
-                            'service' => optional($order->service)->service_title,
-                            'status' => $order->status,
-                            'paid_amount' => $price,
-                            'remaining_balance' => $user->balance,
-                            'currency' => $basic->currency,
-                            'transaction' => $trx_id,
-                        ]);
-                    }
-                } else {
-                    return back()->with('error', "There was an error ,Please contact admin to resolve it" . @$server_order)->withInput();
-                }
-            } else {
-                $error = isset($server_order['errors']['message']) ? $server_order['errors']['message'] : "There was an error ,Please contact admin to resolve it";
-//                dd($error);
-                return back()->with('error', $error)->withInput();
-            }
-
-            /////////////   End place order    /////////////////////
-            $adminBalanceUpdate = new AdminServerBalanceUpdateService();
-            $admin = Admin::first();
-            $adminBalanceUpdate->updateBalance($admin);
-            return redirect()->route('user.order.index')->with('success', 'Your order has been submitted');
-        } else {
-            return back()->with('error', "Order quantity should be minimum {$service->min_amount} and maximum {$service->max_amount}")->withInput();
+        if ($service->min_amount > $quantity || $service->max_amount < $quantity) {
+            return back()->with('error', "Order quantity should be minimum{$service->min_amount}and maximum { $service->max_amount}")
+                ->withInput();
         }
+        $userRate = ($service->user_rate) ?? $service->price;
+        $price = ($quantity * $userRate);
+        $server_price = round(($quantity * $service->server_price), 2);
+        if ($service->category->type == 'SMM') {
+            $price = $price / 1000;
+            $server_price = $server_price / 1000;
+        }
+        $user = Auth::user();
+        if ($user->balance < $price) {
+            return back()->with('error', "Insufficient balance in your wallet.")->withInput();
+        }
+
+        DB::beginTransaction();
+        try {
+            $order = new Order();
+            $order->user_id = $user->id;
+            $order->category_id = $req['category'];
+            $order->service_id = $req['service'];
+            $order->link = $req['link'];
+            $order->quantity = $req['quantity'];
+            $order->status = isset($server_order['order_status']) ? $server_order['order_status'] : 'processing';
+            $order->price = $price;
+            $order->runs = isset($req['runs']) && !empty($req['runs']) ? $req['runs'] : null;
+            $order->interval = isset($req['interval']) && !empty($req['interval']) ? $req['interval'] : null;
+            $order->details = isset($server_order['details']) ? $server_order['details'] : null;
+            $order->codes = isset($server_order['code']) ? $server_order['code'] : null;
+            $order->api_order_id = isset($server_order['order']) ? $server_order['order'] : null;
+            $order->server_price = isset($server_order['price']) ? $server_order['price'] : $server_price;
+            $order->save();
+            if (!in_array($service->category->type, ['NUMBER', 'CODE', '5SIM'])) {
+                $user->balance -= $price;
+                $user->save();
+                $transaction = new TransactionService();
+                $trx_id = $transaction->transaction($user->id, '-', $price, 'Place order');
+            }
+            DB::commit();
+            $msg = [
+                'username' => $user->username,
+                'price' => $price,
+                'currency' => $basic->currency
+            ];
+            $action = [
+                "link" => '#',
+                "icon" => "fas fa-cart-plus text-white"
+            ];
+            $this->adminPushNotification('ORDER_CREATE', $msg, $action);
+            if (!in_array($service->category->type, ['NUMBER', 'CODE', '5SIM'])) {
+                $this->sendMailSms($user, 'ORDER_CONFIRM', [
+                    'order_id' => $order->id,
+                    'order_at' => $order->created_at,
+                    'service' => optional($order->service)->service_title,
+                    'status' => $order->status,
+                    'paid_amount' => $price,
+                    'remaining_balance' => $user->balance,
+                    'currency' => $basic->currency,
+                    'transaction' => $trx_id,
+                ]);
+            }
+        } catch (\Exception $e) {
+            DB::rollback();
+            return back()->with('error', "There was an error ,Please contact admin to resolve it")->withInput();
+        }
+
+        /////////////   End place order    /////////////////////
+        $adminBalanceUpdate = new AdminServerBalanceUpdateService();
+        $admin = Admin::first();
+        $adminBalanceUpdate->updateBalance($admin);
+        return redirect()->route('user.order.index')->with('success', 'Your order has been submitted');
     }
 
 
@@ -263,7 +229,8 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit(Order $order)
+    public
+    function edit(Order $order)
     {
         $order = Order::find($order->id);
         return view('user.pages.order.edit', compact('order'));
@@ -274,14 +241,16 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Order $order)
+    public
+    function destroy(Order $order)
     {
         $order = Order::find($order->id);
         $order->delete();
         return back()->with('success', 'Successfully Deleted');
     }
 
-    public function statusChange(Request $request)
+    public
+    function statusChange(Request $request)
     {
         $req = Purify::clean($request->all());
         $order = Order::find($request->id);
@@ -290,19 +259,22 @@ class OrderController extends Controller
         return back()->with('success', 'Successfully Updated');
     }
 
-    public function getservice(Request $request)
+    public
+    function getservice(Request $request)
     {
         $service = Service::where('service_status')->where('service_title', 'LIKE', "%{$request->service}%")->get()->pluck('service_title');
         return response()->json($service);
     }
 
-    public function massOrder()
+    public
+    function massOrder()
     {
         return view('user.pages.order.add_mass_order');
     }
 
 
-    public function masOrderStore(Request $request)
+    public
+    function masOrderStore(Request $request)
     {
         $req = Purify::clean($request->all());
         $rules = [

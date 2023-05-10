@@ -5,15 +5,15 @@
 @push('style')
     <style>
         .custom-switch-checkbox-inner:after {
-            content: "No"!important;
+            content: "No" !important;
         }
 
         .custom-switch-checkbox-inner:before {
-            content: "Yes"!important;
+            content: "Yes" !important;
         }
 
-        .modal-header .close{
-            margin: -1rem -1rem!important;
+        .modal-header .close {
+            margin: -1rem -1rem !important;
         }
     </style>
 @endpush
@@ -67,21 +67,29 @@
                     </div>
                 </form>
             </div>
+
             <div class="col-xl-3">
-                <button class="btn btn-success w-100 " type="button" data-toggle="modal"
-                        data-target="#balance_refresh">
-                    @lang('Get Syrian Market Price')
-                    <span class="btn-label"><i class="fa fa-refresh" aria-hidden="true"></i></span>
-
+                <button type="button" class="btn btn-sm btn-primary  mr-3" data-toggle="modal"
+                        data-target="#importServiceModal">
+                    <span> @lang('Import Services')</span>
                 </button>
             </div>
-            <div class="col-xl-2">
-                <button class="btn btn-success w-100" type="button" data-toggle="modal"
-                        data-target="#balance">@lang('Update Price')
-                    <span class="btn-label"><i class="fa fa-plus" aria-hidden="true"></i></span>
 
-                </button>
-            </div>
+            {{--            <div class="col-xl-3">--}}
+            {{--                <button class="btn btn-success w-100 " type="button" data-toggle="modal"--}}
+            {{--                        data-target="#balance_refresh">--}}
+            {{--                    @lang('Get Syrian Market Price')--}}
+            {{--                    <span class="btn-label"><i class="fa fa-refresh" aria-hidden="true"></i></span>--}}
+
+            {{--                </button>--}}
+            {{--            </div>--}}
+            {{--            <div class="col-xl-2">--}}
+            {{--                <button class="btn btn-success w-100" type="button" data-toggle="modal"--}}
+            {{--                        data-target="#balance">@lang('Update Price')--}}
+            {{--                    <span class="btn-label"><i class="fa fa-plus" aria-hidden="true"></i></span>--}}
+
+            {{--                </button>--}}
+            {{--            </div>--}}
         </div>
     </div>
 
@@ -237,6 +245,36 @@
         </div>
     </div>
 
+    <div class="modal fade" id="importServiceModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-primary">
+                    <h5 class="modal-title">@lang('Confirm Import Services')</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{ route('admin.api.services') }}" method="post" id="getServicesForm">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <select class="form-control" name="api_provider_id">
+                                <option selected="" disabled>@lang('Select API Provider')</option>
+                                @foreach($apiProviders as $apiProvider)
+                                    <option value="{{ $apiProvider->id }}" >@lang($apiProvider->api_name)</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal"><span> @lang('Cancel')</span></button>
+                        <button type="submit" class="btn btn-primary"><span>  @lang('Get Services')</span> </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" id="description">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -314,8 +352,8 @@
             <div class="modal-content">
                 <form method="post" action="{{ route('admin.update_price') }}"
                       enctype="multipart/form-data">
-                @csrf
-                <!-- Modal Header -->
+                    @csrf
+                    <!-- Modal Header -->
                     <div class="modal-header modal-colored-header bg-primary">
                         <h4 class="modal-title">@lang('Update Price')</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
