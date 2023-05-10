@@ -115,9 +115,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/user-order-service/{id}', 'Admin\OrderManageController@userServiceEdit')->name('user-service-edit');
         //user order
 
-
         Route::get('/usersOrderChangeStatus', 'Admin\OrderManageController@usersOrderChangeStatus')->name('usersOrderChangeStatus');
-
         Route::get('/users-order/awaiting', 'Admin\OrderManageController@awaitingMultiple')->name('user-order-multiple-awaiting');
         Route::get('/users-order/awaiting', 'Admin\OrderManageController@awaitingMultiple')->name('user-order-multiple-awaiting');
         Route::get('/users-order/pending', 'Admin\OrderManageController@pendingMultiple')->name('user-order-multiple-pending');
@@ -128,8 +126,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/users-order/canceled', 'Admin\OrderManageController@cancelledMultiple')->name('user-order-multiple-canceled');
         Route::get('/users-order/refunded', 'Admin\OrderManageController@refundedMultiple')->name('user-order-multiple-refunded');
 
-
+        Route::get('/service', 'ServiceController@create')->name('service.add');
         Route::get('/services', 'ServiceController@index')->name('service.show');
+        Route::post('/services', 'ServiceController@store')->name('service.store');
         Route::get('/search-service', 'ServiceController@search')->name('service-search');
         Route::post('/search-service/status/{id?}', 'ServiceController@statusChange')->name('service.status.change');
         Route::get('/price_refresh','ServiceController@priceRefresh')->name('price_refresh');
@@ -145,9 +144,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/service-multiple-deActive', 'ServiceController@deactiveMultiple')->name('service-multiple-deactive');
         Route::get('/service-multiple-delete', 'ServiceController@deleteMultiple')->name('service-multiple-delete');
 
-
-
-
+        Route::get('/category/add', 'CategoryController@create')->name('category.add');
+        Route::post('/category', 'CategoryController@store')->name('category.store');
         Route::get('/category-active', 'CategoryController@categoryActive')->name('category-active');
         Route::get('/category-deactive', 'CategoryController@categoryDeactive')->name('category-deactive');
         Route::get('/category/{id}', 'CategoryController@edit')->name('category.edit');
@@ -160,16 +158,14 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/category-multiple-active', 'CategoryController@activeMultiple')->name('category-multiple-active');
         Route::get('/category-multiple-deactive', 'CategoryController@deactiveMultiple')->name('category-multiple-deactive');
 
-
-
         Route::get('/debts', 'Admin\DebtController@index')->name('debt.show');
 //        Route::post('api-provider/status{id}', 'ApiProviderController@changeStatus')->name('provider.status');
 //        Route::post('api-provider/priceUpdate/{id}', 'ApiProviderController@priceUpdate')->name('provider.priceUpdate');
 //        Route::post('api-provider/balanceUpdate/{id}', 'ApiProviderController@balanceUpdate')->name('provider.balanceUpdate');
 //
-//        Route::post('/api-services', 'ApiProviderController@getApiServices')->name('api.services');
-//        Route::post('/api-services/import', 'ApiProviderController@import')->name('api.service.import');
-//        Route::post('/api-services/import/multi', 'ApiProviderController@importMulti')->name('api.service.import.multi');
+        Route::post('/api-services', 'ApiProviderController@getApiServices')->name('api.services');
+        Route::post('/api-services/import', 'ApiProviderController@import')->name('api.service.import');
+        Route::post('/api-services/import/multi', 'ApiProviderController@importMulti')->name('api.service.import.multi');
 //        // jquery autocomplete search
 //        Route::get('/get-provider', 'ApiProviderController@providerShow')->name('get.provider');
 //        //api provider multiple
@@ -180,8 +176,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/logo-seo', 'ControlController@logoSeo')->name('logo-seo');
         Route::put('/logoUpdate', 'ControlController@logoUpdate')->name('logoUpdate');
         Route::put('/seoUpdate', 'ControlController@seoUpdate')->name('seoUpdate');
-
-
 
         Route::any('/basic-controls', 'ControlController@index')->name('basic-controls');
         Route::post('/basic-controls', 'ControlController@updateConfigure')->name('basic-controls.update');
@@ -220,6 +214,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
         Route::get('/order', 'OrderController@index')->name('order');
         Route::post('/order/status', 'OrderController@statusChange')->name('order.status.change');
+        Route::get('/order/edit/{id}', 'OrderController@edit')->name('order.edit');
+        Route::post('/order/update/{id}', 'OrderController@update')->name('order.update');
+        Route::delete('/order/destroy/{id}', 'OrderController@destroy')->name('order.destroy')->middleware(['adminRoleChecker:Super,Admin']);;
         Route::get('/get-service', 'OrderController@getservice')->name('get.service');
         Route::get('/get-user', 'OrderController@getuser')->name('get.user');
         Route::get('/search-order', 'OrderController@search')->name('order-search');

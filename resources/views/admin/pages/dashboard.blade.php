@@ -7,45 +7,45 @@
     <div class="container-fluid">
         <div class="row admin-fa_icon">
 
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card shadow border-right">
-                    <div class="card-body">
-                        <div class="d-flex d-lg-flex d-md-block align-items-center">
-                            <div>
-                                <div class="d-inline-flex align-items-center">
-                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{$adminBalance}} </h2>
-                                </div>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Syriamarket balance')</h6>
-                            </div>
-                            <div class="ml-auto mt-md-3 mt-lg-0">
-                                <span class="opacity-7 text-muted"><i class="fa fa-suitcase fa-2x"></i></span>
-                                <a href="{{route('admin.balance.refresh')}}" class="">
+{{--            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">--}}
+{{--                <div class="card shadow border-right">--}}
+{{--                    <div class="card-body">--}}
+{{--                        <div class="d-flex d-lg-flex d-md-block align-items-center">--}}
+{{--                            <div>--}}
+{{--                                <div class="d-inline-flex align-items-center">--}}
+{{--                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{$adminBalance}} </h2>--}}
+{{--                                </div>--}}
+{{--                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Syriamarket balance')</h6>--}}
+{{--                            </div>--}}
+{{--                            <div class="ml-auto mt-md-3 mt-lg-0">--}}
+{{--                                <span class="opacity-7 text-muted"><i class="fa fa-suitcase fa-2x"></i></span>--}}
+{{--                                <a href="{{route('admin.balance.refresh')}}" class="">--}}
 
-                                    <i class="fa fa-refresh" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+{{--                                    <i class="fa fa-refresh" aria-hidden="true"></i>--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card shadow border-right">
-                    <div class="card-body">
-                        <div class="d-flex d-lg-flex d-md-block align-items-center">
-                            <div>
-                                <div class="d-inline-flex align-items-center">
-                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{$adminBalance - $userRecord['totalUserBalance']}} </h2>
-                                </div>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Usable balance')</h6>
-                            </div>
-                            <div class="ml-auto mt-md-3 mt-lg-0">
-                                <span class="opacity-7 text-muted"><i class="fas fa-credit-card m-2"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+{{--            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">--}}
+{{--                <div class="card shadow border-right">--}}
+{{--                    <div class="card-body">--}}
+{{--                        <div class="d-flex d-lg-flex d-md-block align-items-center">--}}
+{{--                            <div>--}}
+{{--                                <div class="d-inline-flex align-items-center">--}}
+{{--                                    <h2 class="text-dark mb-1 font-weight-medium">{{ config('basic.currency_symbol')}}{{$adminBalance - $userRecord['totalUserBalance']}} </h2>--}}
+{{--                                </div>--}}
+{{--                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Usable balance')</h6>--}}
+{{--                            </div>--}}
+{{--                            <div class="ml-auto mt-md-3 mt-lg-0">--}}
+{{--                                <span class="opacity-7 text-muted"><i class="fas fa-credit-card m-2"></i></span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card shadow border-right">
