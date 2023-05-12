@@ -1030,12 +1030,13 @@ border-radius: 6px;}
 
 
 @media (max-width: 1366px){
-#boltd .navbar-nav .nav-item a.nav-link, #boltd .navbar-nav .nav-item a.nav-link {
-display: inline-block;
-padding: 8px 8px;
-color: #000;
-font-weight: 500;
-border-radius: 6px;}
+    #boltd .navbar-nav .nav-item a.nav-link, #boltd .navbar-nav .nav-item a.nav-link {
+    display: inline-block;
+    padding: 8px 8px;
+    color: #000;
+    font-weight: 500;
+    border-radius: 6px;
+    }
 }
 
 
