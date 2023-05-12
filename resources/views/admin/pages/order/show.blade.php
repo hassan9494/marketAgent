@@ -88,9 +88,13 @@
                                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                     </a>
                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-
+                                       <a class="dropdown-item"
+                                          href="{{ route('admin.order.edit',[$order->id]) }}"><i
+                                               class="fa fa-edit text-warning pr-2"
+                                               aria-hidden="true"></i> @lang('Edit')
+                                       </a>
                                         <a href="javascript:void(0)" class="dropdown-item status-change"
-                                           data-toggle="modal"--}}
+                                           data-toggle="modal"
                                            data-target="#statusMoldal"
                                            data-route="{{ route('admin.order.status.change',['id'=>$order->id] ) }} ">
                                            <i class="fa fa-check pr-2 text-success"

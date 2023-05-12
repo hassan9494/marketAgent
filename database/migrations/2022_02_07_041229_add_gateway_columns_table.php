@@ -14,7 +14,7 @@ class AddGatewayColumnsTable extends Migration
     public function up()
     {
         Schema::table('gateways', function (Blueprint $table) {
-            $table->text('note')->nullable();
+           // $table->text('note')->nullable();
         });
     }
 
