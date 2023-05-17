@@ -169,21 +169,22 @@ class FrontendController extends Controller
 
      public function privacyPolicy()
     {
-        // $templateSection = ['privacy-policy', 'service', 'testimonial', 'counter', 'gateway'];
-        // $data['templates'] = Template::templateMedia()->whereIn('section_name', $templateSection)->get()->groupBy('section_name');
+        $templateSection = ['privacy-policy', 'service', 'testimonial', 'counter', 'gateway'];
+        $data['templates'] = Template::templateMedia()->whereIn('section_name', $templateSection)->get()->groupBy('section_name');
 
-        // $contentSection = ['about-us', 'feature', 'counter', 'testimonial'];
-        // $data['contentDetails'] = ContentDetails::select('id', 'content_id', 'description', 'created_at')
-        //     ->whereHas('content', function ($query) use ($contentSection) {
-        //         return $query->whereIn('name', $contentSection);
-        //     })
-        //     ->with(['content:id,name',
-        //         'content.contentMedia' => function ($q) {
-        //             $q->select(['content_id', 'description']);
-        //         }])
-        //     ->get()->groupBy('content.name');
+        $contentSection = ['about-us', 'feature', 'counter', 'testimonial'];
+        $data['contentDetails'] = ContentDetails::select('id', 'content_id', 'description', 'created_at')
+            ->whereHas('content', function ($query) use ($contentSection) {
+                return $query->whereIn('name', $contentSection);
+            })
+            ->with(['content:id,name',
+                'content.contentMedia' => function ($q) {
+                    $q->select(['content_id', 'description']);
+                }])
+            ->get()->groupBy('content.name');
 
-        // $data['gateways'] = Gateway::where('status', 1)->orderBy('sort_by')->get();
+        $data['gateways'] = Gateway::where('status', 1)->orderBy('sort_by')->get();
+        // dd($data);
         return view($this->theme . 'sections.privacy-policy');
 
     }

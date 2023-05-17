@@ -1024,7 +1024,9 @@ display: inline-block;
 padding: 8px 14px;
 color: #000;
 font-weight: 500;
-border-radius: 6px;}
+border-radius: 6px;
+
+}
 }
 }
 

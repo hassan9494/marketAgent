@@ -23,7 +23,7 @@
                                     <h2 class="text-dark mb-1 font-weight-medium"><sup class="set-doller">{{config('basic.currency_symbol')}}</sup>{{getAmount($walletBalance)}}
                                     </h2>
                                 </div>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Your Balance')</h6>
+                                <h6 class="font-weight-normal mb-0 w-100 text-truncate">@lang('Your Balance')</h6>
                             </div>
 
                             <div class=" mt-md-3 mt-lg-0">
@@ -40,7 +40,7 @@
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
                             <div>
                                 <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium">{{number_format($totalTrx)}}</h2>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Total Transaction')
+                                <h6 class="font-weight-normal mb-0 w-100 text-truncate">@lang('Total Transaction')
                                 </h6>
                             </div>
 
@@ -60,7 +60,7 @@
                                 <div class="d-inline-flex align-items-center">
                                     <h2 class="text-dark mb-1 font-weight-medium"><sup class="set-doller">{{config('basic.currency_symbol')}}</sup>{{getAmount($totalDeposit)}}</h2>
                                 </div>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Total Deposit')</h6>
+                                <h6 class="font-weight-normal mb-0 w-100 text-truncate">@lang('Total Deposit')</h6>
                             </div>
 
                             <div class=" mt-md-3 mt-lg-0">
@@ -81,7 +81,7 @@
                                 <div class="d-inline-flex align-items-center">
                                     <h2 class="text-dark mb-1 font-weight-medium">{{getAmount($order['total'])}}</h2>
                                 </div>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Total Orders')</h6>
+                                <h6 class="font-weight-normal mb-0 w-100 text-truncate">@lang('Total Orders')</h6>
                             </div>
 
                             <div class=" mt-md-3 mt-lg-0">
@@ -99,7 +99,7 @@
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
                             <div>
                                 <h2 class="text-dark mb-1 font-weight-medium">{{getAmount($order['processing'])}}</h2>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Processing Orders')</h6>
+                                <h6 class="font-weight-normal mb-0 w-100 text-truncate">@lang('Processing Orders')</h6>
                             </div>
 
                             <div class=" mt-md-3 mt-lg-0">
@@ -117,7 +117,7 @@
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
                             <div>
                                 <h2 class="text-dark mb-1 font-weight-medium">{{getAmount($order['pending'])}}</h2>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Pending Orders')</h6>
+                                <h6 class="font-weight-normal mb-0 w-100 text-truncate">@lang('Pending Orders')</h6>
                             </div>
 
                             <div class=" mt-md-3 mt-lg-0">
@@ -135,7 +135,7 @@
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
                             <div>
                                 <h2 class="text-dark mb-1 font-weight-medium">{{getAmount($order['completed'])}}</h2>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Completed Orders')</h6>
+                                <h6 class="font-weight-normal mb-0 w-100 text-truncate">@lang('Completed Orders')</h6>
                             </div>
 
                             <div class=" mt-md-3 mt-lg-0">
@@ -153,7 +153,7 @@
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
                             <div>
                                 <h2 class="text-dark mb-1 font-weight-medium"><sup class="set-doller">{{config('basic.currency_symbol')}}</sup>{{getAmount($totalDebt)}}</h2>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">@lang('Total Debt')</h6>
+                                <h6 class="font-weight-normal mb-0 w-100 text-truncate">@lang('Total Debt')</h6>
                             </div>
 
                             <div class=" mt-md-3 mt-lg-0">
