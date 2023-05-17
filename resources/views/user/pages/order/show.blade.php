@@ -339,25 +339,26 @@
             });
         }
         function copyOrderDetails(serviceTitle, link, messageId) {
-            var textToCopy = "اسم الخدمة: " + serviceTitle + "\n" + "الرابط: " + link;
+
+            var textToCopy = " @lang('ServiceName'):" + serviceTitle + "\n" + " @lang('link'): " + link;
             var copyMessage = document.getElementById(messageId);
 
             navigator.clipboard.writeText(textToCopy)
                 .then(function() {
-                    copyMessage.textContent = "تم نسخ الاسم والرقم بنجاح!";
+                    copyMessage.textContent = "@lang('name-number-copy')";
                     copyMessage.style.display = "block";
                     copyMessage.style.color = "green";
                     setTimeout(function() {
                         copyMessage.style.display = "none";
-                    }, 1000); // تعيين الوقت بالمللي ثانية (هنا 1000 مللي ثانية = 1 ثانية)
+                    }, 1000);
                 })
                 .catch(function(error) {
-                    copyMessage.textContent = "حدث خطأ أثناء نسخ النص: " + error;
+                    copyMessage.textContent = " @lang('error-copying'): " + error;
                     copyMessage.style.display = "block";
                     copyMessage.style.color = "red";
-                    setTimeout(function(){                    
+                    setTimeout(function(){
                         copyMessage.style.display = "none";
-                        }, 1000); 
+                        }, 1000);
                     });
         }
     </script>
