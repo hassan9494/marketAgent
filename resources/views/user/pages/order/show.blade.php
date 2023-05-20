@@ -7,7 +7,12 @@
                 width: 15%;
             }
         }
-
+        .copy-message {
+            display: none;
+            font-size: 12px;
+            margin-top: 5px;
+            color: green;
+        }
     </style>
 @endpush
 @section('content')
@@ -167,6 +172,10 @@
                                             <h5>@lang(optional($order->service)->service_title)</h5>
                                             @lang('Link'): @lang($order->link)<br>
                                             @lang('Quantity'): @lang($order->quantity) <br>
+                                             <button onclick="copyOrderDetails('{{ optional($order->service)->service_title }}', '{{ $order->link }}', 'copyMessage{{$order->id}}')">
+                                                <i class="fa fa-light fa-copy"></i>
+                                            </button>
+                                            <span id="copyMessage{{$order->id}}" style="display: none;"></span>
                                         </td>
                                         <td>@lang($order->price) @lang(config('basic.currency'))</td>
                                         <td>@lang($order->codes)</td>
@@ -328,6 +337,29 @@
                     }
                 }
             });
+        }
+        function copyOrderDetails(serviceTitle, link, messageId) {
+
+            var textToCopy = " @lang('ServiceName'):" + serviceTitle + "\n" + " @lang('link'): " + link;
+            var copyMessage = document.getElementById(messageId);
+
+            navigator.clipboard.writeText(textToCopy)
+                .then(function() {
+                    copyMessage.textContent = "@lang('name-number-copy')";
+                    copyMessage.style.display = "block";
+                    copyMessage.style.color = "green";
+                    setTimeout(function() {
+                        copyMessage.style.display = "none";
+                    }, 1000);
+                })
+                .catch(function(error) {
+                    copyMessage.textContent = " @lang('error-copying'): " + error;
+                    copyMessage.style.display = "block";
+                    copyMessage.style.color = "red";
+                    setTimeout(function(){
+                        copyMessage.style.display = "none";
+                        }, 1000);
+                    });
         }
     </script>
 @endpush

@@ -14,15 +14,11 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
 
                 <ul class="navbar-nav ml-auto  align-items-end align-items-sm-center">
-                    <li class="nav-item">
-                        <a class="nav-link {{ Request::routeIs('about')  ? 'active' : '' }}"
-                           href="{{ route('about') }}">@lang('About') </a>
-                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link {{ Request::routeIs('user.home')  ? 'active' : '' }}"
                            href="{{ route('user.home') }}">@lang('Dashboard') </a>
@@ -74,9 +70,16 @@
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link {{ Request::routeIs('about')  ? 'active' : '' }}"
+                           href="{{ route('about') }}">@lang('About') </a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link {{ Request::routeIs('privacy-policy')  ? 'active' : '' }}"
                            href="{{ route('privacy-policy') }}">@lang('privacy-policy') </a>
                     </li>
+
+
 
                     <li class="nav-item dropdown {{(Request::routeIs('user.profile') || Request::routeIs('user.api.docs') || Request::routeIs('user.ticket*') || Request::routeIs('user.referral') || Request::routeIs('user.referral.bonus*')) ? 'active' : '' }}">
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdownUser"

@@ -7,8 +7,15 @@
       <sourceFolder url="file://$MODULE_DIR$/app" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/Unit" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/Feature" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/app/Services/Gateway/coingate/coingate-php/lib" isTestSource="false" packagePrefix="CoinGate\" />
+      <sourceFolder url="file://$MODULE_DIR$/app/Services/Gateway/coingate/coingate-php/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/app/Services/Gateway/paythrow/php-sdk/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/app/Services/Gateway/razorpay/razorpay-php/libs/Requests-1.7.0/library" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/app/Services/Gateway/razorpay/razorpay-php/src" isTestSource="false" packagePrefix="Razorpay\Api\" />
+      <sourceFolder url="file://$MODULE_DIR$/app/Services/Gateway/razorpay/razorpay-php/tests" isTestSource="false" packagePrefix="Razorpay\Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/app/Services/Gateway/razorpay/razorpay-php/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/app/Services/Gateway/stripe/stripe-php/lib" isTestSource="false" packagePrefix="StripeJS\" />
+      <sourceFolder url="file://$MODULE_DIR$/app/Services/Gateway/stripe/stripe-php/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/anhskohbo/no-captcha" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/asm89/stack-cors" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/authorizenet/authorizenet" />
@@ -158,6 +165,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/vonage/nexmo-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/xsoap/init" />
+      <excludeFolder url="file://$MODULE_DIR$/app/Services/Gateway/paythrow/php-sdk/vendor/composer" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -147,5 +147,9 @@
     "Pending Payment": "Pending Payment",
     "Cancel Payment": "Cancel Payment",
     "Gateway": "Gateway",
-    "Charge": "Charge"
+    "Charge": "Charge",
+    "ServiceName":"Service name",
+    "link":"link",
+    "name-number-copy": "Name and number copied successfully",
+    "error-copying": "An error occurred copying text"
 }
