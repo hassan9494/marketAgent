@@ -12898,7 +12898,7 @@ button.bg-purple:hover {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color:#fff;
+    color: #fff;
 }
 .text-left {
     text-align: left !important;
@@ -14979,7 +14979,7 @@ a.link:hover {
 }
 .set-doller {
     font-size: 17px;
-    top: -9px;
+    top: 0px;
     right: 2px;
 }
 .custom-shadow {
@@ -16158,7 +16158,7 @@ cardinput {
 }
 
 .column .card .card-footer {
-    background-color: #f9fcfe;
+    background-color: #0895d5e0;
 }
 
 .contain-cards-order {
@@ -16726,7 +16726,16 @@ cardinput {
 .balance {
     margin-left: 25px;
 }
-
+@media screen and (max-width: 991px){
+    .balance {
+        margin-left: unset;
+    }
+}
+@media screen and (max-width: 333px){
+    .balance {
+        display: none;
+    }
+}
 @media (max-width: 1199.98px) {
     .language {
         display: none;
@@ -16771,12 +16780,31 @@ cardinput {
     color: white;
 }
 
+/*.page-wrapper {*/
+/*    background: #eeeeeeab !important;*/
+/*    background-image: url(../../../images/Untitled-3.jpg) !important;*/
+/*    width: 100%;*/
+/*    padding-bottom: 50px;*/
+/*    background-size: cover !important;*/
+/*    background-repeat: no-repeat;*/
+/*}*/
 .page-wrapper {
-    background-image: url(../../../images/background.jpg) !important;
+    background: #eeeeeeab !important;
+    background-image: url(../../../images/Untitled-3.jpg) !important;
+    width: 100%;
     padding-bottom: 50px;
     background-size: cover !important;
+    background-repeat: no-repeat;
+    animation: linesAnimation 5s linear infinite;
 }
-
+@keyframes linesAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
 .news {
     width: 160px;
 }
@@ -16803,3 +16831,4 @@ cardinput {
         align-items: center !important;
     }
 }
+

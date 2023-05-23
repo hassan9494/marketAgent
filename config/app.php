@@ -164,6 +164,7 @@ return [
         /*
          * Package Service Providers...
          */
+        App\Providers\ExternalProviderServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Ixudra\Curl\CurlServiceProvider::class,
         Nexmo\Laravel\NexmoServiceProvider::class,

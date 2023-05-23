@@ -222,7 +222,7 @@ cardinput{
 }
 
 .column .card .card-footer {
-    background-color: #f9fcfe;
+    background-color: #0895d5e0;
 }
 
 
@@ -832,9 +832,21 @@ cardinput{
 }
 
 .page-wrapper {
-    background-image: url(../../../images/back.jpg)!important;
+    background: #eeeeeeab !important;
+    background-image: url(../../../images/Untitled-3.jpg) !important;
+    width: 100%;
     padding-bottom: 50px;
-    background-size: cover!important;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    animation: linesAnimation 5s linear infinite;
+}
+@keyframes linesAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
 }
 .Privacy-Policy .text {
     font-size: 20px;

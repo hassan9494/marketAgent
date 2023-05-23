@@ -126,7 +126,7 @@ box-shadow: unset;
 
 .card {
 border-bottom: 1px solid rgba(162,176,190,.15);
-background: transparent;
+background: #0895d5e0;
 box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
 -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
 -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
@@ -154,9 +154,9 @@ right: 4px;
 line-height: 11px;
 padding: 4px 6px;
 }
-.headerNav .navbar{
-padding-right: 60px;
-}
+<!--.headerNav .navbar{-->
+<!--padding-right: 60px;-->
+<!--}-->
 .list-style-none .scrollable{
 max-height: 250px;
 overflow: auto;
@@ -195,11 +195,18 @@ color: #b8c3d5;
 color: #fff;
 }
 
-
+.mobile-nav{
+display:none;
+}
 @media screen and (max-width: 991px){
 .headerNav .navbar {
 display: flex;
+flex-wrap: nowrap;
 align-items: center;
+margin-right: 3rem !important;
+}
+.navbar-brand {
+    margin-right: unset;
 }
 .headerNav .navbar-brand {
 order: 1;
@@ -222,7 +229,12 @@ text-align: right;
 <!-- .headerNav .navbar-collapse .navbar-nav {
 align-items: flex-end !important;
 } -->
-
+.lg-labtop{
+display:none;
+}
+.mobile-nav{
+display:block;
+}
 .headerNav .navbar{
 padding-right: 0px;
 }
@@ -268,8 +280,8 @@ border-radius: 6px;
 
 }
 #boltd .navbar-nav .nav-item  a.nav-link.active{
-color: <?php echo  $primaryColor;?>;
-background: transparent;
+color: #fff;
+background: #1491d0;
 }
 
 .dropdown-item.active, .dropdown-item:active {
@@ -1017,6 +1029,7 @@ background: transparent !important;
 
 #boltd .navbar-nav .nav-item a.nav-link, #boltd .navbar-nav .nav-item a.nav-link {
     font-size:18px
+    white-space: nowrap;
 }
 
 @media (max-width: 1440px){
@@ -1026,7 +1039,7 @@ background: transparent !important;
     color: #000;
     font-weight: 500;
     border-radius: 6px;
-
+    transition: 0.6s ease-in-out;
     }
 }
 

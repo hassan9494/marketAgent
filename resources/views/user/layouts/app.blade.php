@@ -48,7 +48,8 @@
 <script src="{{ asset('assets/global/js/axios.min.js') }}"></script>
 <script src="{{ asset('assets/global/js/vue.min.js') }}"></script>
 <script src="{{ asset('assets/global/js/pusher.min.js') }}"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 @include('user.layouts.notification')
 @stack('js')
 
