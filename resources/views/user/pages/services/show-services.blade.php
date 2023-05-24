@@ -34,8 +34,7 @@
                         <i id="clearsearch" class="fa fa-times-circle pull-left" onclick="clearSearch()"></i>
                     </div>
                     <button type="button" onclick="myFunction()" id="search"
-                            class="btn btn-primary mr-2 mb-2 search-button"
-                            style="background: #089dda;padding: 12px 30px;">@lang('Search')</button>
+                            class="btn btn-primary mr-2 mb-2 search-button">@lang('Search')</button>
                 </div>
                 <form id="productForm" class="form" method="post" action="{{route('user.order.store')}}"
                       enctype="multipart/form-data">
@@ -142,8 +141,7 @@
                     {{--                            هذا المنتج يعمل بشكل آلي على مدار الساعة--}}
                     {{--                        </div>--}}
                     {{--                    </div>--}}
-                    <button id="submit-button" class="btn btn-primary ml-3 mt-3 form_submit submit-button " disabled
-                            style="background: #089dda;padding: 12px 30px;">
+                    <button id="submit-button" class="btn btn-primary ml-3 mt-3 form_submit submit-button " disable>
                         <span class="indicator-label "></span>
                         @lang('Buy')
                         <div class="spinner-border indicator-progres d-none " role="status">

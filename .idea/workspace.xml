@@ -23,10 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a7eff23-e428-4214-b8ae-75d970d66454" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/sy.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/sy.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/layouts/head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/layouts/head.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/pages/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/pages/dashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user/pages/order/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/pages/order/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/pages/services/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/pages/services/categories.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,10 +237,11 @@
       <recent name="G:\WDM\public\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/assets/images" />
       <recent name="D:\projects\SMM\smm\project\resources\lang" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.AuthenticationTest.test_users_can_not_authenticate_with_invalid_password">
+  <component name="RunManager" selected="PHPUnit.SwProductsTest">
     <configuration name="AuthenticationTest.test_login_screen_can_be_rendered" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -266,12 +269,22 @@
       <TestRunner class="Tests\Feature\AuthenticationTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/AuthenticationTest.php" method="test_users_can_not_authenticate_with_invalid_password" scope="Method" />
       <method v="2" />
     </configuration>
+    <configuration name="SwProductsTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\SwProductsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/SwProductsTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SwProductsTest.testGetBalance" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\SwProductsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/SwProductsTest.php" method="testGetBalance" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.SwProductsTest" />
+        <item itemvalue="PHPUnit.SwProductsTest.testGetBalance" />
         <item itemvalue="PHPUnit.AuthenticationTest.test_users_can_not_authenticate_with_invalid_password" />
         <item itemvalue="PHPUnit.AuthenticationTest.test_users_can_authenticate_using_the_login_screen" />
         <item itemvalue="PHPUnit.AuthenticationTest.test_login_screen_can_be_rendered" />
@@ -326,7 +339,11 @@
       <workItem from="1683996016656" duration="48000" />
       <workItem from="1684205024799" duration="1799000" />
       <workItem from="1684208430180" duration="1821000" />
-      <workItem from="1684297286056" duration="333000" />
+      <workItem from="1684297286056" duration="1089000" />
+      <workItem from="1684684684707" duration="6254000" />
+      <workItem from="1684694918669" duration="5689000" />
+      <workItem from="1684808157737" duration="8021000" />
+      <workItem from="1684894613711" duration="3548000" />
     </task>
     <servers />
   </component>

@@ -166,7 +166,9 @@
                                 </thead>
                                 <tbody>
                                 @foreach($orders as $key => $order)
-                                    <tr>
+                                    <tr data-aos="fade-up"
+                                        data-aos-easing="linear"
+                                        data-aos-duration="1500">
                                         <td> {{$order->id}} </td>
                                         <td class="text-left">
                                             <h5>@lang(optional($order->service)->service_title)</h5>

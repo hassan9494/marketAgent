@@ -65,6 +65,9 @@
                                 </div>
                             </div>
 
+                            <audio id="notificationSound">
+                                <source src="path_to_sound_file.mp3" type="audio/mpeg">
+                            </audio>
 
                             <div class="form-group col-lg-6 col-md-6">
                                 <label class="d-block">@lang('SMS Verification')</label>

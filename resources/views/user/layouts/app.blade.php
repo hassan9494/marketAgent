@@ -48,7 +48,10 @@
 <script src="{{ asset('assets/global/js/axios.min.js') }}"></script>
 <script src="{{ asset('assets/global/js/vue.min.js') }}"></script>
 <script src="{{ asset('assets/global/js/pusher.min.js') }}"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 @include('user.layouts.notification')
 @stack('js')
 

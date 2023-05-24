@@ -17734,7 +17734,7 @@ ul.list-style-none li a:hover {
 }
 
 .auth-wrapper {
-    min-height: 100vh
+    min-height: 100vh;
 }
 
 .auth-wrapper .auth-box {
