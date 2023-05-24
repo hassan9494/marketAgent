@@ -150,6 +150,9 @@
     "Charge": "Charge",
     "ServiceName":"Service name",
     "link":"link",
+    "orderId": "Order id",
+    "userName": "User name",
+    "quantity": "Quantity",
     "name-number-copy": "Name and number copied successfully",
     "error-copying": "An error occurred copying text"
 }

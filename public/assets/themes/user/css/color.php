@@ -201,7 +201,7 @@ display:none;
 @media screen and (max-width: 991px){
 .headerNav .navbar {
 display: flex;
-flex-wrap: nowrap;
+<!--flex-wrap: nowrap;-->
 align-items: center;
 margin-right: 3rem !important;
 }

@@ -69,10 +69,7 @@ class OrderController extends Controller
             ->with('service', 'service.category', 'users')
             ->latest()
             ->paginate(config('basic.paginate'));
-
-            $serviceTitle = '';
-            $link = '';
-        return view('user.pages.order.show', compact('orders', 'serviceTitle', 'link'));
+        return view('user.pages.order.show', compact('orders'));
     }
 
     public function statusSearch(Request $request, $name = 'awaiting')
@@ -127,7 +124,7 @@ class OrderController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    
+
     public function store(Request $request)
     {
         $service = Service::userRate()->findOrFail($request->service);

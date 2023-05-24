@@ -58,6 +58,7 @@ class OrderController extends Controller
             ->paginate(config('basic.paginate'));
 
         $page_title = "Search Orders";
+
         return view('admin.pages.order.search', compact('orders', 'page_title'));
     }
 

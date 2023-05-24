@@ -26,7 +26,6 @@ class OrderManageController extends Controller
         $userid = @$request->user_id;
         $status = @$request->status;
         $dateSearch = @$request->date_order;
-
         $date = preg_match("/^[0-9]{2,4}\-[0-9]{1,2}\-[0-9]{1,2}$/", $dateSearch);
         $orders = Order::when($userid, function ($query) use ($userid) {
             return $query->where('user_id', $userid);
