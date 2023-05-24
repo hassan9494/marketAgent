@@ -7,8 +7,10 @@
      <div class="container" style="margin-bottom: 200px;">
         <div class="row">
             @foreach($categories as $key=>$category)
-                <div class="column" >
-                    <a href="{{route('user.services.show',$category->id)}}">
+                <div class="column" data-aos="fade-up"
+                     data-aos-easing="linear"
+                     data-aos-duration="1500">
+                    <a href="{{route('user.services.show',$category->id)}}" >
                         <div class="card">
                             <div class="card-body">
                                 <img src="{{ getFile(config('location.category.path').$category->image) }}" alt="user">

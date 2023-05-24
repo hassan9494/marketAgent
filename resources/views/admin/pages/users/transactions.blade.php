@@ -66,7 +66,9 @@
                 </thead>
                 <tbody>
                 @forelse($transaction as $k => $row)
-                    <tr>
+                    <tr data-aos="fade-up"
+                        data-aos-easing="linear"
+                        data-aos-duration="1500">
                         <td data-label="@lang('No.')">{{loopIndex($transaction) + $k}}</td>
                         <td data-label="@lang('TRX')">@lang($row->trx_id)</td>
                         <td data-label="@lang('User Name')">
