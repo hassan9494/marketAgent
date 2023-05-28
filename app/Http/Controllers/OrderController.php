@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Stevebauman\Purify\Facades\Purify;
 
 class OrderController extends Controller
@@ -144,19 +145,30 @@ class OrderController extends Controller
         $order->api_order_id = $request->api_order_id;
         $order->link = $req['link'];
         $order->remains = $req['remains'] == '' ? null : $req['remains'];
-        if ($request->status) {
-            $order->status = $req['status'];
+        if ($request->status && $req['status'] == 'refunded') {
+            DB::transaction(function () use ($order) {
+                try {
+                    $order->status = 'refunded';
+                    $order->save();
+                } catch (\Exception $e) {
+                    DB::rollback();
+                    throw $e;
+                }
+            });
+        } else {
+            if ($request->status) {
+                $order->status = $req['status'];
+            }
+            $order->reason = $req['reason'];
+            $order->save();
+            $this->sendMailSms($order->users, 'ORDER_UPDATE', [
+                'order_id' => $order->id,
+                'start_counter' => $order->start_counter,
+                'link' => $order->link,
+                'remains' => $order->remains,
+                'order_status' => $order->status
+            ]);
         }
-        $order->reason = $req['reason'];
-        $order->save();
-
-        $this->sendMailSms($order->users, 'ORDER_UPDATE', [
-            'order_id' => $order->id,
-            'start_counter' => $order->start_counter,
-            'link' => $order->link,
-            'remains' => $order->remains,
-            'order_status' => $order->status
-        ]);
         return back()->with('success', 'successfully updated');
     }
 
@@ -178,8 +190,21 @@ class OrderController extends Controller
     {
         $req = $request->all();
         $order = Order::find($request->id);
-        $order->status = $req['statusChange'];
-        $order->save();
+        if ($req['statusChange'] == 'refunded') {
+            DB::transaction(function () use ($order) {
+                try {
+                    $order->status = 'refunded';
+                    $order->save();
+                } catch (\Exception $e) {
+                    DB::rollback();
+                    throw $e;
+                }
+            });
+        } else {
+            $order->status = $req['statusChange'];
+            $order->save();
+        }
+
         return back()->with('success', 'Successfully Updated');
     }
 

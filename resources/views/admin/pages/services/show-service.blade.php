@@ -129,8 +129,10 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($category->service as $service)
-
+                                @php
+                                    $services = $category->service->sortByDesc('service_status');
+                                @endphp
+                                @foreach($services as $service)
                                     <tr>
                                         <td class="text-center check-box-width-50">
                                             <input type="checkbox"
