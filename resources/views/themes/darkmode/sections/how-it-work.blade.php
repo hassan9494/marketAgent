@@ -24,8 +24,6 @@
                                     <div class="col-md-6">
                                         <div
                                             class="work-box"
-                                            data-aos="fade-up"
-                                            data-aos-duration="800"
                                             data-aos-anchor-placement="center-bottom"
                                         >
                                             <div class="icon-box">

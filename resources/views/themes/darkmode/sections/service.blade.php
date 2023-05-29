@@ -20,8 +20,6 @@
                     <div class="col-lg-4">
                         <div
                             class="service-box"
-                            data-aos="fade-up"
-                            data-aos-duration="1200"
                             data-aos-anchor-placement="center-bottom"
                         >
                             <div class="icon-box">

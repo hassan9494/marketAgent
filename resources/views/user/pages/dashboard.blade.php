@@ -14,9 +14,7 @@
 
         <div class="row my-4 admin-fa_icon">
 
-            <div data-aos="fade-up"
-                 data-aos-easing="linear"
-                 data-aos-duration="1500" class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card shadow ">
                     <div class="card-body">
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
@@ -36,9 +34,7 @@
                 </div>
             </div>
 
-            <div data-aos="fade-up"
-                 data-aos-easing="linear"
-                 data-aos-duration="1500" class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card shadow">
                     <div class="card-body">
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
@@ -56,9 +52,7 @@
                 </div>
             </div>
 
-            <div data-aos="fade-up"
-                 data-aos-easing="linear"
-                 data-aos-duration="1500" class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card shadow">
                     <div class="card-body">
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
@@ -78,9 +72,7 @@
                 </div>
             </div>
 
-            <div data-aos="fade-up"
-                 data-aos-easing="linear"
-                 data-aos-duration="1500" class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card shadow">
                     <div class="card-body">
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
@@ -100,9 +92,7 @@
                 </div>
             </div>
 
-            <div data-aos="fade-up"
-                 data-aos-easing="linear"
-                 data-aos-duration="1500" class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card shadow">
                     <div class="card-body">
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
@@ -120,9 +110,7 @@
                 </div>
             </div>
 
-            <div data-aos="fade-up"
-                 data-aos-easing="linear"
-                 data-aos-duration="1500" class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card shadow">
                     <div class="card-body">
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
@@ -140,9 +128,7 @@
                 </div>
             </div>
 
-            <div data-aos="fade-up"
-                 data-aos-easing="linear"
-                 data-aos-duration="1500" class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card shadow">
                     <div class="card-body">
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
@@ -160,9 +146,7 @@
                 </div>
             </div>
 
-            <div data-aos="fade-up"
-                 data-aos-easing="linear"
-                 data-aos-duration="1500" class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card shadow">
                     <div class="card-body">
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
@@ -182,9 +166,7 @@
         </div>
 
         <div class="row">
-            <div data-aos="fade-up"
-                 data-aos-easing="linear"
-                 data-aos-duration="1500" class="col-md-12">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-body ">
                         <h4 class="card-title">@lang('Latest Transaction')</h4>

@@ -8,8 +8,6 @@
                         <div class="col-lg-6">
                             <div
                                 class="img-box"
-                                data-aos="fade-right"
-                                data-aos-duration="800"
                                 data-aos-anchor-placement="center-bottom"
                             >
                                 <img class="img-fluid" src="{{getFile(config('location.content.path').@$aboutUs->templateMedia()->image)}}" alt="@lang('about image')" />
@@ -24,8 +22,6 @@
                                     @foreach($contentDetails['about-us'] as $about)
                                         <div
                                             class="info-box"
-                                            data-aos="fade-left"
-                                            data-aos-duration="800"
                                             data-aos-anchor-placement="center-bottom"
                                         >
                                         <div class="icon-box">

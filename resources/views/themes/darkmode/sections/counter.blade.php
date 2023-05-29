@@ -16,8 +16,6 @@
                     <div class="col-lg-3 col-md-6">
                         <div
                             class="counter-box"
-                            data-aos="fade-up"
-                            data-aos-duration="800"
                             data-aos-anchor-placement="center-bottom"
                         >
                             <div class="icon-box">

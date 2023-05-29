@@ -146,15 +146,17 @@ class OrderController extends Controller
         $order->link = $req['link'];
         $order->remains = $req['remains'] == '' ? null : $req['remains'];
         if ($request->status && $req['status'] == 'refunded') {
-            DB::transaction(function () use ($order) {
-                try {
-                    $order->status = 'refunded';
-                    $order->save();
-                } catch (\Exception $e) {
-                    DB::rollback();
-                    throw $e;
-                }
-            });
+            if ($order->status != 'refunded') {
+                DB::transaction(function () use ($order) {
+                    try {
+                        $order->status = 'refunded';
+                        $order->save();
+                    } catch (\Exception $e) {
+                        DB::rollback();
+                        throw $e;
+                    }
+                });
+            }
         } else {
             if ($request->status) {
                 $order->status = $req['status'];
@@ -191,15 +193,17 @@ class OrderController extends Controller
         $req = $request->all();
         $order = Order::find($request->id);
         if ($req['statusChange'] == 'refunded') {
-            DB::transaction(function () use ($order) {
-                try {
-                    $order->status = 'refunded';
-                    $order->save();
-                } catch (\Exception $e) {
-                    DB::rollback();
-                    throw $e;
-                }
-            });
+            if ($order->status != 'refunded') {
+                DB::transaction(function () use ($order) {
+                    try {
+                        $order->status = 'refunded';
+                        $order->save();
+                    } catch (\Exception $e) {
+                        DB::rollback();
+                        throw $e;
+                    }
+                });
+            }
         } else {
             $order->status = $req['statusChange'];
             $order->save();

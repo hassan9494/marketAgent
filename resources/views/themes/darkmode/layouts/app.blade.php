@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{asset($themeTrue.'assets/plugins/owlcarousel/animate.css')}}"/>
     <link rel="stylesheet" href="{{asset($themeTrue.'assets/plugins/owlcarousel/owl.carousel.min.css')}}"/>
     <link rel="stylesheet" href="{{asset($themeTrue.'assets/plugins/owlcarousel/owl.theme.default.min.css')}}"/>
-    <link rel="stylesheet" href="{{asset($themeTrue.'assets/plugins/aos/aos.css')}}"/>
+{{--    <link rel="stylesheet" href="{{asset($themeTrue.'assets/plugins/aos/aos.css')}}"/>--}}
     <link rel="stylesheet" href="{{asset($themeTrue.'assets/plugins/fancybox/jquery.fancybox.min.css')}}"/>
     @stack('extra-css')
     <link rel="stylesheet" href="{{ asset($themeTrue.'css/style.css') }}"/>
@@ -138,7 +138,7 @@
 <script src="{{ asset($themeTrue.'assets/plugins/owlcarousel/owl.carousel.min.js') }}"></script>
 <script src="{{ asset($themeTrue.'assets/plugins/counterup/jquery.waypoints.min.js') }}"></script>
 <script src="{{ asset($themeTrue.'assets/plugins/counterup/jquery.counterup.min.js') }}"></script>
-<script src="{{ asset($themeTrue.'assets/plugins/aos/aos.js') }}"></script>
+{{--<script src="{{ asset($themeTrue.'assets/plugins/aos/aos.js') }}"></script>--}}
 <script src="{{ asset($themeTrue.'assets/plugins/fancybox/jquery.fancybox.min.js') }}"></script>
 <script src="{{ asset($themeTrue.'assets/fontawesome/fontawesomepro.js') }}"></script>
 <script src="{{asset('assets/global/js/notiflix-aio-2.7.0.min.js')}}"></script>

@@ -24,8 +24,6 @@
                                     @foreach($contentDetails['about-us'] as $about)
                                         <div
                                             class="info-box"
-                                            data-aos="fade-left"
-                                            data-aos-duration="800"
                                             data-aos-anchor-placement="center-bottom"
                                         >
                                         <div class="icon-box">

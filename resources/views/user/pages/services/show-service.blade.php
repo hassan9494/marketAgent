@@ -12,7 +12,6 @@
                     <li><a href="{{route('user.home')}}">@lang('Home')</a></li>
                     <li class="active">@lang('Service')</li>
                 </ol>
-
                 <div class="card my-3">
                     <div class="card-body">
                         <form action="{{ route('user.service.search') }}" method="get">
