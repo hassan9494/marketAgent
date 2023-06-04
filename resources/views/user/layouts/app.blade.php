@@ -14,6 +14,7 @@
     <div class="page-wrapper d-block">
         @yield('content')
     </div>
+
     <footer class="footer text-center text-muted">
         <p>تم التطوير من قبل شركة كودا . {{trans('All Rights Reserved')}}
             <a href="https://wa.me/+31685364242" target="_blank"><i class="fab fa-whatsapp" style="color: #0cc243;font-size: 20px;"></i></a>
@@ -82,7 +83,11 @@
         }
     });
 
-
+    document.querySelector('.burger-menu').addEventListener('click', function() {
+        var headerMenu = document.querySelector('.header-menu-wrap');
+        this.classList.toggle('open');
+        headerMenu.classList.toggle('fade-in');
+    });
 
     const darkMode = () => {
         var $theme =document.body.classList.toggle("dark-mode");

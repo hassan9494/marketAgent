@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap');
+
 .logo-text img{
     width: 100%;
 }
@@ -420,7 +422,8 @@ input[type="checkbox"].tic-check:checked + label:before {
 #accordion .accordion-body li:before {
     content: "\f10a";
     padding-right: 5px;
-    font-family: "Flaticon";
+    /* font-family: "Flaticon"; */
+    font-family: 'Tajawal', sans-serif;
     font-size: 16px;
     font-style: normal;
     color: #213744;

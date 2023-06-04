@@ -15,6 +15,15 @@
         <option value="$PROJECT_DIR$/app/Services/Gateway/razorpay/razorpay-php/tests" />
         <option value="$PROJECT_DIR$/app/Services/Gateway/razorpay/razorpay-php/tests" />
         <option value="$PROJECT_DIR$/app/Services/Gateway/razorpay/razorpay-php/tests" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/app/Services/Gateway/razorpay/razorpay-php/tests" />
+        <option value="$PROJECT_DIR$/app/Services/Gateway/razorpay/razorpay-php/tests" />
+        <option value="$PROJECT_DIR$/app/Services/Gateway/razorpay/razorpay-php/tests" />
+        <option value="$PROJECT_DIR$/app/Services/Gateway/razorpay/razorpay-php/tests" />
+        <option value="$PROJECT_DIR$/app/Services/Gateway/razorpay/razorpay-php/tests" />
+        <option value="$PROJECT_DIR$/app/Services/Gateway/razorpay/razorpay-php/tests" />
+>>>>>>> design
         <option value="$PROJECT_DIR$/app/Services/Gateway/stripe/stripe-php/tests" />
         <option value="$PROJECT_DIR$/app/Services/Gateway/coingate/coingate-php/tests" />
         <option value="$PROJECT_DIR$/tests" />

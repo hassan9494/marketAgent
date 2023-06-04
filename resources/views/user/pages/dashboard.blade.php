@@ -13,9 +13,8 @@
 
 
         <div class="row my-4 admin-fa_icon">
-
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card shadow ">
+                <div class="card shadow " style="clip-path: polygon(0% 0%, 90% 0, 100% 30%, 100% 100%, 0 100%);">
                     <div class="card-body">
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
                             <div>
@@ -35,7 +34,7 @@
             </div>
 
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card shadow">
+                <div class="card shadow" style="clip-path: polygon(0% 0%, 90% 0, 100% 30%, 100% 100%, 0 100%);">
                     <div class="card-body">
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
                             <div>
@@ -53,7 +52,7 @@
             </div>
 
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card shadow">
+                <div class="card shadow" style="clip-path: polygon(0% 0%, 90% 0, 100% 30%, 100% 100%, 0 100%);">
                     <div class="card-body">
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
                             <div>
@@ -73,7 +72,7 @@
             </div>
 
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card shadow">
+                <div class="card shadow" style="clip-path: polygon(0% 0%, 90% 0, 100% 30%, 100% 100%, 0 100%);">
                     <div class="card-body">
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
                             <div>
@@ -93,7 +92,7 @@
             </div>
 
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card shadow">
+                <div class="card shadow" style="clip-path: polygon(0% 0%, 90% 0, 100% 30%, 100% 100%, 0 100%);">
                     <div class="card-body">
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
                             <div>
@@ -111,7 +110,7 @@
             </div>
 
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card shadow">
+                <div class="card shadow" style="clip-path: polygon(0% 0%, 90% 0, 100% 30%, 100% 100%, 0 100%);">
                     <div class="card-body">
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
                             <div>
@@ -129,7 +128,7 @@
             </div>
 
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card shadow">
+                <div class="card shadow" style="clip-path: polygon(0% 0%, 90% 0, 100% 30%, 100% 100%, 0 100%);">
                     <div class="card-body">
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
                             <div>
@@ -147,7 +146,7 @@
             </div>
 
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="card shadow">
+                <div class="card shadow" style="clip-path: polygon(0% 0%, 90% 0, 100% 30%, 100% 100%, 0 100%);">
                     <div class="card-body">
                         <div class="d-flex d-lg-flex d-md-block align-items-center justify-content-between">
                             <div>
