@@ -173,7 +173,11 @@ clear: both;
 color: var(--allcolor);
 font-size: 16px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 line-height: normal;
 letter-spacing: normal;
 line-height: 24px;
@@ -207,7 +211,11 @@ padding: 0;
 color: var(--pcolor);
 font-size: 14px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 line-height: normal;
 letter-spacing: normal;
 }
@@ -229,7 +237,11 @@ padding: 0 !important;
 color: var(--h1h6);
 font-size: initial ;
 font-weight: normal;
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif !important;
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design
 line-height: normal !important;
 letter-spacing: 0 !important;
 }
@@ -252,7 +264,11 @@ figcaption{
 color: #5e6d77;
 font-size: 18px;
 font-weight: 700;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 line-height: normal;
 letter-spacing: normal;
 }
@@ -262,7 +278,11 @@ padding: 0;
 color: #5e6d77;
 font-size: 14px;
 font-weight: 600;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 line-height: normal;
 letter-spacing: normal;
 }
@@ -271,7 +291,11 @@ margin-bottom: 5px;
 color: #5e6d77;
 font-size: 14px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 line-height: 1.5;
 letter-spacing: 0;
 }
@@ -295,7 +319,11 @@ textarea::-webkit-input-placeholder {
 color: #666666 !important;
 font-size: 16px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 letter-spacing: 0.5px;
 line-height: 22px;
 opacity: 1;
@@ -305,7 +333,11 @@ textarea:-moz-placeholder {
 color: #666666 !important;
 font-size: 16px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 letter-spacing: 0.5px;
 line-height: 22px;
 opacity: 1;
@@ -315,7 +347,11 @@ textarea::-moz-placeholder {
 color: #666666 !important;
 font-size: 16px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 letter-spacing: 0.5px;
 line-height: 22px;
 opacity: 1;
@@ -325,7 +361,11 @@ textarea:-ms-input-placeholder {
 color: #666666 !important;
 font-size: 16px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 letter-spacing: 0.5px;
 line-height: 22px;
 opacity: 1;
@@ -346,7 +386,11 @@ max-height: 100px;
 padding: 10px 15px;
 color: #666666;
 font-size: 14px;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 border: 1px solid #dfdfdf;
 border-radius: 4px;
 background-color: #ffffff;
@@ -380,7 +424,11 @@ line-height: 28px;
 color: #204dcc;
 font-size: 16px;
 font-weight: 600;
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design
 letter-spacing: normal;
 line-height: normal;
 }
@@ -437,7 +485,11 @@ display: inline-block;
 color: var(--heading);
 font-size: 120px;
 font-weight: 700;
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design
 line-height: 1 !important;
 letter-spacing: normal;
 
@@ -451,7 +503,11 @@ height: auto;
 color: var(--subheading);
 font-size: 16px;
 font-weight: 500;
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design
 line-height: 1 !important;
 letter-spacing: normal;
 
@@ -468,7 +524,11 @@ padding-bottom: 60px !important;
 color: var(--h1h6);
 font-size: 36px;
 font-weight: 600;
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design
 line-height: 1 !important;
 letter-spacing: normal;
 }
@@ -501,7 +561,11 @@ padding: 16px 50px;
 color: var(--wcolor);
 font-size: 15px;
 font-weight: 500;
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design
 line-height: normal;
 letter-spacing: normal;
 text-align: center;
@@ -531,7 +595,11 @@ padding: 12px 20px;
 color: #204dcc;
 font-size: 15px;
 font-weight: 500;
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design
 line-height: normal;
 letter-spacing: normal;
 
@@ -703,7 +771,11 @@ justify-content: space-between;
 color: #666666;
 font-size: 15px;
 font-weight: 500;
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design
 letter-spacing: normal;
 line-height: 50px;
 text-align: right;
@@ -721,7 +793,11 @@ left: 0;
 color: #ffffff;
 font-size: 15px;
 font-weight: 500;
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design
 letter-spacing: normal;
 line-height: 50px;
 text-align: center;
@@ -1222,7 +1298,11 @@ border-radius: 0;
 color: #ffffff;
 font-size: 30px;
 font-weight: 500;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 line-height: 1;
 text-align: center;
 cursor: pointer;
@@ -1257,7 +1337,11 @@ color: #232323;
 padding: 0 15px;
 font-size: 16px;
 font-weight: 600;
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design
 line-height: normal;
 letter-spacing: normal;
 vertical-align: middle;
@@ -1301,7 +1385,11 @@ height: 100%;
 color: #ffffff;
 font-size: 16px;
 font-weight: 600;
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design
 line-height: 40px;
 text-align: center;
 border: 0;
@@ -1612,7 +1700,11 @@ margin-bottom: 0;
 color: #232323;
 font-size: 14px;
 font-weight: 700;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 line-height: 28px;
 letter-spacing: 0;
 
@@ -1636,7 +1728,11 @@ margin-top: -38px;
 color: #232323;
 font-size: 14px;
 font-weight: 700;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 line-height: 28px;
 letter-spacing: 0;
 
@@ -1675,7 +1771,11 @@ color: var(--wcolor);
 color: var(--wcolor);
 font-size: 16px;
 font-weight: 600;
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design
 line-height: normal;
 letter-spacing: 0.75px;
 
@@ -1801,7 +1901,11 @@ margin: 40px 0 !important;
 color: var(--wcolor);
 font-size: 24px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 letter-spacing: normal;
 line-height: 2;
 }
@@ -2317,7 +2421,11 @@ height: 55px;
 padding: 14px 30px;
 font-size: 18px;
 font-weight: 600;
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design
 
 border-top-left-radius: 0;
 border-bottom-left-radius: 0;
@@ -2326,7 +2434,11 @@ border-bottom-left-radius: 0;
 color: #232323 !important;
 font-size: 18px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 letter-spacing: 0;
 opacity: 1;
 }
@@ -2334,7 +2446,11 @@ opacity: 1;
 color: #232323 !important;
 font-size: 18px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 letter-spacing: 0;
 opacity: 1;
 }
@@ -2342,7 +2458,11 @@ opacity: 1;
 color: #232323 !important;
 font-size: 18px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 letter-spacing: 0;
 opacity: 1;
 }
@@ -2350,7 +2470,11 @@ opacity: 1;
 color: #232323 !important;
 font-size: 18px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 letter-spacing: 0;
 opacity: 1;
 }
@@ -2397,7 +2521,11 @@ transform: translate(0%, 50%);
 color: #ffffff;
 font-size: 16px;
 font-weight: 600;
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design
 letter-spacing: normal;
 line-height: 1.2;
 }
@@ -2409,7 +2537,11 @@ background-color: #ffffff;
 color: #666666;
 font-size: 18px;
 font-weight: 500;
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design
 
 }
 .card-blog .card-body .card-title {
@@ -2463,7 +2595,11 @@ font-size: 24px;
 color: var(--wcolor);
 font-size: 18px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 letter-spacing: normal;
 line-height: normal;
 }
@@ -2475,7 +2611,11 @@ font-size: 48px;
 color: var(--wcolor);
 font-size: 18px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 letter-spacing: normal;
 line-height: normal;
 }
@@ -2489,7 +2629,11 @@ padding: 16px 20px;
 color: #666666;
 font-size: 16px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 letter-spacing: 0.5px;
 line-height: 16px;
 border: 0;
@@ -2515,7 +2659,11 @@ margin: 40px 0 !important;
 color: #ffffff;
 font-size: 16px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 letter-spacing: normal;
 line-height: 28px;
 }
@@ -2535,7 +2683,11 @@ padding: 0;
 color: #ffffff;
 font-size: 16px;
 font-size: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 letter-spacing: normal;
 line-height: 28px;
 }
@@ -2549,7 +2701,11 @@ text-align: center;
 color: #ffffff;
 font-size: 14px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 letter-spacing: normal;
 line-height: normal;
 }
@@ -2559,7 +2715,11 @@ line-height: normal;
 color: #ffffff;
 font-size: 14px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 letter-spacing: normal;
 line-height: normal;
 }
@@ -2610,7 +2770,11 @@ box-shadow: none;
 color: #666666;
 font-size: 15px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 }
 .regain {
 display: none;
@@ -2745,7 +2909,11 @@ padding: 5px 10px;
 color: #204dcc;
 font-size: 18px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design
 letter-spacing: normal;
 line-height: normal;
 border: 0;
@@ -3002,7 +3170,11 @@ font-family: IcoFont;
 color: #ffffff;
 font-size: 16px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 }
 .counter-wrap-2 {
 position: relative;
@@ -3046,7 +3218,11 @@ justify-content: center;
 color: #333;
 font-size: 30px;
 font-weight: 700;
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design
 letter-spacing: normal;
 line-height: normal;
 border: 0;
@@ -3108,7 +3284,11 @@ justify-content: center;
 color: #ffffff;
 font-size: 14px;
 font-weight: 500;
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design
 border: 0;
 border-radius: 4px;
 background: linear-gradient(109deg, var(--bggrdleft2) 0%, var(--bggrdright2));
@@ -3235,7 +3415,11 @@ padding: 15px 20px;
 color: var(--allcolor);
 font-size: 16px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 border: 1px solid #dfdfdf;
 border-radius: 4px;
 background-color: #ffffff;
@@ -3342,7 +3526,11 @@ float: left;
 color: #666666;
 font-size: 14px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 letter-spacing: normal;
 line-height: normal;
 border: 0;
@@ -3374,7 +3562,11 @@ padding: 7.5px 15px;
 color: #666666;
 font-size: 18px;
 font-weight: 700;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 margin-left: initial !important;
 border: 1px solid #dfdfdf;
 border-radius: 0 4px 0 4px !important;
@@ -3397,7 +3589,11 @@ color: #666666;
 color: #204dcc;
 font-size: 14px;
 font-weight: 400;
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design
 letter-spacing: normal;
 line-height: normal;
 }
@@ -4323,4 +4519,10 @@ background: transparent !important;
 .Privacy-Policy .text {
     font-size: 20px;
     line-height: 45px;
+<<<<<<< HEAD
 }
+=======
+}
+
+
+>>>>>>> design
