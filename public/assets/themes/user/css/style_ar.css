@@ -16717,35 +16717,59 @@ cardinput {
     /*border-color: #d03c7f!important;*/
     border-radius: 5px;
     padding: 10px;
-    width: 200px;
+    /* width: 200px; */
     text-align: center;
+    clip-path: polygon(0% 0%, 90% 0, 100% 30%, 100% 100%, 0 100%);
+    border-bottom: 1px solid rgba(162,176,190,.15);
+    background-image: linear-gradient(to right bottom, #f90cff, #e027ff, #c534ff, #a93eff, #8a44ff, #6560ff, #3c73ff, #0081ff, #009cff, #00b3ff, #00c6f5, #0cd7e8);
     /*color: #d03c7f!important;*/
-    background: #1491d0 !important;
+    /* background: #1491d0 !important; */
 }
 .balance-span {
     color: #ffffff;
-    background: #1491d0;
-    /*padding: 10px;*/
+    font-size: 12px;
 }
-.balance {
-    /*margin-left: 25px;*/
+@media (min-width: 993px) and (max-width: 1140px) {
+    .balance-span {
+        font-size: 9px;
+    }
+    a#navbarDropdownUser span {
+        display: none;
+    }
+    a#navbarDropdownUser svg {
+        display: none;
+    }
 }
 @media screen and (max-width: 991px) {
     .balance {
         margin-left: unset;
     }
+    .balance {
+        clip-path: polygon(0% 0%, 70% 0, 100% 30%, 100% 100%, 0 100%);
+    }
+    .headerNav:before {
+        width: 95px !important;
+        clip-path: polygon(0 0, 100% 0%, 70% 100%, 0% 100%) !important;
+    }
+    .headerNav:after {
+        width: 95px !important;
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 30% 100%) !important;
+    }
 }
-@media screen and (max-width: 333px) {
+@media screen and (max-width: 400px) {
     .balance {
         display: none;
     }
 }
-@media (max-width: 1199.98px) {
-    .language {
-        display: none;
+@media screen and (max-width: 418px) {
+    .balance-span {
+        font-size: 9px;
     }
-    .balance-div {
-        display: none;
+    .headerNav .header-logo a {
+        height: 35px;
+    }
+    .headerNav .primary-header-inner {
+        padding: 10px 20px;
     }
 }
 .scroll-top2 {
@@ -16797,6 +16821,7 @@ cardinput {
     background-image: url(../../../images/body-bg.jpg) !important;
     width: 100%;
     padding-bottom: 50px;
+    margin-bottom: 40px;
     background-size: cover !important;
     background-repeat: no-repeat;
     animation: linesAnimation 5s linear infinite;
@@ -16874,16 +16899,20 @@ cardinput {
     justify-content: space-between;
     position: relative;
 }
-.headerNav .primary-header .header-logo {
+/* .headerNav .primary-header .header-logo {
     max-width: 220px;
-}
+} */
 .headerNav .primary-header .flex-logo {
     display: flex;
     align-items: center;
     gap: 20px;
 }
+.headerNav .header-logo a {
+    height: 50px;
+}
 .headerNav .header-logo img {
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
 }
 /*.headerNav .primary-header .header-menu-wrap {*/
 /*    display: block !important;*/
@@ -16892,6 +16921,8 @@ cardinput {
     margin: 0;
     padding: 0;
     list-style: none;
+    display: flex;
+    align-items: center;
 }
 .headerNav .header-menu-wrap ul li {
     display: inline-block;
@@ -16912,6 +16943,7 @@ cardinput {
     -webkit-font-smoothing: antialiased;
     position: relative;
     z-index: 1;
+    white-space: nowrap;
 }
 .headerNav .header-menu-wrap ul li > a:before {
     background-color: #9841ff;
@@ -17005,8 +17037,8 @@ cardinput {
     display: flex;
     gap: 20px;
     align-items: center;
+    justify-content: end;
     line-height: 80px;
-    margin-left: 20px;
 }
 .mobile-menu-icon {
     display: none;
@@ -17041,18 +17073,16 @@ cardinput {
 .line-menu.line-half {
     width: 50%;
 }
-@media (max-width: 1260px) {
+/* @media (max-width: 1260px) {
     .headerNav .primary-header .header-logo {
         max-width: 175px;
     }
-}
+} */
 @media (min-width: 993px) {
     .header-menu-wrap li ul {
         display: block !important;
     }
-    .headerNav .header-menu-wrap ul li > a {
-        font-size: 12px;
-    }
+
     .headerNav .primary-header-inner {
         padding: 10px 20px;
     }
@@ -17060,6 +17090,9 @@ cardinput {
 @media (max-width: 993px) {
     .mobile-menu-icon {
         display: block;
+    }
+    .headerNav .header-menu-wrap ul li > a {
+        font-size: 12px;
     }
     .line-menu {
         background-color: #ddd;

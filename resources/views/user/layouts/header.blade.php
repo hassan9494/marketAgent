@@ -71,14 +71,7 @@
                         </ul>
                     </div>
                     <div class="header-right">
-                        <div class="mobile-menu-icon">
-                            <div class="burger-menu">
-                                <div class="line-menu line-half first-line"></div>
-                                <div class="line-menu"></div>
-                                <div class="line-menu line-half last-line"></div>
-                            </div>
-                        </div>
-                        <!-- Notification -->
+
                         <div class="push-notification dropdown " id="pushNotificationArea">
 
                             <a class="nav-link dropdown-toggle pl-md-3 position-relative" href="javascript:void(0)"
@@ -93,7 +86,6 @@
                                     <li>
                                         <div class="scrollable message-center notifications position-relative">
 
-                                            <!-- Message -->
                                             <a v-for="(item, index) in items"
                                                @click.prevent="readAt(item.id, item.description.link)"
                                                href="javascript:void(0)"
@@ -101,7 +93,6 @@
                                                 <span class="btn btn-success text-white">
                                                     <i :class="item.description.icon" class="text-white"></i>
                                                 </span>
-{{--                                                rounded-circle btn-circle--}}
                                                 <div class="d-inline-block v-middle pl-2">
                                         <span class="font-12  d-block text-muted" v-cloak
                                               v-html="item.description.text"></span>
@@ -129,13 +120,11 @@
 
 
                         </div>
-                        <!-- End Notification -->
 
                         <div class="push-notification language">
                             <a class="nav-link dropdown-toggle lin" href="#" id="navbarDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                style="background-color: transparent;">
-                                {{--                    @lang('Languages')--}}
                                 <i class="fa fa-globe bell-font"></i>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -145,6 +134,14 @@
                                         {{$language->name}}
                                     </a>
                                 @endforeach
+                            </div>
+                        </div>
+
+                        <div class="mobile-menu-icon">
+                            <div class="burger-menu">
+                                <div class="line-menu line-half first-line"></div>
+                                <div class="line-menu"></div>
+                                <div class="line-menu line-half last-line"></div>
                             </div>
                         </div>
                     </div>

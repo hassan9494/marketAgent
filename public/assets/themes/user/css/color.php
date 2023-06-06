@@ -206,7 +206,7 @@ margin-right: 3rem !important;
 order: 1;
 }
 .headerNav .push-notification {
-order: 2;
+<!-- order: 2; -->
 position: relative;
 top: initial;
 right: initial;
