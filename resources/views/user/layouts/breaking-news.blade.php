@@ -2,8 +2,10 @@
 {{--    <div class="row" style="background-color:#ce3279 !important ">--}}
         <div class="row">
             <div class="d-flex justify-content-between align-items-center breaking-news"
-                 style="background: #f90cff;width: 100%;
-    background-image: linear-gradient(to right bottom, #f90cff, #e027ff, #c534ff, #a93eff, #8a44ff, #6560ff, #3c73ff, #0081ff, #009cff, #00b3ff, #00c6f5, #0cd7e8);">
+            style="
+            width: 100%;
+            background-image: linear-gradient(to right bottom,#1c81c2, #1c81c2, #0894cf, #05a2c7, #0ac9db);
+            ">
                 <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-danger py-2 text-white px-1 news"
                      style="background-color: #ce3279!important;width: 200px">
                     <span class="d-flex align-items-center">&nbsp;@lang('WDM News')</span>

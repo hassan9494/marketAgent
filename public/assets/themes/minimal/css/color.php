@@ -464,25 +464,12 @@ transform: translate(-50%, -65%);
 .slogan {
 position: relative;
 margin-top: 25px !important;
-padding-bottom: 60px !important;
 color: var(--h1h6);
 font-size: 36px;
 font-weight: 600;
 font-family: "Tajawal", sans-serif;
 line-height: 1 !important;
 letter-spacing: normal;
-}
-.slogan::after {
-content: '';
-position: absolute;
-bottom: 0;
-left: 50%;
-width: 204px;
-height: 6px;
-border: 0;
-border-radius: 3px;
-background: linear-gradient(90deg, var(--bggrdleft2) 40%, var(--bggrdright2) 60%);
-transform: translate(-50%, 0%);
 }
 .heading-left > .sub-heading {
 top: 65%;
@@ -515,7 +502,7 @@ user-select: none;
 border: 0;
 border-radius: 4px;
 outline: 0;
-background: linear-gradient(109deg, var(--bggrdleft2) 0%, var(--bggrdright2) 100%);
+background: linear-gradient(109deg, #ce3279 0%, #ce3279 100%);
 box-shadow: none;
 transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out, border-color 0.35s ease-in-out, box-shadow 0.35s ease-in-out;
 }
@@ -1055,8 +1042,7 @@ right: 0;
 width: 128px;
 height: 108px;
 border: 0;
-border-radius: 10px;
-background: linear-gradient(109deg, var(--bggrdleft3) 0%, var(--bggrdright3) 100%);
+border-radius: 10px;background-image: linear-gradient(to right bottom,#1c81c2, #1c81c2, #0894cf, #05a2c7, #0ac9db);
 z-index: -1;
 }
 .wrapper:after {
@@ -1068,7 +1054,7 @@ width: 83px;
 height: 71px;
 border: 0;
 border-radius: 10px;
-background: linear-gradient(109deg, var(--bggrdleft3) 0%, var(--bggrdright3) 100%);
+background-image: linear-gradient(to right bottom,#1c81c2, #1c81c2, #0894cf, #05a2c7, #0ac9db);
 z-index: 1;
 }
 .text-wrapper {
@@ -1449,6 +1435,8 @@ padding-top: 109px;
 /*---- ABOUT-US ----*/
 #about-us {
 margin: 75px 0;
+padding-top: 100px;
+padding-bottom: 300px;
 background-color: var(--allbg);
 }
 .youtube-wrapper {

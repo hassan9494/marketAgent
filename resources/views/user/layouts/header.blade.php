@@ -71,16 +71,13 @@
                         </ul>
                     </div>
                     <div class="header-right">
-
                         <div class="push-notification dropdown " id="pushNotificationArea">
-
                             <a class="nav-link dropdown-toggle pl-md-3 position-relative" href="javascript:void(0)"
                                id="bell" role="button" data-toggle="dropdown" aria-haspopup="true"
                                aria-expanded="false">
                                 <span><i class="far fa-bell bell-font"></i></span>
                                 <span class="badge badge-primary notify-no rounded-circle" v-cloak>@{{ items.length }}</span>
                             </a>
-
                             <div class="right-dropdown dropdown-menu dropdown-menu-right mailbox animated bounceInDown">
                                 <ul class="list-style-none">
                                     <li>
@@ -117,10 +114,7 @@
                                     </li>
                                 </ul>
                             </div>
-
-
                         </div>
-
                         <div class="push-notification language">
                             <a class="nav-link dropdown-toggle lin" href="#" id="navbarDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -128,7 +122,6 @@
                                 <i class="fa fa-globe bell-font"></i>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
                                 @foreach(getLanguges() as $language)
                                     <a class="dropdown-item" href="{{route('language',[$language->short_name])}}">
                                         {{$language->name}}

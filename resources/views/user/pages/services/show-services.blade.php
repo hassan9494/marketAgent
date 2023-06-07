@@ -51,7 +51,7 @@
                                             class="{{$service->is_available  != 1 ? 'disable ' : ''}} col-4 pr-0 pl-0"
                                             id="box{{$key+1}}"
                                             onclick="{{$service->is_available}} == 1 ? as(this,'{{$key+1}}','9','{{$service->user_rate ?? $service->price}}','{{$service->id}}',{{$service->min_amount}},{{$service->max_amount}}) : ''"
-                                            style="width:32.3%; flex:1 1 25cm; list-style-type:none ; display:inline-block ; max-width:175px ; opacity: 1 ;">
+                                            style="flex:1 1 25cm; list-style-type:none ; display:inline-block ; max-width:175px ; opacity: 1 ;">
                                             <div class="product_group">
                                                 <img
                                                     src="{{ getFile(config('location.category.path').$service->category->image) }}"
@@ -76,7 +76,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    {{-- <div class="col">
                         <input type="hidden" name="service" id="product_id" class="form-control">
                         <div class="  mt-2">
                             <div class="ml-3 alert alert-info" id="bb" style="visibility:hidden ;">
@@ -85,7 +85,7 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="service-form">
                         <div>
                             <div class="alert alert-info  pull-right" style="background:#089dda ;color:#fff; ">

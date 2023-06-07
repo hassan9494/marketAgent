@@ -506,7 +506,6 @@ font-family: "Tajawal", sans-serif;
 line-height: normal;
 letter-spacing: normal;
 text-align: center;
-
 white-space: nowrap;
 vertical-align: middle;
 -webkit-user-select: none;
