@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap');
 
->>>>>>> design
 .fa-fw,
 .fa-li {
     text-align: center
@@ -32,12 +29,8 @@ input {
 }
 
 @font-face {
-<<<<<<< HEAD
-    font-family: Rubik;
-=======
     /* font-family: Rubik; */
     font-family: 'Tajawal', sans-serif;
->>>>>>> design
     font-style: normal;
     font-weight: 300;
     font-display: swap;
@@ -45,12 +38,8 @@ input {
 }
 
 @font-face {
-<<<<<<< HEAD
-    font-family: Rubik;
-=======
     /* font-family: Rubik; */
     font-family: 'Tajawal', sans-serif;
->>>>>>> design
     font-style: normal;
     font-weight: 400;
     font-display: swap;
@@ -58,12 +47,8 @@ input {
 }
 
 @font-face {
-<<<<<<< HEAD
-    font-family: Rubik;
-=======
     /* font-family: Rubik; */
     font-family: 'Tajawal', sans-serif;
->>>>>>> design
     font-style: normal;
     font-weight: 500;
     font-display: swap;
@@ -71,12 +56,8 @@ input {
 }
 
 @font-face {
-<<<<<<< HEAD
-    font-family: Rubik;
-=======
     /* font-family: Rubik; */
     font-family: 'Tajawal', sans-serif;
->>>>>>> design
     font-style: normal;
     font-weight: 700;
     font-display: swap;
@@ -12015,11 +11996,7 @@ a.badge-purple:focus {
 
 .popover,
 .tooltip {
-<<<<<<< HEAD
-    font-family: Rubik, sans-serif;
-=======
     : Rubik, sans-serif;
->>>>>>> design
     font-style: normal;
     font-weight: 400;
     text-transform: none;

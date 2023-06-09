@@ -12,9 +12,9 @@
 @section('content')
 
     <div class="container">
-        <div class="card card-login mx-auto" style="border-radius: 15px">
+        <div class="card card-login mx-auto">
             <div class="card-header"
-                 style="padding: 1.25rem 1.25rem;border-radius: 15px;margin-bottom: 0;background-color: #fff;border-bottom: 1px solid #e9e9ef;">
+                 style="padding: 1.25rem 1.25rem;margin-bottom: 0;background-color: #fff;border-bottom: 1px solid #e9e9ef;">
                 <h3 class="slogan text-dark" style="display: inline-block;margin-top: 5px;">@lang('Add Order')</h3>
                 <div class="pull-left">
                     <a class="btn btn-info d-none backButton" href="{{route('user.service.show')}}">
@@ -48,10 +48,10 @@
                                         <input class="inp-hid-catg" type="text" name="category"
                                                value="{{$service->category->id}}" hidden>
                                         <li data-title=" {{$service->service_title }}"
-                                            class="{{$service->is_available  != 1 ? 'disable ' : ''}} col-4 pr-0 pl-0"
+                                            class="{{$service->is_available  != 1 ? 'disable ' : ''}} col-md-4 col-sm-12 pr-0 pl-0"
                                             id="box{{$key+1}}"
                                             onclick="{{$service->is_available}} == 1 ? as(this,'{{$key+1}}','9','{{$service->user_rate ?? $service->price}}','{{$service->id}}',{{$service->min_amount}},{{$service->max_amount}}) : ''"
-                                            style="width:32.3%; flex:1 1 25cm; list-style-type:none ; display:inline-block ; max-width:175px ; opacity: 1 ;">
+                                            style="flex:1 1 25cm; list-style-type:none ; display:inline-block ; max-width:175px ; opacity: 1 ;">
                                             <div class="product_group">
                                                 <img
                                                     src="{{ getFile(config('location.category.path').$service->category->image) }}"
@@ -76,7 +76,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    {{-- <div class="col">
                         <input type="hidden" name="service" id="product_id" class="form-control">
                         <div class="  mt-2">
                             <div class="ml-3 alert alert-info" id="bb" style="visibility:hidden ;">
@@ -85,7 +85,7 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="service-form">
                         <div>
                             <div class="alert alert-info  pull-right" style="background:#089dda ;color:#fff; ">

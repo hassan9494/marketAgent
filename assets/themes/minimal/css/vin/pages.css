@@ -38,6 +38,7 @@
 */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 /* 1. Theme default css */
@@ -70,6 +71,8 @@ a,
 	-o-transition: all 0.3s ease-out 0s;
 	transition: all 0.3s ease-out 0s;
 =======
+=======
+>>>>>>> design-rahaf
 /* 1. Theme default css */
 @import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 body {
@@ -99,11 +102,15 @@ a,
     -ms-transition: all 0.3s ease-out 0s;
     -o-transition: all 0.3s ease-out 0s;
     transition: all 0.3s ease-out 0s;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 a:focus,
 .btn:focus,
 .button:focus {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	text-decoration: none;
 	outline: none;
@@ -113,11 +120,17 @@ a:focus,
     outline: none;
     box-shadow: none;
 >>>>>>> design
+=======
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+>>>>>>> design-rahaf
 }
 
 a:hover,
 .portfolio-cat a:hover,
 .footer -menu li a:hover {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	color: #2B96CC;
 	text-decoration: none;
@@ -134,6 +147,8 @@ button:focus,input:focus,input:focus,textarea,textarea:focus{outline: 0}
 .capitalize {
 	text-transform: capitalize;
 =======
+=======
+>>>>>>> design-rahaf
     color: #2b96cc;
     text-decoration: none;
 }
@@ -154,7 +169,10 @@ textarea:focus {
 }
 .capitalize {
     text-transform: capitalize;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 h1,
 h2,
@@ -163,6 +181,7 @@ h4,
 h5,
 h6 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	font-family: 'Oxanium', cursive;
 	color: #fff;
 	margin-top: 0px;
@@ -170,13 +189,18 @@ h6 {
 	font-weight: 800;
 	text-transform: uppercase;
 =======
+=======
+>>>>>>> design-rahaf
     font-family: "Tajawal", sans-serif;
     color: #fff;
     margin-top: 0px;
     font-style: normal;
     font-weight: 800;
     text-transform: uppercase;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 h1 a,
 h2 a,
@@ -184,6 +208,7 @@ h3 a,
 h4 a,
 h5 a,
 h6 a {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	color: inherit;
 }
@@ -273,6 +298,8 @@ label {
 .separator {
 	border-top: 1px solid #f2f2f2
 =======
+=======
+>>>>>>> design-rahaf
     color: inherit;
 }
 h1 {
@@ -360,7 +387,10 @@ label {
 }
 .separator {
     border-top: 1px solid #f2f2f2;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 /* button style */
 .btn {
@@ -405,6 +435,7 @@ label {
 }
 .btn:hover::after {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	bottom: 0;
 }
 .btn:hover {
@@ -413,6 +444,8 @@ label {
 .breadcrumb > .active {
 	color: #ff5917;
 =======
+=======
+>>>>>>> design-rahaf
     bottom: 0;
 }
 .btn:hover {
@@ -420,11 +453,15 @@ label {
 }
 .breadcrumb > .active {
     color: #ff5917;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 
 /* scrollUp */
 .scroll-top {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	width: 50px;
 	height: 50px;
@@ -464,6 +501,8 @@ label {
 
 
 =======
+=======
+>>>>>>> design-rahaf
     width: 50px;
     height: 50px;
     line-height: 50px;
@@ -504,7 +543,10 @@ label {
     background: #a3a3a3;
 }
 
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 /* 2. Header */
 .header-bg {
     background-image: url(../../../../../../../../../Vinom/imgs/header_bg.jpg);
@@ -514,6 +556,7 @@ label {
 }
 .menu-wrap {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	background-image: url(../../../../../../../../../Vinom/imgs/main_header_bg.png);
 	background-position: center;
 	background-size: cover;
@@ -522,6 +565,8 @@ label {
 	margin-top: 7px;
 	box-shadow: 0px 3px 7px 0px rgba(128, 18, 40, 0.15);
 =======
+=======
+>>>>>>> design-rahaf
     background-image: url(../../../../../../../../../Vinom/imgs/main_header_bg.png);
     background-position: center;
     background-size: cover;
@@ -529,12 +574,16 @@ label {
     padding: 0 20px;
     margin-top: 7px;
     box-shadow: 0px 3px 7px 0px rgba(128, 18, 40, 0.15);
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .custom-container {
     max-width: 1330px;
 }
 .transparent-header {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	position: absolute;
 	left: 0;
@@ -543,13 +592,18 @@ label {
 	z-index: 9;
 	height: auto;
 =======
+=======
+>>>>>>> design-rahaf
     position: absolute;
     left: 0;
     top: 8px;
     width: 100%;
     z-index: 9;
     height: auto;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .header-top-social ul {
     display: flex;
@@ -557,10 +611,14 @@ label {
 }
 .header-top-social ul li + li {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	margin-left: 10px;
 =======
     margin-left: 10px;
 >>>>>>> design
+=======
+    margin-left: 10px;
+>>>>>>> design-rahaf
 }
 .header-top-social ul li a {
     background-image: url(../../../../../../../../../Vinom/imgs/header_social_bg.jpg);
@@ -585,10 +643,14 @@ label {
     text-transform: uppercase;
     font-weight: 700;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Oxanium', cursive;
 =======
     font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+    font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 }
 .header-top-login ul li a {
     display: block;
@@ -598,6 +660,7 @@ label {
     font-weight: 700;
     font-size: 11px;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Oxanium', cursive;
     padding: 2px 23px 2px 7px;
     border-top: 2px solid #2a2b37;
@@ -605,23 +668,33 @@ label {
 	border-radius: 3px;
   	box-shadow: 0px 3px 7px 0px rgba(128, 18, 40, 0.2);
 =======
+=======
+>>>>>>> design-rahaf
     font-family: "Tajawal", sans-serif;
     padding: 2px 23px 2px 7px;
     border-top: 2px solid #2a2b37;
     border-bottom: 2px solid #2a2b37;
     border-radius: 3px;
     box-shadow: 0px 3px 7px 0px rgba(128, 18, 40, 0.2);
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .header-top-login ul li a i {
     width: 29px;
     height: 25px;
+<<<<<<< HEAD
 <<<<<<< HEAD
     box-shadow: 0px 3px 7px 0px rgba(128, 18, 40, 0.2), inset 0px 3px 7px 0px rgba(56, 17, 33, 0.4);
 =======
     box-shadow: 0px 3px 7px 0px rgba(128, 18, 40, 0.2),
         inset 0px 3px 7px 0px rgba(56, 17, 33, 0.4);
 >>>>>>> design
+=======
+    box-shadow: 0px 3px 7px 0px rgba(128, 18, 40, 0.2),
+        inset 0px 3px 7px 0px rgba(56, 17, 33, 0.4);
+>>>>>>> design-rahaf
     text-align: center;
     line-height: 25px;
     background: #1d1e29;
@@ -629,6 +702,7 @@ label {
     color: #ff4800;
 }
 .header-top-login ul li a:hover {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	color: #ff4800;
 }
@@ -664,6 +738,8 @@ label {
 	font-family: 'Oxanium', cursive;
 	z-index: 1;
 =======
+=======
+>>>>>>> design-rahaf
     color: #ff4800;
 }
 .menu-nav {
@@ -697,7 +773,10 @@ label {
     position: relative;
     font-family: "Tajawal", sans-serif;
     z-index: 1;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .navbar-wrap > ul > li > a::before {
     content: "";
@@ -713,14 +792,19 @@ label {
     margin: 0 auto;
     opacity: 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
     transition: .3s linear;
 =======
     transition: 0.3s linear;
 >>>>>>> design
+=======
+    transition: 0.3s linear;
+>>>>>>> design-rahaf
     box-shadow: 0px 1px 8.37px 0.63px rgba(0, 0, 0, 0.28);
 }
 .navbar-wrap > ul > li.active > a,
 .navbar-wrap > ul > li:hover > a {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	color: #fff;
 }
@@ -750,6 +834,8 @@ label {
 	color: #dfdce1;
 	font-size: 14px;
 =======
+=======
+>>>>>>> design-rahaf
     color: #fff;
 }
 .navbar-wrap > ul > li.active > a::before,
@@ -777,7 +863,10 @@ label {
 .header-action > ul > li > a {
     color: #dfdce1;
     font-size: 14px;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .header-shop-cart a span {
     position: absolute;
@@ -800,11 +889,16 @@ label {
     height: 46px;
     background-color: #20212d;
 <<<<<<< HEAD
+<<<<<<< HEAD
     box-shadow: 0px 3px 7px 0px rgba(128, 18, 40, 0.2), inset 0px 3px 7px 0px rgba(56, 17, 33, 0.4);
 =======
     box-shadow: 0px 3px 7px 0px rgba(128, 18, 40, 0.2),
         inset 0px 3px 7px 0px rgba(56, 17, 33, 0.4);
 >>>>>>> design
+=======
+    box-shadow: 0px 3px 7px 0px rgba(128, 18, 40, 0.2),
+        inset 0px 3px 7px 0px rgba(56, 17, 33, 0.4);
+>>>>>>> design-rahaf
     text-align: center;
     line-height: 46px;
 }
@@ -823,6 +917,7 @@ label {
     transform: translateY(10px);
 }
 .header-shop-cart ul.minicart::before {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	position: absolute;
 	content: '';
@@ -845,6 +940,8 @@ label {
 	overflow: hidden;
 	padding: 0;
 =======
+=======
+>>>>>>> design-rahaf
     position: absolute;
     content: "";
     left: 0px;
@@ -865,7 +962,10 @@ label {
     margin-left: 0;
     overflow: hidden;
     padding: 0;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .header-shop-cart .minicart .cart-img {
     width: 100px;
@@ -873,10 +973,14 @@ label {
 }
 ul.minicart .cart-img img {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	width: 100px;
 =======
     width: 100px;
 >>>>>>> design
+=======
+    width: 100px;
+>>>>>>> design-rahaf
 }
 .header-shop-cart .minicart .cart-content {
     padding-left: 15px;
@@ -890,6 +994,7 @@ ul.minicart .cart-content h4 {
     font-size: 14px;
     background: none;
     text-transform: uppercase;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	line-height: 1.4;
 	margin-bottom: 5px;
@@ -910,6 +1015,8 @@ ul.minicart .cart-price .new {
 	font-size: 14px;
 	margin-left: 0;
 =======
+=======
+>>>>>>> design-rahaf
     line-height: 1.4;
     margin-bottom: 5px;
 }
@@ -928,13 +1035,17 @@ ul.minicart .cart-price span {
 ul.minicart .cart-price .new {
     font-size: 14px;
     margin-left: 0;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .header-shop-cart .minicart .del-icon {
     margin-top: 30px;
     flex-grow: 1;
 }
 .minicart .del-icon > a {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	font-size: 18px;
 	color: #ffffffa3;
@@ -1006,6 +1117,8 @@ ul.minicart .cart-price .new {
 	text-align: left;
 	display: block;
 =======
+=======
+>>>>>>> design-rahaf
     font-size: 18px;
     color: #ffffffa3;
 }
@@ -1075,7 +1188,10 @@ ul.minicart .cart-price .new {
     margin-left: 0;
     text-align: left;
     display: block;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .navbar-wrap ul li .submenu li a {
     padding: 0 10px 0 25px;
@@ -1092,6 +1208,7 @@ ul.minicart .cart-price .new {
 .navbar-wrap ul li .submenu li.active a,
 .navbar-wrap ul li .submenu li a:hover {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	color: #ff5917;
 }
 .navbar-wrap ul li:hover > .submenu {
@@ -1099,13 +1216,18 @@ ul.minicart .cart-price .new {
 	visibility: visible;
 	transform: scale(1);
 =======
+=======
+>>>>>>> design-rahaf
     color: #ff5917;
 }
 .navbar-wrap ul li:hover > .submenu {
     opacity: 1;
     visibility: visible;
     transform: scale(1);
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .sticky-menu {
     left: 0;
@@ -1123,20 +1245,27 @@ ul.minicart .cart-price .new {
 }
 .sticky-menu .menu-wrap {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	background-image: none;
 	box-shadow: none;
 	margin-top: 0;
 	padding: 0 0;
 =======
+=======
+>>>>>>> design-rahaf
     background-image: none;
     box-shadow: none;
     margin-top: 0;
     padding: 0 0;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 
 /* Mobile-menu */
 .nav-outer .mobile-nav-toggler {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	position: relative;
 	float: right;
@@ -1349,6 +1478,8 @@ ul.minicart .cart-price .new {
 	-o-transition: all 500ms ease;
 	transition: all 500ms ease;
 =======
+=======
+>>>>>>> design-rahaf
     position: relative;
     float: right;
     font-size: 40px;
@@ -1559,23 +1690,32 @@ ul.minicart .cart-price .new {
     -webkit-transition: all 500ms ease;
     -o-transition: all 500ms ease;
     transition: all 500ms ease;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .menu-area .mobile-nav-toggler {
     position: relative;
     float: right;
     font-size: 30px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	cursor: pointer;
 	line-height: 1;
 	color: #fff;
 	margin-top: 6px;
 =======
+=======
+>>>>>>> design-rahaf
     cursor: pointer;
     line-height: 1;
     color: #fff;
     margin-top: 6px;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
     display: none;
 }
 
@@ -1608,25 +1748,34 @@ ul.minicart .cart-price .new {
     color: #cfcdcd;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .breadcrumb-item+.breadcrumb-item::before {
 =======
 .breadcrumb-item + .breadcrumb-item::before {
 >>>>>>> design
+=======
+.breadcrumb-item + .breadcrumb-item::before {
+>>>>>>> design-rahaf
     display: inline-block;
     padding-right: 10px;
     color: #4e4d4d;
     content: "|";
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .breadcrumb-item+.breadcrumb-item {
 =======
 .breadcrumb-item + .breadcrumb-item {
 >>>>>>> design
+=======
+.breadcrumb-item + .breadcrumb-item {
+>>>>>>> design-rahaf
     padding-left: 10px;
 }
 .breadcrumb-content h2 {
     line-height: 1.2;
     margin-bottom: 9px;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	font-size: 40px;
 	letter-spacing: -1px;
@@ -1634,12 +1783,17 @@ ul.minicart .cart-price .new {
 .breadcrumb-content h2 span {
 	color: #ff5917;
 =======
+=======
+>>>>>>> design-rahaf
     font-size: 40px;
     letter-spacing: -1px;
 }
 .breadcrumb-content h2 span {
     color: #ff5917;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .breadcrumb-bg::after {
     content: "";
@@ -1653,6 +1807,7 @@ ul.minicart .cart-price .new {
 
 /* 4. Search modal */
 #search-modal {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	background-color: rgba(23,26,33,.95);
 }
@@ -1705,6 +1860,8 @@ ul.minicart .cart-price .new {
 	border: none;
 	cursor: pointer;
 =======
+=======
+>>>>>>> design-rahaf
     background-color: rgba(23, 26, 33, 0.95);
 }
 #search-modal .modal-dialog {
@@ -1755,31 +1912,44 @@ ul.minicart .cart-price .new {
     background: 0 0;
     border: none;
     cursor: pointer;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
     top: 11px;
     color: #ff5917;
 }
 .modal-backdrop {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	z-index: 1;
 }
 .modal-open .header-top {
 	z-index: 2;
 =======
+=======
+>>>>>>> design-rahaf
     z-index: 1;
 }
 .modal-open .header-top {
     z-index: 2;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 
 /* 5. Slider */
 .section-bg-wrap {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	position: relative;
 =======
     position: relative;
 >>>>>>> design
+=======
+    position: relative;
+>>>>>>> design-rahaf
 }
 .section-bg-img {
     background-image: url(../../../../../../../../../Vinom/imgs/section_bg01.jpg);
@@ -1794,12 +1964,17 @@ ul.minicart .cart-price .new {
 }
 .slider-area {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	margin-top: -46px;
 	padding-bottom: 40px;
 =======
     margin-top: -46px;
     padding-bottom: 40px;
 >>>>>>> design
+=======
+    margin-top: -46px;
+    padding-bottom: 40px;
+>>>>>>> design-rahaf
 }
 .slider-bg-1 {
     background-image: url(../../../../../../../../../Vinom/imgs/slider_bg.jpg);
@@ -1808,6 +1983,7 @@ ul.minicart .cart-price .new {
     min-height: 501px;
     display: flex !important;
     align-items: center;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	padding: 120px 0;
 	border-radius: 4px;
@@ -1819,6 +1995,8 @@ ul.minicart .cart-price .new {
 .slider-bg-1 .row {
 	flex-grow: 1;
 =======
+=======
+>>>>>>> design-rahaf
     padding: 120px 0;
     border-radius: 4px;
     box-shadow: 0px 3px 27px 0px rgba(36, 12, 17, 0.44);
@@ -1828,7 +2006,10 @@ ul.minicart .cart-price .new {
 }
 .slider-bg-1 .row {
     flex-grow: 1;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .slider-content {
     padding-left: 20px;
@@ -1837,6 +2018,7 @@ ul.minicart .cart-price .new {
 .slider-content h6 {
     font-size: 20px;
     color: #ff5917;
+<<<<<<< HEAD
 <<<<<<< HEAD
     font-family: 'Poppins', sans-serif;
 	letter-spacing: 2px;
@@ -1847,6 +2029,8 @@ ul.minicart .cart-price .new {
 .slider-content h6 span {
 	font-style: italic;
 =======
+=======
+>>>>>>> design-rahaf
     font-family: "Poppins", sans-serif;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -1855,12 +2039,16 @@ ul.minicart .cart-price .new {
 }
 .slider-content h6 span {
     font-style: italic;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .slider-content h2 {
     text-transform: uppercase;
     font-size: 50px;
     line-height: 1;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	margin-bottom: 9px;
 	letter-spacing: -2px;
@@ -1868,10 +2056,15 @@ ul.minicart .cart-price .new {
     margin-bottom: 9px;
     letter-spacing: -2px;
 >>>>>>> design
+=======
+    margin-bottom: 9px;
+    letter-spacing: -2px;
+>>>>>>> design-rahaf
 }
 .slider-content p {
     font-size: 14px;
     line-height: 24px;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	color: #f8f5f5;
 	letter-spacing: 1px;
@@ -1879,6 +2072,10 @@ ul.minicart .cart-price .new {
     color: #f8f5f5;
     letter-spacing: 1px;
 >>>>>>> design
+=======
+    color: #f8f5f5;
+    letter-spacing: 1px;
+>>>>>>> design-rahaf
     margin-bottom: 25px;
 }
 .slider-active .slick-arrow {
@@ -1895,6 +2092,7 @@ ul.minicart .cart-price .new {
     border-radius: 0px 6px 6px 0px;
     background: #ff5917;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	color: #fff;
 	opacity: .16;
 	-webkit-transition: all 0.3s ease-out 0s;
@@ -1903,12 +2101,18 @@ ul.minicart .cart-price .new {
     opacity: 0.16;
     -webkit-transition: all 0.3s ease-out 0s;
 >>>>>>> design
+=======
+    color: #fff;
+    opacity: 0.16;
+    -webkit-transition: all 0.3s ease-out 0s;
+>>>>>>> design-rahaf
     -moz-transition: all 0.3s ease-out 0s;
     -ms-transition: all 0.3s ease-out 0s;
     -o-transition: all 0.3s ease-out 0s;
     transition: all 0.3s ease-out 0s;
 }
 .slider-active .slick-next {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	left: auto;
 	right: 0;
@@ -1917,13 +2121,18 @@ ul.minicart .cart-price .new {
 .slider-active .slick-arrow:hover {
 	opacity: 1;
 =======
+=======
+>>>>>>> design-rahaf
     left: auto;
     right: 0;
     border-radius: 6px 0 0 6px;
 }
 .slider-active .slick-arrow:hover {
     opacity: 1;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 
 /* 6. Game-boost */
@@ -1961,12 +2170,17 @@ ul.minicart .cart-price .new {
     display: flex;
     align-items: center;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	flex-wrap: wrap;
 	padding: 25px 0;
 =======
     flex-wrap: wrap;
     padding: 25px 0;
 >>>>>>> design
+=======
+    flex-wrap: wrap;
+    padding: 25px 0;
+>>>>>>> design-rahaf
 }
 .game-boost-item {
     display: flex;
@@ -1974,12 +2188,17 @@ ul.minicart .cart-price .new {
     flex: 0 0 33.333%;
     padding: 19px 55px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	align-items: center;
 	position: relative;
 =======
     align-items: center;
     position: relative;
 >>>>>>> design
+=======
+    align-items: center;
+    position: relative;
+>>>>>>> design-rahaf
 }
 .game-boost-item::after {
     content: "";
@@ -1993,10 +2212,14 @@ ul.minicart .cart-price .new {
 }
 .game-boost-item:last-child::after {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	display: none;
 =======
     display: none;
 >>>>>>> design
+=======
+    display: none;
+>>>>>>> design-rahaf
 }
 .game-boost-item .icon {
     font-size: 60px;
@@ -2006,10 +2229,14 @@ ul.minicart .cart-price .new {
 }
 .game-boost-item .content {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	flex-grow: 1;
 =======
     flex-grow: 1;
 >>>>>>> design
+=======
+    flex-grow: 1;
+>>>>>>> design-rahaf
 }
 .game-boost-item .content h4 {
     font-size: 20px;
@@ -2026,6 +2253,7 @@ ul.minicart .cart-price .new {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /* 7. Product-offer */
 .offer-product-area {
@@ -2033,17 +2261,23 @@ ul.minicart .cart-price .new {
 	overflow: hidden;
 	z-index: 1;
 =======
+=======
+>>>>>>> design-rahaf
 /* 7. Product-offer */
 .offer-product-area {
     position: relative;
     overflow: hidden;
     z-index: 1;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .offer-product-thumb {
     min-width: 100%;
     min-height: 300px;
     border-radius: 6px;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	transition: .3s linear;
 	background-position: left center;
@@ -2059,6 +2293,8 @@ ul.minicart .cart-price .new {
 .offer-product-item:hover .offer-product-thumb {
 	transform: scale(1.1);
 =======
+=======
+>>>>>>> design-rahaf
     transition: 0.3s linear;
     background-position: left center;
     background-size: cover;
@@ -2072,7 +2308,10 @@ ul.minicart .cart-price .new {
 }
 .offer-product-item:hover .offer-product-thumb {
     transform: scale(1.1);
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .offer-product-content {
     position: absolute;
@@ -2106,16 +2345,22 @@ ul.minicart .cart-price .new {
 .offer-product-content h3 a:hover,
 .side-title h3 span {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	color: #ff5917;
 }
 .offer-product-content h3 a:hover span {
 	color: #fff;
 =======
+=======
+>>>>>>> design-rahaf
     color: #ff5917;
 }
 .offer-product-content h3 a:hover span {
     color: #fff;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .offer-product-line {
     position: absolute;
@@ -2127,10 +2372,14 @@ ul.minicart .cart-price .new {
     background: #ff5917;
     z-index: -1;
 <<<<<<< HEAD
+<<<<<<< HEAD
     opacity: .14;
 =======
     opacity: 0.14;
 >>>>>>> design
+=======
+    opacity: 0.14;
+>>>>>>> design-rahaf
 }
 .offer-product-line.line2 {
     height: 10px;
@@ -2144,6 +2393,7 @@ ul.minicart .cart-price .new {
 }
 .popular-game-thumb img {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	border-radius: 4px 20px 4px 20px;
 	max-width: 100%;
 }
@@ -2151,29 +2401,40 @@ ul.minicart .cart-price .new {
 	position: relative;
 	overflow: hidden;
 =======
+=======
+>>>>>>> design-rahaf
     border-radius: 4px 20px 4px 20px;
     max-width: 100%;
 }
 .popular-game-item {
     position: relative;
     overflow: hidden;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .popular-game-content {
     position: absolute;
     bottom: 25px;
     left: 25px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	right: 25px;
 	transform: translateY(0px);
     transition: .3s linear;
 	z-index: 1;
 =======
+=======
+>>>>>>> design-rahaf
     right: 25px;
     transform: translateY(0px);
     transition: 0.3s linear;
     z-index: 1;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .popular-game-item:hover .popular-game-content {
     transform: translateY(30px);
@@ -2199,12 +2460,17 @@ ul.minicart .cart-price .new {
 }
 .popular-game-content h5 span {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	color: #ff5917;
 	padding-left: 6px;
 =======
     color: #ff5917;
     padding-left: 6px;
 >>>>>>> design
+=======
+    color: #ff5917;
+    padding-left: 6px;
+>>>>>>> design-rahaf
 }
 .popular-game-overlay {
     position: absolute;
@@ -2217,18 +2483,24 @@ ul.minicart .cart-price .new {
     justify-content: center;
     flex-direction: column;
 <<<<<<< HEAD
+<<<<<<< HEAD
     background: rgb(41 43 60 / .92);
     z-index: 2;
 	border-radius: 4px 20px 4px 20px;
 	transition: .3s linear;
 	opacity: 0;
 =======
+=======
+>>>>>>> design-rahaf
     background: rgb(41 43 60 / 0.92);
     z-index: 2;
     border-radius: 4px 20px 4px 20px;
     transition: 0.3s linear;
     opacity: 0;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .popular-game-overlay h6 {
     font-size: 16px;
@@ -2238,10 +2510,14 @@ ul.minicart .cart-price .new {
 }
 .popular-game-overlay h6 span {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	color: #ff5917;
 =======
     color: #ff5917;
 >>>>>>> design
+=======
+    color: #ff5917;
+>>>>>>> design-rahaf
 }
 .popular-game-overlay h6:after {
     content: "";
@@ -2255,10 +2531,14 @@ ul.minicart .cart-price .new {
 }
 .popular-game-overlay h6 a:hover {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	color: #fff;
 =======
     color: #fff;
 >>>>>>> design
+=======
+    color: #fff;
+>>>>>>> design-rahaf
 }
 .popular-game-overlay a.cart {
     display: block;
@@ -2274,22 +2554,29 @@ ul.minicart .cart-price .new {
 }
 .popular-game-overlay a.cart:hover {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	color: #fff;
 	background: #ff5917;
 }
 .popular-game-item:hover .popular-game-overlay {
 	opacity: 1;
 =======
+=======
+>>>>>>> design-rahaf
     color: #fff;
     background: #ff5917;
 }
 .popular-game-item:hover .popular-game-overlay {
     opacity: 1;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 
 /* 9. Game features */
 .game-features-bg {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	background-image: url(../../../../../../../../../Vinom/imgs/game_features_bg.jpg);
 	background-position: bottom center;
@@ -2299,6 +2586,11 @@ ul.minicart .cart-price .new {
     background-position: bottom center;
     background-size: cover;
 >>>>>>> design
+=======
+    background-image: url(../../../../../../../../../Vinom/imgs/game_features_bg.jpg);
+    background-position: bottom center;
+    background-size: cover;
+>>>>>>> design-rahaf
 }
 .section-title .title {
     font-size: 40px;
@@ -2308,10 +2600,14 @@ ul.minicart .cart-price .new {
 .section-title .title span,
 .game-features-content h3 a:hover {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	color: #ff5917;
 =======
     color: #ff5917;
 >>>>>>> design
+=======
+    color: #ff5917;
+>>>>>>> design-rahaf
 }
 .section-title.text-center .title::after {
     content: "";
@@ -2323,10 +2619,14 @@ ul.minicart .cart-price .new {
 }
 .section-title p {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	margin-bottom: 0;
 =======
     margin-bottom: 0;
 >>>>>>> design
+=======
+    margin-bottom: 0;
+>>>>>>> design-rahaf
 }
 .game-features-item {
     position: relative;
@@ -2335,12 +2635,17 @@ ul.minicart .cart-price .new {
 }
 .game-features-thumb img {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	max-width: 100%;
 	border-radius: 3px 3px 0px 0px;
 =======
     max-width: 100%;
     border-radius: 3px 3px 0px 0px;
 >>>>>>> design
+=======
+    max-width: 100%;
+    border-radius: 3px 3px 0px 0px;
+>>>>>>> design-rahaf
 }
 .game-features-content {
     position: absolute;
@@ -2354,10 +2659,14 @@ ul.minicart .cart-price .new {
 .game-features-content h3 {
     font-size: 20px;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Poppins', sans-serif;
 =======
     font-family: "Poppins", sans-serif;
 >>>>>>> design
+=======
+    font-family: "Poppins", sans-serif;
+>>>>>>> design-rahaf
     font-weight: 700;
     margin-bottom: 9px;
 }
@@ -2371,16 +2680,22 @@ ul.minicart .cart-price .new {
 }
 .game-features-content > p span {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	color: #ff5917;
 	padding-left: 5px;
 =======
     color: #ff5917;
     padding-left: 5px;
 >>>>>>> design
+=======
+    color: #ff5917;
+    padding-left: 5px;
+>>>>>>> design-rahaf
 }
 .game-features-tag {
     position: absolute;
     left: 30px;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	top: -30px;
 	right: 30px;
@@ -2388,6 +2703,10 @@ ul.minicart .cart-price .new {
     top: -30px;
     right: 30px;
 >>>>>>> design
+=======
+    top: -30px;
+    right: 30px;
+>>>>>>> design-rahaf
     z-index: 1;
 }
 .game-features-tag a {
@@ -2432,10 +2751,14 @@ ul.minicart .cart-price .new {
     font-size: 16px;
     color: #dcdcdc;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Poppins', sans-serif;
 =======
     font-family: "Poppins", sans-serif;
 >>>>>>> design
+=======
+    font-family: "Poppins", sans-serif;
+>>>>>>> design-rahaf
     font-weight: 700;
     margin-bottom: 5px;
 }
@@ -2518,10 +2841,14 @@ ul.minicart .cart-price .new {
     display: inline-block;
     text-transform: uppercase;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Oxanium', cursive;
 =======
     font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+    font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
     font-weight: 800;
     color: #b3b2b2;
     font-size: 14px;
@@ -2586,10 +2913,14 @@ ul.minicart .cart-price .new {
     color: #ff5917;
     font-weight: 700;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Poppins', sans-serif;
 =======
     font-family: "Poppins", sans-serif;
 >>>>>>> design
+=======
+    font-family: "Poppins", sans-serif;
+>>>>>>> design-rahaf
     text-align: center;
     padding: 53px 30px;
     background: #1d1e2a;
@@ -2607,6 +2938,7 @@ ul.minicart .cart-price .new {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /* 11. Video-area */
 .video-bg {
@@ -2616,6 +2948,8 @@ ul.minicart .cart-price .new {
 	position: relative;
 	z-index: 1;
 =======
+=======
+>>>>>>> design-rahaf
 /* 11. Video-area */
 .video-bg {
     background-image: url(../../../../../../../../../Vinom/imgs/video_bg.jpg);
@@ -2623,7 +2957,10 @@ ul.minicart .cart-price .new {
     background-size: cover;
     position: relative;
     z-index: 1;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .section-title .sub-title {
     display: block;
@@ -2635,10 +2972,14 @@ ul.minicart .cart-price .new {
 }
 .video-content .section-title .title {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	margin-bottom: 18px;
 =======
     margin-bottom: 18px;
 >>>>>>> design
+=======
+    margin-bottom: 18px;
+>>>>>>> design-rahaf
 }
 .video-content .section-title p {
     font-size: 14px;
@@ -2660,6 +3001,7 @@ ul.minicart .cart-price .new {
     color: #fff;
     line-height: 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
     opacity: .68;
     z-index: 1;
 }
@@ -2667,13 +3009,18 @@ ul.minicart .cart-price .new {
 	color: #ff5917;
 	opacity: 1;
 =======
+=======
+>>>>>>> design-rahaf
     opacity: 0.68;
     z-index: 1;
 }
 .video-img a.popup-video:hover {
     color: #ff5917;
     opacity: 1;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .video-top-shape {
     position: absolute;
@@ -2690,6 +3037,7 @@ ul.minicart .cart-price .new {
 }
 .custom-gallery-row [class*="col-"] {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	padding-left: 5px;
 	padding-right: 5px;
 }
@@ -2700,6 +3048,8 @@ ul.minicart .cart-price .new {
 .gallery-img-item {
 	margin-bottom: 10px;
 =======
+=======
+>>>>>>> design-rahaf
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -2709,7 +3059,10 @@ ul.minicart .cart-price .new {
 }
 .gallery-img-item {
     margin-bottom: 10px;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .gallery-hover-icon {
     position: absolute;
@@ -2722,6 +3075,7 @@ ul.minicart .cart-price .new {
     -ms-transition: all 0.4s ease-out 0s;
     -o-transition: all 0.4s ease-out 0s;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	transition: all 0.4s ease-out 0s;
 	z-index: 2;
 }
@@ -2729,13 +3083,18 @@ ul.minicart .cart-price .new {
 	display: block;
 	position: relative;
 =======
+=======
+>>>>>>> design-rahaf
     transition: all 0.4s ease-out 0s;
     z-index: 2;
 }
 .gallery-img-item > a {
     display: block;
     position: relative;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .gallery-img-item > a::after {
     content: "";
@@ -2746,18 +3105,24 @@ ul.minicart .cart-price .new {
     height: 100%;
     background: #252634;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	opacity: 0;
 	-webkit-transition: all 0.4s ease-out 0s;
 =======
     opacity: 0;
     -webkit-transition: all 0.4s ease-out 0s;
 >>>>>>> design
+=======
+    opacity: 0;
+    -webkit-transition: all 0.4s ease-out 0s;
+>>>>>>> design-rahaf
     -moz-transition: all 0.4s ease-out 0s;
     -ms-transition: all 0.4s ease-out 0s;
     -o-transition: all 0.4s ease-out 0s;
     transition: all 0.4s ease-out 0s;
 }
 .gallery-img-item:hover .gallery-hover-icon {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	transform: translate(-50%, -50%) scale(1);
 	opacity: 1;
@@ -2768,6 +3133,8 @@ ul.minicart .cart-price .new {
 .gallery-img-item .gallery-img {
 	max-width: 100%;
 =======
+=======
+>>>>>>> design-rahaf
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
 }
@@ -2776,7 +3143,10 @@ ul.minicart .cart-price .new {
 }
 .gallery-img-item .gallery-img {
     max-width: 100%;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 
 /* 13. Best games */
@@ -2793,6 +3163,7 @@ ul.minicart .cart-price .new {
 }
 .best-game-title {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	background-image: url(../../../../../../../../../Vinom/imgs/best_game_title_bg.jpg);
 	background-position: center;
 	background-size: cover;
@@ -2800,13 +3171,18 @@ ul.minicart .cart-price .new {
 	border-radius: 8px 8px 0 0;
 	margin-bottom: 15px;
 =======
+=======
+>>>>>>> design-rahaf
     background-image: url(../../../../../../../../../Vinom/imgs/best_game_title_bg.jpg);
     background-position: center;
     background-size: cover;
     box-shadow: 0px 3px 7px 0px rgba(128, 18, 40, 0.1);
     border-radius: 8px 8px 0 0;
     margin-bottom: 15px;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .best-game-title h4 {
     font-size: 22px;
@@ -2816,10 +3192,14 @@ ul.minicart .cart-price .new {
 }
 .best-game-title h4 span {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	color: #ff5917;
 =======
     color: #ff5917;
 >>>>>>> design
+=======
+    color: #ff5917;
+>>>>>>> design-rahaf
 }
 .best-game-title h4::before {
     content: "";
@@ -2847,12 +3227,17 @@ ul.minicart .cart-price .new {
     align-items: flex-start;
     padding: 25px 60px 25px 30px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 	position: relative;
 =======
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     position: relative;
 >>>>>>> design
+=======
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    position: relative;
+>>>>>>> design-rahaf
 }
 .best-game-thumb {
     flex: 0 0 103px;
@@ -2860,6 +3245,7 @@ ul.minicart .cart-price .new {
     margin-right: 20px;
 }
 .best-game-thumb img {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	max-width: 100%;
 	border-radius: 3px;
@@ -2869,6 +3255,11 @@ ul.minicart .cart-price .new {
     border-radius: 3px;
     box-shadow: 0px 6px 38px 0px rgba(12, 11, 15, 0.19);
 >>>>>>> design
+=======
+    max-width: 100%;
+    border-radius: 3px;
+    box-shadow: 0px 6px 38px 0px rgba(12, 11, 15, 0.19);
+>>>>>>> design-rahaf
 }
 .best-game-content {
     flex-grow: 1;
@@ -2881,10 +3272,14 @@ ul.minicart .cart-price .new {
 }
 .best-game-content h6 a:hover {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	color: #ff5917;
 =======
     color: #ff5917;
 >>>>>>> design
+=======
+    color: #ff5917;
+>>>>>>> design-rahaf
 }
 .best-game-content .rating {
     display: flex;
@@ -2911,10 +3306,14 @@ ul.minicart .cart-price .new {
 .best-gamin-wrap .row [class*="col-"]:nth-child(3) .best-game-item,
 .best-gamin-wrap .row [class*="col-"]:nth-child(4) .best-game-item {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	background: #282938;
 =======
     background: #282938;
 >>>>>>> design
+=======
+    background: #282938;
+>>>>>>> design-rahaf
 }
 
 /* 14. Uc pack */
@@ -2936,10 +3335,14 @@ ul.minicart .cart-price .new {
     height: 100%;
     background: #1e1625;
 <<<<<<< HEAD
+<<<<<<< HEAD
     opacity: .9;
 =======
     opacity: 0.9;
 >>>>>>> design
+=======
+    opacity: 0.9;
+>>>>>>> design-rahaf
 }
 .uc-pack-img img {
     max-width: 100%;
@@ -2962,10 +3365,14 @@ ul.minicart .cart-price .new {
     font-weight: 700;
     color: #ececec;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Poppins', sans-serif;
 =======
     font-family: "Poppins", sans-serif;
 >>>>>>> design
+=======
+    font-family: "Poppins", sans-serif;
+>>>>>>> design-rahaf
     margin-bottom: 8px;
 }
 .uc-pack-content h4 a:hover {
@@ -3015,10 +3422,14 @@ ul.minicart .cart-price .new {
     text-transform: uppercase;
     color: #cfcdcd;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Oxanium', cursive;
 =======
     font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+    font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
     font-weight: 800;
     margin-bottom: 0;
 }
@@ -3032,8 +3443,11 @@ ul.minicart .cart-price .new {
     background-color: #292b33;
     border: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
     clip-path: polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px));
 =======
+=======
+>>>>>>> design-rahaf
     clip-path: polygon(
         0 0,
         calc(100% - 20px) 0,
@@ -3042,27 +3456,38 @@ ul.minicart .cart-price .new {
         20px 100%,
         0 calc(100% - 20px)
     );
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
     border-radius: 3px;
     box-shadow: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
     transition: .3s ease-in-out,;
 =======
     transition: 0.3s ease-in-out;
 >>>>>>> design
+=======
+    transition: 0.3s ease-in-out;
+>>>>>>> design-rahaf
     width: 276px;
     height: 57px;
     margin-left: auto;
     text-transform: uppercase;
     font-weight: 800;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Oxanium', cursive;
 =======
     font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+    font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 }
 .product-thumb img {
     max-width: 100%;
@@ -3096,10 +3521,14 @@ ul.minicart .cart-price .new {
     font-size: 14px;
     font-weight: 800;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Oxanium', cursive;
 =======
     font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+    font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
     margin-right: 5px;
 }
 .shop-item-bottom .content a.cat:last-child {
@@ -3113,10 +3542,14 @@ ul.minicart .cart-price .new {
     color: #fefefe;
     font-weight: 800;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Oxanium', cursive;
 =======
     font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+    font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 }
 .product-thumb .add-to-cart {
     position: absolute;
@@ -3127,10 +3560,14 @@ ul.minicart .cart-price .new {
     background-color: #ff5917;
     opacity: 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
     transition: .3s linear;
 =======
     transition: 0.3s linear;
 >>>>>>> design
+=======
+    transition: 0.3s linear;
+>>>>>>> design-rahaf
     padding: 20px 30px;
 }
 .product-thumb .add-to-cart i {
@@ -3148,18 +3585,24 @@ ul.minicart .cart-price .new {
     height: 100%;
     background: #2d2f37;
 <<<<<<< HEAD
+<<<<<<< HEAD
     transition: .3s linear;
     opacity: 0;
 }
 .shop-item:hover .product-thumb::before {
     opacity: .85;
 =======
+=======
+>>>>>>> design-rahaf
     transition: 0.3s linear;
     opacity: 0;
 }
 .shop-item:hover .product-thumb::before {
     opacity: 0.85;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .shop-item:hover .product-thumb .add-to-cart {
     top: 50%;
@@ -3207,6 +3650,7 @@ ul.minicart .cart-price .new {
     height: 100%;
     background: #2d2f37;
 <<<<<<< HEAD
+<<<<<<< HEAD
     transition: .3s linear;
     opacity: 0;
 }
@@ -3216,6 +3660,8 @@ ul.minicart .cart-price .new {
 .cart-plus-minus {
 	position: relative;
 =======
+=======
+>>>>>>> design-rahaf
     transition: 0.3s linear;
     opacity: 0;
 }
@@ -3224,7 +3670,10 @@ ul.minicart .cart-price .new {
 }
 .cart-plus-minus {
     position: relative;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .cart-plus-minus input {
     width: 100%;
@@ -3237,10 +3686,14 @@ ul.minicart .cart-price .new {
     color: #adabab;
     font-weight: 800;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Oxanium', cursive;
 =======
     font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+    font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 }
 .qtybutton {
     position: absolute;
@@ -3258,15 +3711,20 @@ ul.minicart .cart-price .new {
     color: #adabab;
     font-weight: 800;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Oxanium', cursive;
 =======
     font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+    font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 }
 .dec.qtybutton {
     font-size: 20px;
 }
 .inc.qtybutton {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	right: 10px;
 	left: auto;
@@ -3274,6 +3732,8 @@ ul.minicart .cart-price .new {
 .perched-info .add-card-btn {
     clip-path: polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 0px));
 =======
+=======
+>>>>>>> design-rahaf
     right: 10px;
     left: auto;
 }
@@ -3286,17 +3746,24 @@ ul.minicart .cart-price .new {
         20px 100%,
         0 calc(100% - 0px)
     );
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
     border-radius: 0;
     background-image: none;
     background-color: #2d2f37;
     font-size: 16px;
     font-weight: 800;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Oxanium', cursive;
 =======
     font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+    font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
     padding: 18px 30px;
     margin-bottom: 15px;
 }
@@ -3321,10 +3788,14 @@ ul.minicart .cart-price .new {
     color: #ff5917;
     font-weight: 800;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Oxanium', cursive;
 =======
     font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+    font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
     line-height: 1;
     padding-bottom: 55px;
     margin-bottom: 35px;
@@ -3368,10 +3839,14 @@ ul.minicart .cart-price .new {
     text-transform: uppercase;
     color: #fff;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Oxanium', cursive;
 =======
     font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+    font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
     font-weight: 800;
     font-size: 14px;
 }
@@ -3416,10 +3891,14 @@ ul.minicart .cart-price .new {
     color: #fff;
     text-transform: uppercase;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Oxanium', cursive;
 =======
     font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+    font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
     line-height: 1;
 }
 .product-desc-wrap .nav-tabs .nav-item:last-child {
@@ -3504,10 +3983,14 @@ ul.minicart .cart-price .new {
     font-size: 18px;
     font-weight: 700;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Poppins', sans-serif;
 =======
     font-family: "Poppins", sans-serif;
 >>>>>>> design
+=======
+    font-family: "Poppins", sans-serif;
+>>>>>>> design-rahaf
     text-transform: capitalize;
     margin-bottom: 12px;
 }
@@ -3658,8 +4141,11 @@ ul.minicart .cart-price .new {
     background-color: #292b33;
     border: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
     clip-path: polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px));
 =======
+=======
+>>>>>>> design-rahaf
     clip-path: polygon(
         0 0,
         calc(100% - 20px) 0,
@@ -3668,7 +4154,10 @@ ul.minicart .cart-price .new {
         20px 100%,
         0 calc(100% - 20px)
     );
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
     padding: 24px 90px 24px 30px;
     color: #adabab;
     font-size: 14px;
@@ -3847,10 +4336,14 @@ ul.minicart .cart-price .new {
     left: 50%;
     top: 50%;
 <<<<<<< HEAD
+<<<<<<< HEAD
     transform: translate(-50% , -50%);
 =======
     transform: translate(-50%, -50%);
 >>>>>>> design
+=======
+    transform: translate(-50%, -50%);
+>>>>>>> design-rahaf
     z-index: -1;
     opacity: 0;
     -webkit-transition: all 0.3s ease-out 0s;
@@ -3906,8 +4399,11 @@ ul.minicart .cart-price .new {
     color: #d7d7d7;
     padding: 55px 50px;
 <<<<<<< HEAD
+<<<<<<< HEAD
     clip-path: polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px));
 =======
+=======
+>>>>>>> design-rahaf
     clip-path: polygon(
         0 0,
         calc(100% - 20px) 0,
@@ -3916,7 +4412,10 @@ ul.minicart .cart-price .new {
         20px 100%,
         0 calc(100% - 20px)
     );
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
     overflow: hidden;
     position: relative;
     font-size: 18px;
@@ -3924,16 +4423,22 @@ ul.minicart .cart-price .new {
     font-weight: 700;
     line-height: 30px;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Oxanium', cursive;
 }
 .blog-details-area blockquote span {
     color:  #ff5917;
 =======
+=======
+>>>>>>> design-rahaf
     font-family: "Tajawal", sans-serif;
 }
 .blog-details-area blockquote span {
     color: #ff5917;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .blog-details-area blockquote i {
     position: absolute;
@@ -4046,18 +4551,24 @@ ul.minicart .cart-price .new {
 }
 .comment-avatar-info {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	flex-wrap: wrap;
 	margin-bottom: 13px;
 =======
+=======
+>>>>>>> design-rahaf
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 13px;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .comment-avatar-info h4 {
     font-size: 16px;
@@ -4067,15 +4578,20 @@ ul.minicart .cart-price .new {
 .comment-avatar-info h4 span {
     font-size: 12px;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Poppins', sans-serif;
 =======
     font-family: "Poppins", sans-serif;
 >>>>>>> design
+=======
+    font-family: "Poppins", sans-serif;
+>>>>>>> design-rahaf
     font-weight: 500;
     color: #d0cece;
     margin-left: 20px;
 }
 .comment-reply a {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	font-size: 14px;
 	color: #d0cece;
@@ -4094,6 +4610,8 @@ ul.minicart .cart-price .new {
 .comment-reply a:hover {
     color:  #ff5917;
 =======
+=======
+>>>>>>> design-rahaf
     font-size: 14px;
     color: #d0cece;
 }
@@ -4110,7 +4628,10 @@ ul.minicart .cart-price .new {
 .comment-avatar-info h4 a:hover,
 .comment-reply a:hover {
     color: #ff5917;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 .comment-form input,
 .comment-form textarea {
@@ -4146,8 +4667,11 @@ ul.minicart .cart-price .new {
     padding: 22px 30px;
     font-size: 16px;
 <<<<<<< HEAD
+<<<<<<< HEAD
     clip-path: polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px));
 =======
+=======
+>>>>>>> design-rahaf
     clip-path: polygon(
         0 0,
         calc(100% - 20px) 0,
@@ -4156,7 +4680,10 @@ ul.minicart .cart-price .new {
         20px 100%,
         0 calc(100% - 20px)
     );
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 }
 
 /* 19. Footer */
@@ -4179,10 +4706,14 @@ ul.minicart .cart-price .new {
     font-weight: 700;
     text-transform: uppercase;
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: 'Oxanium', cursive;
 =======
     font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+    font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
     color: #b6b6b6;
     padding: 10px 30px;
     line-height: 1;
@@ -4291,6 +4822,7 @@ ul.minicart .cart-price .new {
 }
 .copyright-wrap {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	background: #191c23;
 	padding: 35px 0;
 }
@@ -4298,13 +4830,18 @@ ul.minicart .cart-price .new {
 	font-size: 14px;
 	color: #b1b1b1;
 =======
+=======
+>>>>>>> design-rahaf
     background: #191c23;
     padding: 35px 0;
 }
 .copyright-text p {
     font-size: 14px;
     color: #b1b1b1;
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
     margin-bottom: 0;
     line-height: 26px;
 }
@@ -4326,10 +4863,14 @@ ul.minicart .cart-price .new {
     background-color: #292b33;
     z-index: 9999999;
 <<<<<<< HEAD
+<<<<<<< HEAD
     text-align: center
 =======
     text-align: center;
 >>>>>>> design
+=======
+    text-align: center;
+>>>>>>> design-rahaf
 }
 
 .loading {
@@ -4381,7 +4922,11 @@ ul.minicart .cart-price .new {
         height: 0;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
 >>>>>>> design
+=======
+}
+>>>>>>> design-rahaf

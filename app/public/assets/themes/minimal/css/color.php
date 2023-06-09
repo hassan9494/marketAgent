@@ -106,9 +106,13 @@ if (isset($_GET['copyrights']) AND $_GET['copyrights'] != '') {
 
 ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap');
 >>>>>>> design
+=======
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap');
+>>>>>>> design-rahaf
 
 :root {
 --allcolor: #666666;
@@ -178,10 +182,14 @@ color: var(--allcolor);
 font-size: 16px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 line-height: normal;
 letter-spacing: normal;
 line-height: 24px;
@@ -216,10 +224,14 @@ color: var(--pcolor);
 font-size: 14px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 line-height: normal;
 letter-spacing: normal;
 }
@@ -242,10 +254,14 @@ color: var(--h1h6);
 font-size: initial ;
 font-weight: normal;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif !important;
 =======
 font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 line-height: normal !important;
 letter-spacing: 0 !important;
 }
@@ -269,10 +285,14 @@ color: #5e6d77;
 font-size: 18px;
 font-weight: 700;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 line-height: normal;
 letter-spacing: normal;
 }
@@ -283,10 +303,14 @@ color: #5e6d77;
 font-size: 14px;
 font-weight: 600;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 line-height: normal;
 letter-spacing: normal;
 }
@@ -296,10 +320,14 @@ color: #5e6d77;
 font-size: 14px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 line-height: 1.5;
 letter-spacing: 0;
 }
@@ -324,10 +352,14 @@ color: #666666 !important;
 font-size: 16px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: 0.5px;
 line-height: 22px;
 opacity: 1;
@@ -338,10 +370,14 @@ color: #666666 !important;
 font-size: 16px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: 0.5px;
 line-height: 22px;
 opacity: 1;
@@ -352,10 +388,14 @@ color: #666666 !important;
 font-size: 16px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: 0.5px;
 line-height: 22px;
 opacity: 1;
@@ -366,10 +406,14 @@ color: #666666 !important;
 font-size: 16px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: 0.5px;
 line-height: 22px;
 opacity: 1;
@@ -391,10 +435,14 @@ padding: 10px 15px;
 color: #666666;
 font-size: 14px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 border: 1px solid #dfdfdf;
 border-radius: 4px;
 background-color: #ffffff;
@@ -429,10 +477,14 @@ color: #204dcc;
 font-size: 16px;
 font-weight: 600;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
 =======
 font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: normal;
 line-height: normal;
 }
@@ -490,10 +542,14 @@ color: var(--heading);
 font-size: 120px;
 font-weight: 700;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
 =======
 font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 line-height: 1 !important;
 letter-spacing: normal;
 
@@ -508,10 +564,14 @@ color: var(--subheading);
 font-size: 16px;
 font-weight: 500;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
 =======
 font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 line-height: 1 !important;
 letter-spacing: normal;
 
@@ -529,10 +589,14 @@ color: var(--h1h6);
 font-size: 36px;
 font-weight: 600;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
 =======
 font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 line-height: 1 !important;
 letter-spacing: normal;
 }
@@ -566,14 +630,17 @@ color: var(--wcolor);
 font-size: 15px;
 font-weight: 500;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
 =======
 font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 line-height: normal;
 letter-spacing: normal;
 text-align: center;
-
 white-space: nowrap;
 vertical-align: middle;
 -webkit-user-select: none;
@@ -600,10 +667,14 @@ color: #204dcc;
 font-size: 15px;
 font-weight: 500;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
 =======
 font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 line-height: normal;
 letter-spacing: normal;
 
@@ -776,10 +847,14 @@ color: #666666;
 font-size: 15px;
 font-weight: 500;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
 =======
 font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: normal;
 line-height: 50px;
 text-align: right;
@@ -798,10 +873,14 @@ color: #ffffff;
 font-size: 15px;
 font-weight: 500;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
 =======
 font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: normal;
 line-height: 50px;
 text-align: center;
@@ -1303,10 +1382,14 @@ color: #ffffff;
 font-size: 30px;
 font-weight: 500;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 line-height: 1;
 text-align: center;
 cursor: pointer;
@@ -1342,10 +1425,14 @@ padding: 0 15px;
 font-size: 16px;
 font-weight: 600;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
 =======
 font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 line-height: normal;
 letter-spacing: normal;
 vertical-align: middle;
@@ -1390,10 +1477,14 @@ color: #ffffff;
 font-size: 16px;
 font-weight: 600;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
 =======
 font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 line-height: 40px;
 text-align: center;
 border: 0;
@@ -1705,10 +1796,14 @@ color: #232323;
 font-size: 14px;
 font-weight: 700;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 line-height: 28px;
 letter-spacing: 0;
 
@@ -1733,10 +1828,14 @@ color: #232323;
 font-size: 14px;
 font-weight: 700;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 line-height: 28px;
 letter-spacing: 0;
 
@@ -1776,10 +1875,14 @@ color: var(--wcolor);
 font-size: 16px;
 font-weight: 600;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
 =======
 font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 line-height: normal;
 letter-spacing: 0.75px;
 
@@ -1906,10 +2009,14 @@ color: var(--wcolor);
 font-size: 24px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: normal;
 line-height: 2;
 }
@@ -2426,10 +2533,14 @@ padding: 14px 30px;
 font-size: 18px;
 font-weight: 600;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
 =======
 font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 
 border-top-left-radius: 0;
 border-bottom-left-radius: 0;
@@ -2439,10 +2550,14 @@ color: #232323 !important;
 font-size: 18px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: 0;
 opacity: 1;
 }
@@ -2451,10 +2566,14 @@ color: #232323 !important;
 font-size: 18px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: 0;
 opacity: 1;
 }
@@ -2463,10 +2582,14 @@ color: #232323 !important;
 font-size: 18px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: 0;
 opacity: 1;
 }
@@ -2475,10 +2598,14 @@ color: #232323 !important;
 font-size: 18px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: 0;
 opacity: 1;
 }
@@ -2526,10 +2653,14 @@ color: #ffffff;
 font-size: 16px;
 font-weight: 600;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
 =======
 font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: normal;
 line-height: 1.2;
 }
@@ -2542,10 +2673,14 @@ color: #666666;
 font-size: 18px;
 font-weight: 500;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
 =======
 font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 
 }
 .card-blog .card-body .card-title {
@@ -2600,10 +2735,14 @@ color: var(--wcolor);
 font-size: 18px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: normal;
 line-height: normal;
 }
@@ -2616,10 +2755,14 @@ color: var(--wcolor);
 font-size: 18px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: normal;
 line-height: normal;
 }
@@ -2634,10 +2777,14 @@ color: #666666;
 font-size: 16px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: 0.5px;
 line-height: 16px;
 border: 0;
@@ -2664,10 +2811,14 @@ color: #ffffff;
 font-size: 16px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: normal;
 line-height: 28px;
 }
@@ -2688,10 +2839,14 @@ color: #ffffff;
 font-size: 16px;
 font-size: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: normal;
 line-height: 28px;
 }
@@ -2706,10 +2861,14 @@ color: #ffffff;
 font-size: 14px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: normal;
 line-height: normal;
 }
@@ -2720,10 +2879,14 @@ color: #ffffff;
 font-size: 14px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: normal;
 line-height: normal;
 }
@@ -2775,10 +2938,14 @@ color: #666666;
 font-size: 15px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 }
 .regain {
 display: none;
@@ -2914,10 +3081,14 @@ color: #204dcc;
 font-size: 18px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
 =======
 font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: normal;
 line-height: normal;
 border: 0;
@@ -3175,10 +3346,14 @@ color: #ffffff;
 font-size: 16px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 }
 .counter-wrap-2 {
 position: relative;
@@ -3223,10 +3398,14 @@ color: #333;
 font-size: 30px;
 font-weight: 700;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
 =======
 font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: normal;
 line-height: normal;
 border: 0;
@@ -3289,10 +3468,14 @@ color: #ffffff;
 font-size: 14px;
 font-weight: 500;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Poppins', sans-serif;
 =======
 font-family: "Tajawal", sans-serif;
 >>>>>>> design
+=======
+font-family: "Tajawal", sans-serif;
+>>>>>>> design-rahaf
 border: 0;
 border-radius: 4px;
 background: linear-gradient(109deg, var(--bggrdleft2) 0%, var(--bggrdright2));
@@ -3420,10 +3603,14 @@ color: var(--allcolor);
 font-size: 16px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 border: 1px solid #dfdfdf;
 border-radius: 4px;
 background-color: #ffffff;
@@ -3531,10 +3718,14 @@ color: #666666;
 font-size: 14px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: normal;
 line-height: normal;
 border: 0;
@@ -3567,10 +3758,14 @@ color: #666666;
 font-size: 18px;
 font-weight: 700;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 margin-left: initial !important;
 border: 1px solid #dfdfdf;
 border-radius: 0 4px 0 4px !important;
@@ -3594,10 +3789,14 @@ color: #204dcc;
 font-size: 14px;
 font-weight: 400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: 'Nunito', sans-serif;
 =======
 font-family: 'Tajawal',sans-serif;
 >>>>>>> design
+=======
+font-family: 'Tajawal',sans-serif;
+>>>>>>> design-rahaf
 letter-spacing: normal;
 line-height: normal;
 }
@@ -3743,10 +3942,14 @@ RESPONSIVE - FOR ALL SCREENS
 ----------------------------------------------------------------------*/
 @media (max-width: 1199px) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*------ NAVBAR  ------*/
 =======
 /*------ NAVBAR ------*/
 >>>>>>> design
+=======
+/*------ NAVBAR ------*/
+>>>>>>> design-rahaf
 .shape-rectangle,
 .shape-circle {
 display: none !important;
@@ -3766,10 +3969,14 @@ color: #232323;
 background: initial !important;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*------ HERO THEME 2  ------*/
 =======
 /*------ HERO THEME 2 ------*/
 >>>>>>> design
+=======
+/*------ HERO THEME 2 ------*/
+>>>>>>> design-rahaf
 #hero-banner.theme-2::before {
 width: 100%;
 background-position: center;
@@ -3789,10 +3996,14 @@ justify-content: center;
 box-shadow: 0 1px 66.5px 3.5px rgba(0, 0, 0, 0.5);
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*------ ABOUT US, VISION, TESTIMONIAL  ------*/
 =======
 /*------ ABOUT US, VISION, TESTIMONIAL ------*/
 >>>>>>> design
+=======
+/*------ ABOUT US, VISION, TESTIMONIAL ------*/
+>>>>>>> design-rahaf
 #about-us .text-wrapper,
 #vision .text-wrapper {
 padding-top: 60px;
@@ -4033,10 +4244,14 @@ align-items: center !important;
 text-align: center;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*------  THEME 2 COUNTER-SERVICE  ------*/
 =======
 /*------ THEME 2 COUNTER-SERVICE ------*/
 >>>>>>> design
+=======
+/*------ THEME 2 COUNTER-SERVICE ------*/
+>>>>>>> design-rahaf
 #counter-service .row .col-lg-4 {
 margin-bottom: 60px;
 }
@@ -4477,18 +4692,24 @@ border-radius: 4px 0 0 4px;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .admin-fa_icon  span.opacity-7.text-muted .fa,
 .admin-fa_icon  span.opacity-7.text-muted .fas,
 .admin-fa_icon  span.opacity-7.text-muted .far,
 .admin-fa_icon  span.opacity-7.text-muted .fab,
 .admin-fa_icon  span.opacity-7.text-muted .feather
 =======
+=======
+>>>>>>> design-rahaf
 .admin-fa_icon span.opacity-7.text-muted .fa,
 .admin-fa_icon span.opacity-7.text-muted .fas,
 .admin-fa_icon span.opacity-7.text-muted .far,
 .admin-fa_icon span.opacity-7.text-muted .fab,
 .admin-fa_icon span.opacity-7.text-muted .feather
+<<<<<<< HEAD
 >>>>>>> design
+=======
+>>>>>>> design-rahaf
 {
 color: <?php echo $primaryColor;?> !important;
 }
@@ -4520,10 +4741,14 @@ background-color: #fff;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .user-service-list .card-body  table tbody tr {
 =======
 .user-service-list .card-body table tbody tr {
 >>>>>>> design
+=======
+.user-service-list .card-body table tbody tr {
+>>>>>>> design-rahaf
 border: none !important;
 }
 
@@ -4548,7 +4773,11 @@ padding: .25em;
 .bg-transparent{
 background: transparent !important;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
 >>>>>>> design
+=======
+}
+>>>>>>> design-rahaf
