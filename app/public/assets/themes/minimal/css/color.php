@@ -105,6 +105,7 @@ if (isset($_GET['copyrights']) AND $_GET['copyrights'] != '') {
 }
 
 ?>
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap');
 
 :root {
 --allcolor: #666666;
@@ -173,7 +174,7 @@ clear: both;
 color: var(--allcolor);
 font-size: 16px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 line-height: normal;
 letter-spacing: normal;
 line-height: 24px;
@@ -207,7 +208,7 @@ padding: 0;
 color: var(--pcolor);
 font-size: 14px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 line-height: normal;
 letter-spacing: normal;
 }
@@ -229,7 +230,7 @@ padding: 0 !important;
 color: var(--h1h6);
 font-size: initial ;
 font-weight: normal;
-font-family: 'Poppins', sans-serif !important;
+font-family: "Tajawal", sans-serif;
 line-height: normal !important;
 letter-spacing: 0 !important;
 }
@@ -252,7 +253,7 @@ figcaption{
 color: #5e6d77;
 font-size: 18px;
 font-weight: 700;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 line-height: normal;
 letter-spacing: normal;
 }
@@ -262,7 +263,7 @@ padding: 0;
 color: #5e6d77;
 font-size: 14px;
 font-weight: 600;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 line-height: normal;
 letter-spacing: normal;
 }
@@ -271,7 +272,7 @@ margin-bottom: 5px;
 color: #5e6d77;
 font-size: 14px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 line-height: 1.5;
 letter-spacing: 0;
 }
@@ -295,7 +296,7 @@ textarea::-webkit-input-placeholder {
 color: #666666 !important;
 font-size: 16px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 letter-spacing: 0.5px;
 line-height: 22px;
 opacity: 1;
@@ -305,7 +306,7 @@ textarea:-moz-placeholder {
 color: #666666 !important;
 font-size: 16px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 letter-spacing: 0.5px;
 line-height: 22px;
 opacity: 1;
@@ -315,7 +316,7 @@ textarea::-moz-placeholder {
 color: #666666 !important;
 font-size: 16px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 letter-spacing: 0.5px;
 line-height: 22px;
 opacity: 1;
@@ -325,7 +326,7 @@ textarea:-ms-input-placeholder {
 color: #666666 !important;
 font-size: 16px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 letter-spacing: 0.5px;
 line-height: 22px;
 opacity: 1;
@@ -346,7 +347,7 @@ max-height: 100px;
 padding: 10px 15px;
 color: #666666;
 font-size: 14px;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 border: 1px solid #dfdfdf;
 border-radius: 4px;
 background-color: #ffffff;
@@ -380,7 +381,7 @@ line-height: 28px;
 color: #204dcc;
 font-size: 16px;
 font-weight: 600;
-font-family: 'Poppins', sans-serif;
+font-family: "Tajawal", sans-serif;
 letter-spacing: normal;
 line-height: normal;
 }
@@ -437,7 +438,7 @@ display: inline-block;
 color: var(--heading);
 font-size: 120px;
 font-weight: 700;
-font-family: 'Poppins', sans-serif;
+font-family: "Tajawal", sans-serif;
 line-height: 1 !important;
 letter-spacing: normal;
 
@@ -451,7 +452,7 @@ height: auto;
 color: var(--subheading);
 font-size: 16px;
 font-weight: 500;
-font-family: 'Poppins', sans-serif;
+font-family: "Tajawal", sans-serif;
 line-height: 1 !important;
 letter-spacing: normal;
 
@@ -468,7 +469,7 @@ padding-bottom: 60px !important;
 color: var(--h1h6);
 font-size: 36px;
 font-weight: 600;
-font-family: 'Poppins', sans-serif;
+font-family: "Tajawal", sans-serif;
 line-height: 1 !important;
 letter-spacing: normal;
 }
@@ -501,11 +502,10 @@ padding: 16px 50px;
 color: var(--wcolor);
 font-size: 15px;
 font-weight: 500;
-font-family: 'Poppins', sans-serif;
+font-family: "Tajawal", sans-serif;
 line-height: normal;
 letter-spacing: normal;
 text-align: center;
-
 white-space: nowrap;
 vertical-align: middle;
 -webkit-user-select: none;
@@ -531,7 +531,7 @@ padding: 12px 20px;
 color: #204dcc;
 font-size: 15px;
 font-weight: 500;
-font-family: 'Poppins', sans-serif;
+font-family: "Tajawal", sans-serif;
 line-height: normal;
 letter-spacing: normal;
 
@@ -703,7 +703,7 @@ justify-content: space-between;
 color: #666666;
 font-size: 15px;
 font-weight: 500;
-font-family: 'Poppins', sans-serif;
+font-family: "Tajawal", sans-serif;
 letter-spacing: normal;
 line-height: 50px;
 text-align: right;
@@ -721,7 +721,7 @@ left: 0;
 color: #ffffff;
 font-size: 15px;
 font-weight: 500;
-font-family: 'Poppins', sans-serif;
+font-family: "Tajawal", sans-serif;
 letter-spacing: normal;
 line-height: 50px;
 text-align: center;
@@ -1222,7 +1222,7 @@ border-radius: 0;
 color: #ffffff;
 font-size: 30px;
 font-weight: 500;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 line-height: 1;
 text-align: center;
 cursor: pointer;
@@ -1257,7 +1257,7 @@ color: #232323;
 padding: 0 15px;
 font-size: 16px;
 font-weight: 600;
-font-family: 'Poppins', sans-serif;
+font-family: "Tajawal", sans-serif;
 line-height: normal;
 letter-spacing: normal;
 vertical-align: middle;
@@ -1301,7 +1301,7 @@ height: 100%;
 color: #ffffff;
 font-size: 16px;
 font-weight: 600;
-font-family: 'Poppins', sans-serif;
+font-family: "Tajawal", sans-serif;
 line-height: 40px;
 text-align: center;
 border: 0;
@@ -1612,7 +1612,7 @@ margin-bottom: 0;
 color: #232323;
 font-size: 14px;
 font-weight: 700;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 line-height: 28px;
 letter-spacing: 0;
 
@@ -1636,7 +1636,7 @@ margin-top: -38px;
 color: #232323;
 font-size: 14px;
 font-weight: 700;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 line-height: 28px;
 letter-spacing: 0;
 
@@ -1675,7 +1675,7 @@ color: var(--wcolor);
 color: var(--wcolor);
 font-size: 16px;
 font-weight: 600;
-font-family: 'Poppins', sans-serif;
+font-family: "Tajawal", sans-serif;
 line-height: normal;
 letter-spacing: 0.75px;
 
@@ -1801,7 +1801,7 @@ margin: 40px 0 !important;
 color: var(--wcolor);
 font-size: 24px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 letter-spacing: normal;
 line-height: 2;
 }
@@ -2317,7 +2317,7 @@ height: 55px;
 padding: 14px 30px;
 font-size: 18px;
 font-weight: 600;
-font-family: 'Poppins', sans-serif;
+font-family: "Tajawal", sans-serif;
 
 border-top-left-radius: 0;
 border-bottom-left-radius: 0;
@@ -2326,7 +2326,7 @@ border-bottom-left-radius: 0;
 color: #232323 !important;
 font-size: 18px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 letter-spacing: 0;
 opacity: 1;
 }
@@ -2334,7 +2334,7 @@ opacity: 1;
 color: #232323 !important;
 font-size: 18px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 letter-spacing: 0;
 opacity: 1;
 }
@@ -2342,7 +2342,7 @@ opacity: 1;
 color: #232323 !important;
 font-size: 18px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 letter-spacing: 0;
 opacity: 1;
 }
@@ -2350,7 +2350,7 @@ opacity: 1;
 color: #232323 !important;
 font-size: 18px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 letter-spacing: 0;
 opacity: 1;
 }
@@ -2397,7 +2397,7 @@ transform: translate(0%, 50%);
 color: #ffffff;
 font-size: 16px;
 font-weight: 600;
-font-family: 'Poppins', sans-serif;
+font-family: "Tajawal", sans-serif;
 letter-spacing: normal;
 line-height: 1.2;
 }
@@ -2409,7 +2409,7 @@ background-color: #ffffff;
 color: #666666;
 font-size: 18px;
 font-weight: 500;
-font-family: 'Poppins', sans-serif;
+font-family: "Tajawal", sans-serif;
 
 }
 .card-blog .card-body .card-title {
@@ -2463,7 +2463,7 @@ font-size: 24px;
 color: var(--wcolor);
 font-size: 18px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 letter-spacing: normal;
 line-height: normal;
 }
@@ -2475,7 +2475,7 @@ font-size: 48px;
 color: var(--wcolor);
 font-size: 18px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 letter-spacing: normal;
 line-height: normal;
 }
@@ -2489,7 +2489,7 @@ padding: 16px 20px;
 color: #666666;
 font-size: 16px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 letter-spacing: 0.5px;
 line-height: 16px;
 border: 0;
@@ -2515,7 +2515,7 @@ margin: 40px 0 !important;
 color: #ffffff;
 font-size: 16px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 letter-spacing: normal;
 line-height: 28px;
 }
@@ -2535,7 +2535,7 @@ padding: 0;
 color: #ffffff;
 font-size: 16px;
 font-size: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 letter-spacing: normal;
 line-height: 28px;
 }
@@ -2549,7 +2549,7 @@ text-align: center;
 color: #ffffff;
 font-size: 14px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 letter-spacing: normal;
 line-height: normal;
 }
@@ -2559,7 +2559,7 @@ line-height: normal;
 color: #ffffff;
 font-size: 14px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 letter-spacing: normal;
 line-height: normal;
 }
@@ -2610,7 +2610,7 @@ box-shadow: none;
 color: #666666;
 font-size: 15px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 }
 .regain {
 display: none;
@@ -2745,7 +2745,7 @@ padding: 5px 10px;
 color: #204dcc;
 font-size: 18px;
 font-weight: 400;
-font-family: 'Poppins', sans-serif;
+font-family: "Tajawal", sans-serif;
 letter-spacing: normal;
 line-height: normal;
 border: 0;
@@ -3002,7 +3002,7 @@ font-family: IcoFont;
 color: #ffffff;
 font-size: 16px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 }
 .counter-wrap-2 {
 position: relative;
@@ -3046,7 +3046,7 @@ justify-content: center;
 color: #333;
 font-size: 30px;
 font-weight: 700;
-font-family: 'Poppins', sans-serif;
+font-family: "Tajawal", sans-serif;
 letter-spacing: normal;
 line-height: normal;
 border: 0;
@@ -3108,7 +3108,7 @@ justify-content: center;
 color: #ffffff;
 font-size: 14px;
 font-weight: 500;
-font-family: 'Poppins', sans-serif;
+font-family: "Tajawal", sans-serif;
 border: 0;
 border-radius: 4px;
 background: linear-gradient(109deg, var(--bggrdleft2) 0%, var(--bggrdright2));
@@ -3235,7 +3235,7 @@ padding: 15px 20px;
 color: var(--allcolor);
 font-size: 16px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 border: 1px solid #dfdfdf;
 border-radius: 4px;
 background-color: #ffffff;
@@ -3342,7 +3342,7 @@ float: left;
 color: #666666;
 font-size: 14px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 letter-spacing: normal;
 line-height: normal;
 border: 0;
@@ -3374,7 +3374,7 @@ padding: 7.5px 15px;
 color: #666666;
 font-size: 18px;
 font-weight: 700;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 margin-left: initial !important;
 border: 1px solid #dfdfdf;
 border-radius: 0 4px 0 4px !important;
@@ -3397,7 +3397,7 @@ color: #666666;
 color: #204dcc;
 font-size: 14px;
 font-weight: 400;
-font-family: 'Nunito', sans-serif;
+font-family: 'Tajawal',sans-serif;
 letter-spacing: normal;
 line-height: normal;
 }
@@ -3542,7 +3542,7 @@ color: var(--subheading);
 RESPONSIVE - FOR ALL SCREENS
 ----------------------------------------------------------------------*/
 @media (max-width: 1199px) {
-/*------ NAVBAR  ------*/
+/*------ NAVBAR ------*/
 .shape-rectangle,
 .shape-circle {
 display: none !important;
@@ -3561,7 +3561,7 @@ padding: 11px 10px !important;
 color: #232323;
 background: initial !important;
 }
-/*------ HERO THEME 2  ------*/
+/*------ HERO THEME 2 ------*/
 #hero-banner.theme-2::before {
 width: 100%;
 background-position: center;
@@ -3580,7 +3580,7 @@ justify-content: center;
 -webkit-box-shadow: 0 1px 66.5px 3.5px rgba(0, 0, 0, 0.5);
 box-shadow: 0 1px 66.5px 3.5px rgba(0, 0, 0, 0.5);
 }
-/*------ ABOUT US, VISION, TESTIMONIAL  ------*/
+/*------ ABOUT US, VISION, TESTIMONIAL ------*/
 #about-us .text-wrapper,
 #vision .text-wrapper {
 padding-top: 60px;
@@ -3820,7 +3820,7 @@ align-items: center !important;
 #contact .form-content {
 text-align: center;
 }
-/*------  THEME 2 COUNTER-SERVICE  ------*/
+/*------ THEME 2 COUNTER-SERVICE ------*/
 #counter-service .row .col-lg-4 {
 margin-bottom: 60px;
 }
@@ -4260,11 +4260,11 @@ border-radius: 4px 0 0 4px;
 }
 
 
-.admin-fa_icon  span.opacity-7.text-muted .fa,
-.admin-fa_icon  span.opacity-7.text-muted .fas,
-.admin-fa_icon  span.opacity-7.text-muted .far,
-.admin-fa_icon  span.opacity-7.text-muted .fab,
-.admin-fa_icon  span.opacity-7.text-muted .feather
+.admin-fa_icon span.opacity-7.text-muted .fa,
+.admin-fa_icon span.opacity-7.text-muted .fas,
+.admin-fa_icon span.opacity-7.text-muted .far,
+.admin-fa_icon span.opacity-7.text-muted .fab,
+.admin-fa_icon span.opacity-7.text-muted .feather
 {
 color: <?php echo $primaryColor;?> !important;
 }
@@ -4295,7 +4295,7 @@ background-color: #f2f2f2;
 background-color: #fff;
 }
 
-.user-service-list .card-body  table tbody tr {
+.user-service-list .card-body table tbody tr {
 border: none !important;
 }
 

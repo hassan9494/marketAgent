@@ -22,7 +22,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="1a7eff23-e428-4214-b8ae-75d970d66454" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="1a7eff23-e428-4214-b8ae-75d970d66454" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/layouts/breaking-news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/layouts/breaking-news.blade.php" afterDir="false" />
+    </list>
+>>>>>>> design
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -211,23 +218,38 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+<<<<<<< HEAD
     &quot;last_opened_file_path&quot;: &quot;C:/Projects/esp&quot;,
+=======
+    &quot;last_opened_file_path&quot;: &quot;/home/rahafjamool/Documents/learning/Hammam/marketAgent/resources/views/user/layouts&quot;,
+>>>>>>> design
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+<<<<<<< HEAD
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+=======
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+>>>>>>> design
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+<<<<<<< HEAD
+=======
+      <recent name="$PROJECT_DIR$/resources/views/user/layouts" />
+>>>>>>> design
       <recent name="G:\WDM\public\assets\uploads\logo" />
       <recent name="G:\WDM\assets\uploads\logo" />
       <recent name="G:\WDM\app\public\assets\uploads\logo" />
       <recent name="G:\WDM\resources\views\user\layouts" />
+<<<<<<< HEAD
       <recent name="G:\WDM\public\assets\images" />
+=======
+>>>>>>> design
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/assets/images" />
@@ -339,7 +361,17 @@
       <workItem from="1684894613711" duration="3548000" />
       <workItem from="1684988198525" duration="3517000" />
       <workItem from="1685212365963" duration="11028000" />
+<<<<<<< HEAD
       <workItem from="1685326073362" duration="837000" />
+=======
+      <workItem from="1685326073362" duration="8405000" />
+      <workItem from="1685389533238" duration="270000" />
+      <workItem from="1685471211063" duration="5099000" />
+      <workItem from="1685587276958" duration="2525000" />
+      <workItem from="1685645356782" duration="829000" />
+      <workItem from="1685652919798" duration="6292000" />
+      <workItem from="1685850526000" duration="1077000" />
+>>>>>>> design
     </task>
     <servers />
   </component>

@@ -14,11 +14,55 @@
     <div class="page-wrapper d-block">
         @yield('content')
     </div>
+
     <footer class="footer text-center text-muted">
-        <p>تم التطوير من قبل شركة كودا . {{trans('All Rights Reserved')}}
-            <a href="https://wa.me/+31685364242" target="_blank"><i class="fab fa-whatsapp" style="color: #0cc243;font-size: 20px;"></i></a>
-            <a href="mailto:aaaaahm.sy@gmail.com" target="_blank"><i class="fa fa-envelope" style="color: #1a73e8;font-size: 20px;"></i></a>
-        </p>
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <a href="{{route('home')}}">
+                    <div class="logo">
+                        <img src="{{ getFile(config('location.logoIcon.path').'logo.png')}}" alt="Logo">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <ul class="links">
+                    <li class="{{ Request::routeIs('user.home')  ? 'active' : '' }}">
+                        <a href="{{ route('user.home') }}">@lang('Dashboard')<span></span>
+                        </a>
+                    </li>
+                    <li class="{{ Request::routeIs('about')  ? 'active' : '' }}">
+                        <a href="{{ route('about') }}">@lang('About')  <span></span>
+                        </a>
+                    </li>
+                    <li class="{{ Request::routeIs('user.order.index')  ? 'active' : '' }}">
+                        <a href="{{ route('user.order.index') }}">@lang('Order') <span></span>
+                        </a>
+                    </li>
+                    <li class="{{ Request::routeIs('user.service*')  ? 'active' : '' }}">
+                        <a href="{{ route('user.service.show') }}">@lang('Services') <span></span>
+                        </a>
+                    </li>
+                    <li class="{{ Request::routeIs('user.transaction') ? 'active' : '' }}">
+                        <a href="{{ route('user.transaction') }}">@lang('Transactions') <span></span>
+                        </a>
+                    </li>
+                    <li class="{{ Request::routeIs('user.debt') ? 'active' : '' }}">
+                        <a href="{{ route('user.debt') }}">@lang('Debt') <span></span>
+                        </a>
+                    </li>
+                    <li class="{{ Request::routeIs('privacy-policy')  ? 'active' : '' }}">
+                        <a href="{{ route('privacy-policy') }}">@lang('privacy-policy') <span></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-12 col-sm-12">
+                <p>تم التطوير من قبل شركة كودا . {{trans('All Rights Reserved')}}
+                    <a href="https://wa.me/+31685364242" target="_blank"><i class="fab fa-whatsapp" style="color: #0cc243;font-size: 20px;"></i></a>
+                    <a href="mailto:aaaaahm.sy@gmail.com" target="_blank"><i class="fa fa-envelope" style="color: #1a73e8;font-size: 20px;"></i></a>
+                </p>
+            </div>
+        </div>
     </footer>
 
     <button class="scroll-top2 scroll-to-target2 open2">
@@ -82,7 +126,11 @@
         }
     });
 
-
+    document.querySelector('.burger-menu').addEventListener('click', function() {
+        var headerMenu = document.querySelector('.header-menu-wrap');
+        this.classList.toggle('open');
+        headerMenu.classList.toggle('fade-in');
+    });
 
     const darkMode = () => {
         var $theme =document.body.classList.toggle("dark-mode");

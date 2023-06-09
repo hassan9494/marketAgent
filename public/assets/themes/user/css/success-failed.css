@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap');
+
 .cf:before,
 .cf:after {
     content: " ";
@@ -18,7 +20,7 @@ html {
 body {
     padding: 0 20px;
     min-width: 300px;
-    font-family: 'Akkurat-Regular', sans-serif;
+    font-family: 'Tajawal', sans-serif;
     background-color: #fffffe;
     color: #1a1a1a;
     text-align: center;
@@ -41,7 +43,7 @@ a:active {
 }
 .site-header__title {
     margin: 0;
-    font-family: Montserrat, sans-serif;
+    font-family: 'Tajawal', sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.1;
