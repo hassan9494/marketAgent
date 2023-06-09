@@ -7770,12 +7770,10 @@ fieldset:disabled a.btn {
     margin-bottom: 0;
 }
 .dropdown-item {
-    display: block;
-    width: 100%;
+    margin: auto;
     padding: 0.65rem 1rem;
     clear: both;
     color: #6c757d;
-    text-align: inherit;
     background-color: transparent;
     border: 0;
 }
@@ -16573,7 +16571,7 @@ cardinput {
 }
 
 .products_list li {
-    width: 32.33%;
+    /* width: 32.33%; */
     margin-top: 18px;
     flex: 1 1 25em;
     list-style-type: none;
