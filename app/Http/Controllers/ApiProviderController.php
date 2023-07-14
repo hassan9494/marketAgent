@@ -225,11 +225,14 @@ class ApiProviderController extends Controller
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
+        $categories = Category::all();
+
         $provider = ApiProvider::find($request->api_provider_id);
 
-        $apiLiveData = Curl::to($provider['url'])->withData(['key' => $provider['api_key'], 'action' => 'services'])->get();
+        $apiLiveData = Curl::to($provider['url'])->withData(['key' => $provider['api_key'], 'action' => 'services'])->post();
         $apiServiceLists = json_decode($apiLiveData);
-        return view('admin.pages.services.show-api-services', compact('apiServiceLists', 'provider'));
+
+        return view('admin.pages.services.show-api-services', compact('apiServiceLists', 'provider', 'categories'));
     }
 
     public function import(Request $request)
@@ -239,17 +242,21 @@ class ApiProviderController extends Controller
         $services = Service::all();
         $insertCat = 1;
         $existService = 0;
-        foreach ($all_category as $categories):
-            if ($categories->category_title == $req['category']):
-                $insertCat = 0;
+        if (!$request->category_id) {
+            foreach ($all_category as $categories):
+                if ($categories->category_title == $req['category']):
+                    $insertCat = 0;
+                endif;
+            endforeach;
+            if ($insertCat == 1):
+                $cat = new Category();
+                $cat->category_title = $req['category'];
+                $cat->type = 'BALANCE';
+                $cat->special_field = 'الرابط';
+                $cat->status = 1;
+                $cat->save();
             endif;
-        endforeach;
-        if ($insertCat == 1):
-            $cat = new Category();
-            $cat->category_title = $req['category'];
-            $cat->status = 1;
-            $cat->save();
-        endif;
+        }
         foreach ($services as $service):
             if ($service->api_provider_id == $req['id']):
                 $existService = 1;
@@ -257,25 +264,26 @@ class ApiProviderController extends Controller
         endforeach;
         if ($existService != 1):
             $service = new Service();
-            $idCat = Category::where('category_title', $req['category'])->first()->id;
+            $idCat = $request->category_id ?? Category::where('category_title', $req['category'])->first()->id;
             $service->service_title = $req['name'];
             $service->category_id = $idCat;
             $service->min_amount = $req['min'];
             $service->max_amount = $req['max'];
-            $increased_price = ($req['rate'] * $req['price_percentage_increase']) / 100;
+            $increased_price = ($req['rate'] / 100) * $req['price_percentage_increase'];
             $service->price = $req['rate'] + $increased_price;
             $service->service_status = 1;
             $service->api_provider_id = $req['provider'];
-            $service->api_service_id = @$req['id'];
-            $service->drip_feed = @$req['dripfeed'];
-            $service->api_provider_price = @$req['rate'];
+            $service->api_service_id = $req['id'];
+            $service->drip_feed = $req['dripfeed'] ?? 0;
+            $service->api_provider_price = $req['rate'];
             $service->save();
-            return redirect()->route('admin.service.show');
+            return redirect()->route('admin.service.show')->with('success', 'Added succussfuly');
         else:
-            return redirect()->route('admin.service.show')->with('success', 'Already Have this service');
+            return redirect()->route('admin.service.show')->with('error', 'Already Have this service');
         endif;
 
     }
+
 
     public function importMulti(Request $request)
     {
@@ -368,21 +376,21 @@ class ApiProviderController extends Controller
     public function checkSMS($orderID)
     {
         $order = Order::find($orderID);
-        $id = $order->order_id_api;
-        $apiproviderdata = new SymService();
-        $key = env("PROVIDER_API_KEY", "test");
+        $apiproviderdata = ApiProvider::findorfail($order->service->api_provider_id);
         $params = [
+            'key' => $apiproviderdata->api_key,
             'action' => 'smscode',
-            'order' => $order->api_order_id,
-            'key' =>$key
+            'order' => $order->api_order_id
         ];
-        $base_url = env("PROVIDER_URL", "https://market-syria.com/api/v1");
-        $response = Curl::to($base_url)
+        $response = Curl::to($apiproviderdata->url)
             ->withData($params)->post();
         $response = json_decode($response, 1);
-        if (isset($response) && $response !=0) {
-            $res = (new OrderController())->finish5SImOrder($order, $response);
-            return $res;
+        if (isset($response['status']) && $response['status'] == 'success') {
+            $code = $response['smsCode'];
+            if (isset($code) && $order->status != 'completed') {
+                $res = (new OrderController())->finish5SImOrder($order, $response);
+            }
+            return $code;
         } else return '0';
     }
 }

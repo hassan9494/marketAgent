@@ -154,7 +154,7 @@
                                             {{ $service->price }} {{config('basic.currency_symbol')}}
                                         </td>
                                         <td data-label="@lang('Capital Price')">
-                                            {{ $service->server_price }} {{config('basic.currency_symbol')}}
+                                            {{ $service->api_provider_price }} {{config('basic.currency_symbol')}}
                                         </td>
                                         <td data-label="@lang('Status')">
                                             <span

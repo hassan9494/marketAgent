@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Exceptions\ExternalProviderRemoteException;
 use App\Http\Controllers\Controller;
 use App\Http\Traits\Notify;
 use App\Models\Admin;
@@ -127,21 +128,17 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
-        $service = Service::userRate()->findOrFail($request->service);
+
         $req = Purify::clean($request->all());
         $rules = [
             'category' => 'required|integer|min:1|not_in:0',
             'service' => 'required|integer|min:1|not_in:0',
-//            'link' => 'required|url',
-//            'quantity' => 'required|integer|min:'.$service->min_amount.'|max:'.$service->max_amount,
-//            'check' => 'required',
         ];
         $validator = Validator::make($req, $rules);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
         $service = Service::userRate()->findOrFail($request->service);
-
         $basic = (object)config('basic');
 
         if (in_array($service->category->type, ['NUMBER', 'CODE', '5SIM']))
@@ -155,10 +152,8 @@ class OrderController extends Controller
         }
         $userRate = ($service->user_rate) ?? $service->price;
         $price = ($quantity * $userRate);
-        $server_price = round(($quantity * $service->server_price), 2);
         if ($service->category->type == 'SMM') {
             $price = $price / 1000;
-            $server_price = $server_price / 1000;
         }
         $user = Auth::user();
         if ($user->balance < $price) {
@@ -173,14 +168,11 @@ class OrderController extends Controller
             $order->service_id = $req['service'];
             $order->link = $req['link'];
             $order->quantity = $req['quantity'];
-            $order->status = isset($server_order['order_status']) ? $server_order['order_status'] : 'processing';
+            $order->status = 'processing';
             $order->price = $price;
-            $order->runs = isset($req['runs']) && !empty($req['runs']) ? $req['runs'] : null;
-            $order->interval = isset($req['interval']) && !empty($req['interval']) ? $req['interval'] : null;
-            $order->details = isset($server_order['details']) ? $server_order['details'] : null;
-            $order->codes = isset($server_order['code']) ? $server_order['code'] : null;
-            $order->api_order_id = isset($server_order['order']) ? $server_order['order'] : null;
-            $order->server_price = isset($server_order['price']) ? $server_order['price'] : $server_price;
+            if (isset($service->api_provider_id) && $service->api_provider_id != 0) {
+                $this->apiProviderOrder($service, $req, $order);
+            }
             $order->save();
             if (!in_array($service->category->type, ['NUMBER', 'CODE', '5SIM'])) {
                 $user->balance -= $price;
@@ -215,11 +207,6 @@ class OrderController extends Controller
             DB::rollback();
             return back()->with('error', "There was an error ,Please contact admin to resolve it")->withInput();
         }
-
-        /////////////   End place order    /////////////////////
-        $adminBalanceUpdate = new AdminServerBalanceUpdateService();
-        $admin = Admin::first();
-        $adminBalanceUpdate->updateBalance($admin);
         return redirect()->route('user.order.index')->with('success', 'Your order has been submitted');
     }
 
@@ -399,6 +386,30 @@ class OrderController extends Controller
 
         }
         return back()->with('success', 'Successfully Added');
+
+    }
+
+    public function apiProviderOrder($service, $req, $order)
+    {
+        $apiproviderdata = ApiProvider::find($service->api_provider_id);
+        $postData = [
+            'key' => $apiproviderdata['api_key'],
+            'action' => 'add',
+            'service' => $service->api_service_id,
+            'link' => $req['link'],
+            'quantity' => $req['quantity']
+        ];
+        $apiservicedata = Curl::to($apiproviderdata['url'])->withData($postData)->post();
+        $apidata = json_decode($apiservicedata);
+        if (isset($apidata->order)) {
+            $order->status_description = "order: {
+                    $apidata->order}";
+            $order->api_order_id = $apidata->order;
+            $order->link = $apidata->link;
+        } else {
+            $order->status_description = "error: {
+                    $apidata->error}";
+        }
     }
 
 }

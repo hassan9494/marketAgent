@@ -18,9 +18,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        BlockIoIPN::class,
-        UpdateOrdersStatus::class,
-        ServicesSync::class,
+        UpdateOrdersStatus::class
     ];
 
     /**
