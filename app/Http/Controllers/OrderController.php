@@ -288,16 +288,11 @@ class OrderController extends Controller
 
     public function finish5SImOrder($order, $result)
     {
-
         $user = $order->users;
-        if ($user->balance < $order->price) {
-            $notify[] = ['error', 'Insufficient balance. Please deposit and try again!'];
-            return back()->withNotify($notify);
-        }
         $user->balance -= $order->price;
         $user->save();
         $order->status = 'completed';
-        $order->start_counter = $result['sms'][0]['code'] ?? $result ?? ' ';
+        $order->codes = $result['smsCode'];
         $order->save();
 
         //Create Transaction
@@ -310,7 +305,7 @@ class OrderController extends Controller
         $transaction->charge = 0;
         $transaction->save();
 
-        return $result['sms'][0]['code'] ?? $result;
+        return $result['smsCode'];
 
     }
 }

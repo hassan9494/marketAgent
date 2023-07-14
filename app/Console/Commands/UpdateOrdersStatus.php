@@ -2,7 +2,9 @@
 
 namespace App\Console\Commands;
 
+use App\Http\Controllers\OrderController;
 use App\Http\Traits\Notify;
+use App\Models\ApiProvider;
 use App\Models\Order;
 use App\Models\Transaction;
 use App\Services\SymService;
@@ -10,6 +12,7 @@ use App\Services\TransactionService;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Ixudra\Curl\Facades\Curl;
 
 class UpdateOrdersStatus extends Command
 {
@@ -46,46 +49,62 @@ class UpdateOrdersStatus extends Command
      */
     public function handle()
     {
-        $server_connection = new SymService();
-        $order_param = array();
-        $order_param['action'] = 'sync_orders';
-        $server_orders = $server_connection->serverRequest($order_param);
-        foreach ($server_orders as $server_order) {
-            $order = Order::where('api_order_id', $server_order['id'])->first();
-            if (isset($order))
-                if ($order->status != $server_order['status']) {
-                    $order->status = $server_order['status'];
-                    DB::beginTransaction();
-                    $order->save();
-                    if ($server_order['status'] == 'refunded') {
-                        $user = $order->users;
-                        $user->balance += $order->price;
+        $msaderOrders = Order::whereNotNull('api_order_id')
+            ->where('created_at', '>', now()->subMinutes(10))->get();
+        $msaderOrders = $msaderOrders->pluck('api_order_id');
+        if (isset($msaderOrders))
+            $this->updateMsaderOrders($msaderOrders);
+    }
 
-                        $transaction = new TransactionService();
-                        $trx_id = $transaction->transaction($user->id, '+', $order->price, 'Retrieving the balance after change the order status to a refund');
-//                        $transaction = new Transaction();
-//                        $transaction->user_id = $user->id;
-//                        $transaction->trx_type = '+';
-//                        $transaction->amount = $order->price;
-//                        $transaction->remarks = 'Retrieving the balance after change the order status to a refund';
-//                        $transaction->trx_id = strRandom();
-//                        $transaction->charge = 0;
-
-                        $user->save();
-
-                        $msg = [
-                            'order_id' => $order->id,
-                            'status' => $order->status
-                        ];
-                        $action = [
-                            "link" => '#',
-                            "icon" => "fas fa-cart-plus text-white"
-                        ];
-                        @$this->userPushNotification($order->users, 'ORDER_STATUS_CHANGED', $msg, $action);
+    public function updateMsaderOrders($msaderOrdersIDs)
+    {
+        $msaderProvider = ApiProvider::where('description', 'LIKE', 'msader');
+        $this->base_url = $msaderProvider->url;
+        $params = [
+            'key' => $msaderProvider->api_key,
+            'action' => 'orders',
+            'orders' => implode(",", $msaderOrdersIDs)
+        ];
+        $response = Curl::to($this->base_url)->withData($params)->post();
+        $orderStatus = json_decode($response, true);
+        if (isset($orderStatus[0]['order'])) {
+            foreach ($orderStatus as $remoteOrder) {
+                $order = Order::where('api_order_id', '=', $remoteOrder['order'])->first();
+                if ($order && $remoteOrder['status'] != $order->status) {
+                    if ($order->category->type != "NUMBER")
+                        $this->statusChange($order, $remoteOrder['status']);
+                    else {
+                        if ($remoteOrder['status'] == 'completed') {
+                            if ($remoteOrder['code'])
+                                $res = (new OrderController())->finish5SImOrder($order, ['smsCode' => $remoteOrder['code']]);
+                        } else
+                            $this->statusChange($order, $remoteOrder['status']);
                     }
-                    DB::commit();
-                }
-        }
 
+                }
+            }
+        }
+    }
+
+    public function statusChange(Order $order, $status)
+    {
+        $user = $order->users;
+        if ($status == 'refunded') {
+            if ($order->status != 'refunded') {
+                $user->balance += $order->price;
+                $transaction1 = new Transaction();
+                $transaction1->user_id = $user->id;
+                $transaction1->trx_type = '+';
+                $transaction1->amount = $order->price;
+                $transaction1->remarks = 'استرجاع الرصيد بعد تحويل حالة الطلب الى مسترجع';
+                $transaction1->trx_id = strRandom();
+                $transaction1->charge = 0;
+                if ($user->save()) {
+                    $transaction1->save();
+                }
+            }
+        }
+        $order->status = $status;
+        $order->save();
     }
 }

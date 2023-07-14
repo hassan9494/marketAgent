@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Traits\Notify;
 use App\Mail\SendMail;
+use App\Models\ApiProvider;
 use App\Models\Category;
 use App\Models\Content;
 use App\Models\ContentDetails;
@@ -13,6 +14,7 @@ use App\Models\Order;
 use App\Models\Service;
 use App\Models\Subscriber;
 use App\Models\Template;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Ixudra\Curl\Facades\Curl;
@@ -302,34 +304,64 @@ class FrontendController extends Controller
     }
 
 
-    public function cron()
-    {
-		$orders = Order::with(['service', 'service.provider'])->whereNotIn('status', ['completed', 'refunded', 'canceled'])->whereHas('service', function ($query) {
-            $query->whereNotNull('api_provider_id')->orWhere('api_provider_id', '!=', 0);
-        })->get();
-
-        foreach($orders as $order){
-            $service = $order->service;
-            if (isset($service->api_provider_id)) {
-                $apiproviderdata = $service->provider;
-                $apiservicedata = Curl::to($apiproviderdata['url'])->withData(['key' => $apiproviderdata['api_key'], 'action' => 'status','order'=>$order->api_order_id])->post();
-                $apidata = json_decode($apiservicedata);
-                if (isset($apidata->status)) {
-                    $order->status =  strtolower($apidata->status);
-					$order->start_counter = @$apidata->start_count;
-					$order->remains = @$apidata->remains;
-                }
-
-				if (isset($apidata->error)) {
-					$order->status_description = "error: {" .@$apidata->error ."}";
-				}
-
-                $order->save();
-            }
-        };
-
-		return 'ok';
-    }
-
-
+//    public function cron()
+//    {
+//        $msaderOrders = Order::whereNotNull('api_order_id')
+//            ->where('created_at', '>', now()->subMinutes(300))->get();
+//        $msaderOrders = $msaderOrders->pluck('api_order_id')->toArray();
+//        if (isset($msaderOrders))
+//            $this->updateMsaderOrders($msaderOrders);
+//    }
+//
+//    public function updateMsaderOrders($msaderOrdersIDs)
+//    {
+//        $msaderProvider = ApiProvider::where('description', 'LIKE', 'msader')->first();
+//        $this->base_url = $msaderProvider->url;
+//        $params = [
+//            'key' => $msaderProvider->api_key,
+//            'action' => 'orders',
+//            'orders' => implode(",", $msaderOrdersIDs)
+//        ];
+//        $response = Curl::to($this->base_url)->withData($params)->post();
+//        $orderStatus = json_decode($response, true);
+//        if (isset($orderStatus[0]['order'])) {
+//            foreach ($orderStatus as $remoteOrder) {
+//                $order = Order::where('api_order_id', '=', $remoteOrder['order'])->first();
+//                if ($order && $remoteOrder['status'] != $order->status) {
+//                    if ($order->category->type != "NUMBER")
+//                        $this->statusChange($order, $remoteOrder['status']);
+//                    else {
+//                        if ($remoteOrder['status'] == 'completed') {
+//                            if ($remoteOrder['code'])
+//                                $res = (new OrderController())->finish5SImOrder($order, ['smsCode' => $remoteOrder['code']]);
+//                        } else
+//                            $this->statusChange($order, $remoteOrder['status']);
+//                    }
+//
+//                }
+//            }
+//        }
+//    }
+//
+//    public function statusChange(Order $order, $status)
+//    {
+//        $user = $order->users;
+//        if ($status == 'refunded') {
+//            if ($order->status != 'refunded') {
+//                $user->balance += $order->price;
+//                $transaction1 = new Transaction();
+//                $transaction1->user_id = $user->id;
+//                $transaction1->trx_type = '+';
+//                $transaction1->amount = $order->price;
+//                $transaction1->remarks = 'استرجاع الرصيد بعد تحويل حالة الطلب الى مسترجع';
+//                $transaction1->trx_id = strRandom();
+//                $transaction1->charge = 0;
+//                if ($user->save()) {
+//                    $transaction1->save();
+//                }
+//            }
+//        }
+//        $order->status = $status;
+//        $order->save();
+//    }
 }

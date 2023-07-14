@@ -22,7 +22,33 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a7eff23-e428-4214-b8ae-75d970d66454" name="Default Changelist" comment="" />
+    <list default="true" id="1a7eff23-e428-4214-b8ae-75d970d66454" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/UpdateOrdersStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/UpdateOrdersStatus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ExternalServices/AbstractOperation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ExternalServices/AbstractValidator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ExternalServices/ExceptionsServices/ExternalProviderException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ExternalServices/ExceptionsServices/ExternalProviderLocalException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ExternalServices/ExceptionsServices/ExternalProviderRemoteException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ExternalServices/ExternalProviderResponse.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ExternalServices/ProviderInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ExternalServices/SmsActivate/AbstractSmsActivateOperation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ExternalServices/SmsActivate/CreateOrder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ExternalServices/SmsActivate/GetBalance.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ExternalServices/SmsActivate/GetOrderStatus.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ExternalServices/SmsActivate/SmsActivate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ExternalServices/SwProducts/AbstractSwProductsOperation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ExternalServices/SwProducts/GetBalance.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ExternalServices/SwProducts/SwProducts.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiProviderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiProviderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/services/show-api-services.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/services/show-api-services.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/services/show-service.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/services/show-service.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -206,28 +232,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Projects/esp&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Projects/WDM/resources/views/admin/pages/services",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\WDM\resources\views\admin\pages\services" />
       <recent name="G:\WDM\public\assets\uploads\logo" />
       <recent name="G:\WDM\assets\uploads\logo" />
       <recent name="G:\WDM\app\public\assets\uploads\logo" />
       <recent name="G:\WDM\resources\views\user\layouts" />
-      <recent name="G:\WDM\public\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/assets/images" />
