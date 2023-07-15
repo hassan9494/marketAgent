@@ -159,7 +159,8 @@ class OrderController extends Controller
         if ($user->balance < $price) {
             return back()->with('error', "Insufficient balance in your wallet.")->withInput();
         }
-
+        if(isset($req['special_field']))
+            $req['link'] = $req['special_field'];
         DB::beginTransaction();
         try {
             $order = new Order();
@@ -204,6 +205,7 @@ class OrderController extends Controller
                 ]);
             }
         } catch (\Exception $e) {
+            dd($e);
             DB::rollback();
             return back()->with('error', "There was an error ,Please contact admin to resolve it")->withInput();
         }

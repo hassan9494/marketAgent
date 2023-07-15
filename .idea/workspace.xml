@@ -24,30 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1a7eff23-e428-4214-b8ae-75d970d66454" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/UpdateOrdersStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/UpdateOrdersStatus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ExternalServices/AbstractOperation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ExternalServices/AbstractValidator.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ExternalServices/ExceptionsServices/ExternalProviderException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ExternalServices/ExceptionsServices/ExternalProviderLocalException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ExternalServices/ExceptionsServices/ExternalProviderRemoteException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ExternalServices/ExternalProviderResponse.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ExternalServices/ProviderInterface.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ExternalServices/SmsActivate/AbstractSmsActivateOperation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ExternalServices/SmsActivate/CreateOrder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ExternalServices/SmsActivate/GetBalance.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ExternalServices/SmsActivate/GetOrderStatus.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ExternalServices/SmsActivate/SmsActivate.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ExternalServices/SwProducts/AbstractSwProductsOperation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ExternalServices/SwProducts/GetBalance.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ExternalServices/SwProducts/SwProducts.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiProviderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiProviderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/services/show-api-services.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/services/show-api-services.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/services/show-service.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/services/show-service.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
